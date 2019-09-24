@@ -3,17 +3,19 @@
 #define PRESSED true
 #define RELEASED false
 
-
-class KeyboardHandler
+namespace game
 {
-    private:
-    bool keys[255] = { 0 };
+    class KeyboardHandler
+    {
+        private:
+        bool keys[255] = { 0 };
 
-    public:
-    KeyboardHandler();
-    int getVertical();
-    int getHorizontal();
-    bool isPressed(unsigned char);
-    bool isReleased(unsigned char);
-    void handleEvent(SDL_Event*);
-};
+        public:
+        KeyboardHandler();
+        int getVertical();
+        int getHorizontal();
+        bool isPressed(unsigned char);
+        bool isReleased(unsigned char);
+        void handleEvent(SDL_Event*);
+    };
+}

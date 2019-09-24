@@ -4,14 +4,17 @@
 #include "solid.hpp"
 #include "character.hpp"
 
-class Environment
+namespace game
 {
-    private:
-    std::vector< Solid > solids;
-    std::vector< Character > characters;
+    class Environment
+    {
+        private:
+        std::vector< Solid > solids;
+        std::vector< Character > characters;
 
-    public:
-    Environment();
-    Environment(std::vector< Solid >& solids);
-    std::vector< Solid > getSolids() { return this->solids; }
-};
+        public:
+        Environment();
+        Environment(std::vector< Solid >& solids);
+        std::vector< Solid > getSolids() { return this->solids; }
+    };
+}

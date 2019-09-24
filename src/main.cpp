@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[])
 {
-    GameData gamedata = GameData(); // Initialize Game Session
+    game::GameData gamedata = game::GameData(); // Initialize Game Session
     gamedata.updateMap(0);
 
     SDL_Event event;

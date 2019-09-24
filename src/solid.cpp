@@ -1,6 +1,9 @@
 #include "solid.hpp"
 
-Solid::Solid()
+namespace game
 {
+    Solid::Solid()
+    {
 
+    }
 }

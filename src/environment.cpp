@@ -1,11 +1,14 @@
 #include "environment.hpp"
 
-Environment::Environment()
+namespace game
 {
+    Environment::Environment()
+    {
 
-}
+    }
 
-Environment::Environment(std::vector< Solid >& solids)
-{ 
-    this->solids = solids; 
+    Environment::Environment(std::vector< Solid >& solids)
+    { 
+        this->solids = solids; 
+    }
 }
