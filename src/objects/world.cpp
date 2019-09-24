@@ -9,7 +9,7 @@ using namespace std;
 
 World::World()
 {
-
+    loadMaps();
 }
 
 bool World::loadMaps()

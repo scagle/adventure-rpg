@@ -35,3 +35,8 @@ Option Menu::getOption()
 {
     return (this->options[current_option]);
 }
+
+std::vector< Option >* Menu::getAllOptions()
+{
+    return &(this->options);
+}

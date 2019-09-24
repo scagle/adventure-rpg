@@ -7,6 +7,7 @@
 MenuHandler::MenuHandler()
 {
     this->menus = {};
+    loadMenus();
 }
 
 void MenuHandler::loadMenus()
@@ -15,7 +16,7 @@ void MenuHandler::loadMenus()
         {"main" , Menu( "Main Menu", { 
                     { "Save", "save", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, //TODO Pass function pointer to appropriate methods
                     { "Load", "load", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR },
-                    { "Exit", "",     OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
+                    { "Exit", "",     WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
                 } ) },
         {"save" , Menu( "Save Page", { 
                     { "Save 1", "save1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 

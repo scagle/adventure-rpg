@@ -29,4 +29,5 @@ class Menu
     void up();
     void down();
     Option getOption();
+    std::vector< Option >* getAllOptions();
 };

@@ -10,6 +10,11 @@ class MenuHandler
     std::unordered_map<std::string, Menu > menus;
     std::stack< Menu > menu_stack;
     /*! TODO: - Create basic main_menu with some options that call other menus with options
+     *          - Test options
+     *        - Update rendering
+     *          - Use actual renderer
+     *          - Implement Alpha Channels
+     *          - Get text rendering
      *        - Have KeyboardHandler give navigation capabilities to menu
      *        - Verify that alpha is either 0=invis, 255=vis or vice versa
      *        - Figure out how to input text for names / output text to display ( is library required or what? )
