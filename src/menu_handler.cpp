@@ -2,7 +2,7 @@
 #include <iostream>
 #include "menu_handler.hpp"
 #include "menu.hpp"
-#include "../globals.hpp"
+#include "globals.hpp"
 
 MenuHandler::MenuHandler()
 {

@@ -1,9 +1,9 @@
 #include <SDL.h>
-#include "ui/keyboard_handler.hpp"
-#include "ui/menu_handler.hpp"
-#include "objects/character.hpp"
-#include "objects/world.hpp"
-#include "objects/solid.hpp"
+#include "keyboard_handler.hpp"
+#include "menu_handler.hpp"
+#include "character.hpp"
+#include "world.hpp"
+#include "solid.hpp"
 
 
 class KeyboardHandler;

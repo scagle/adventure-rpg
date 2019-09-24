@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 #include "character.hpp"
-#include "../globals.hpp"
+#include "globals.hpp"
 
 Character::Character()
 {

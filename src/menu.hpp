@@ -3,7 +3,7 @@
 #include <SDL.h>
 #include <vector>
 #include <string>
-#include "../globals.hpp"
+#include "globals.hpp"
 
 struct Option
 {

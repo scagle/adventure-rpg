@@ -1,7 +1,7 @@
 #include <iostream>
 #include <assert.h>
 #include "gamedata.hpp"
-#include "utils/sdl_utils.hpp"
+#include "sdl_utils.hpp"
 
 GameData::GameData()
 {
