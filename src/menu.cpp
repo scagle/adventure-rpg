@@ -38,7 +38,7 @@ namespace game
         return (this->options[current_option]);
     }
 
-    std::vector< Option >* Menu::getAllOptions()
+    std::vector< Option >* Menu::getOptions()
     {
         return &(this->options);
     }

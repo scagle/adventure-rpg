@@ -47,6 +47,7 @@ namespace game
         void selectMenu();
         Menu& getMenu();
         bool inMenu();
+        virtual void render( SDL_Renderer *renderer );
         void save();
         void load();
         void quit();

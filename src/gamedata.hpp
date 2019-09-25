@@ -35,6 +35,7 @@ namespace game
             bool inMenu = true;
 
         public:
+            ~GameData() { }
             GameData();
             bool isDone() const { return quit; }
             void checkInputs( SDL_Event* event );

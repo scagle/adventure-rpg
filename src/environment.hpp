@@ -16,5 +16,6 @@ namespace game
         Environment();
         Environment(std::vector< Solid >& solids);
         std::vector< Solid > getSolids() { return this->solids; }
+        std::vector< Character > getCharacters() { return this->characters; }
     };
 }

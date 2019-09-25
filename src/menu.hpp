@@ -4,18 +4,10 @@
 #include <vector>
 #include <string>
 #include "globals.hpp"
+#include "option.hpp"
 
 namespace game
 {
-    struct Option
-    {
-        std::string text;
-        std::string next;
-        SDL_Color bg;
-        SDL_Color fg;
-        void (*call_function)();
-    };
-
     class Menu
     {
         private:
@@ -31,6 +23,6 @@ namespace game
         void up();
         void down();
         Option getOption();
-        std::vector< Option >* getAllOptions();
+        std::vector< Option >* getOptions();
     };
 }

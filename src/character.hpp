@@ -17,7 +17,8 @@ namespace game
         public:
         Character();
         Character(SDL_Rect, SDL_Color);
-        void update(std::vector< Solid >*);
+        virtual void update(std::vector< Solid >*);
+        virtual void render( SDL_Renderer *renderer );
         // Accessors
         // Mutators
         void setVelocity(float vx, float vy){ velocity_x = vx; velocity_y = vy; } 

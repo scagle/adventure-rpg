@@ -84,6 +84,33 @@ namespace game
         return (this->menu_stack.size());
     }
 
+    void MenuHandler::render( SDL_Renderer *renderer )
+    {
+        if ( !inMenu() )
+            return;
+
+        // Draw Transparent Overlay
+        SDL_Rect menu_box = { SCREEN_WIDTH / 4, SCREEN_HEIGHT / 8, SCREEN_WIDTH / 2, SCREEN_HEIGHT - SCREEN_HEIGHT / 4 }; 
+        SDL_SetRenderDrawColor( renderer, 
+                                MENU_BACKGROUND_COLOR.r,
+                                MENU_BACKGROUND_COLOR.g,
+                                MENU_BACKGROUND_COLOR.b,
+                                MENU_BACKGROUND_COLOR.a
+        );
+        SDL_RenderFillRect( renderer, &menu_box );
+        // Get Options
+        Menu menu = getMenu();
+        std::vector< Option > *options = menu.getOptions();
+        for ( Option option : (*options) )
+        {
+            int option_height = (menu_box.h - 60) / options->size();
+            for (int i = 0; i < (int)options->size(); i++)
+            {
+                option.render( renderer, &menu_box, option_height, i );
+            }
+        }
+    }
+
     void MenuHandler::save()
     {
 

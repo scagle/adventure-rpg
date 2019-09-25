@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <SDL.h>
 
 #include "character.hpp"
 #include "globals.hpp"
@@ -80,5 +81,11 @@ namespace game
                 this->hitbox.y = (int)(this->actual_y + 0.5); // Rounding to nearest whole number
             }
         }
+    }
+
+    void Character::render( SDL_Renderer *renderer )
+    {
+        SDL_SetRenderDrawColor( renderer, color.r, color.g, color.b, color.a );
+        SDL_RenderFillRect( renderer, &hitbox );
     }
 }
