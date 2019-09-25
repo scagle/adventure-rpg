@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <string>
 #include "globals.hpp"
 
@@ -18,15 +19,16 @@ namespace game
             SDL_Color background;    // Background color of option
             SDL_Color foreground;    // Foreground color of option
             //void (Menu::*call_function)(); // function to call when activated
+            TTF_Font *font;          // Font to draw text with
+            SDL_Texture *message;    // Font texture to draw
 
         public:
-            Option( std::string t, std::string n ) 
-                : text(t), next(n), background(OPTION_BACKGROUND_COLOR), foreground(OPTION_FOREGROUND_COLOR) { }
-
-            Option( std::string t, std::string n, SDL_Color bg, SDL_Color fg ) 
-                : text(t), next(n), background(bg), foreground(fg) { }
+            Option( std::string t, std::string n ) ;
+            Option( std::string t, std::string n, SDL_Color bg, SDL_Color fg, int) ;
+            ~Option();
 
             virtual void render( SDL_Renderer*, SDL_Rect*, int, int );
+            void initText();
 
     };
 }

@@ -9,43 +9,43 @@ namespace game
     MenuHandler::MenuHandler()
     {
         this->menus = {};
-        loadMenus();
     }
 
-    void MenuHandler::loadMenus()
+    bool MenuHandler::loadMenus()
     {
         this->menus = { 
             {"main" , Menu( "Main Menu", { 
-                        { "Save", "save", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, //TODO Pass function pointer to appropriate methods
-                        { "Load", "load", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR },
-                        { "Exit", "",     WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
+                        Option( "Save", "save", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT  ), //TODO Pass function pointer to appropriate methods
+                        Option( "Load", "load", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT  ),
+                        Option( "Exit", "",     WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ) 
                     } ) },
             {"save" , Menu( "Save Page", { 
-                        { "Save 1", "save1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 2", "save2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 3", "save3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 4", "save4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 5", "save5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 6", "save6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 7", "save7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 8", "save8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Save 9", "save9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
+                        Option( "Save 1", "save1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 2", "save2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 3", "save3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 4", "save4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 5", "save5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 6", "save6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 7", "save7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 8", "save8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Save 9", "save9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ) 
                     } ) }, 
             {"load" , Menu( "Load Page", { 
-                        { "Load 1", "load1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 2", "load2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 3", "load3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 4", "load4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 5", "load5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 6", "load6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 7", "load7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 8", "load8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR }, 
-                        { "Load 9", "load9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
+                        Option( "Load 1", "load1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 2", "load2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 3", "load3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 4", "load4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 5", "load5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 6", "load6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 7", "load7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 8", "load8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        Option( "Load 9", "load9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ) 
                     } ) }, 
             {"warning" , Menu( "Warning", { 
-                        { "warning!!!", "main", WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR } 
+                        Option( "warning!!!", "main", WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ) 
                     } ) } 
         };
+        return true;
     }
 
     void MenuHandler::pushMenu(std::string key)

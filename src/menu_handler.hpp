@@ -40,7 +40,7 @@ namespace game
         MenuHandler();
         enum Direction{UP, DOWN};
 
-        void loadMenus();
+        bool loadMenus();
         void pushMenu(std::string);
         void popMenu();
         void moveMenu(Direction);

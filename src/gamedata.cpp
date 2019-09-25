@@ -1,3 +1,5 @@
+#include <SDL.h>
+#include <SDL_ttf.h>
 #include <iostream>
 #include <assert.h>
 #include "gamedata.hpp"
@@ -5,17 +7,16 @@
 
 namespace game
 {
-    GameData::GameData()
-    {
-        keyboard_handler = KeyboardHandler();
-        menu_handler = MenuHandler();
-        main_character = Character( SDL_Rect{0, 0, 20, 20}, SDL_Color{255, 50, 50} );
-        world = World();
 
-        if ( this->init() )
-            std::cout << "Success!" << "\n";
-        else
-            std::cout << "Failure!" << "\n";
+    // Static Declarations
+    SDL_Renderer* GameData::renderer;         
+    std::vector< TTF_Font* > GameData::fonts; 
+    bool GameData::initialized = false;
+    bool GameData::quit = false;
+
+    GameData::~GameData()
+    {
+        close(); 
     }
 
     void GameData::checkInputs( SDL_Event* event )
@@ -77,14 +78,14 @@ namespace game
         SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear( renderer );
 
-        // Draw Characters
+        // Render Characters
         main_character.render( renderer );
 
-        // Draw Solid Objects
+        // Render Solid Objects
         for ( Solid solid : statics )
             solid.render( renderer );
 
-        // Draw Menu
+        // Render Menu
         menu_handler.render( renderer );
 
         //Update screen
@@ -97,16 +98,80 @@ namespace game
         statics = world.getMap(map_index)->getSolids();
     }
 
+    bool GameData::close()
+    {
+        bool success = true; // proof by contradiction
+
+        printf("Closing GameData!\n");
+        // Destroy window
+        SDL_DestroyWindow( window );
+        SDL_DestroyRenderer( renderer );
+        window = NULL;
+        renderer = NULL;
+
+        // Close fonts
+        /*! TODO: Segmentation fault
+         *  \todo Segmentation fault
+         */
+        //for ( TTF_Font* font : fonts )
+        //{
+        //    TTF_CloseFont(font);
+        //}
+
+        TTF_Quit();
+        SDL_Quit();
+
+        printf("Goodbye!\n");
+
+        return success;
+    }
+    void GameData::start()
+    {
+        printf( "Testing\n" ); 
+        keyboard_handler = KeyboardHandler();
+        menu_handler = MenuHandler();
+        main_character = Character( SDL_Rect{0, 0, 20, 20}, SDL_Color{255, 50, 50} );
+        world = World();
+
+        if ( init() )
+            std::cout << "Success!" << "\n";
+        else
+            std::cout << "Failure!" << "\n";
+    }
+
     bool GameData::init()
     {
-        // SDL
+        if ( !initSDL() )
+            printf("Initialization of initSDL() failed!\n");
+        if ( !initSDL_Window() )
+            printf("Initialization of initSDL_Window() failed!\n");
+        if ( !initSDL_Renderer() )
+            printf("Initialization of initSDL_Renderer() failed!\n");
+        if ( !initFonts() )
+            printf("Initialization of initFonts() failed!\n");
+        if ( !initMaps() )
+            printf("Initialization of initMaps() failed!\n");
+        if ( !initWorlds() )
+            printf("Initialization of initWorlds() failed!\n");
+        if ( !initMenus() )
+            printf("Initialization of initWorlds() failed!\n");
+
+        initialized = true;
+        return true;
+    }
+
+    bool GameData::initSDL()
+    {
         if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
         {
             printf( "SDL couldn't be initialized! : %s\n", SDL_GetError() ); 
             return false;
         }
+        return true;
+    }
 
-        // SDL_Window
+    bool GameData::initSDL_Window()
+    {
         window = SDL_CreateWindow ( 
                 "Game", 
                 SDL_WINDOWPOS_UNDEFINED, 
@@ -120,46 +185,74 @@ namespace game
             printf( "Window couldn't be created! : %s\n", SDL_GetError() );
             return false;
         }
+        return true;
+    }
 
+    bool GameData::initSDL_Renderer()
+    {
         renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
         if ( renderer == NULL )
         {
             printf( "Renderer couldn't be created! : %s\n", SDL_GetError() );
             return false;
         }
+        return true;
+    }
 
-        // Maps
+    bool GameData::initFonts()
+    {
+        if ( TTF_Init() == -1 )
+        {
+            printf( "Fonts couldn't be initialized! \n" ); 
+            return false;
+        }
+        std::vector< std::string > font_names = {
+            "../assets/fonts/lazy.ttf", 
+            "../assets/fonts/NotoSansMono-Regular.ttf", 
+            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf"
+        };
+        for ( std::string font_name : font_names )
+        {
+            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 16);
+            if ( font == NULL )
+            {
+                printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 
+                return false;
+            }
+            fonts.push_back(font);
+        }
+        return true;
+    }
+
+    bool GameData::initMaps()
+    {
+        if ( !world.loadMaps() )
+        {
+            printf( "Maps couldn't be initialized! \n" ); 
+            return false;
+        }
+        return true;
+    }
+
+    bool GameData::initWorlds()
+    {
         if ( !world.loadMaps() )
         {
             printf( "Maps couldn't be initialized! \n"); 
             return false;
         }
-            
-        // Surface
-        surface = SDL_GetWindowSurface( window );
-
-        initialized = true;
         return true;
     }
 
-
-    bool GameData::close()
+    bool GameData::initMenus()
     {
-        bool success = true; // proof by contradiction
-        // Deallocate the surface
-        SDL_FreeSurface( surface );
-        surface = NULL;
 
-        // Destroy window
-        SDL_DestroyWindow( window );
-        SDL_DestroyRenderer( renderer );
-        window = NULL;
-        renderer = NULL;
-
-        SDL_Quit();
-
-        printf("Goodbye!\n");
-
-        return success;
+        if ( !menu_handler.loadMenus() )
+        {
+            printf( "Maps couldn't be initialized! \n"); 
+            return false;
+        }
+        return true;
     }
 }
+

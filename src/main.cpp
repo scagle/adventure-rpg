@@ -5,7 +5,11 @@
 
 int main(int argc, char *argv[])
 {
-    game::GameData gamedata = game::GameData(); // Initialize Game Session
+    /*! TODO: Fix this annoying static problem
+     *  \todo Fix this annoying static problem
+     */
+    game::GameData gamedata = game::GameData(); // Initialize Game Sessions
+    gamedata.start(); // Start Game
     gamedata.updateMap(0);
 
     SDL_Event event;
@@ -15,7 +19,5 @@ int main(int argc, char *argv[])
         gamedata.update();
         gamedata.render();
     }
-
-    gamedata.close();
     return 0;
 } 

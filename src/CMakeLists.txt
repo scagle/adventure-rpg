@@ -1,6 +1,8 @@
 # SDL2
 find_package(SDL2 REQUIRED)
+find_package(SDL2TTF REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${SDL2TTF_INCLUDE_DIRS})
 
 add_executable(game 
     character.cpp
@@ -26,7 +28,9 @@ add_executable(game
     world.cpp
     world.hpp
 )
-target_link_libraries(game ${SDL2_LIBRARIES})
+
+target_link_libraries(game SDL2 SDL2_ttf)
+
 message("Copying binary to <project>/build")
 add_custom_command(TARGET game
     POST_BUILD
