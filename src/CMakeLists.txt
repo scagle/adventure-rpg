@@ -9,6 +9,8 @@ add_executable(game
     character.hpp
     environment.cpp
     environment.hpp
+    event.cpp
+    event.hpp
     gamedata.cpp
     gamedata.hpp
     globals.hpp

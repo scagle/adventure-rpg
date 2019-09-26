@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <SDL.h>
 #include "environment.hpp"
 #include "character.hpp"
 
@@ -16,12 +17,15 @@ namespace game
 
         public:
         World();
+        ~World() { }
         bool loadMaps(); 
         std::vector< std::string > getFiles(std::string, std::string); 
+        virtual void render( SDL_Renderer *renderer );
+        virtual void update();
         Environment* getCurrentMap() { return &(this->maps[current_map]); }
         Environment* getMap(unsigned int index) { return &(this->maps[index]); }
 
-        std::vector< Character* >& getCharacters(); // TODO: Recursively check all environements and return characters
+        std::vector< Character* >& getCharacters(); // TODO: Recursively check all environments and return characters
         
     };
 }

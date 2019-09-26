@@ -4,6 +4,7 @@
 #include <assert.h>
 #include "gamedata.hpp"
 #include "sdl_utils.hpp"
+#include "event.hpp"
 
 namespace game
 {
@@ -11,6 +12,8 @@ namespace game
     // Static Declarations
     SDL_Renderer* GameData::renderer;         
     std::vector< TTF_Font* > GameData::fonts; 
+    std::vector< Solid > *GameData::solids;
+    std::vector< Solid > *GameData::portals;
     bool GameData::initialized = false;
     bool GameData::quit = false;
 
@@ -69,7 +72,8 @@ namespace game
         float velocity_x = keyboard_handler.getHorizontal() * MAIN_CHARACTER_SPEED;
         float velocity_y = keyboard_handler.getVertical()   * MAIN_CHARACTER_SPEED;
         main_character.setVelocity(velocity_x, velocity_y);
-        main_character.update(&statics);
+        main_character.update();
+        world.update();
     }
 
     void GameData::render()
@@ -78,12 +82,9 @@ namespace game
         SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear( renderer );
 
-        // Render Characters
+        // Render Environment
+        world.render( renderer );
         main_character.render( renderer );
-
-        // Render Solid Objects
-        for ( Solid solid : statics )
-            solid.render( renderer );
 
         // Render Menu
         menu_handler.render( renderer );
@@ -95,7 +96,26 @@ namespace game
     void GameData::updateMap(int map_index)
     {
         map_index = map_index;
-        statics = world.getMap(map_index)->getSolids();
+        Environment *env = world.getMap(map_index);
+        solids = env->getSolids();
+        portals = env->getPortals();
+    }
+    
+    void GameData::sendEvent(Event event, bool value)
+    {
+        switch ( event.getType() )
+        {
+            case Event::Game_EventType::PORTAL:
+                Event::setEvent(Event::Game_EventType::PORTAL, value);
+                if (value)
+                    printf("In Portal!\n");
+                else
+                    printf("No Longer in Portal!\n");
+                break;
+            default:
+                printf("Unknown Event\n");
+                break;
+        }
     }
 
     bool GameData::close()
@@ -127,16 +147,15 @@ namespace game
     }
     void GameData::start()
     {
-        printf( "Testing\n" ); 
         keyboard_handler = KeyboardHandler();
         menu_handler = MenuHandler();
-        main_character = Character( SDL_Rect{0, 0, 20, 20}, SDL_Color{255, 50, 50} );
+        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME);
         world = World();
 
         if ( init() )
-            std::cout << "Success!" << "\n";
+            std::cout << "Initialization Success!" << "\n";
         else
-            std::cout << "Failure!" << "\n";
+            std::cout << "Initialization Failure!" << "\n";
     }
 
     bool GameData::init()
@@ -191,6 +210,7 @@ namespace game
     bool GameData::initSDL_Renderer()
     {
         renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
+        SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
         if ( renderer == NULL )
         {
             printf( "Renderer couldn't be created! : %s\n", SDL_GetError() );
