@@ -149,7 +149,7 @@ namespace game
     {
         keyboard_handler = KeyboardHandler();
         menu_handler = MenuHandler();
-        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME);
+        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true);
         world = World();
 
         if ( init() )

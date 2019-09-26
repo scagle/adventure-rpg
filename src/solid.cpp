@@ -36,7 +36,9 @@ namespace game
              hitbox.y >= box->y &&
              hitbox.x + hitbox.w <= box->x + box->w &&
              hitbox.y + hitbox.h <= box->y + box->h )
+        {
             return true;
+        }
         return false;
     }
 }
