@@ -5,9 +5,15 @@ include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${SDL2TTF_INCLUDE_DIRS})
 
 set(GAME_SOURCES 
+    button_box.cpp
+    button_box.hpp
     character.cpp
     character.hpp
+    container.cpp
+    container.hpp
     dialog.cpp
+    dialog_handler.cpp
+    dialog_handler.hpp
     dialog.hpp
     environment.cpp
     environment.hpp
@@ -29,6 +35,8 @@ set(GAME_SOURCES
     sdl_utils.hpp
     solid.cpp
     solid.hpp
+    text_box.cpp
+    text_box.hpp
     world.cpp
     world.hpp
 )

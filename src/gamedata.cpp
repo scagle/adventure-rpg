@@ -5,6 +5,8 @@
 #include "gamedata.hpp"
 #include "sdl_utils.hpp"
 #include "event.hpp"
+#include "text_box.hpp"
+#include "button_box.hpp"
 #include "enums/direction.hpp"
 
 namespace game
