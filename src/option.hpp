@@ -21,14 +21,23 @@ namespace game
             //void (Menu::*call_function)(); // function to call when activated
             TTF_Font *font;          // Font to draw text with
             SDL_Texture *message;    // Font texture to draw
+            int font_index = 0;
+            bool initialized_text = false;
 
         public:
             Option( std::string t, std::string n ) ;
             Option( std::string t, std::string n, SDL_Color bg, SDL_Color fg, int) ;
+            Option(const Option &);
+            Option& operator=(const Option &);   
             ~Option();
 
-            virtual void render( SDL_Renderer*, SDL_Rect*, int, int );
+            virtual void render( SDL_Renderer*, SDL_Rect*, int, int, bool );
             void initText();
+            std::string getText() { return this->text; }
+            std::string getNext() { return this->next; }
+            SDL_Color* getForeground() { return &(this->foreground); }
+            SDL_Color* getBackground() { return &(this->background); }
+            SDL_Texture* getTextMessage() { return this->message; }
 
     };
 }

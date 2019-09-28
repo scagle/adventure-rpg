@@ -54,7 +54,7 @@ namespace game
             static bool getQuit() { return quit; }
             static std::vector< Solid >* getSolids() { return solids; }
             static std::vector< Solid >* getPortals() { return portals; }
-            static TTF_Font* getDefaultFont(int) { return fonts[0]; }
+            static TTF_Font* getFont(int) { return fonts[0]; }
             static SDL_Renderer* getActiveRenderer() { return renderer; }
             static void setInitialized(bool val) { initialized = val; }
             static void setQuit(bool val) { quit = val; }
@@ -65,7 +65,6 @@ namespace game
             bool initSDL();
             bool initSDL_Window();
             bool initSDL_Renderer();
-            bool initMaps();
             bool initFonts();
             bool initWorlds();
             bool initMenus();

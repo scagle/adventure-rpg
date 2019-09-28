@@ -5,6 +5,7 @@
 #include "gamedata.hpp"
 #include "sdl_utils.hpp"
 #include "event.hpp"
+#include "enums/direction.hpp"
 
 namespace game
 {
@@ -44,19 +45,25 @@ namespace game
                         if (menu_handler.inMenu())
                             menu_handler.popMenu();
                         else
-                            menu_handler.pushMenu("main");
+                            MenuHandler::pushMenu("main");
                         break;
                     case SDLK_j:
                         if (menu_handler.inMenu())
-                            menu_handler.moveMenu(MenuHandler::DOWN);
+                            menu_handler.moveMenu(Direction::DOWN);
+                        else if (menu_handler.inDialog())
+                            menu_handler.moveDialog(Direction::DOWN);
                         break;
                     case SDLK_k:
                         if (menu_handler.inMenu())
-                            menu_handler.moveMenu(MenuHandler::UP);
+                            menu_handler.moveMenu(Direction::UP);
+                        else if (menu_handler.inDialog())
+                            menu_handler.moveDialog(Direction::UP);
                         break;
                     case SDLK_RETURN:
                         if (menu_handler.inMenu())
                             menu_handler.selectMenu();
+                        else if (menu_handler.inDialog())
+                            menu_handler.selectDialog();
                         break;
                     default: 
                         break;
@@ -68,12 +75,15 @@ namespace game
 
     void GameData::update()
     {
-        // Update Character
-        float velocity_x = keyboard_handler.getHorizontal() * MAIN_CHARACTER_SPEED;
-        float velocity_y = keyboard_handler.getVertical()   * MAIN_CHARACTER_SPEED;
-        main_character.setVelocity(velocity_x, velocity_y);
-        main_character.update();
-        world.update();
+        if (!menu_handler.inMenu())
+        {
+            // Update Character
+            float velocity_x = keyboard_handler.getHorizontal() * MAIN_CHARACTER_SPEED;
+            float velocity_y = keyboard_handler.getVertical()   * MAIN_CHARACTER_SPEED;
+            main_character.setVelocity(velocity_x, velocity_y);
+            main_character.update();
+            world.update();
+        }
     }
 
     void GameData::render()
@@ -101,13 +111,13 @@ namespace game
         portals = env->getPortals();
     }
     
-    void GameData::sendEvent(Event event, bool value)
+    void GameData::sendEvent(Event event, bool flag)
     {
         switch ( event.getType() )
         {
             case Event::Game_EventType::PORTAL:
-                Event::setEvent(Event::Game_EventType::PORTAL, value);
-                if (value)
+                Event::setEvent(Event::Game_EventType::PORTAL, flag);
+                if (flag)
                     printf("In Portal!\n");
                 else
                     printf("No Longer in Portal!\n");
@@ -129,14 +139,10 @@ namespace game
         window = NULL;
         renderer = NULL;
 
-        // Close fonts
-        /*! TODO: Segmentation fault
-         *  \todo Segmentation fault
-         */
-        //for ( TTF_Font* font : fonts )
-        //{
-        //    TTF_CloseFont(font);
-        //}
+        for ( TTF_Font* font : fonts )
+        {
+            TTF_CloseFont(font);
+        }
 
         TTF_Quit();
         SDL_Quit();
@@ -147,15 +153,11 @@ namespace game
     }
     void GameData::start()
     {
-        keyboard_handler = KeyboardHandler();
-        menu_handler = MenuHandler();
-        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true);
-        world = World();
-
         if ( init() )
             std::cout << "Initialization Success!" << "\n";
         else
             std::cout << "Initialization Failure!" << "\n";
+        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true);
     }
 
     bool GameData::init()
@@ -168,8 +170,6 @@ namespace game
             printf("Initialization of initSDL_Renderer() failed!\n");
         if ( !initFonts() )
             printf("Initialization of initFonts() failed!\n");
-        if ( !initMaps() )
-            printf("Initialization of initMaps() failed!\n");
         if ( !initWorlds() )
             printf("Initialization of initWorlds() failed!\n");
         if ( !initMenus() )
@@ -210,7 +210,7 @@ namespace game
     bool GameData::initSDL_Renderer()
     {
         renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
-        SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderDrawBlendMode( renderer, SDL_BLENDMODE_BLEND );
         if ( renderer == NULL )
         {
             printf( "Renderer couldn't be created! : %s\n", SDL_GetError() );
@@ -227,9 +227,9 @@ namespace game
             return false;
         }
         std::vector< std::string > font_names = {
+            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf",
             "../assets/fonts/lazy.ttf", 
             "../assets/fonts/NotoSansMono-Regular.ttf", 
-            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf"
         };
         for ( std::string font_name : font_names )
         {
@@ -240,16 +240,6 @@ namespace game
                 return false;
             }
             fonts.push_back(font);
-        }
-        return true;
-    }
-
-    bool GameData::initMaps()
-    {
-        if ( !world.loadMaps() )
-        {
-            printf( "Maps couldn't be initialized! \n" ); 
-            return false;
         }
         return true;
     }

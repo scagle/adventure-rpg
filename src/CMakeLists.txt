@@ -4,9 +4,11 @@ find_package(SDL2TTF REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${SDL2TTF_INCLUDE_DIRS})
 
-add_executable(game 
+set(GAME_SOURCES 
     character.cpp
     character.hpp
+    dialog.cpp
+    dialog.hpp
     environment.cpp
     environment.hpp
     event.cpp
@@ -30,6 +32,9 @@ add_executable(game
     world.cpp
     world.hpp
 )
+
+add_subdirectory(enums)
+add_executable(game ${GAME_SOURCES} ${ENUM_SOURCES})
 
 target_link_libraries(game SDL2 SDL2_ttf)
 

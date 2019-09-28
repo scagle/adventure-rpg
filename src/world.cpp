@@ -5,12 +5,17 @@
 #include <SDL.h>
 #include "world.hpp"
 #include "solid.hpp"
+#include "character.hpp"
 #include "globals.hpp"
 
 using namespace std;
 
 namespace game
 {
+    
+    std::vector< Environment > World::maps;
+    unsigned int World::current_map = 0;
+
     World::World()
     {
         loadMaps();
@@ -43,8 +48,8 @@ namespace game
         };
 
         vector< Character > map0_characters = { 
-            Character( {250, 50, 20, 20}, { 100, 50, 22, 255 }, "Sally" ),
-            Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard" ),
+            Character( {250, 50, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant" ),
+            Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard", false ),
         };
 
         maps.push_back(Environment("home", map0_objects, map0_portals, map0_characters));
@@ -79,6 +84,17 @@ namespace game
     {
 
         getCurrentMap()->update();
+    }
+
+    std::vector< Character* >* World::getCharacters()
+    {
+        std::vector< Character* >* all_characters = new std::vector< Character* >;
+        /*! TODO: This
+         *  \todo This
+         */
+        printf("*** WARNING: unimplemented/todo code @(world.cpp -> getCharacters())");
+
+        return all_characters;
     }
 
     // Get files with "name" in it

@@ -12,20 +12,21 @@ namespace game
     class World
     {
         private:
-        std::vector< Environment > maps;
-        unsigned int current_map = 0;   
+        static std::vector< Environment > maps;
+        static unsigned int current_map;   
 
         public:
         World();
         ~World() { }
         bool loadMaps(); 
-        std::vector< std::string > getFiles(std::string, std::string); 
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
         Environment* getCurrentMap() { return &(this->maps[current_map]); }
         Environment* getMap(unsigned int index) { return &(this->maps[index]); }
 
-        std::vector< Character* >& getCharacters(); // TODO: Recursively check all environments and return characters
+        static std::vector< Character >* getCharactersInMap() { return maps[current_map].getCharacters(); }
+        std::vector< std::string > getFiles(std::string, std::string); 
+        std::vector< Character* >* getCharacters(); // TODO: Recursively check all environments and return characters
         
     };
 }

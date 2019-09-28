@@ -1,0 +1,1131 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+$(VERBOSE).SILENT	build/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE).SILENT	build/src/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE).SILENT	build/src/enums/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE).SILENT	font_test/build/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE).SILENT	font_test/build/src/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+0	.vscode/c_cpp_properties.json	/^                "${workspaceFolder}\/**"$/;"	s	array:configurations.0.includePath
+0	.vscode/c_cpp_properties.json	/^        {$/;"	o	array:configurations
+0	.vscode/launch.json	/^                {$/;"	o	array:configurations.0.setupCommands
+0	.vscode/launch.json	/^        {$/;"	o	array:configurations
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
+BLUR_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color BLUR_BACKGROUND_COLOR      = { 0  , 0  , 0  , 100 };$/;"	v	typeref:typename:const SDL_Color
+CMAKE_AR	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/steven\/Development\/mine\/build$/;"	m
+CMAKE_BINARY_DIR	build/src/Makefile	/^CMAKE_BINARY_DIR = \/home\/steven\/Development\/mine\/build$/;"	m
+CMAKE_BINARY_DIR	build/src/enums/Makefile	/^CMAKE_BINARY_DIR = \/home\/steven\/Development\/mine\/build$/;"	m
+CMAKE_BINARY_DIR	font_test/build/Makefile	/^CMAKE_BINARY_DIR = \/home\/steven\/Development\/mine\/font_test\/build$/;"	m
+CMAKE_BINARY_DIR	font_test/build/src/Makefile	/^CMAKE_BINARY_DIR = \/home\/steven\/Development\/mine\/font_test\/build$/;"	m
+CMAKE_BUILD_TYPE	CMakeLists.txt	/^set(CMAKE_BUILD_TYPE RelWithDebInfo)$/;"	v
+CMAKE_BUILD_TYPE	font_test/CMakeLists.txt	/^set(CMAKE_BUILD_TYPE RelWithDebInfo)$/;"	v
+CMAKE_C11_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")$/;"	v
+CMAKE_C11_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")$/;"	v
+CMAKE_C90_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")$/;"	v
+CMAKE_C90_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")$/;"	v
+CMAKE_C99_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")$/;"	v
+CMAKE_C99_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_C_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_CXX_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_C_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_CXX_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	build/src/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	build/src/enums/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	font_test/build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	font_test/build/src/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMPILER_IS_CYGWIN	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_GNUCC	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCC 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCC	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCC 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCXX	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCXX 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCXX	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCXX 1)$/;"	v
+CMAKE_COMPILER_IS_MINGW	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_CROSSCOMPILING	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	build/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	build/src/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	build/src/enums/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	font_test/build/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	font_test/build/src/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CXX11_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_att/;"	v
+CMAKE_CXX11_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_att/;"	v
+CMAKE_CXX14_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_de/;"	v
+CMAKE_CXX14_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_de/;"	v
+CMAKE_CXX17_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")$/;"	v
+CMAKE_CXX17_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")$/;"	v
+CMAKE_CXX20_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")$/;"	v
+CMAKE_CXX20_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")$/;"	v
+CMAKE_CXX98_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")$/;"	v
+CMAKE_CXX98_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")$/;"	v
+CMAKE_CXX_ABI_COMPILED	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_ABI_COMPILED TRUE)$/;"	v
+CMAKE_CXX_ABI_COMPILED	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_ABI_COMPILED TRUE)$/;"	v
+CMAKE_CXX_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_CXX_CL_SHOWINCLUDES_PREFIX	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_CXX_COMPILER	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER "\/usr\/bin\/c++")$/;"	v
+CMAKE_CXX_COMPILER	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER "\/usr\/bin\/c++")$/;"	v
+CMAKE_CXX_COMPILER_ABI	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ABI "ELF")$/;"	v
+CMAKE_CXX_COMPILER_ABI	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ABI "ELF")$/;"	v
+CMAKE_CXX_COMPILER_AR	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_CXX_COMPILER_AR	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_CXX_COMPILER_ARG1	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ARG1 "")$/;"	v
+CMAKE_CXX_COMPILER_ARG1	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ARG1 "")$/;"	v
+CMAKE_CXX_COMPILER_ENV_VAR	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ENV_VAR "CXX")$/;"	v
+CMAKE_CXX_COMPILER_ENV_VAR	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ENV_VAR "CXX")$/;"	v
+CMAKE_CXX_COMPILER_FRONTEND_VARIANT	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "")$/;"	v
+CMAKE_CXX_COMPILER_FRONTEND_VARIANT	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "")$/;"	v
+CMAKE_CXX_COMPILER_ID	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID_RUN	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_CXX_COMPILER_ID_RUN	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_CXX_COMPILER_LOADED	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_LOADED 1)$/;"	v
+CMAKE_CXX_COMPILER_LOADED	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_LOADED 1)$/;"	v
+CMAKE_CXX_COMPILER_RANLIB	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_CXX_COMPILER_RANLIB	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_CXX_COMPILER_VERSION	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION "9.1.0")$/;"	v
+CMAKE_CXX_COMPILER_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION "9.1.0")$/;"	v
+CMAKE_CXX_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_CXX_COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_CXX_COMPILER_WORKS	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_CXX_COMPILER_WORKS	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_CXX_COMPILER_WRAPPER	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WRAPPER "")$/;"	v
+CMAKE_CXX_COMPILER_WRAPPER	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WRAPPER "")$/;"	v
+CMAKE_CXX_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias/;"	v
+CMAKE_CXX_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias/;"	v
+CMAKE_CXX_FLAGS	CMakeLists.txt	/^set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall")$/;"	v
+CMAKE_CXX_FLAGS	font_test/CMakeLists.txt	/^set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall")$/;"	v
+CMAKE_CXX_IGNORE_EXTENSIONS	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_CXX_IGNORE_EXTENSIONS	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "\/usr\/include\/c++\/9.1.0;\/usr\/include\/c++\/9.1./;"	v
+CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "\/usr\/include\/c++\/9.1.0;\/usr\/include\/c++\/9.1./;"	v
+CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0;\/usr\/lib;/;"	v
+CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0;\/usr\/lib;/;"	v
+CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_LIBRARIES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_CXX_LIBRARY_ARCHITECTURE	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE 30)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE 30)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)$/;"	v
+CMAKE_CXX_PLATFORM_ID	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_PLATFORM_ID "Linux")$/;"	v
+CMAKE_CXX_PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_PLATFORM_ID "Linux")$/;"	v
+CMAKE_CXX_SIMULATE_ID	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_ID "")$/;"	v
+CMAKE_CXX_SIMULATE_ID	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_ID "")$/;"	v
+CMAKE_CXX_SIMULATE_VERSION	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_VERSION "")$/;"	v
+CMAKE_CXX_SIMULATE_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_VERSION "")$/;"	v
+CMAKE_CXX_SIZEOF_DATA_PTR	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_CXX_SIZEOF_DATA_PTR	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;mm;CPP)$/;"	v
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;mm;CPP)$/;"	v
+CMAKE_CXX_STANDARD	CMakeLists.txt	/^set(CMAKE_CXX_STANDARD 11)$/;"	v
+CMAKE_CXX_STANDARD	font_test/CMakeLists.txt	/^set(CMAKE_CXX_STANDARD 11)$/;"	v
+CMAKE_CXX_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")$/;"	v
+CMAKE_CXX_STANDARD_COMPUTED_DEFAULT	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")$/;"	v
+CMAKE_CXX_TARGET_INCLUDE_PATH	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_CXX_TARGET_INCLUDE_PATH$/;"	v
+CMAKE_CXX_TARGET_INCLUDE_PATH	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_CXX_TARGET_INCLUDE_PATH$/;"	v
+CMAKE_C_ABI_COMPILED	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_ABI_COMPILED TRUE)$/;"	v
+CMAKE_C_ABI_COMPILED	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_ABI_COMPILED TRUE)$/;"	v
+CMAKE_C_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_C_CL_SHOWINCLUDES_PREFIX	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_C_COMPILER	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER "\/usr\/bin\/cc")$/;"	v
+CMAKE_C_COMPILER	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER "\/usr\/bin\/cc")$/;"	v
+CMAKE_C_COMPILER_ABI	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ABI "ELF")$/;"	v
+CMAKE_C_COMPILER_ABI	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ABI "ELF")$/;"	v
+CMAKE_C_COMPILER_AR	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_C_COMPILER_AR	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_C_COMPILER_ARG1	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ARG1 "")$/;"	v
+CMAKE_C_COMPILER_ARG1	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ARG1 "")$/;"	v
+CMAKE_C_COMPILER_ENV_VAR	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ENV_VAR "CC")$/;"	v
+CMAKE_C_COMPILER_ENV_VAR	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ENV_VAR "CC")$/;"	v
+CMAKE_C_COMPILER_FRONTEND_VARIANT	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_FRONTEND_VARIANT "")$/;"	v
+CMAKE_C_COMPILER_FRONTEND_VARIANT	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_FRONTEND_VARIANT "")$/;"	v
+CMAKE_C_COMPILER_ID	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID "GNU")$/;"	v
+CMAKE_C_COMPILER_ID	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID "GNU")$/;"	v
+CMAKE_C_COMPILER_ID_RUN	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_C_COMPILER_ID_RUN	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_C_COMPILER_LOADED	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_LOADED 1)$/;"	v
+CMAKE_C_COMPILER_LOADED	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_LOADED 1)$/;"	v
+CMAKE_C_COMPILER_RANLIB	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_C_COMPILER_RANLIB	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_C_COMPILER_VERSION	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION "9.1.0")$/;"	v
+CMAKE_C_COMPILER_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION "9.1.0")$/;"	v
+CMAKE_C_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_C_COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_C_COMPILER_WORKS	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_C_COMPILER_WORKS	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_C_COMPILER_WRAPPER	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WRAPPER "")$/;"	v
+CMAKE_C_COMPILER_WRAPPER	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WRAPPER "")$/;"	v
+CMAKE_C_COMPILE_FEATURES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macr/;"	v
+CMAKE_C_COMPILE_FEATURES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macr/;"	v
+CMAKE_C_IGNORE_EXTENSIONS	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_C_IGNORE_EXTENSIONS	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0\/include;\//;"	v
+CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0\/include;\//;"	v
+CMAKE_C_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0;\/usr\/lib;\//;"	v
+CMAKE_C_IMPLICIT_LINK_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/9.1.0;\/usr\/lib;\//;"	v
+CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_C_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")$/;"	v
+CMAKE_C_IMPLICIT_LINK_LIBRARIES	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_C_LIBRARY_ARCHITECTURE	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_C_LINKER_PREFERENCE	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_LINKER_PREFERENCE 10)$/;"	v
+CMAKE_C_LINKER_PREFERENCE	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_LINKER_PREFERENCE 10)$/;"	v
+CMAKE_C_PLATFORM_ID	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_PLATFORM_ID "Linux")$/;"	v
+CMAKE_C_PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_PLATFORM_ID "Linux")$/;"	v
+CMAKE_C_SIMULATE_ID	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_ID "")$/;"	v
+CMAKE_C_SIMULATE_ID	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_ID "")$/;"	v
+CMAKE_C_SIMULATE_VERSION	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_VERSION "")$/;"	v
+CMAKE_C_SIMULATE_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_VERSION "")$/;"	v
+CMAKE_C_SIZEOF_DATA_PTR	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_C_SIZEOF_DATA_PTR	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_C_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SOURCE_FILE_EXTENSIONS c;m)$/;"	v
+CMAKE_C_SOURCE_FILE_EXTENSIONS	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_SOURCE_FILE_EXTENSIONS c;m)$/;"	v
+CMAKE_C_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")$/;"	v
+CMAKE_C_STANDARD_COMPUTED_DEFAULT	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")$/;"	v
+CMAKE_DEPENDS_CHECK_CXX	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_CHECK_CXX$/;"	v
+CMAKE_DEPENDS_CHECK_CXX	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_CHECK_CXX$/;"	v
+CMAKE_DEPENDS_GENERATOR	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")$/;"	v
+CMAKE_DEPENDS_GENERATOR	font_test/build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")$/;"	v
+CMAKE_DEPENDS_LANGUAGES	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_LANGUAGES$/;"	v
+CMAKE_DEPENDS_LANGUAGES	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_LANGUAGES$/;"	v
+CMAKE_DEPEND_INFO_FILES	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPEND_INFO_FILES$/;"	v
+CMAKE_DEPEND_INFO_FILES	font_test/build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPEND_INFO_FILES$/;"	v
+CMAKE_FORCE_UNIX_PATHS	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_FORCE_UNIX_PATHS	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_FORCE_UNIX_PATHS	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_FORCE_UNIX_PATHS	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_FORCE_UNIX_PATHS	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_Fortran_TARGET_MODULE_DIR	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_Fortran_TARGET_MODULE_DIR "")$/;"	v
+CMAKE_Fortran_TARGET_MODULE_DIR	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_Fortran_TARGET_MODULE_DIR "")$/;"	v
+CMAKE_HOST_SYSTEM	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM "Linux-5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM "Linux-5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM_NAME	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_HOST_SYSTEM_NAME	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_HOST_SYSTEM_PROCESSOR	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_HOST_SYSTEM_PROCESSOR	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_HOST_SYSTEM_VERSION	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/src/enums/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/src/enums/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	font_test/build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	font_test/build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	font_test/build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	font_test/build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/src/enums/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	font_test/build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	font_test/build/src/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	font_test/build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	font_test/build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
+CMAKE_INSTALL_PREFIX	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/src/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/src/enums/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	font_test/build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	font_test/build/src/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	build/src/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	build/src/enums/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	font_test/build/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	font_test/build/src/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_MAKEFILE_DEPENDS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_DEPENDS$/;"	v
+CMAKE_MAKEFILE_DEPENDS	font_test/build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_DEPENDS$/;"	v
+CMAKE_MAKEFILE_OUTPUTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_OUTPUTS$/;"	v
+CMAKE_MAKEFILE_OUTPUTS	font_test/build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_OUTPUTS$/;"	v
+CMAKE_MAKEFILE_PRODUCTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_PRODUCTS$/;"	v
+CMAKE_MAKEFILE_PRODUCTS	font_test/build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_PRODUCTS$/;"	v
+CMAKE_MODULE_PATH	CMakeLists.txt	/^set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}\/cmake\/")$/;"	v
+CMAKE_MODULE_PATH	font_test/CMakeLists.txt	/^set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}\/cmake\/")$/;"	v
+CMAKE_MT	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_MT	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_MT	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_MT	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/steven\/Development\/mine\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/steven\/Development\/mine\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/steven\/Development\/mine\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/steven\/Development\/mine\/font_test\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/steven\/Development\/mine\/font_test\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/steven\/Development\/mine")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/steven\/Development\/mine")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	build/src/enums/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/steven\/Development\/mine")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	font_test/build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/steven\/Development\/mine\/font_test")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	font_test/build/src/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/steven\/Development\/mine\/font_test")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/steven\/Development\/mine$/;"	m
+CMAKE_SOURCE_DIR	build/src/Makefile	/^CMAKE_SOURCE_DIR = \/home\/steven\/Development\/mine$/;"	m
+CMAKE_SOURCE_DIR	build/src/enums/Makefile	/^CMAKE_SOURCE_DIR = \/home\/steven\/Development\/mine$/;"	m
+CMAKE_SOURCE_DIR	font_test/build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/steven\/Development\/mine\/font_test$/;"	m
+CMAKE_SOURCE_DIR	font_test/build/src/Makefile	/^CMAKE_SOURCE_DIR = \/home\/steven\/Development\/mine\/font_test$/;"	m
+CMAKE_SYSTEM	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM "Linux-5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM "Linux-5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM_LOADED	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_LOADED 1)$/;"	v
+CMAKE_SYSTEM_LOADED	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_LOADED 1)$/;"	v
+CMAKE_SYSTEM_NAME	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_SYSTEM_NAME	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_SYSTEM_PROCESSOR	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_SYSTEM_PROCESSOR	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_SYSTEM_VERSION	build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM_VERSION	font_test/build/CMakeFiles/3.15.2/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "5.2.9-arch1-1-ARCH")$/;"	v
+CMAKE_TARGET_LINKED_INFO_FILES	build/src/CMakeFiles/game.dir/DependInfo.cmake	/^set(CMAKE_TARGET_LINKED_INFO_FILES$/;"	v
+CMAKE_TARGET_LINKED_INFO_FILES	font_test/build/src/CMakeFiles/font.dir/DependInfo.cmake	/^set(CMAKE_TARGET_LINKED_INFO_FILES$/;"	v
+COMPILER_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_ID /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+CXX_STD	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:
+CXX_STD	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:
+CYGWIN	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+C_DIALECT	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT /;"	d	file:
+C_DIALECT	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT$/;"	d	file:
+C_DIALECT	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define C_DIALECT /;"	d	file:
+C_DIALECT	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT /;"	d	file:
+C_DIALECT	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT$/;"	d	file:
+C_DIALECT	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define C_DIALECT /;"	d	file:
+Character	src/character.cpp	/^    Character::Character()$/;"	f	class:game::Character
+Character	src/character.cpp	/^    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name)$/;"	f	class:game::Character
+Character	src/character.cpp	/^    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc)$/;"	f	class:game::Character
+Character	src/character.cpp	/^    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::strin/;"	f	class:game::Character
+Character	src/character.hpp	/^    class Character : public Solid$/;"	c	namespace:game
+Choice	src/dialog.hpp	/^        struct Choice$/;"	s	class:game::Dialog
+DEC	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
+DEC	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
+DEC	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
+DEC	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
+DEFAULT_FONT	src/globals.hpp	/^const int DEFAULT_FONT  = 0;$/;"	v	typeref:typename:const int
+DIALOG	src/event.hpp	/^            DIALOG = 1,$/;"	e	enum:game::Event::Game_EventType
+DISTANCE_ACCURATE	src/character.hpp	/^            DISTANCE_ACCURATE = 1,$/;"	e	enum:game::Character::Distance_Algorithm
+DISTANCE_FAST	src/character.hpp	/^            DISTANCE_FAST = 0,$/;"	e	enum:game::Character::Distance_Algorithm
+DOWN	src/enums/direction.hpp	/^        DOWN  ,$/;"	e	enum:game::Direction
+Dialog	src/dialog.hpp	/^        Dialog() { }$/;"	f	class:game::Dialog
+Dialog	src/dialog.hpp	/^        Dialog(std::vector< std::string > p, std::vector< Choice > c) : pages(p), choices(c) { }$/;"	f	class:game::Dialog
+Dialog	src/dialog.hpp	/^    class Dialog$/;"	c	namespace:game
+DialogHandler	src/dialog_handler.hpp	/^    class DialogHandler$/;"	c	namespace:game
+Direction	src/enums/direction.hpp	/^    enum class Direction $/;"	g	namespace:game
+Distance_Algorithm	src/character.hpp	/^        enum Distance_Algorithm$/;"	g	class:game::Character
+ENUM_SOURCES	src/enums/CMakeLists.txt	/^set(ENUM_SOURCES $/;"	v
+EQUALS	build/Makefile	/^EQUALS = =$/;"	m
+EQUALS	build/src/Makefile	/^EQUALS = =$/;"	m
+EQUALS	build/src/enums/Makefile	/^EQUALS = =$/;"	m
+EQUALS	font_test/build/Makefile	/^EQUALS = =$/;"	m
+EQUALS	font_test/build/src/Makefile	/^EQUALS = =$/;"	m
+Environment	src/environment.hpp	/^        Environment() { }$/;"	f	class:game::Environment
+Environment	src/environment.hpp	/^        Environment(std::string n, std::vector< Solid > o, std::vector< Solid > p, std::vector< /;"	f	class:game::Environment
+Environment	src/environment.hpp	/^    class Environment$/;"	c	namespace:game
+Event	src/event.cpp	/^    Event::Event( Game_EventType t, std::string v ) : type(t), value(v) $/;"	f	class:game::Event
+Event	src/event.cpp	/^    Event::Event()$/;"	f	class:game::Event
+Event	src/event.hpp	/^    class Event$/;"	c	namespace:game
+GAME_SOURCES	src/CMakeLists.txt	/^set(GAME_SOURCES $/;"	v
+GameData	src/gamedata.hpp	/^            GameData() { }$/;"	f	class:game::GameData
+GameData	src/gamedata.hpp	/^    class GameData$/;"	c	namespace:game
+Game_EventType	src/event.hpp	/^        enum class Game_EventType$/;"	g	class:game::Event
+HEX	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
+HEX	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
+HEX	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
+HEX	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
+ID_VOID_MAIN	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+ID_VOID_MAIN	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+InterfaceHandler	src/interface_handler.hpp	/^        InterfaceHandler() { }$/;"	f	class:game::InterfaceHandler
+InterfaceHandler	src/interface_handler.hpp	/^    class InterfaceHandler$/;"	c	namespace:game
+KeyboardHandler	src/keyboard_handler.cpp	/^    KeyboardHandler::KeyboardHandler(){}$/;"	f	class:game::KeyboardHandler
+KeyboardHandler	src/keyboard_handler.hpp	/^    class KeyboardHandler$/;"	c	namespace:game
+LEFT	src/enums/direction.hpp	/^        LEFT  ,$/;"	e	enum:game::Direction
+LTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^LTexture::LTexture()$/;"	f	class:LTexture
+LTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^class LTexture$/;"	c	file:
+MAIN_CHARACTER_NAME	src/globals.hpp	/^const std::string MAIN_CHARACTER_NAME = "Bob";$/;"	v	typeref:typename:const std::string
+MAIN_CHARACTER_SPEED	src/globals.hpp	/^const float MAIN_CHARACTER_SPEED = 0.10;$/;"	v	typeref:typename:const float
+MENU_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color MENU_BACKGROUND_COLOR      = { 20  , 20  , 50  , 255 };$/;"	v	typeref:typename:const SDL_Color
+MIMode	.vscode/launch.json	/^            "MIMode": "gdb",$/;"	s	object:configurations.0
+MINGW	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW32_LIBRARY	cmake/FindSDL2.cmake	/^  set(MINGW32_LIBRARY mingw32 "-mwindows" CACHE STRING "link flags for MinGW")$/;"	v
+MINGW32_LIBRARY	cmake/FindSDL2TTF.cmake	/^	SET(MINGW32_LIBRARY mingw32 CACHE STRING "mwindows for MinGW")$/;"	v
+MINGW32_LIBRARY	font_test/cmake/FindSDL2.cmake	/^  set(MINGW32_LIBRARY mingw32 "-mwindows" CACHE STRING "link flags for MinGW")$/;"	v
+MINGW32_LIBRARY	font_test/cmake/FindSDL2TTF.cmake	/^	SET(MINGW32_LIBRARY mingw32 CACHE STRING "mwindows for MinGW")$/;"	v
+Menu	src/menu.cpp	/^    Menu::Menu()$/;"	f	class:game::Menu
+Menu	src/menu.cpp	/^    Menu::Menu(std::string title)$/;"	f	class:game::Menu
+Menu	src/menu.cpp	/^    Menu::Menu(std::string title, std::vector< Option > options)$/;"	f	class:game::Menu
+Menu	src/menu.hpp	/^    class Menu$/;"	c	namespace:game
+MenuHandler	src/menu_handler.cpp	/^    MenuHandler::MenuHandler()$/;"	f	class:game::MenuHandler
+MenuHandler	src/menu_handler.hpp	/^    class MenuHandler : public InterfaceHandler$/;"	c	namespace:game
+NEXT	src/enums/direction.hpp	/^        NEXT  ,$/;"	e	enum:game::Direction
+OPTION_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color OPTION_BACKGROUND_COLOR    = { 50  , 50  , 80  , 255 };$/;"	v	typeref:typename:const SDL_Color
+OPTION_FOREGROUND_COLOR	src/globals.hpp	/^const SDL_Color OPTION_FOREGROUND_COLOR    = { 255   , 255 , 255 , 255 };$/;"	v	typeref:typename:const SDL_Color
+OPTION_SELECTED_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color OPTION_SELECTED_BACKGROUND_COLOR  = { 100  , 100  , 150  , 255 };$/;"	v	typeref:typename:const SDL_Color
+Option	src/option.cpp	/^    Option::Option( std::string t, std::string n ) $/;"	f	class:game::Option
+Option	src/option.cpp	/^    Option::Option( std::string t, std::string n, SDL_Color bg, SDL_Color fg, int fi ) $/;"	f	class:game::Option
+Option	src/option.cpp	/^    Option::Option(const Option &other) : text(other.text), next(other.next), $/;"	f	class:game::Option
+Option	src/option.hpp	/^    class Option$/;"	c	namespace:game
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID$/;"	d	file:
+PORTAL	src/event.hpp	/^            PORTAL = 0,$/;"	e	enum:game::Event::Game_EventType
+PORTAL	src/solid.hpp	/^            PORTAL,        $/;"	e	enum:game::Solid::Type
+PRESSED	src/keyboard_handler.hpp	/^#define PRESSED /;"	d
+PREV	src/enums/direction.hpp	/^        PREV  ,$/;"	e	enum:game::Direction
+RELEASED	src/keyboard_handler.hpp	/^#define RELEASED /;"	d
+RIGHT	src/enums/direction.hpp	/^        RIGHT ,$/;"	e	enum:game::Direction
+RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	build/src/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	build/src/enums/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	font_test/build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	font_test/build/src/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+SCREEN_HEIGHT	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^const int SCREEN_HEIGHT = 480;$/;"	v	typeref:typename:const int
+SCREEN_HEIGHT	src/globals.hpp	/^const int SCREEN_HEIGHT = 480;$/;"	v	typeref:typename:const int
+SCREEN_WIDTH	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^const int SCREEN_WIDTH = 640;$/;"	v	typeref:typename:const int
+SCREEN_WIDTH	src/globals.hpp	/^const int SCREEN_WIDTH  = 640;$/;"	v	typeref:typename:const int
+SDL2TTF_LIBRARY	cmake/FindSDL2TTF.cmake	/^	SET(SDL2TTF_LIBRARY ${SDL2TTF_LIBRARY_TEMP} CACHE STRING "Where the SDL2TTF Library can be foun/;"	v
+SDL2TTF_LIBRARY	font_test/cmake/FindSDL2TTF.cmake	/^	SET(SDL2TTF_LIBRARY ${SDL2TTF_LIBRARY_TEMP} CACHE STRING "Where the SDL2TTF Library can be foun/;"	v
+SDL2TTF_LIBRARY_TEMP	cmake/FindSDL2TTF.cmake	/^			SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTFMAIN_LIBRARY} ${SDL2TTF_LIBRARY_TEMP})$/;"	v
+SDL2TTF_LIBRARY_TEMP	cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${MINGW32_LIBRARY} ${SDL2TTF_LIBRARY_TEMP})$/;"	v
+SDL2TTF_LIBRARY_TEMP	cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTF_LIBRARY_TEMP} "-framework Cocoa")$/;"	v
+SDL2TTF_LIBRARY_TEMP	cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTF_LIBRARY_TEMP} ${CMAKE_THREAD_LIBS_INIT})$/;"	v
+SDL2TTF_LIBRARY_TEMP	cmake/FindSDL2TTF.cmake	/^	SET(SDL2TTF_LIBRARY_TEMP "${SDL2TTF_LIBRARY_TEMP}" CACHE INTERNAL "")$/;"	v
+SDL2TTF_LIBRARY_TEMP	font_test/cmake/FindSDL2TTF.cmake	/^			SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTFMAIN_LIBRARY} ${SDL2TTF_LIBRARY_TEMP})$/;"	v
+SDL2TTF_LIBRARY_TEMP	font_test/cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${MINGW32_LIBRARY} ${SDL2TTF_LIBRARY_TEMP})$/;"	v
+SDL2TTF_LIBRARY_TEMP	font_test/cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTF_LIBRARY_TEMP} "-framework Cocoa")$/;"	v
+SDL2TTF_LIBRARY_TEMP	font_test/cmake/FindSDL2TTF.cmake	/^		SET(SDL2TTF_LIBRARY_TEMP ${SDL2TTF_LIBRARY_TEMP} ${CMAKE_THREAD_LIBS_INIT})$/;"	v
+SDL2TTF_LIBRARY_TEMP	font_test/cmake/FindSDL2TTF.cmake	/^	SET(SDL2TTF_LIBRARY_TEMP "${SDL2TTF_LIBRARY_TEMP}" CACHE INTERNAL "")$/;"	v
+SDL2TTF_SEARCH_PATHS	cmake/FindSDL2TTF.cmake	/^SET(SDL2TTF_SEARCH_PATHS$/;"	v
+SDL2TTF_SEARCH_PATHS	font_test/cmake/FindSDL2TTF.cmake	/^SET(SDL2TTF_SEARCH_PATHS$/;"	v
+SDL2_DIR	cmake/FindSDL2.cmake	/^  set(SDL2_DIR "" CACHE PATH "SDL2 directory")$/;"	v
+SDL2_DIR	font_test/cmake/FindSDL2.cmake	/^  set(SDL2_DIR "" CACHE PATH "SDL2 directory")$/;"	v
+SDL2_INCLUDE_DIRS	cmake/FindSDL2.cmake	/^set(SDL2_INCLUDE_DIRS ${SDL2_INCLUDE_DIR})$/;"	v
+SDL2_INCLUDE_DIRS	font_test/cmake/FindSDL2.cmake	/^set(SDL2_INCLUDE_DIRS ${SDL2_INCLUDE_DIR})$/;"	v
+SDL2_LIBRARIES	cmake/FindSDL2.cmake	/^set(SDL2_LIBRARIES ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})$/;"	v
+SDL2_LIBRARIES	font_test/cmake/FindSDL2.cmake	/^set(SDL2_LIBRARIES ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})$/;"	v
+SDL2_LIBRARY	cmake/FindSDL2.cmake	/^  set(SDL2_LIBRARY ${SDL2_LIBRARY_TEMP} CACHE STRING "Where the SDL Library can be found")$/;"	v
+SDL2_LIBRARY	font_test/cmake/FindSDL2.cmake	/^  set(SDL2_LIBRARY ${SDL2_LIBRARY_TEMP} CACHE STRING "Where the SDL Library can be found")$/;"	v
+SDL2_LIBRARY_TEMP	cmake/FindSDL2.cmake	/^      set(SDL2_LIBRARY_TEMP "${SDLMAIN_LIBRARY}" ${SDL2_LIBRARY_TEMP})$/;"	v
+SDL2_LIBRARY_TEMP	cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${MINGW32_LIBRARY} ${SDL2_LIBRARY_TEMP})$/;"	v
+SDL2_LIBRARY_TEMP	cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${SDL2_LIBRARY_TEMP} "-framework Cocoa")$/;"	v
+SDL2_LIBRARY_TEMP	cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${SDL2_LIBRARY_TEMP} ${CMAKE_THREAD_LIBS_INIT})$/;"	v
+SDL2_LIBRARY_TEMP	font_test/cmake/FindSDL2.cmake	/^      set(SDL2_LIBRARY_TEMP "${SDLMAIN_LIBRARY}" ${SDL2_LIBRARY_TEMP})$/;"	v
+SDL2_LIBRARY_TEMP	font_test/cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${MINGW32_LIBRARY} ${SDL2_LIBRARY_TEMP})$/;"	v
+SDL2_LIBRARY_TEMP	font_test/cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${SDL2_LIBRARY_TEMP} "-framework Cocoa")$/;"	v
+SDL2_LIBRARY_TEMP	font_test/cmake/FindSDL2.cmake	/^    set(SDL2_LIBRARY_TEMP ${SDL2_LIBRARY_TEMP} ${CMAKE_THREAD_LIBS_INIT})$/;"	v
+SDL2_TTF_INCLUDE_DIRS	cmake/FindSDL2_ttf.cmake	/^set(SDL2_TTF_INCLUDE_DIRS ${SDL2_TTF_INCLUDE_DIR})$/;"	v
+SDL2_TTF_INCLUDE_DIRS	font_test/cmake/FindSDL2_ttf.cmake	/^set(SDL2_TTF_INCLUDE_DIRS ${SDL2_TTF_INCLUDE_DIR})$/;"	v
+SDL2_TTF_LIBRARIES	cmake/FindSDL2_ttf.cmake	/^set(SDL2_TTF_LIBRARIES ${SDL2_TTF_LIBRARY})$/;"	v
+SDL2_TTF_LIBRARIES	font_test/cmake/FindSDL2_ttf.cmake	/^set(SDL2_TTF_LIBRARIES ${SDL2_TTF_LIBRARY})$/;"	v
+SDL2_TTF_VERSION_STRING	cmake/FindSDL2_ttf.cmake	/^    set(SDL2_TTF_VERSION_STRING ${SDL2_TTF_VERSION_MAJOR}.${SDL2_TTF_VERSION_MINOR}.${SDL2_TTF_V/;"	v
+SDL2_TTF_VERSION_STRING	font_test/cmake/FindSDL2_ttf.cmake	/^    set(SDL2_TTF_VERSION_STRING ${SDL2_TTF_VERSION_MAJOR}.${SDL2_TTF_VERSION_MINOR}.${SDL2_TTF_V/;"	v
+SDL2_VERSION_STRING	cmake/FindSDL2.cmake	/^  set(SDL2_VERSION_STRING ${SDL2_VERSION_MAJOR}.${SDL2_VERSION_MINOR}.${SDL2_VERSION_PATCH})$/;"	v
+SDL2_VERSION_STRING	font_test/cmake/FindSDL2.cmake	/^  set(SDL2_VERSION_STRING ${SDL2_VERSION_MAJOR}.${SDL2_VERSION_MINOR}.${SDL2_VERSION_PATCH})$/;"	v
+SDLTTF_FOUND	cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_FOUND ${SDL2_TTF_FOUND})$/;"	v
+SDLTTF_FOUND	cmake/FindSDL_ttf.cmake	/^set(SDLTTF_FOUND ${SDL_TTF_FOUND})$/;"	v
+SDLTTF_FOUND	font_test/cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_FOUND ${SDL2_TTF_FOUND})$/;"	v
+SDLTTF_FOUND	font_test/cmake/FindSDL_ttf.cmake	/^set(SDLTTF_FOUND ${SDL_TTF_FOUND})$/;"	v
+SDLTTF_INCLUDE_DIR	cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_INCLUDE_DIR ${SDL2_TTF_INCLUDE_DIRS})$/;"	v
+SDLTTF_INCLUDE_DIR	cmake/FindSDL_ttf.cmake	/^set(SDLTTF_INCLUDE_DIR ${SDL_TTF_INCLUDE_DIRS})$/;"	v
+SDLTTF_INCLUDE_DIR	font_test/cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_INCLUDE_DIR ${SDL2_TTF_INCLUDE_DIRS})$/;"	v
+SDLTTF_INCLUDE_DIR	font_test/cmake/FindSDL_ttf.cmake	/^set(SDLTTF_INCLUDE_DIR ${SDL_TTF_INCLUDE_DIRS})$/;"	v
+SDLTTF_LIBRARY	cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_LIBRARY ${SDL2_TTF_LIBRARIES})$/;"	v
+SDLTTF_LIBRARY	cmake/FindSDL_ttf.cmake	/^set(SDLTTF_LIBRARY ${SDL_TTF_LIBRARIES})$/;"	v
+SDLTTF_LIBRARY	font_test/cmake/FindSDL2_ttf.cmake	/^set(SDLTTF_LIBRARY ${SDL2_TTF_LIBRARIES})$/;"	v
+SDLTTF_LIBRARY	font_test/cmake/FindSDL_ttf.cmake	/^set(SDLTTF_LIBRARY ${SDL_TTF_LIBRARIES})$/;"	v
+SDL_TTF_INCLUDE_DIR	cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_INCLUDE_DIR ${SDLTTF_INCLUDE_DIR} CACHE PATH "directory cache$/;"	v
+SDL_TTF_INCLUDE_DIR	font_test/cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_INCLUDE_DIR ${SDLTTF_INCLUDE_DIR} CACHE PATH "directory cache$/;"	v
+SDL_TTF_INCLUDE_DIRS	cmake/FindSDL_ttf.cmake	/^set(SDL_TTF_INCLUDE_DIRS ${SDL_TTF_INCLUDE_DIR})$/;"	v
+SDL_TTF_INCLUDE_DIRS	font_test/cmake/FindSDL_ttf.cmake	/^set(SDL_TTF_INCLUDE_DIRS ${SDL_TTF_INCLUDE_DIR})$/;"	v
+SDL_TTF_LIBRARIES	cmake/FindSDL_ttf.cmake	/^set(SDL_TTF_LIBRARIES ${SDL_TTF_LIBRARY})$/;"	v
+SDL_TTF_LIBRARIES	font_test/cmake/FindSDL_ttf.cmake	/^set(SDL_TTF_LIBRARIES ${SDL_TTF_LIBRARY})$/;"	v
+SDL_TTF_LIBRARY	cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_LIBRARY ${SDLTTF_LIBRARY} CACHE FILEPATH "file cache entry$/;"	v
+SDL_TTF_LIBRARY	font_test/cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_LIBRARY ${SDLTTF_LIBRARY} CACHE FILEPATH "file cache entry$/;"	v
+SDL_TTF_VERSION_STRING	cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_VERSION_STRING ${SDL_TTF_VERSION_MAJOR}.${SDL_TTF_VERSION_MINOR}.${SDL_TTF_VERSION/;"	v
+SDL_TTF_VERSION_STRING	font_test/cmake/FindSDL_ttf.cmake	/^  set(SDL_TTF_VERSION_STRING ${SDL_TTF_VERSION_MAJOR}.${SDL_TTF_VERSION_MINOR}.${SDL_TTF_VERSION/;"	v
+SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	build/src/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	build/src/enums/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	font_test/build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	font_test/build/src/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SIMULATE_ID	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SOLID	src/solid.hpp	/^            SOLID,$/;"	e	enum:game::Solid::Type
+STRINGIFY	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	build/src/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	build/src/enums/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	font_test/build/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	font_test/build/src/Makefile	/^SUFFIXES =$/;"	m
+Solid	src/solid.hpp	/^        Solid() : type(Type::SOLID) { }$/;"	f	class:game::Solid
+Solid	src/solid.hpp	/^        Solid(SDL_Rect h, SDL_Color c, Type t) : hitbox(h), color(c), type(t) { }$/;"	f	class:game::Solid
+Solid	src/solid.hpp	/^        Solid(SDL_Rect h, SDL_Color c, Type t, std::string l) : hitbox(h), color(c), type(t), lo/;"	f	class:game::Solid
+Solid	src/solid.hpp	/^        Solid(Type t) : type(t) { }$/;"	f	class:game::Solid
+Solid	src/solid.hpp	/^    class Solid$/;"	c	namespace:game
+Type	src/solid.hpp	/^        enum class Type { $/;"	g	class:game::Solid
+UIManager	src/ui_manager.hpp	/^    class UIManager$/;"	c	namespace:game
+UNIX	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	font_test/build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UP	src/enums/direction.hpp	/^        UP    ,$/;"	e	enum:game::Direction
+VC_LIB_PATH_SUFFIX	cmake/FindSDL2.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	cmake/FindSDL2.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+VC_LIB_PATH_SUFFIX	cmake/FindSDL2_ttf.cmake	/^    set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	cmake/FindSDL2_ttf.cmake	/^    set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+VC_LIB_PATH_SUFFIX	cmake/FindSDL_ttf.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	cmake/FindSDL_ttf.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL2.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL2.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL2_ttf.cmake	/^    set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL2_ttf.cmake	/^    set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL_ttf.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x64)$/;"	v
+VC_LIB_PATH_SUFFIX	font_test/cmake/FindSDL_ttf.cmake	/^  set(VC_LIB_PATH_SUFFIX lib\/x86)$/;"	v
+WARNING_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color WARNING_BACKGROUND_COLOR   = { 50  , 50   , 80  , 255 };$/;"	v	typeref:typename:const SDL_Color
+World	src/world.cpp	/^    World::World()$/;"	f	class:game::World
+World	src/world.hpp	/^    class World$/;"	c	namespace:game
+action	src/character.hpp	/^        std::string action;$/;"	m	class:game::Character	typeref:typename:std::string
+action	src/dialog.hpp	/^            std::string action;$/;"	m	struct:game::Dialog::Choice	typeref:typename:std::string
+actual_x	src/character.hpp	/^        float actual_x; $/;"	m	class:game::Character	typeref:typename:float
+actual_y	src/character.hpp	/^        float actual_y;$/;"	m	class:game::Character	typeref:typename:float
+all	build/Makefile	/^all: cmake_check_build_system$/;"	t
+all	build/src/Makefile	/^all: cmake_check_build_system$/;"	t
+all	build/src/enums/Makefile	/^all: cmake_check_build_system$/;"	t
+all	font_test/build/Makefile	/^all: cmake_check_build_system$/;"	t
+all	font_test/build/src/Makefile	/^all: cmake_check_build_system$/;"	t
+args	.vscode/launch.json	/^            "args": [],$/;"	a	object:configurations.0
+background	src/option.hpp	/^            SDL_Color background;    \/\/ Background color of option$/;"	m	class:game::Option	typeref:typename:SDL_Color
+bg	src/menu.hpp	/^        SDL_Color bg = MENU_BACKGROUND_COLOR;$/;"	m	class:game::Menu	typeref:typename:SDL_Color
+box	src/dialog.hpp	/^        SDL_Rect box;$/;"	m	class:game::Dialog	typeref:typename:SDL_Rect
+cStandard	.vscode/c_cpp_properties.json	/^            "cStandard": "c11",$/;"	s	object:configurations.0
+character.cpp.i	build/src/Makefile	/^character.cpp.i:$/;"	t
+character.cpp.o	build/src/Makefile	/^character.cpp.o:$/;"	t
+character.cpp.s	build/src/Makefile	/^character.cpp.s:$/;"	t
+character.i	build/src/Makefile	/^character.i: character.cpp.i$/;"	t
+character.o	build/src/Makefile	/^character.o: character.cpp.o$/;"	t
+character.s	build/src/Makefile	/^character.s: character.cpp.s$/;"	t
+characters	src/environment.hpp	/^        std::vector< Character > characters;$/;"	m	class:game::Environment	typeref:typename:std::vector<Character>
+checkInputs	src/gamedata.cpp	/^    void GameData::checkInputs( SDL_Event* event )$/;"	f	class:game::GameData	typeref:typename:void
+checkNearby	src/character.cpp	/^    void Character::checkNearby(std::vector< Character > *characters)$/;"	f	class:game::Character	typeref:typename:void
+checkPortal	src/character.cpp	/^    void Character::checkPortal(std::vector< Solid > *portals)$/;"	f	class:game::Character	typeref:typename:void
+choice_index	src/dialog.hpp	/^        unsigned int choice_index = 0;$/;"	m	class:game::Dialog	typeref:typename:unsigned int
+choices	src/dialog.hpp	/^        std::vector< Choice > choices;$/;"	m	class:game::Dialog	typeref:typename:std::vector<Choice>
+clean	build/Makefile	/^clean:$/;"	t
+clean	build/src/Makefile	/^clean:$/;"	t
+clean	build/src/enums/Makefile	/^clean:$/;"	t
+clean	font_test/build/Makefile	/^clean:$/;"	t
+clean	font_test/build/src/Makefile	/^clean:$/;"	t
+clean/fast	build/Makefile	/^clean\/fast: clean$/;"	t
+clean/fast	build/src/Makefile	/^clean\/fast: clean$/;"	t
+clean/fast	build/src/enums/Makefile	/^clean\/fast: clean$/;"	t
+clean/fast	font_test/build/Makefile	/^clean\/fast: clean$/;"	t
+clean/fast	font_test/build/src/Makefile	/^clean\/fast: clean$/;"	t
+close	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void close()$/;"	f	typeref:typename:void
+close	src/gamedata.cpp	/^    bool GameData::close()$/;"	f	class:game::GameData	typeref:typename:bool
+cmake_check_build_system	build/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_check_build_system	build/src/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_check_build_system	build/src/enums/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_check_build_system	font_test/build/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_check_build_system	font_test/build/src/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_force	build/Makefile	/^cmake_force:$/;"	t
+cmake_force	build/src/Makefile	/^cmake_force:$/;"	t
+cmake_force	build/src/enums/Makefile	/^cmake_force:$/;"	t
+cmake_force	font_test/build/Makefile	/^cmake_force:$/;"	t
+cmake_force	font_test/build/src/Makefile	/^cmake_force:$/;"	t
+color	src/solid.hpp	/^        SDL_Color color;$/;"	m	class:game::Solid	typeref:typename:SDL_Color
+colorToNumber	src/sdl_utils.cpp	/^    uint32_t colorToNumber(SDL_Color color)$/;"	f	namespace:game	typeref:typename:uint32_t
+compileCommands	.vscode/c_cpp_properties.json	/^            "compileCommands": "${workspaceFolder}\/build\/compile_commands.json",$/;"	s	object:configurations.0
+compilerPath	.vscode/c_cpp_properties.json	/^            "compilerPath": "\/usr\/bin\/gcc",$/;"	s	object:configurations.0
+configurationProvider	.vscode/c_cpp_properties.json	/^            "configurationProvider": "vector-of-bool.cmake-tools"$/;"	s	object:configurations.0
+configurations	.vscode/c_cpp_properties.json	/^    "configurations": [$/;"	a
+configurations	.vscode/launch.json	/^    "configurations": [$/;"	a
+const	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+const	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+construct	src/character.cpp	/^    void Character::construct(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::/;"	f	class:game::Character	typeref:typename:void
+container_stack	src/menu_handler.cpp	/^    std::stack< Container* > MenuHandler::container_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Container * >
+containers	src/menu_handler.cpp	/^    std::unordered_map< std::string, Container > MenuHandler::containers;       \/\/ < container/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Container>
+cppStandard	.vscode/c_cpp_properties.json	/^            "cppStandard": "c++17",$/;"	s	object:configurations.0
+current_map	src/world.cpp	/^    unsigned int World::current_map = 0;$/;"	m	class:game::World	typeref:typename:unsigned int
+current_map	src/world.hpp	/^        static unsigned int current_map;   $/;"	m	class:game::World	typeref:typename:unsigned int
+current_option	src/menu.hpp	/^        unsigned int current_option = 0;$/;"	m	class:game::Menu	typeref:typename:unsigned int
+cwd	.vscode/launch.json	/^            "cwd": "${workspaceFolder}\/build\/",$/;"	s	object:configurations.0
+default_target	build/Makefile	/^default_target: all$/;"	t
+default_target	build/src/Makefile	/^default_target: all$/;"	t
+default_target	build/src/enums/Makefile	/^default_target: all$/;"	t
+default_target	font_test/build/Makefile	/^default_target: all$/;"	t
+default_target	font_test/build/src/Makefile	/^default_target: all$/;"	t
+defines	.vscode/c_cpp_properties.json	/^            "defines": [],$/;"	a	object:configurations.0
+depend	build/Makefile	/^depend:$/;"	t
+depend	build/src/Makefile	/^depend:$/;"	t
+depend	build/src/enums/Makefile	/^depend:$/;"	t
+depend	font_test/build/Makefile	/^depend:$/;"	t
+depend	font_test/build/src/Makefile	/^depend:$/;"	t
+description	.vscode/launch.json	/^                    "description": "Enable pretty-printing for gdb",$/;"	s	object:configurations.0.setupCommands.0
+dialog.cpp.i	build/src/Makefile	/^dialog.cpp.i:$/;"	t
+dialog.cpp.o	build/src/Makefile	/^dialog.cpp.o:$/;"	t
+dialog.cpp.s	build/src/Makefile	/^dialog.cpp.s:$/;"	t
+dialog.i	build/src/Makefile	/^dialog.i: dialog.cpp.i$/;"	t
+dialog.o	build/src/Makefile	/^dialog.o: dialog.cpp.o$/;"	t
+dialog.s	build/src/Makefile	/^dialog.s: dialog.cpp.s$/;"	t
+dialog_handler	src/ui_manager.hpp	/^        static DialogHandler dialog_handler;$/;"	m	class:game::UIManager	typeref:typename:DialogHandler
+down	src/menu.cpp	/^    void Menu::down() $/;"	f	class:game::Menu	typeref:typename:void
+edit_cache	build/Makefile	/^edit_cache:$/;"	t
+edit_cache	build/src/Makefile	/^edit_cache:$/;"	t
+edit_cache	build/src/enums/Makefile	/^edit_cache:$/;"	t
+edit_cache	font_test/build/Makefile	/^edit_cache:$/;"	t
+edit_cache	font_test/build/src/Makefile	/^edit_cache:$/;"	t
+edit_cache/fast	build/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+edit_cache/fast	build/src/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+edit_cache/fast	build/src/enums/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+edit_cache/fast	font_test/build/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+edit_cache/fast	font_test/build/src/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+environment	.vscode/launch.json	/^            "environment": [],$/;"	a	object:configurations.0
+environment.cpp.i	build/src/Makefile	/^environment.cpp.i:$/;"	t
+environment.cpp.o	build/src/Makefile	/^environment.cpp.o:$/;"	t
+environment.cpp.s	build/src/Makefile	/^environment.cpp.s:$/;"	t
+environment.i	build/src/Makefile	/^environment.i: environment.cpp.i$/;"	t
+environment.o	build/src/Makefile	/^environment.o: environment.cpp.o$/;"	t
+environment.s	build/src/Makefile	/^environment.s: environment.cpp.s$/;"	t
+event.cpp.i	build/src/Makefile	/^event.cpp.i:$/;"	t
+event.cpp.o	build/src/Makefile	/^event.cpp.o:$/;"	t
+event.cpp.s	build/src/Makefile	/^event.cpp.s:$/;"	t
+event.i	build/src/Makefile	/^event.i: event.cpp.i$/;"	t
+event.o	build/src/Makefile	/^event.o: event.cpp.o$/;"	t
+event.s	build/src/Makefile	/^event.s: event.cpp.s$/;"	t
+event_tracker	src/event.cpp	/^    std::bitset< 255 > Event::event_tracker;$/;"	m	class:game::Event	typeref:typename:std::bitset<255>
+event_tracker	src/event.hpp	/^            static std::bitset< 255 > event_tracker;$/;"	m	class:game::Event	typeref:typename:std::bitset<255>
+externalConsole	.vscode/launch.json	/^            "externalConsole": false,$/;"	b	object:configurations.0
+font	font_test/CMakeLists.txt	/^project(font)$/;"	p
+font	font_test/build/Makefile	/^font: cmake_check_build_system$/;"	t
+font	font_test/build/src/Makefile	/^font: src\/CMakeFiles\/font.dir\/rule$/;"	t
+font	font_test/src/CMakeLists.txt	/^add_executable(font $/;"	t
+font	src/option.hpp	/^            TTF_Font *font;          \/\/ Font to draw text with$/;"	m	class:game::Option	typeref:typename:TTF_Font *
+font/fast	font_test/build/Makefile	/^font\/fast:$/;"	t
+font/fast	font_test/build/src/Makefile	/^font\/fast:$/;"	t
+font_index	src/option.hpp	/^            int font_index = 0;$/;"	m	class:game::Option	typeref:typename:int
+fonts	src/gamedata.cpp	/^    std::vector< TTF_Font* > GameData::fonts; $/;"	m	class:game::GameData	typeref:typename:std::vector<TTF_Font * >
+fonts	src/gamedata.hpp	/^            static std::vector< TTF_Font* > fonts;  \/\/ Fonts$/;"	m	class:game::GameData	typeref:typename:std::vector<TTF_Font * >
+foreground	src/option.hpp	/^            SDL_Color foreground;    \/\/ Foreground color of option$/;"	m	class:game::Option	typeref:typename:SDL_Color
+free	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::free()$/;"	f	class:LTexture	typeref:typename:void
+gFont	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^TTF_Font *gFont = NULL;$/;"	v	typeref:typename:TTF_Font *
+gRenderer	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^SDL_Renderer* gRenderer = NULL;$/;"	v	typeref:typename:SDL_Renderer *
+gTextTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^LTexture gTextTexture;$/;"	v	typeref:typename:LTexture
+gWindow	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^SDL_Window* gWindow = NULL;$/;"	v	typeref:typename:SDL_Window *
+game	CMakeLists.txt	/^project(game)$/;"	p
+game	build/Makefile	/^game: cmake_check_build_system$/;"	t
+game	build/src/Makefile	/^game: src\/CMakeFiles\/game.dir\/rule$/;"	t
+game	src/CMakeLists.txt	/^add_executable(game ${GAME_SOURCES} ${ENUM_SOURCES})$/;"	t
+game	src/character.cpp	/^namespace game$/;"	n	file:
+game	src/character.hpp	/^namespace game$/;"	n
+game	src/dialog.cpp	/^namespace game$/;"	n	file:
+game	src/dialog.hpp	/^namespace game$/;"	n
+game	src/dialog_handler.cpp	/^namespace game$/;"	n	file:
+game	src/dialog_handler.hpp	/^namespace game$/;"	n
+game	src/enums/direction.hpp	/^namespace game$/;"	n
+game	src/environment.cpp	/^namespace game$/;"	n	file:
+game	src/environment.hpp	/^namespace game$/;"	n
+game	src/event.cpp	/^namespace game$/;"	n	file:
+game	src/event.hpp	/^namespace game$/;"	n
+game	src/gamedata.cpp	/^namespace game$/;"	n	file:
+game	src/gamedata.hpp	/^namespace game$/;"	n
+game	src/interface_handler.hpp	/^namespace game$/;"	n
+game	src/keyboard_handler.cpp	/^namespace game$/;"	n	file:
+game	src/keyboard_handler.hpp	/^namespace game$/;"	n
+game	src/menu.cpp	/^namespace game$/;"	n	file:
+game	src/menu.hpp	/^namespace game$/;"	n
+game	src/menu_handler.cpp	/^namespace game$/;"	n	file:
+game	src/menu_handler.hpp	/^namespace game$/;"	n
+game	src/option.cpp	/^namespace game$/;"	n	file:
+game	src/option.hpp	/^namespace game$/;"	n
+game	src/sdl_utils.cpp	/^namespace game$/;"	n	file:
+game	src/sdl_utils.hpp	/^namespace game$/;"	n
+game	src/solid.cpp	/^namespace game$/;"	n	file:
+game	src/solid.hpp	/^namespace game$/;"	n
+game	src/ui_manager.hpp	/^namespace game$/;"	n
+game	src/world.cpp	/^namespace game$/;"	n	file:
+game	src/world.hpp	/^namespace game$/;"	n
+game/fast	build/Makefile	/^game\/fast:$/;"	t
+game/fast	build/src/Makefile	/^game\/fast:$/;"	t
+gamedata.cpp.i	build/src/Makefile	/^gamedata.cpp.i:$/;"	t
+gamedata.cpp.o	build/src/Makefile	/^gamedata.cpp.o:$/;"	t
+gamedata.cpp.s	build/src/Makefile	/^gamedata.cpp.s:$/;"	t
+gamedata.i	build/src/Makefile	/^gamedata.i: gamedata.cpp.i$/;"	t
+gamedata.o	build/src/Makefile	/^gamedata.o: gamedata.cpp.o$/;"	t
+gamedata.s	build/src/Makefile	/^gamedata.s: gamedata.cpp.s$/;"	t
+getAction	src/character.hpp	/^        std::string getAction() { return this->action; }$/;"	f	class:game::Character	typeref:typename:std::string
+getActiveRenderer	src/gamedata.hpp	/^            static SDL_Renderer* getActiveRenderer() { return renderer; }$/;"	f	class:game::GameData	typeref:typename:SDL_Renderer *
+getBackground	src/option.hpp	/^            SDL_Color* getBackground() { return &(this->background); }$/;"	f	class:game::Option	typeref:typename:SDL_Color *
+getCharacters	src/environment.hpp	/^        std::vector< Character >* getCharacters() { return &characters; }$/;"	f	class:game::Environment	typeref:typename:std::vector<Character> *
+getCharacters	src/world.cpp	/^    std::vector< Character* >* World::getCharacters()$/;"	f	class:game::World	typeref:typename:std::vector<Character * > *
+getCharactersInMap	src/world.hpp	/^        static std::vector< Character >* getCharactersInMap() { return maps[current_map].getChar/;"	f	class:game::World	typeref:typename:std::vector<Character> *
+getChoice	src/dialog.hpp	/^        Dialog::Choice* getChoice() { return &(this->choices[choice_index]); };$/;"	f	class:game::Dialog	typeref:typename:Dialog::Choice *
+getColor	src/solid.hpp	/^        SDL_Color* getColor() { return &color; }$/;"	f	class:game::Solid	typeref:typename:SDL_Color *
+getColorNumber	src/solid.hpp	/^        uint32_t getColorNumber() { return ( (color.a << 24) | (color.r << 16) | (color.g << 8) /;"	f	class:game::Solid	typeref:typename:uint32_t
+getContainer	src/menu_handler.cpp	/^    Container* MenuHandler::getContainer()$/;"	f	class:game::MenuHandler	typeref:typename:Container *
+getCurrentMap	src/world.hpp	/^        Environment* getCurrentMap() { return &(this->maps[current_map]); }$/;"	f	class:game::World	typeref:typename:Environment *
+getDialog	src/menu_handler.cpp	/^    Dialog* MenuHandler::getDialog()$/;"	f	class:game::MenuHandler	typeref:typename:Dialog *
+getDistance	src/character.cpp	/^    unsigned int Character::getDistance(float x, float y, Distance_Algorithm alg)$/;"	f	class:game::Character	typeref:typename:unsigned int
+getFiles	src/world.cpp	/^    vector< string > World::getFiles(string dir, string name)$/;"	f	class:game::World	typeref:typename:vector<string>
+getFont	src/gamedata.hpp	/^            static TTF_Font* getFont(int) { return fonts[0]; }$/;"	f	class:game::GameData	typeref:typename:TTF_Font *
+getForeground	src/option.hpp	/^            SDL_Color* getForeground() { return &(this->foreground); }$/;"	f	class:game::Option	typeref:typename:SDL_Color *
+getHeight	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^int LTexture::getHeight()$/;"	f	class:LTexture	typeref:typename:int
+getHorizontal	src/keyboard_handler.cpp	/^    int KeyboardHandler::getHorizontal()$/;"	f	class:game::KeyboardHandler	typeref:typename:int
+getIndex	src/event.hpp	/^            static int getIndex(Game_EventType type) { return type_to_indices[type]; }$/;"	f	class:game::Event	typeref:typename:int
+getInitialized	src/gamedata.hpp	/^            static bool getInitialized() { return initialized; }$/;"	f	class:game::GameData	typeref:typename:bool
+getLocation	src/solid.hpp	/^        std::string getLocation() { return this->location; }$/;"	f	class:game::Solid	typeref:typename:std::string
+getMap	src/world.hpp	/^        Environment* getMap(unsigned int index) { return &(this->maps[index]); }$/;"	f	class:game::World	typeref:typename:Environment *
+getName	src/event.hpp	/^            std::string getName() { return type_to_names[type]; }$/;"	f	class:game::Event	typeref:typename:std::string
+getNext	src/option.hpp	/^            std::string getNext() { return this->next; }$/;"	f	class:game::Option	typeref:typename:std::string
+getOption	src/menu.cpp	/^    Option* Menu::getOption() $/;"	f	class:game::Menu	typeref:typename:Option *
+getOptions	src/menu.cpp	/^    std::vector< Option >* Menu::getOptions()$/;"	f	class:game::Menu	typeref:typename:std::vector<Option> *
+getPortals	src/environment.hpp	/^        std::vector< Solid >* getPortals() { return &portals; }$/;"	f	class:game::Environment	typeref:typename:std::vector<Solid> *
+getPortals	src/gamedata.hpp	/^            static std::vector< Solid >* getPortals() { return portals; }$/;"	f	class:game::GameData	typeref:typename:std::vector<Solid> *
+getQuit	src/gamedata.hpp	/^            static bool getQuit() { return quit; }$/;"	f	class:game::GameData	typeref:typename:bool
+getRekt	src/solid.hpp	/^        SDL_Rect* getRekt() { return &hitbox; }$/;"	f	class:game::Solid	typeref:typename:SDL_Rect *
+getSolids	src/environment.hpp	/^        std::vector< Solid >* getSolids() { return &solids; }$/;"	f	class:game::Environment	typeref:typename:std::vector<Solid> *
+getSolids	src/gamedata.hpp	/^            static std::vector< Solid >* getSolids() { return solids; }$/;"	f	class:game::GameData	typeref:typename:std::vector<Solid> *
+getText	src/option.hpp	/^            std::string getText() { return this->text; }$/;"	f	class:game::Option	typeref:typename:std::string
+getTextMessage	src/option.hpp	/^            SDL_Texture* getTextMessage() { return this->message; }$/;"	f	class:game::Option	typeref:typename:SDL_Texture *
+getType	src/event.hpp	/^            Game_EventType getType() { return type; }$/;"	f	class:game::Event	typeref:typename:Game_EventType
+getType	src/solid.hpp	/^        Type getType() { return this->type; }$/;"	f	class:game::Solid	typeref:typename:Type
+getValue	src/event.hpp	/^            std::string getValue() { return value; }$/;"	f	class:game::Event	typeref:typename:std::string
+getVertical	src/keyboard_handler.cpp	/^    int KeyboardHandler::getVertical()$/;"	f	class:game::KeyboardHandler	typeref:typename:int
+getWidth	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^int LTexture::getWidth()$/;"	f	class:LTexture	typeref:typename:int
+handleEvent	src/keyboard_handler.cpp	/^    void KeyboardHandler::handleEvent(SDL_Event *event)$/;"	f	class:game::KeyboardHandler	typeref:typename:void
+hasDialog	src/character.hpp	/^        bool hasDialog() { return (action != ""); }$/;"	f	class:game::Character	typeref:typename:bool
+help	build/Makefile	/^help:$/;"	t
+help	build/src/Makefile	/^help:$/;"	t
+help	build/src/enums/Makefile	/^help:$/;"	t
+help	font_test/build/Makefile	/^help:$/;"	t
+help	font_test/build/src/Makefile	/^help:$/;"	t
+hitbox	src/solid.hpp	/^        SDL_Rect hitbox;$/;"	m	class:game::Solid	typeref:typename:SDL_Rect
+ignoreFailures	.vscode/launch.json	/^                    "ignoreFailures": true,$/;"	b	object:configurations.0.setupCommands.0
+inContainer	src/menu_handler.cpp	/^    bool MenuHandler::inContainer()$/;"	f	class:game::MenuHandler	typeref:typename:bool
+inDialog	src/menu_handler.cpp	/^    bool MenuHandler::inDialog()$/;"	f	class:game::MenuHandler	typeref:typename:bool
+inEvent	src/event.hpp	/^            static bool inEvent(Game_EventType type) { return event_tracker[getIndex(type)]; }$/;"	f	class:game::Event	typeref:typename:bool
+inEvent	src/gamedata.hpp	/^            static bool inEvent(Event::Game_EventType type) { return Event::inEvent(type); }$/;"	f	class:game::GameData	typeref:typename:bool
+includePath	.vscode/c_cpp_properties.json	/^            "includePath": [$/;"	a	object:configurations.0
+info_arch	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_language_dialect_default	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_dialect_default =$/;"	v	typeref:typename:const char *
+info_language_dialect_default	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_dialect_default = "INFO" ":" "dialect_default["$/;"	v	typeref:typename:const char *
+info_language_dialect_default	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_dialect_default =$/;"	v	typeref:typename:const char *
+info_language_dialect_default	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_dialect_default = "INFO" ":" "dialect_default["$/;"	v	typeref:typename:const char *
+info_platform	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate_version	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+init	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool init()$/;"	f	typeref:typename:bool
+init	src/gamedata.cpp	/^    bool GameData::init()$/;"	f	class:game::GameData	typeref:typename:bool
+initContainers	src/dialog_handler.cpp	/^    bool MenuHandler::initContainers()$/;"	f	class:game::MenuHandler	typeref:typename:bool
+initContainers	src/menu_handler.cpp	/^    bool MenuHandler::initContainers()$/;"	f	class:game::MenuHandler	typeref:typename:bool
+initFonts	src/gamedata.cpp	/^    bool GameData::initFonts()$/;"	f	class:game::GameData	typeref:typename:bool
+initMenus	src/gamedata.cpp	/^    bool GameData::initMenus()$/;"	f	class:game::GameData	typeref:typename:bool
+initSDL	src/gamedata.cpp	/^    bool GameData::initSDL()$/;"	f	class:game::GameData	typeref:typename:bool
+initSDL_Renderer	src/gamedata.cpp	/^    bool GameData::initSDL_Renderer()$/;"	f	class:game::GameData	typeref:typename:bool
+initSDL_Window	src/gamedata.cpp	/^    bool GameData::initSDL_Window()$/;"	f	class:game::GameData	typeref:typename:bool
+initText	src/option.cpp	/^    void Option::initText()$/;"	f	class:game::Option	typeref:typename:void
+initTextTextures	src/menu_handler.cpp	/^    bool MenuHandler::initTextTextures()$/;"	f	class:game::MenuHandler	typeref:typename:bool
+initWorlds	src/gamedata.cpp	/^    bool GameData::initWorlds()$/;"	f	class:game::GameData	typeref:typename:bool
+initialized	src/gamedata.cpp	/^    bool GameData::initialized = false;$/;"	m	class:game::GameData	typeref:typename:bool
+initialized	src/gamedata.hpp	/^            static bool initialized;$/;"	m	class:game::GameData	typeref:typename:bool
+initialized_text	src/option.hpp	/^            bool initialized_text = false;$/;"	m	class:game::Option	typeref:typename:bool
+intelliSenseMode	.vscode/c_cpp_properties.json	/^            "intelliSenseMode": "clang-x64",$/;"	s	object:configurations.0
+isDone	src/gamedata.hpp	/^            bool isDone() const { return quit; }$/;"	f	class:game::GameData	typeref:typename:bool
+isInside	src/solid.cpp	/^    bool Solid::isInside( SDL_Rect* box)$/;"	f	class:game::Solid	typeref:typename:bool
+isPressed	src/keyboard_handler.cpp	/^    bool KeyboardHandler::isPressed(unsigned char key)$/;"	f	class:game::KeyboardHandler	typeref:typename:bool
+isReleased	src/keyboard_handler.cpp	/^    bool KeyboardHandler::isReleased(unsigned char key)$/;"	f	class:game::KeyboardHandler	typeref:typename:bool
+keyboard_handler	src/gamedata.hpp	/^            KeyboardHandler keyboard_handler;   \/\/ Keyboard input handler$/;"	m	class:game::GameData	typeref:typename:KeyboardHandler
+keyboard_handler.cpp.i	build/src/Makefile	/^keyboard_handler.cpp.i:$/;"	t
+keyboard_handler.cpp.o	build/src/Makefile	/^keyboard_handler.cpp.o:$/;"	t
+keyboard_handler.cpp.s	build/src/Makefile	/^keyboard_handler.cpp.s:$/;"	t
+keyboard_handler.i	build/src/Makefile	/^keyboard_handler.i: keyboard_handler.cpp.i$/;"	t
+keyboard_handler.o	build/src/Makefile	/^keyboard_handler.o: keyboard_handler.cpp.o$/;"	t
+keyboard_handler.s	build/src/Makefile	/^keyboard_handler.s: keyboard_handler.cpp.s$/;"	t
+left	src/dialog.hpp	/^        void left() { if (choice_index > 0) choice_index--; };$/;"	f	class:game::Dialog	typeref:typename:void
+load	src/menu_handler.cpp	/^    void MenuHandler::load()$/;"	f	class:game::MenuHandler	typeref:typename:void
+loadFromFile	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool LTexture::loadFromFile( std::string path )$/;"	f	class:LTexture	typeref:typename:bool
+loadFromRenderedText	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColor )$/;"	f	class:LTexture	typeref:typename:bool
+loadMaps	src/world.cpp	/^    bool World::loadMaps()$/;"	f	class:game::World	typeref:typename:bool
+loadMedia	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool loadMedia()$/;"	f	typeref:typename:bool
+location	src/solid.hpp	/^        std::string location; \/\/ map to jump to if main character is 100% inside this solid (P/;"	m	class:game::Solid	typeref:typename:std::string
+mHeight	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^		int mHeight;$/;"	m	class:LTexture	typeref:typename:int	file:
+mTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^		SDL_Texture* mTexture;$/;"	m	class:LTexture	typeref:typename:SDL_Texture *	file:
+mWidth	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^		int mWidth;$/;"	m	class:LTexture	typeref:typename:int	file:
+main	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^int main( int argc, char* args[] )$/;"	f	typeref:typename:int
+main	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
+main	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+main	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
+main	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+main	font_test/src/main.cpp	/^int main(int argc, char ** argv)$/;"	f	typeref:typename:int
+main	src/main.cpp	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main.cpp.i	build/src/Makefile	/^main.cpp.i:$/;"	t
+main.cpp.i	font_test/build/src/Makefile	/^main.cpp.i:$/;"	t
+main.cpp.o	build/src/Makefile	/^main.cpp.o:$/;"	t
+main.cpp.o	font_test/build/src/Makefile	/^main.cpp.o:$/;"	t
+main.cpp.s	build/src/Makefile	/^main.cpp.s:$/;"	t
+main.cpp.s	font_test/build/src/Makefile	/^main.cpp.s:$/;"	t
+main.i	build/src/Makefile	/^main.i: main.cpp.i$/;"	t
+main.i	font_test/build/src/Makefile	/^main.i: main.cpp.i$/;"	t
+main.o	build/src/Makefile	/^main.o: main.cpp.o$/;"	t
+main.o	font_test/build/src/Makefile	/^main.o: main.cpp.o$/;"	t
+main.s	build/src/Makefile	/^main.s: main.cpp.s$/;"	t
+main.s	font_test/build/src/Makefile	/^main.s: main.cpp.s$/;"	t
+main_character	src/character.hpp	/^        bool main_character;$/;"	m	class:game::Character	typeref:typename:bool
+main_character	src/gamedata.hpp	/^            Character main_character;           \/\/ Main character$/;"	m	class:game::GameData	typeref:typename:Character
+map_index	src/gamedata.hpp	/^            int map_index = 0;$/;"	m	class:game::GameData	typeref:typename:int
+maps	src/world.cpp	/^    std::vector< Environment > World::maps;$/;"	m	class:game::World	typeref:typename:std::vector<Environment>
+maps	src/world.hpp	/^        static std::vector< Environment > maps;$/;"	m	class:game::World	typeref:typename:std::vector<Environment>
+menu.cpp.i	build/src/Makefile	/^menu.cpp.i:$/;"	t
+menu.cpp.o	build/src/Makefile	/^menu.cpp.o:$/;"	t
+menu.cpp.s	build/src/Makefile	/^menu.cpp.s:$/;"	t
+menu.i	build/src/Makefile	/^menu.i: menu.cpp.i$/;"	t
+menu.o	build/src/Makefile	/^menu.o: menu.cpp.o$/;"	t
+menu.s	build/src/Makefile	/^menu.s: menu.cpp.s$/;"	t
+menu_handler	src/gamedata.hpp	/^            MenuHandler menu_handler;           \/\/ Menu handler$/;"	m	class:game::GameData	typeref:typename:MenuHandler
+menu_handler	src/ui_manager.hpp	/^        static MenuHandler menu_handler;$/;"	m	class:game::UIManager	typeref:typename:MenuHandler
+menu_handler.cpp.i	build/src/Makefile	/^menu_handler.cpp.i:$/;"	t
+menu_handler.cpp.o	build/src/Makefile	/^menu_handler.cpp.o:$/;"	t
+menu_handler.cpp.s	build/src/Makefile	/^menu_handler.cpp.s:$/;"	t
+menu_handler.i	build/src/Makefile	/^menu_handler.i: menu_handler.cpp.i$/;"	t
+menu_handler.o	build/src/Makefile	/^menu_handler.o: menu_handler.cpp.o$/;"	t
+menu_handler.s	build/src/Makefile	/^menu_handler.s: menu_handler.cpp.s$/;"	t
+menu_stack	src/menu_handler.hpp	/^        static std::stack< Menu* > menu_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Menu * >
+menus	src/menu_handler.hpp	/^        static std::unordered_map< std::string, Menu > menus;$/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Menu>
+message	src/option.hpp	/^            SDL_Texture *message;    \/\/ Font texture to draw$/;"	m	class:game::Option	typeref:typename:SDL_Texture *
+moveCharacter	src/character.cpp	/^    bool Character::moveCharacter(float *actual, float *velocity, int *hitbox_coord, $/;"	f	class:game::Character	typeref:typename:bool
+moveContainer	src/menu_handler.cpp	/^    void MenuHandler::moveContainer(Direction dir)$/;"	f	class:game::MenuHandler	typeref:typename:void
+moveDialog	src/menu_handler.cpp	/^    void MenuHandler::moveDialog(Direction dir)$/;"	f	class:game::MenuHandler	typeref:typename:void
+name	.vscode/c_cpp_properties.json	/^            "name": "Linux",$/;"	s	object:configurations.0
+name	.vscode/launch.json	/^            "name": "(gdb) Launch",$/;"	s	object:configurations.0
+name	src/character.hpp	/^        std::string name;$/;"	m	class:game::Character	typeref:typename:std::string
+name	src/environment.hpp	/^        std::string name;$/;"	m	class:game::Environment	typeref:typename:std::string
+next	src/option.hpp	/^            std::string next;        \/\/ string of the next menu key (ie: "main", "save screen"/;"	m	class:game::Option	typeref:typename:std::string
+open-in-vim.openMethod	.vscode/settings.json	/^    "open-in-vim.openMethod": "linux.gnome-terminal",$/;"	s
+open-in-vim.restoreCursorAfterVim	.vscode/settings.json	/^    "open-in-vim.restoreCursorAfterVim": true,$/;"	b
+open-in-vim.useNeovim	.vscode/settings.json	/^    "open-in-vim.useNeovim": true$/;"	b
+operator =	src/option.cpp	/^    Option& Option::operator=(const Option &other)    $/;"	f	class:game::Option	typeref:typename:Option &
+option.cpp.i	build/src/Makefile	/^option.cpp.i:$/;"	t
+option.cpp.o	build/src/Makefile	/^option.cpp.o:$/;"	t
+option.cpp.s	build/src/Makefile	/^option.cpp.s:$/;"	t
+option.i	build/src/Makefile	/^option.i: option.cpp.i$/;"	t
+option.o	build/src/Makefile	/^option.o: option.cpp.o$/;"	t
+option.s	build/src/Makefile	/^option.s: option.cpp.s$/;"	t
+options	src/menu.hpp	/^        std::vector< Option > options;$/;"	m	class:game::Menu	typeref:typename:std::vector<Option>
+page_index	src/dialog.hpp	/^        unsigned int page_index = 0;$/;"	m	class:game::Dialog	typeref:typename:unsigned int
+pages	src/dialog.hpp	/^        std::vector< std::string > pages;$/;"	m	class:game::Dialog	typeref:typename:std::vector<std::string>
+popContainer	src/menu_handler.cpp	/^    void MenuHandler::popContainer()$/;"	f	class:game::MenuHandler	typeref:typename:void
+popDialog	src/menu_handler.cpp	/^    void MenuHandler::popDialog()$/;"	f	class:game::MenuHandler	typeref:typename:void
+portal_color	src/solid.hpp	/^        uint32_t portal_color = 0;$/;"	m	class:game::Solid	typeref:typename:uint32_t
+portals	src/environment.hpp	/^        std::vector< Solid > portals;$/;"	m	class:game::Environment	typeref:typename:std::vector<Solid>
+portals	src/gamedata.cpp	/^    std::vector< Solid > *GameData::portals;$/;"	m	class:game::GameData	typeref:typename:std::vector<Solid> *
+portals	src/gamedata.hpp	/^            static std::vector< Solid > *portals;   \/\/ A vector of pointers to solids that are/;"	m	class:game::GameData	typeref:typename:std::vector<Solid> *
+preinstall	build/Makefile	/^preinstall: all$/;"	t
+preinstall	build/src/Makefile	/^preinstall: all$/;"	t
+preinstall	build/src/enums/Makefile	/^preinstall: all$/;"	t
+preinstall	font_test/build/Makefile	/^preinstall: all$/;"	t
+preinstall	font_test/build/src/Makefile	/^preinstall: all$/;"	t
+preinstall/fast	build/Makefile	/^preinstall\/fast:$/;"	t
+preinstall/fast	build/src/Makefile	/^preinstall\/fast:$/;"	t
+preinstall/fast	build/src/enums/Makefile	/^preinstall\/fast:$/;"	t
+preinstall/fast	font_test/build/Makefile	/^preinstall\/fast:$/;"	t
+preinstall/fast	font_test/build/src/Makefile	/^preinstall\/fast:$/;"	t
+program	.vscode/launch.json	/^            "program": "${workspaceFolder}\/build\/game",$/;"	s	object:configurations.0
+pushContainer	src/menu_handler.cpp	/^    void MenuHandler::pushContainer(std::string next)$/;"	f	class:game::MenuHandler	typeref:typename:void
+pushDialog	src/menu_handler.cpp	/^    void MenuHandler::pushDialog(std::string next, int entity_center_x, int entity_center_y)$/;"	f	class:game::MenuHandler	typeref:typename:void
+qnxnto	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+quit	src/gamedata.cpp	/^    bool GameData::quit = false;$/;"	m	class:game::GameData	typeref:typename:bool
+quit	src/gamedata.hpp	/^            static bool quit;$/;"	m	class:game::GameData	typeref:typename:bool
+quit	src/menu_handler.cpp	/^    void MenuHandler::quit()$/;"	f	class:game::MenuHandler	typeref:typename:void
+rebuild_cache	build/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache	build/src/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache	build/src/enums/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache	font_test/build/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache	font_test/build/src/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache/fast	build/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+rebuild_cache/fast	build/src/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+rebuild_cache/fast	build/src/enums/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+rebuild_cache/fast	font_test/build/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+rebuild_cache/fast	font_test/build/src/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+render	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_Render/;"	f	class:LTexture	typeref:typename:void
+render	src/character.cpp	/^    void Character::render( SDL_Renderer *renderer )$/;"	f	class:game::Character	typeref:typename:void
+render	src/dialog.cpp	/^    void Dialog::render( SDL_Renderer *renderer )$/;"	f	class:game::Dialog	typeref:typename:void
+render	src/environment.cpp	/^    void Environment::render( SDL_Renderer *renderer ) $/;"	f	class:game::Environment	typeref:typename:void
+render	src/gamedata.cpp	/^    void GameData::render()$/;"	f	class:game::GameData	typeref:typename:void
+render	src/menu.cpp	/^    void Menu::render( SDL_Renderer *renderer )$/;"	f	class:game::Menu	typeref:typename:void
+render	src/menu_handler.cpp	/^    void MenuHandler::render( SDL_Renderer *renderer )$/;"	f	class:game::MenuHandler	typeref:typename:void
+render	src/option.cpp	/^    void Option::render( SDL_Renderer *renderer, SDL_Rect *menu_box, int height, int index, bool/;"	f	class:game::Option	typeref:typename:void
+render	src/solid.cpp	/^    void Solid::render( SDL_Renderer *renderer )$/;"	f	class:game::Solid	typeref:typename:void
+render	src/world.cpp	/^    void World::render( SDL_Renderer *renderer ) $/;"	f	class:game::World	typeref:typename:void
+renderer	src/gamedata.cpp	/^    SDL_Renderer* GameData::renderer;         $/;"	m	class:game::GameData	typeref:typename:SDL_Renderer *
+renderer	src/gamedata.hpp	/^            static SDL_Renderer* renderer;          \/\/ Hardware accelerated renderer$/;"	m	class:game::GameData	typeref:typename:SDL_Renderer *
+request	.vscode/launch.json	/^            "request": "launch",$/;"	s	object:configurations.0
+right	src/dialog.hpp	/^        void right() { if (choice_index < choices.size()) choice_index++; };$/;"	f	class:game::Dialog	typeref:typename:void
+save	src/menu_handler.cpp	/^    void MenuHandler::save()$/;"	f	class:game::MenuHandler	typeref:typename:void
+sdl_utils.cpp.i	build/src/Makefile	/^sdl_utils.cpp.i:$/;"	t
+sdl_utils.cpp.o	build/src/Makefile	/^sdl_utils.cpp.o:$/;"	t
+sdl_utils.cpp.s	build/src/Makefile	/^sdl_utils.cpp.s:$/;"	t
+sdl_utils.i	build/src/Makefile	/^sdl_utils.i: sdl_utils.cpp.i$/;"	t
+sdl_utils.o	build/src/Makefile	/^sdl_utils.o: sdl_utils.cpp.o$/;"	t
+sdl_utils.s	build/src/Makefile	/^sdl_utils.s: sdl_utils.cpp.s$/;"	t
+selectContainer	src/menu_handler.cpp	/^    void MenuHandler::selectContainer()$/;"	f	class:game::MenuHandler	typeref:typename:void
+selectDialog	src/menu_handler.cpp	/^    void MenuHandler::selectDialog()$/;"	f	class:game::MenuHandler	typeref:typename:void
+sendEvent	src/gamedata.cpp	/^    void GameData::sendEvent(Event event, bool flag)$/;"	f	class:game::GameData	typeref:typename:void
+setAlpha	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::setAlpha( Uint8 alpha )$/;"	f	class:LTexture	typeref:typename:void
+setAnchor	src/dialog.cpp	/^    void Dialog::setAnchor(int entity_center_x, int entity_center_y)$/;"	f	class:game::Dialog	typeref:typename:void
+setBlendMode	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::setBlendMode( SDL_BlendMode blending )$/;"	f	class:LTexture	typeref:typename:void
+setColor	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::setColor( Uint8 red, Uint8 green, Uint8 blue )$/;"	f	class:LTexture	typeref:typename:void
+setEvent	src/event.hpp	/^            static void setEvent(Game_EventType type, bool b) { event_tracker[getIndex(type)] = /;"	f	class:game::Event	typeref:typename:void
+setInitialized	src/gamedata.hpp	/^            static void setInitialized(bool val) { initialized = val; }$/;"	f	class:game::GameData	typeref:typename:void
+setQuit	src/gamedata.hpp	/^            static void setQuit(bool val) { quit = val; }$/;"	f	class:game::GameData	typeref:typename:void
+setVelocity	src/character.hpp	/^        void setVelocity(float vx, float vy){ velocity_x = vx; velocity_y = vy; } $/;"	f	class:game::Character	typeref:typename:void
+setupCommands	.vscode/launch.json	/^            "setupCommands": [$/;"	a	object:configurations.0
+solid.cpp.i	build/src/Makefile	/^solid.cpp.i:$/;"	t
+solid.cpp.o	build/src/Makefile	/^solid.cpp.o:$/;"	t
+solid.cpp.s	build/src/Makefile	/^solid.cpp.s:$/;"	t
+solid.i	build/src/Makefile	/^solid.i: solid.cpp.i$/;"	t
+solid.o	build/src/Makefile	/^solid.o: solid.cpp.o$/;"	t
+solid.s	build/src/Makefile	/^solid.s: solid.cpp.s$/;"	t
+solids	src/environment.hpp	/^        std::vector< Solid > solids;$/;"	m	class:game::Environment	typeref:typename:std::vector<Solid>
+solids	src/gamedata.cpp	/^    std::vector< Solid > *GameData::solids;$/;"	m	class:game::GameData	typeref:typename:std::vector<Solid> *
+solids	src/gamedata.hpp	/^            static std::vector< Solid > *solids;    \/\/ A pointer to a vector of solids$/;"	m	class:game::GameData	typeref:typename:std::vector<Solid> *
+src/CMakeFiles/font.dir/rule	font_test/build/src/Makefile	/^src\/CMakeFiles\/font.dir\/rule:$/;"	t
+src/CMakeFiles/game.dir/rule	build/src/Makefile	/^src\/CMakeFiles\/game.dir\/rule:$/;"	t
+start	src/gamedata.cpp	/^    void GameData::start()$/;"	f	class:game::GameData	typeref:typename:void
+stopAtEntry	.vscode/launch.json	/^            "stopAtEntry": false,$/;"	b	object:configurations.0
+text	.vscode/launch.json	/^                    "text": "-enable-pretty-printing",$/;"	s	object:configurations.0.setupCommands.0
+text	src/dialog.hpp	/^            std::string text;$/;"	m	struct:game::Dialog::Choice	typeref:typename:std::string
+text	src/option.hpp	/^            std::string text;        \/\/ Text of option$/;"	m	class:game::Option	typeref:typename:std::string
+text_textures	src/menu_handler.cpp	/^    std::unordered_map< std::string, SDL_Texture > MenuHandler::text_textures;  \/\/ < container/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,SDL_Texture>
+text_textures	src/menu_handler.cpp	/^    std::vector< SDL_Texture > MenuHandler::text_textures;$/;"	m	class:game::MenuHandler	typeref:typename:std::vector<SDL_Texture>
+title	src/menu.hpp	/^        std::string title = "";$/;"	m	class:game::Menu	typeref:typename:std::string
+travel_handler	src/ui_manager.hpp	/^        static TravelHandler travel_handler;$/;"	m	class:game::UIManager	typeref:typename:TravelHandler
+type	.vscode/launch.json	/^            "type": "cppdbg",$/;"	s	object:configurations.0
+type	src/event.hpp	/^            Game_EventType type;$/;"	m	class:game::Event	typeref:typename:Game_EventType
+type	src/solid.hpp	/^        Type type;             \/\/ type(s) (bit addressing) of solid $/;"	m	class:game::Solid	typeref:typename:Type
+type_to_indices	src/event.cpp	/^    std::unordered_map< Event::Game_EventType, int > Event::type_to_indices = {$/;"	m	class:game::Event	typeref:typename:std::unordered_map<Event::Game_EventType,int>
+type_to_indices	src/event.hpp	/^            static std::unordered_map< Game_EventType, int > type_to_indices;$/;"	m	class:game::Event	typeref:typename:std::unordered_map<Game_EventType,int>
+type_to_names	src/event.cpp	/^    std::unordered_map< Event::Game_EventType, std::string > Event::type_to_names = {$/;"	m	class:game::Event	typeref:typename:std::unordered_map<Event::Game_EventType,std::string>
+type_to_names	src/event.hpp	/^            static std::unordered_map< Game_EventType, std::string > type_to_names;$/;"	m	class:game::Event	typeref:typename:std::unordered_map<Game_EventType,std::string>
+up	src/menu.cpp	/^    void Menu::up() $/;"	f	class:game::Menu	typeref:typename:void
+update	src/character.cpp	/^    void Character::update()$/;"	f	class:game::Character	typeref:typename:void
+update	src/dialog.cpp	/^    void Dialog::update()$/;"	f	class:game::Dialog	typeref:typename:void
+update	src/environment.cpp	/^    void Environment::update() $/;"	f	class:game::Environment	typeref:typename:void
+update	src/gamedata.cpp	/^    void GameData::update()$/;"	f	class:game::GameData	typeref:typename:void
+update	src/menu.cpp	/^    void Menu::update()$/;"	f	class:game::Menu	typeref:typename:void
+update	src/menu_handler.cpp	/^    void MenuHandler::update()$/;"	f	class:game::MenuHandler	typeref:typename:void
+update	src/solid.cpp	/^    void Solid::update()$/;"	f	class:game::Solid	typeref:typename:void
+update	src/world.cpp	/^    void World::update() $/;"	f	class:game::World	typeref:typename:void
+updateMap	src/gamedata.cpp	/^    void GameData::updateMap(int map_index)$/;"	f	class:game::GameData	typeref:typename:void
+value	src/event.hpp	/^            std::string value;$/;"	m	class:game::Event	typeref:typename:std::string
+velocity_x	src/character.hpp	/^        float velocity_x;$/;"	m	class:game::Character	typeref:typename:float
+velocity_y	src/character.hpp	/^        float velocity_y;$/;"	m	class:game::Character	typeref:typename:float
+version	.vscode/c_cpp_properties.json	/^    "version": 4$/;"	n
+volatile	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+volatile	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+window	src/gamedata.hpp	/^            SDL_Window* window;          \/\/ Window containing the game$/;"	m	class:game::GameData	typeref:typename:SDL_Window *
+world	src/gamedata.hpp	/^            World world;                        \/\/ World with all the maps$/;"	m	class:game::GameData	typeref:typename:World
+world.cpp.i	build/src/Makefile	/^world.cpp.i:$/;"	t
+world.cpp.o	build/src/Makefile	/^world.cpp.o:$/;"	t
+world.cpp.s	build/src/Makefile	/^world.cpp.s:$/;"	t
+world.i	build/src/Makefile	/^world.i: world.cpp.i$/;"	t
+world.o	build/src/Makefile	/^world.o: world.cpp.o$/;"	t
+world.s	build/src/Makefile	/^world.s: world.cpp.s$/;"	t
+~Environment	src/environment.hpp	/^        ~Environment() { }$/;"	f	class:game::Environment
+~Event	src/event.hpp	/^            ~Event() { }$/;"	f	class:game::Event
+~GameData	src/gamedata.cpp	/^    GameData::~GameData()$/;"	f	class:game::GameData
+~InterfaceHandler	src/interface_handler.hpp	/^        virtual ~InterfaceHandler() { }$/;"	f	class:game::InterfaceHandler
+~LTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^LTexture::~LTexture()$/;"	f	class:LTexture
+~Option	src/option.cpp	/^    Option::~Option() $/;"	f	class:game::Option
+~World	src/world.hpp	/^        ~World() { }$/;"	f	class:game::World
