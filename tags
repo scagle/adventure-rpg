@@ -458,8 +458,6 @@ HEX	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^#define H
 HEX	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
 ID_VOID_MAIN	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
 ID_VOID_MAIN	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
-InterfaceHandler	src/interface_handler.hpp	/^        InterfaceHandler() { }$/;"	f	class:game::InterfaceHandler
-InterfaceHandler	src/interface_handler.hpp	/^    class InterfaceHandler$/;"	c	namespace:game
 KeyboardHandler	src/keyboard_handler.cpp	/^    KeyboardHandler::KeyboardHandler(){}$/;"	f	class:game::KeyboardHandler
 KeyboardHandler	src/keyboard_handler.hpp	/^    class KeyboardHandler$/;"	c	namespace:game
 LEFT	src/enums/direction.hpp	/^        LEFT  ,$/;"	e	enum:game::Direction
@@ -482,7 +480,7 @@ Menu	src/menu.cpp	/^    Menu::Menu(std::string title)$/;"	f	class:game::Menu
 Menu	src/menu.cpp	/^    Menu::Menu(std::string title, std::vector< Option > options)$/;"	f	class:game::Menu
 Menu	src/menu.hpp	/^    class Menu$/;"	c	namespace:game
 MenuHandler	src/menu_handler.cpp	/^    MenuHandler::MenuHandler()$/;"	f	class:game::MenuHandler
-MenuHandler	src/menu_handler.hpp	/^    class MenuHandler : public InterfaceHandler$/;"	c	namespace:game
+MenuHandler	src/menu_handler.hpp	/^    class MenuHandler$/;"	c	namespace:game
 NEXT	src/enums/direction.hpp	/^        NEXT  ,$/;"	e	enum:game::Direction
 OPTION_BACKGROUND_COLOR	src/globals.hpp	/^const SDL_Color OPTION_BACKGROUND_COLOR    = { 50  , 50  , 80  , 255 };$/;"	v	typeref:typename:const SDL_Color
 OPTION_FOREGROUND_COLOR	src/globals.hpp	/^const SDL_Color OPTION_FOREGROUND_COLOR    = { 255   , 255 , 255 , 255 };$/;"	v	typeref:typename:const SDL_Color
@@ -623,7 +621,6 @@ Solid	src/solid.hpp	/^        Solid(SDL_Rect h, SDL_Color c, Type t, std::string
 Solid	src/solid.hpp	/^        Solid(Type t) : type(t) { }$/;"	f	class:game::Solid
 Solid	src/solid.hpp	/^    class Solid$/;"	c	namespace:game
 Type	src/solid.hpp	/^        enum class Type { $/;"	g	class:game::Solid
-UIManager	src/ui_manager.hpp	/^    class UIManager$/;"	c	namespace:game
 UNIX	build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
 UNIX	build/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
 UNIX	font_test/build/CMakeFiles/3.15.2/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
@@ -702,8 +699,6 @@ configurations	.vscode/launch.json	/^    "configurations": [$/;"	a
 const	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 const	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 construct	src/character.cpp	/^    void Character::construct(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::/;"	f	class:game::Character	typeref:typename:void
-container_stack	src/menu_handler.cpp	/^    std::stack< Container* > MenuHandler::container_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Container * >
-containers	src/menu_handler.cpp	/^    std::unordered_map< std::string, Container > MenuHandler::containers;       \/\/ < container/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Container>
 cppStandard	.vscode/c_cpp_properties.json	/^            "cppStandard": "c++17",$/;"	s	object:configurations.0
 current_map	src/world.cpp	/^    unsigned int World::current_map = 0;$/;"	m	class:game::World	typeref:typename:unsigned int
 current_map	src/world.hpp	/^        static unsigned int current_map;   $/;"	m	class:game::World	typeref:typename:unsigned int
@@ -727,7 +722,12 @@ dialog.cpp.s	build/src/Makefile	/^dialog.cpp.s:$/;"	t
 dialog.i	build/src/Makefile	/^dialog.i: dialog.cpp.i$/;"	t
 dialog.o	build/src/Makefile	/^dialog.o: dialog.cpp.o$/;"	t
 dialog.s	build/src/Makefile	/^dialog.s: dialog.cpp.s$/;"	t
-dialog_handler	src/ui_manager.hpp	/^        static DialogHandler dialog_handler;$/;"	m	class:game::UIManager	typeref:typename:DialogHandler
+dialog_set	src/menu_handler.cpp	/^    std::set< std::string > MenuHandler::dialog_set;$/;"	m	class:game::MenuHandler	typeref:typename:std::set<std::string>
+dialog_set	src/menu_handler.hpp	/^        static std::set< std::string > dialog_set;$/;"	m	class:game::MenuHandler	typeref:typename:std::set<std::string>
+dialog_stack	src/menu_handler.cpp	/^    std::stack< Dialog* > MenuHandler::dialog_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Dialog * >
+dialog_stack	src/menu_handler.hpp	/^        static std::stack< Dialog* > dialog_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Dialog * >
+dialogs	src/menu_handler.cpp	/^    std::unordered_map< std::string, Dialog > MenuHandler::dialogs;$/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Dialog>
+dialogs	src/menu_handler.hpp	/^        static std::unordered_map< std::string, Dialog > dialogs;$/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Dialog>
 down	src/menu.cpp	/^    void Menu::down() $/;"	f	class:game::Menu	typeref:typename:void
 edit_cache	build/Makefile	/^edit_cache:$/;"	t
 edit_cache	build/src/Makefile	/^edit_cache:$/;"	t
@@ -788,7 +788,6 @@ game	src/event.cpp	/^namespace game$/;"	n	file:
 game	src/event.hpp	/^namespace game$/;"	n
 game	src/gamedata.cpp	/^namespace game$/;"	n	file:
 game	src/gamedata.hpp	/^namespace game$/;"	n
-game	src/interface_handler.hpp	/^namespace game$/;"	n
 game	src/keyboard_handler.cpp	/^namespace game$/;"	n	file:
 game	src/keyboard_handler.hpp	/^namespace game$/;"	n
 game	src/menu.cpp	/^namespace game$/;"	n	file:
@@ -801,7 +800,6 @@ game	src/sdl_utils.cpp	/^namespace game$/;"	n	file:
 game	src/sdl_utils.hpp	/^namespace game$/;"	n
 game	src/solid.cpp	/^namespace game$/;"	n	file:
 game	src/solid.hpp	/^namespace game$/;"	n
-game	src/ui_manager.hpp	/^namespace game$/;"	n
 game	src/world.cpp	/^namespace game$/;"	n	file:
 game	src/world.hpp	/^namespace game$/;"	n
 game/fast	build/Makefile	/^game\/fast:$/;"	t
@@ -821,7 +819,6 @@ getCharactersInMap	src/world.hpp	/^        static std::vector< Character >* getC
 getChoice	src/dialog.hpp	/^        Dialog::Choice* getChoice() { return &(this->choices[choice_index]); };$/;"	f	class:game::Dialog	typeref:typename:Dialog::Choice *
 getColor	src/solid.hpp	/^        SDL_Color* getColor() { return &color; }$/;"	f	class:game::Solid	typeref:typename:SDL_Color *
 getColorNumber	src/solid.hpp	/^        uint32_t getColorNumber() { return ( (color.a << 24) | (color.r << 16) | (color.g << 8) /;"	f	class:game::Solid	typeref:typename:uint32_t
-getContainer	src/menu_handler.cpp	/^    Container* MenuHandler::getContainer()$/;"	f	class:game::MenuHandler	typeref:typename:Container *
 getCurrentMap	src/world.hpp	/^        Environment* getCurrentMap() { return &(this->maps[current_map]); }$/;"	f	class:game::World	typeref:typename:Environment *
 getDialog	src/menu_handler.cpp	/^    Dialog* MenuHandler::getDialog()$/;"	f	class:game::MenuHandler	typeref:typename:Dialog *
 getDistance	src/character.cpp	/^    unsigned int Character::getDistance(float x, float y, Distance_Algorithm alg)$/;"	f	class:game::Character	typeref:typename:unsigned int
@@ -834,6 +831,7 @@ getIndex	src/event.hpp	/^            static int getIndex(Game_EventType type) { 
 getInitialized	src/gamedata.hpp	/^            static bool getInitialized() { return initialized; }$/;"	f	class:game::GameData	typeref:typename:bool
 getLocation	src/solid.hpp	/^        std::string getLocation() { return this->location; }$/;"	f	class:game::Solid	typeref:typename:std::string
 getMap	src/world.hpp	/^        Environment* getMap(unsigned int index) { return &(this->maps[index]); }$/;"	f	class:game::World	typeref:typename:Environment *
+getMenu	src/menu_handler.cpp	/^    Menu* MenuHandler::getMenu()$/;"	f	class:game::MenuHandler	typeref:typename:Menu *
 getName	src/event.hpp	/^            std::string getName() { return type_to_names[type]; }$/;"	f	class:game::Event	typeref:typename:std::string
 getNext	src/option.hpp	/^            std::string getNext() { return this->next; }$/;"	f	class:game::Option	typeref:typename:std::string
 getOption	src/menu.cpp	/^    Option* Menu::getOption() $/;"	f	class:game::Menu	typeref:typename:Option *
@@ -860,10 +858,10 @@ help	font_test/build/Makefile	/^help:$/;"	t
 help	font_test/build/src/Makefile	/^help:$/;"	t
 hitbox	src/solid.hpp	/^        SDL_Rect hitbox;$/;"	m	class:game::Solid	typeref:typename:SDL_Rect
 ignoreFailures	.vscode/launch.json	/^                    "ignoreFailures": true,$/;"	b	object:configurations.0.setupCommands.0
-inContainer	src/menu_handler.cpp	/^    bool MenuHandler::inContainer()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 inDialog	src/menu_handler.cpp	/^    bool MenuHandler::inDialog()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 inEvent	src/event.hpp	/^            static bool inEvent(Game_EventType type) { return event_tracker[getIndex(type)]; }$/;"	f	class:game::Event	typeref:typename:bool
 inEvent	src/gamedata.hpp	/^            static bool inEvent(Event::Game_EventType type) { return Event::inEvent(type); }$/;"	f	class:game::GameData	typeref:typename:bool
+inMenu	src/menu_handler.cpp	/^    bool MenuHandler::inMenu()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 includePath	.vscode/c_cpp_properties.json	/^            "includePath": [$/;"	a	object:configurations.0
 info_arch	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
 info_arch	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
@@ -903,15 +901,12 @@ info_version_internal	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompil
 info_version_internal	font_test/build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
 init	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool init()$/;"	f	typeref:typename:bool
 init	src/gamedata.cpp	/^    bool GameData::init()$/;"	f	class:game::GameData	typeref:typename:bool
-initContainers	src/dialog_handler.cpp	/^    bool MenuHandler::initContainers()$/;"	f	class:game::MenuHandler	typeref:typename:bool
-initContainers	src/menu_handler.cpp	/^    bool MenuHandler::initContainers()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 initFonts	src/gamedata.cpp	/^    bool GameData::initFonts()$/;"	f	class:game::GameData	typeref:typename:bool
 initMenus	src/gamedata.cpp	/^    bool GameData::initMenus()$/;"	f	class:game::GameData	typeref:typename:bool
 initSDL	src/gamedata.cpp	/^    bool GameData::initSDL()$/;"	f	class:game::GameData	typeref:typename:bool
 initSDL_Renderer	src/gamedata.cpp	/^    bool GameData::initSDL_Renderer()$/;"	f	class:game::GameData	typeref:typename:bool
 initSDL_Window	src/gamedata.cpp	/^    bool GameData::initSDL_Window()$/;"	f	class:game::GameData	typeref:typename:bool
 initText	src/option.cpp	/^    void Option::initText()$/;"	f	class:game::Option	typeref:typename:void
-initTextTextures	src/menu_handler.cpp	/^    bool MenuHandler::initTextTextures()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 initWorlds	src/gamedata.cpp	/^    bool GameData::initWorlds()$/;"	f	class:game::GameData	typeref:typename:bool
 initialized	src/gamedata.cpp	/^    bool GameData::initialized = false;$/;"	m	class:game::GameData	typeref:typename:bool
 initialized	src/gamedata.hpp	/^            static bool initialized;$/;"	m	class:game::GameData	typeref:typename:bool
@@ -934,6 +929,7 @@ loadFromFile	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool LText
 loadFromRenderedText	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColor )$/;"	f	class:LTexture	typeref:typename:bool
 loadMaps	src/world.cpp	/^    bool World::loadMaps()$/;"	f	class:game::World	typeref:typename:bool
 loadMedia	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^bool loadMedia()$/;"	f	typeref:typename:bool
+loadMenus	src/menu_handler.cpp	/^    bool MenuHandler::loadMenus()$/;"	f	class:game::MenuHandler	typeref:typename:bool
 location	src/solid.hpp	/^        std::string location; \/\/ map to jump to if main character is 100% inside this solid (P/;"	m	class:game::Solid	typeref:typename:std::string
 mHeight	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^		int mHeight;$/;"	m	class:LTexture	typeref:typename:int	file:
 mTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^		SDL_Texture* mTexture;$/;"	m	class:LTexture	typeref:typename:SDL_Texture *	file:
@@ -971,19 +967,20 @@ menu.i	build/src/Makefile	/^menu.i: menu.cpp.i$/;"	t
 menu.o	build/src/Makefile	/^menu.o: menu.cpp.o$/;"	t
 menu.s	build/src/Makefile	/^menu.s: menu.cpp.s$/;"	t
 menu_handler	src/gamedata.hpp	/^            MenuHandler menu_handler;           \/\/ Menu handler$/;"	m	class:game::GameData	typeref:typename:MenuHandler
-menu_handler	src/ui_manager.hpp	/^        static MenuHandler menu_handler;$/;"	m	class:game::UIManager	typeref:typename:MenuHandler
 menu_handler.cpp.i	build/src/Makefile	/^menu_handler.cpp.i:$/;"	t
 menu_handler.cpp.o	build/src/Makefile	/^menu_handler.cpp.o:$/;"	t
 menu_handler.cpp.s	build/src/Makefile	/^menu_handler.cpp.s:$/;"	t
 menu_handler.i	build/src/Makefile	/^menu_handler.i: menu_handler.cpp.i$/;"	t
 menu_handler.o	build/src/Makefile	/^menu_handler.o: menu_handler.cpp.o$/;"	t
 menu_handler.s	build/src/Makefile	/^menu_handler.s: menu_handler.cpp.s$/;"	t
+menu_stack	src/menu_handler.cpp	/^    std::stack< Menu* > MenuHandler::menu_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Menu * >
 menu_stack	src/menu_handler.hpp	/^        static std::stack< Menu* > menu_stack;$/;"	m	class:game::MenuHandler	typeref:typename:std::stack<Menu * >
+menus	src/menu_handler.cpp	/^    std::unordered_map< std::string, Menu > MenuHandler::menus;$/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Menu>
 menus	src/menu_handler.hpp	/^        static std::unordered_map< std::string, Menu > menus;$/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,Menu>
 message	src/option.hpp	/^            SDL_Texture *message;    \/\/ Font texture to draw$/;"	m	class:game::Option	typeref:typename:SDL_Texture *
 moveCharacter	src/character.cpp	/^    bool Character::moveCharacter(float *actual, float *velocity, int *hitbox_coord, $/;"	f	class:game::Character	typeref:typename:bool
-moveContainer	src/menu_handler.cpp	/^    void MenuHandler::moveContainer(Direction dir)$/;"	f	class:game::MenuHandler	typeref:typename:void
 moveDialog	src/menu_handler.cpp	/^    void MenuHandler::moveDialog(Direction dir)$/;"	f	class:game::MenuHandler	typeref:typename:void
+moveMenu	src/menu_handler.cpp	/^    void MenuHandler::moveMenu(Direction dir)$/;"	f	class:game::MenuHandler	typeref:typename:void
 name	.vscode/c_cpp_properties.json	/^            "name": "Linux",$/;"	s	object:configurations.0
 name	.vscode/launch.json	/^            "name": "(gdb) Launch",$/;"	s	object:configurations.0
 name	src/character.hpp	/^        std::string name;$/;"	m	class:game::Character	typeref:typename:std::string
@@ -1002,8 +999,8 @@ option.s	build/src/Makefile	/^option.s: option.cpp.s$/;"	t
 options	src/menu.hpp	/^        std::vector< Option > options;$/;"	m	class:game::Menu	typeref:typename:std::vector<Option>
 page_index	src/dialog.hpp	/^        unsigned int page_index = 0;$/;"	m	class:game::Dialog	typeref:typename:unsigned int
 pages	src/dialog.hpp	/^        std::vector< std::string > pages;$/;"	m	class:game::Dialog	typeref:typename:std::vector<std::string>
-popContainer	src/menu_handler.cpp	/^    void MenuHandler::popContainer()$/;"	f	class:game::MenuHandler	typeref:typename:void
 popDialog	src/menu_handler.cpp	/^    void MenuHandler::popDialog()$/;"	f	class:game::MenuHandler	typeref:typename:void
+popMenu	src/menu_handler.cpp	/^    void MenuHandler::popMenu()$/;"	f	class:game::MenuHandler	typeref:typename:void
 portal_color	src/solid.hpp	/^        uint32_t portal_color = 0;$/;"	m	class:game::Solid	typeref:typename:uint32_t
 portals	src/environment.hpp	/^        std::vector< Solid > portals;$/;"	m	class:game::Environment	typeref:typename:std::vector<Solid>
 portals	src/gamedata.cpp	/^    std::vector< Solid > *GameData::portals;$/;"	m	class:game::GameData	typeref:typename:std::vector<Solid> *
@@ -1019,8 +1016,8 @@ preinstall/fast	build/src/enums/Makefile	/^preinstall\/fast:$/;"	t
 preinstall/fast	font_test/build/Makefile	/^preinstall\/fast:$/;"	t
 preinstall/fast	font_test/build/src/Makefile	/^preinstall\/fast:$/;"	t
 program	.vscode/launch.json	/^            "program": "${workspaceFolder}\/build\/game",$/;"	s	object:configurations.0
-pushContainer	src/menu_handler.cpp	/^    void MenuHandler::pushContainer(std::string next)$/;"	f	class:game::MenuHandler	typeref:typename:void
 pushDialog	src/menu_handler.cpp	/^    void MenuHandler::pushDialog(std::string next, int entity_center_x, int entity_center_y)$/;"	f	class:game::MenuHandler	typeref:typename:void
+pushMenu	src/menu_handler.cpp	/^    void MenuHandler::pushMenu(std::string next)$/;"	f	class:game::MenuHandler	typeref:typename:void
 qnxnto	build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
 qnxnto	build/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
 qnxnto	font_test/build/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
@@ -1059,8 +1056,8 @@ sdl_utils.cpp.s	build/src/Makefile	/^sdl_utils.cpp.s:$/;"	t
 sdl_utils.i	build/src/Makefile	/^sdl_utils.i: sdl_utils.cpp.i$/;"	t
 sdl_utils.o	build/src/Makefile	/^sdl_utils.o: sdl_utils.cpp.o$/;"	t
 sdl_utils.s	build/src/Makefile	/^sdl_utils.s: sdl_utils.cpp.s$/;"	t
-selectContainer	src/menu_handler.cpp	/^    void MenuHandler::selectContainer()$/;"	f	class:game::MenuHandler	typeref:typename:void
 selectDialog	src/menu_handler.cpp	/^    void MenuHandler::selectDialog()$/;"	f	class:game::MenuHandler	typeref:typename:void
+selectMenu	src/menu_handler.cpp	/^    void MenuHandler::selectMenu()$/;"	f	class:game::MenuHandler	typeref:typename:void
 sendEvent	src/gamedata.cpp	/^    void GameData::sendEvent(Event event, bool flag)$/;"	f	class:game::GameData	typeref:typename:void
 setAlpha	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^void LTexture::setAlpha( Uint8 alpha )$/;"	f	class:LTexture	typeref:typename:void
 setAnchor	src/dialog.cpp	/^    void Dialog::setAnchor(int entity_center_x, int entity_center_y)$/;"	f	class:game::Dialog	typeref:typename:void
@@ -1087,10 +1084,7 @@ stopAtEntry	.vscode/launch.json	/^            "stopAtEntry": false,$/;"	b	object
 text	.vscode/launch.json	/^                    "text": "-enable-pretty-printing",$/;"	s	object:configurations.0.setupCommands.0
 text	src/dialog.hpp	/^            std::string text;$/;"	m	struct:game::Dialog::Choice	typeref:typename:std::string
 text	src/option.hpp	/^            std::string text;        \/\/ Text of option$/;"	m	class:game::Option	typeref:typename:std::string
-text_textures	src/menu_handler.cpp	/^    std::unordered_map< std::string, SDL_Texture > MenuHandler::text_textures;  \/\/ < container/;"	m	class:game::MenuHandler	typeref:typename:std::unordered_map<std::string,SDL_Texture>
-text_textures	src/menu_handler.cpp	/^    std::vector< SDL_Texture > MenuHandler::text_textures;$/;"	m	class:game::MenuHandler	typeref:typename:std::vector<SDL_Texture>
 title	src/menu.hpp	/^        std::string title = "";$/;"	m	class:game::Menu	typeref:typename:std::string
-travel_handler	src/ui_manager.hpp	/^        static TravelHandler travel_handler;$/;"	m	class:game::UIManager	typeref:typename:TravelHandler
 type	.vscode/launch.json	/^            "type": "cppdbg",$/;"	s	object:configurations.0
 type	src/event.hpp	/^            Game_EventType type;$/;"	m	class:game::Event	typeref:typename:Game_EventType
 type	src/solid.hpp	/^        Type type;             \/\/ type(s) (bit addressing) of solid $/;"	m	class:game::Solid	typeref:typename:Type
@@ -1125,7 +1119,6 @@ world.s	build/src/Makefile	/^world.s: world.cpp.s$/;"	t
 ~Environment	src/environment.hpp	/^        ~Environment() { }$/;"	f	class:game::Environment
 ~Event	src/event.hpp	/^            ~Event() { }$/;"	f	class:game::Event
 ~GameData	src/gamedata.cpp	/^    GameData::~GameData()$/;"	f	class:game::GameData
-~InterfaceHandler	src/interface_handler.hpp	/^        virtual ~InterfaceHandler() { }$/;"	f	class:game::InterfaceHandler
 ~LTexture	assets/fonts/16_true_type_fonts/16_true_type_fonts.cpp	/^LTexture::~LTexture()$/;"	f	class:LTexture
 ~Option	src/option.cpp	/^    Option::~Option() $/;"	f	class:game::Option
 ~World	src/world.hpp	/^        ~World() { }$/;"	f	class:game::World

@@ -157,7 +157,7 @@ namespace game
             std::cout << "Initialization Success!" << "\n";
         else
             std::cout << "Initialization Failure!" << "\n";
-        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true);
+        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true );
     }
 
     bool GameData::init()
@@ -227,13 +227,13 @@ namespace game
             return false;
         }
         std::vector< std::string > font_names = {
-            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf",
             "../assets/fonts/lazy.ttf", 
+            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf",
             "../assets/fonts/NotoSansMono-Regular.ttf", 
         };
         for ( std::string font_name : font_names )
         {
-            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 16);
+            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 128);
             if ( font == NULL )
             {
                 printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 
