@@ -8,6 +8,8 @@
 #include "text_box.hpp"
 #include "button_box.hpp"
 #include "enums/direction.hpp"
+#include "enums/event_type.hpp"
+#include "container.hpp"
 
 namespace game
 {
@@ -19,6 +21,7 @@ namespace game
     std::vector< Solid > *GameData::portals;
     bool GameData::initialized = false;
     bool GameData::quit = false;
+    Container test;
 
     GameData::~GameData()
     {
@@ -101,12 +104,24 @@ namespace game
         // Render Menu
         menu_handler.render( renderer );
 
+        test.render( renderer );
+
         //Update screen
         SDL_RenderPresent( renderer );
     }
 
     void GameData::updateMap(int map_index)
     {
+        test = Container(
+            {
+                TextBox("Testing1", fonts[0]),
+            },
+            {
+                ButtonBox("Button1", fonts[0], "but1"),
+                ButtonBox("Button2", fonts[0], "but2"),
+                ButtonBox("Button3", fonts[0], "but3"),
+            }
+        );
         map_index = map_index;
         Environment *env = world.getMap(map_index);
         solids = env->getSolids();
@@ -117,8 +132,8 @@ namespace game
     {
         switch ( event.getType() )
         {
-            case Event::Game_EventType::PORTAL:
-                Event::setEvent(Event::Game_EventType::PORTAL, flag);
+            case EventType::PORTAL:
+                Event::setEvent(EventType::PORTAL, flag);
                 if (flag)
                     printf("In Portal!\n");
                 else
@@ -229,13 +244,13 @@ namespace game
             return false;
         }
         std::vector< std::string > font_names = {
-            "../assets/fonts/lazy.ttf", 
-            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf",
             "../assets/fonts/NotoSansMono-Regular.ttf", 
+            "../assets/fonts/Sauce_Code_Pro_Medium_Nerd_Font_Complete_Mono.ttf",
+            "../assets/fonts/lazy.ttf", 
         };
         for ( std::string font_name : font_names )
         {
-            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 128);
+            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 32);
             if ( font == NULL )
             {
                 printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 

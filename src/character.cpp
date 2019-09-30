@@ -5,9 +5,10 @@
 
 #include "character.hpp"
 #include "gamedata.hpp"
-#include "menu_handler.hpp"
+#include "ui_manager.hpp"
 #include "world.hpp"
 #include "globals.hpp"
+#include "enums/event_type.hpp"
 
 namespace game
 {
@@ -88,7 +89,7 @@ namespace game
 
     void Character::checkPortal(std::vector< Solid > *portals)
     {
-        bool was_inside = GameData::inEvent( Event::Game_EventType::PORTAL );
+        bool was_inside = GameData::inEvent( EventType::PORTAL );
         bool is_inside = false;
         for (unsigned int i = 0; i < (*portals).size(); i++)
         {
@@ -97,14 +98,14 @@ namespace game
                 is_inside = true;
                 if ( !was_inside )
                 {
-                    GameData::sendEvent(Event(Event::Game_EventType::PORTAL, "forest"), true); // Send "PORTAL" event
+                    GameData::sendEvent(Event(EventType::PORTAL, "forest"), true); // Send "PORTAL" event
                     break;
                 }
             }
         }
         if ( was_inside && !is_inside )
         {
-            GameData::sendEvent(Event(Event::Game_EventType::PORTAL, ""), false); // Send "PORTAL" event
+            GameData::sendEvent(Event(EventType::PORTAL, ""), false); // Send "PORTAL" event
         }
     }
 
@@ -113,7 +114,7 @@ namespace game
         //TODO: Make pushDialog/pushMenu push copy of dialog/menu so that more than one of them can appear.
         //      Also see if you can make the Font_Textures static, so that they don't have to be created
         //      everytime a new dialog/menu is created
-        bool was_inside = MenuHandler::inDialog();
+        bool was_inside = UIManager::inUI(UI::DIALOG);
         bool is_inside = false;
         Character *closest_character;
         unsigned int distance = 100;
@@ -131,12 +132,12 @@ namespace game
         }
         if (!was_inside && is_inside)
         {
-            MenuHandler::pushDialog("shop0_buy", 0, 0);
+            UIManager::handleEvent(Event("shop0_buy", 0, 0));
             //printf("Inside Area\n");
         }
         if (was_inside && !is_inside)
         {
-            //MenuHandler::pushDialog("shop0_buy", 0, 0);
+            //UIManager::handleEvent(Event("shop0_buy", 0, 0));
             //printf("Left Area\n");
         }
     }

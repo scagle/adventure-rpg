@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <string>
 #include "text_box.hpp"
+#include "globals.hpp"
 
 namespace game
 {
@@ -11,10 +12,14 @@ namespace game
         std::string action;
 
         public:
-        ButtonBox( std::string, SDL_Texture*, SDL_Rect, SDL_Color, std::string );
+        ButtonBox( );
+        ButtonBox( std::string );
+        ButtonBox( std::string, int, std::string );
+        ButtonBox( std::string, int, SDL_Color, std::string );
 
+        void construct( std::string );
         std::string getAction();
-        virtual void render( SDL_Renderer *renderer, SDL_Color *selected_color );
+        virtual void render( SDL_Renderer *renderer, SDL_Rect *button_rect, bool selected );
         virtual void update();
     };
 };

@@ -5,38 +5,23 @@
 #include <vector>
 #include "menu.hpp"
 #include "dialog.hpp"
+#include "container_handler.hpp"
 #include "enums/direction.hpp"
 
 namespace game
 {
-    class MenuHandler
+    class MenuHandler : public ContainerHandler
     {
         private:
-        static std::unordered_map< std::string, Menu > menus;
-        static std::unordered_map< std::string, Dialog > dialogs;
-        static std::stack< Menu* > menu_stack;
-        static std::stack< Dialog* > dialog_stack;
-        static std::set< std::string > dialog_set;
-
 
         public:
         MenuHandler();
+        virtual ~MenuHandler() { }
 
         bool loadMenus();
-        static void pushMenu(std::string);
-        static void pushDialog(std::string, int, int);
-        void popMenu();
-        void popDialog();
-        void moveMenu(Direction);
-        void moveDialog(Direction);
-        void selectMenu();
-        void selectDialog();
-        Menu* getMenu();
-        Dialog* getDialog();
-        static bool inMenu();
-        static bool inDialog();
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
+        static bool inMenu() { return (container_stack; }
         void save();
         void load();
         void quit();

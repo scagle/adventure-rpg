@@ -11,10 +11,13 @@ set(GAME_SOURCES
     character.hpp
     container.cpp
     container.hpp
+    container_handler.cpp
+    container_handler.hpp
     dialog.cpp
     dialog_handler.cpp
     dialog_handler.hpp
     dialog.hpp
+    enums/direction.hpp
     environment.cpp
     environment.hpp
     event.cpp
@@ -37,6 +40,8 @@ set(GAME_SOURCES
     solid.hpp
     text_box.cpp
     text_box.hpp
+    ui_manager.cpp
+    ui_manager.hpp
     world.cpp
     world.hpp
 )

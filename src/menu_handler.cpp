@@ -10,13 +10,6 @@
 
 namespace game
 {
-    // Static Declarations
-    std::unordered_map< std::string, Menu > MenuHandler::menus;
-    std::unordered_map< std::string, Dialog > MenuHandler::dialogs;
-    std::stack< Menu* > MenuHandler::menu_stack;
-    std::stack< Dialog* > MenuHandler::dialog_stack;
-    std::set< std::string > MenuHandler::dialog_set;
-
     MenuHandler::MenuHandler()
     {
         this->menus = {};
@@ -28,195 +21,69 @@ namespace game
         /*! TODO: Could be made more efficient by passing by reference instead of value
          *  \todo Could be made more efficient by passing by reference instead of value
          */
-/////// MENU /////////////////////////////////////////////////////////////////////////////////////////////////////
-        this->menus = 
+        this->containers = 
         { 
             { 
                 "main" , 
-                Menu( 
-                    "Main Menu", 
+                Container( 
                     { 
-                        Option( "Save", "save", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load", "load", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ),
-                        Option( "Exit", "",     WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                    } 
+                        ButtonBox( "Save", DEFAULT_FONT, "save" ), 
+                        ButtonBox( "Load", DEFAULT_FONT, "load" ),
+                        ButtonBox( "Exit", DEFAULT_FONT, "",    ), 
+                    }, 
+                    {
+                    }
                 ) 
             },
             { 
                 "save" , 
-                Menu( 
-                    "Save Page", 
+                Container( 
                     { 
-                        Option( "Save 1", "save1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 2", "save2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 3", "save3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 4", "save4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 5", "save5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 6", "save6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 7", "save7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 8", "save8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Save 9", "save9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        ButtonBox( "Save 1", DEFAULT_FONT, "save1" ), 
+                        ButtonBox( "Save 2", DEFAULT_FONT, "save2" ), 
+                        ButtonBox( "Save 3", DEFAULT_FONT, "save3" ), 
+                        ButtonBox( "Save 4", DEFAULT_FONT, "save4" ), 
+                        ButtonBox( "Save 5", DEFAULT_FONT, "save5" ), 
+                        ButtonBox( "Save 6", DEFAULT_FONT, "save6" ), 
+                        ButtonBox( "Save 7", DEFAULT_FONT, "save7" ), 
+                        ButtonBox( "Save 8", DEFAULT_FONT, "save8" ), 
+                        ButtonBox( "Save 9", DEFAULT_FONT, "save9" ), 
                     } 
                 ) 
             }, 
             { 
                 "load" , 
-                Menu( 
-                    "Load Page", 
+                Container( 
                     { 
-                        Option( "Load 1", "load1", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 2", "load2", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 3", "load3", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 4", "load4", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 5", "load5", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 6", "load6", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 7", "load7", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 8", "load8", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
-                        Option( "Load 9", "load9", OPTION_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ), 
+                        ButtonBox( "Load 1", DEFAULT_FONT, "load1" ), 
+                        ButtonBox( "Load 2", DEFAULT_FONT, "load2" ), 
+                        ButtonBox( "Load 3", DEFAULT_FONT, "load3" ), 
+                        ButtonBox( "Load 4", DEFAULT_FONT, "load4" ), 
+                        ButtonBox( "Load 5", DEFAULT_FONT, "load5" ), 
+                        ButtonBox( "Load 6", DEFAULT_FONT, "load6" ), 
+                        ButtonBox( "Load 7", DEFAULT_FONT, "load7" ), 
+                        ButtonBox( "Load 8", DEFAULT_FONT, "load8" ), 
+                        ButtonBox( "Load 9", DEFAULT_FONT, "load9" ), 
                     } 
                 ) 
             }, 
             { 
                 "warning" , 
-                Menu( 
-                    "Warning", 
+                Container( 
                     { 
-                        Option( "warning!!!", "main", WARNING_BACKGROUND_COLOR, OPTION_FOREGROUND_COLOR, DEFAULT_FONT ),
+                        ButtonBox( "warning!!!", DEFAULT_FONT, "main" ),
                     } 
                 ) 
             },
         };
 
-/////// DIALOGS /////////////////////////////////////////////////////////////////////////////////////////////////
-//        this->dialogs = { {"test", Dialog()} }; 
-
-        this->dialogs = 
-        { 
-            { 
-                "portal_to_forest" , 
-                Dialog( 
-                    { 
-                        "Travel to Forest?", 
-                    }, 
-                    { 
-                        Dialog::Choice{"Yes", "travel_forest"}, 
-                        Dialog::Choice{"No", "leave"}, 
-                    }
-                )
-            },
-            { 
-                "home_merchant" , 
-                Dialog( 
-                    { 
-                        "Hello there adventurer! Would you like to browse my wares?",
-                    }, 
-                    { 
-                        Dialog::Choice{"Buy", "shop0_buy"}, 
-                        Dialog::Choice{"Sell", "shop0_sell"}, 
-                        Dialog::Choice{"BEGONE!", "leave"},
-                    }
-                )
-                
-            }
-        };
-
         return true;
-    }
-
-    void MenuHandler::pushMenu(std::string next)
-    {
-        menu_stack.push(&menus[next]);
-    }
-
-    void MenuHandler::pushDialog(std::string next, int entity_center_x, int entity_center_y)
-    {
-        dialogs[next].setAnchor(entity_center_x, entity_center_y);
-        dialog_stack.push(&dialogs[next]);
-    }
-
-    void MenuHandler::popMenu()
-    {
-        menu_stack.pop();
-    }
-
-    void MenuHandler::popDialog()
-    {
-        dialog_stack.pop();
-    }
-
-    void MenuHandler::moveMenu(Direction dir)
-    {
-        if (dir == Direction::UP)
-            this->menu_stack.top()->up();
-        else if (dir == Direction::DOWN)
-            this->menu_stack.top()->down();
-        else
-            printf("Invalid Direction! game::MenuHandler::moveMenu()\n");
-    }
-
-    void MenuHandler::moveDialog(Direction dir)
-    {
-        if (dir == Direction::LEFT)
-            this->dialog_stack.top()->left();
-        else if (dir == Direction::RIGHT)
-            this->dialog_stack.top()->right();
-        else
-            printf("Invalid Direction! game::MenuHandler::moveDialog()\n");
-    }
-
-    void MenuHandler::selectMenu()
-    {
-        Option *selected_option = this->menu_stack.top()->getOption();
-        std::string text = selected_option->getText();
-        std::string next = selected_option->getNext();
-        if (next != "")
-        {
-            menu_stack.push(&menus[next]);
-        }
-
-        printf("Pressed: '%s' which calls '%s'\n", text.c_str(), next.c_str());
-    }
-
-    void MenuHandler::selectDialog()
-    {
-        Dialog::Choice *choice = this->dialog_stack.top()->getChoice();
-        std::string text = choice->text;
-        std::string action = choice->action;
-    }
-
-    Menu* MenuHandler::getMenu()
-    {
-        if (menu_stack.size() == 0)
-            std::cout << "*** Warning: No menus on stack! (ui/menu_handler.cpp -> getMenu())";
-
-        return this->menu_stack.top();
-    }
-
-    Dialog* MenuHandler::getDialog()
-    {
-        if (dialog_stack.size() == 0)
-            std::cout << "*** Warning: No dialogs on stack! (ui/menu_handler.cpp -> getDialog())";
-
-        return this->dialog_stack.top();
-    }
-
-    bool MenuHandler::inMenu()
-    {
-        return (menu_stack.size() > 0);
-    }
-
-    bool MenuHandler::inDialog()
-    {
-        return (dialog_stack.size() > 0);
     }
 
     void MenuHandler::render( SDL_Renderer *renderer )
     {
-        if ( inMenu() )
-            getMenu()->render( renderer );
-        else if ( inDialog() )
-        {
-            getDialog()->render( renderer );
+        if ( inContainer() )
+            getContainer()->render( renderer );
         }
     }
 

@@ -1,24 +1,33 @@
 #include <unordered_map>
 #include "event.hpp"
+#include "enums/event_type.hpp"
 
 namespace game
 {
-    // Static Declarations
-    std::unordered_map< Event::Game_EventType, std::string > Event::type_to_names = {
-        { Event::Game_EventType::PORTAL, "portal" },   // type, event_tracker_index
-    };
-    std::unordered_map< Event::Game_EventType, int > Event::type_to_indices = {
-        { Event::Game_EventType::PORTAL, 0},
-    };
-    std::bitset< 255 > Event::event_tracker;
-
     Event::Event()
     {
-        event_tracker.reset();
+        construct( EventType::UNKOWN, "", 0 );
     }
 
-    Event::Event( Game_EventType t, std::string v ) : type(t), value(v) 
+    Event::Event( EventType type )
+    {
+        construct( type, "", 0 );
+    }
+
+    Event::Event( EventType type, std::string id ) 
     { 
-        event_tracker.reset();
+        construct( EventType::UNKOWN, id, 0 );
+    }
+
+    Event::Event( EventType type, std::string id, int value ) 
+    { 
+        construct( EventType::UNKOWN, id, value );
+    }
+
+    void Event::construct( EventType type, std::string id, int value )
+    {
+        this->type = type;
+        this->id = id;
+        this->value = value;
     }
 }

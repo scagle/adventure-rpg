@@ -9,6 +9,7 @@
 #include "world.hpp"
 #include "event.hpp"
 #include "solid.hpp"
+#include "enums/event_type.hpp"
 
 
 class KeyboardHandler;
@@ -49,7 +50,6 @@ namespace game
             bool close();
 
             static void sendEvent(Event, bool);
-            static bool inEvent(Event::Game_EventType type) { return Event::inEvent(type); }
             static bool getInitialized() { return initialized; }
             static bool getQuit() { return quit; }
             static std::vector< Solid >* getSolids() { return solids; }

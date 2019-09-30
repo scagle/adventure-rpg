@@ -1,26 +1,29 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <string>
 
 namespace game
 {
     class TextBox  
     {
-        private:
+        protected:   // We want inherited classes to have access to members
         std::string text;
         SDL_Texture *text_texture;
-        SDL_Rect box;
-        SDL_Color color;
+        SDL_Color background;
+        SDL_Color foreground;
+        int font_index;
 
         public:
         TextBox();
-        TextBox( std::string, SDL_Texture*, SDL_Rect );
-        TextBox( std::string, SDL_Texture*, SDL_Rect, SDL_Color );
+        TextBox( std::string, int );
+        TextBox( std::string, int, SDL_Color );
         virtual ~TextBox() { }
 
-        void construct( std::string, SDL_Texture*, SDL_Rect, SDL_Color );
-        virtual void render( SDL_Renderer *renderer );
+        void construct( std::string, int, SDL_Color );
+        virtual void render( SDL_Renderer *renderer, SDL_Rect *text_rect );
         virtual void update();
+        virtual void initText();
 
     };
 };
