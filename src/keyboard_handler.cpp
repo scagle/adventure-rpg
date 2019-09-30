@@ -25,7 +25,7 @@ namespace game
         return this->keys[key] == RELEASED;
     }
 
-    void KeyboardHandler::handleEvent(SDL_Event *event)
+    void KeyboardHandler::handleInput(SDL_Event *event)
     {
         if ( event->type == SDL_KEYDOWN )
         {

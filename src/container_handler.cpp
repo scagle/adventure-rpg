@@ -1,9 +1,19 @@
 #include <cstdio>
 #include <unordered_map>
+#include <stack>
 #include "container_handler.hpp"
 
 namespace game
 {
+    std::unordered_map< std::string, Container > ContainerHandler::containers;
+    std::stack< Container* > ContainerHandler::container_stack;
+
+    bool ContainerHandler::loadContainers()
+    {
+        this->containers = {};
+        return false;
+    }
+
     void ContainerHandler::pushContainer(std::string id)
     {
         container_stack.push(&containers[id]);

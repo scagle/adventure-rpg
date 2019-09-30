@@ -4,9 +4,9 @@
 #include <bitset>
 #include <vector>
 #include "keyboard_handler.hpp"
-#include "menu_handler.hpp"
-#include "character.hpp"
+#include "ui_manager.hpp"
 #include "world.hpp"
+#include "character.hpp"
 #include "event.hpp"
 #include "solid.hpp"
 #include "enums/event_type.hpp"
@@ -23,17 +23,17 @@ namespace game
     class GameData
     {
         private:
-            SDL_Window* window;          // Window containing the game
+            SDL_Window* window;                 // Window containing the game
             KeyboardHandler keyboard_handler;   // Keyboard input handler
-            MenuHandler menu_handler;           // Menu handler
+            UIManager ui_manager;               // Manager of menus/dialogs/travel interfaces
             Character main_character;           // Main character
-            World world;                        // World with all the maps
+            World world;                        // World with all the maps / mapdata
 
             // Current Map attributes
             int map_index = 0;
 
             static SDL_Renderer* renderer;          // Hardware accelerated renderer
-            static std::vector< TTF_Font* > fonts;  // Fonts
+            static std::vector< TTF_Font* > fonts;  // All pre-loaded fonts
             static std::vector< Solid > *solids;    // A pointer to a vector of solids
             static std::vector< Solid > *portals;   // A vector of pointers to solids that are of type PORTAL
             static bool initialized;
@@ -67,6 +67,6 @@ namespace game
             bool initSDL_Renderer();
             bool initFonts();
             bool initWorlds();
-            bool initMenus();
+            bool initUI();
     };
 }

@@ -16,6 +16,6 @@ namespace game
         int getHorizontal();
         bool isPressed(unsigned char);
         bool isReleased(unsigned char);
-        void handleEvent(SDL_Event*);
+        void handleInput(SDL_Event*);
     };
 }

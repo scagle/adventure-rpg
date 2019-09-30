@@ -21,6 +21,9 @@ namespace game
             Event( EventType type, std::string id, int value);
             virtual ~Event() { }
 
+            EventType getType() { return this->type; }
+            std::string getID() { return this->id; }
+            int getValue() { return this->value; }
             void construct( EventType type, std::string id, int value );
     };
 }

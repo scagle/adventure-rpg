@@ -6,6 +6,8 @@
 #include "character.hpp"
 #include "gamedata.hpp"
 #include "ui_manager.hpp"
+#include "dialog_handler.hpp"
+#include "travel_handler.hpp"
 #include "world.hpp"
 #include "globals.hpp"
 #include "enums/event_type.hpp"
@@ -89,7 +91,7 @@ namespace game
 
     void Character::checkPortal(std::vector< Solid > *portals)
     {
-        bool was_inside = GameData::inEvent( EventType::PORTAL );
+        bool was_inside = UIManager::inUI(UI::TRAVEL);
         bool is_inside = false;
         for (unsigned int i = 0; i < (*portals).size(); i++)
         {
@@ -98,14 +100,16 @@ namespace game
                 is_inside = true;
                 if ( !was_inside )
                 {
-                    GameData::sendEvent(Event(EventType::PORTAL, "forest"), true); // Send "PORTAL" event
+                    Event event = Event(EventType::TRAVEL, "forest", 1);
+                    UIManager::handleEvent(UI::TRAVEL, &event); // Send "PORTAL" event
                     break;
                 }
             }
         }
         if ( was_inside && !is_inside )
         {
-            GameData::sendEvent(Event(EventType::PORTAL, ""), false); // Send "PORTAL" event
+            Event event = Event(EventType::TRAVEL, "forest", 0);
+            UIManager::handleEvent(UI::TRAVEL, &event); // Send "PORTAL" event
         }
     }
 
@@ -132,13 +136,13 @@ namespace game
         }
         if (!was_inside && is_inside)
         {
-            UIManager::handleEvent(Event("shop0_buy", 0, 0));
-            //printf("Inside Area\n");
+            Event event = Event(EventType::DIALOG, "shop0_buy", 1);
+            UIManager::handleEvent(UI::DIALOG, &event);
         }
         if (was_inside && !is_inside)
         {
-            //UIManager::handleEvent(Event("shop0_buy", 0, 0));
-            //printf("Left Area\n");
+            Event event = Event(EventType::DIALOG, "shop0_buy", 0);
+            UIManager::handleEvent(UI::DIALOG, &event);
         }
     }
 

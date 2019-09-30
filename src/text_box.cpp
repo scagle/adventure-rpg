@@ -6,7 +6,7 @@ namespace game
 {
     TextBox::TextBox()
     {
-        construct( "", NULL, {255, 255, 255, 255} );
+        construct( "", 0, {255, 255, 255, 255} );
     }
 
     TextBox::TextBox( std::string text, int font_index)

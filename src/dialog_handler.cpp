@@ -1,44 +1,68 @@
-#include "dialog_handler.hpp"
 #include <string>
+#include "dialog_handler.hpp"
+#include "container.hpp"
+#include "button_box.hpp"
+#include "button_box.hpp"
+#include "globals.hpp"
 
 namespace game
 {
-    void DialogHandler::pushContainerToPosition(std::string id, int entity_center_x, int entity_center_y)
+    std::set< std::string > DialogHandler::dialog_set;
+    bool DialogHandler::loadContainers() 
     {
-//        dialogs[id].setAnchor(entity_center_x, entity_center_y);
-//        dialog_stack.push(&dialogs[id]);
-    }
-
-    void DialogHandler::loadContainers()
-    {
-        this->dialogs = 
+        this->containers = 
         { 
             { 
-                "portal_to_forest" , 
-                Dialog( 
+                "main_portal",
+                Container( 
                     { 
-                        "Travel to Forest?", 
+                        TextBox("Travel to Forest?", DEFAULT_FONT)
                     }, 
                     { 
-                        Dialog::Choice{"Yes", "travel_forest"}, 
-                        Dialog::Choice{"No", "leave"}, 
+                        ButtonBox("Yes", DEFAULT_FONT, "travel_forest"), 
+                        ButtonBox("No", DEFAULT_FONT, "leave"), 
                     }
                 )
             },
             { 
-                "home_merchant" , 
-                Dialog( 
+                "merchant0",
+                Container( 
                     { 
-                        "Hello there adventurer! Would you like to browse my wares?",
+                        TextBox("Hello there adventurer! Would you like to browse my wares?", DEFAULT_FONT)
                     }, 
                     { 
-                        Dialog::Choice{"Buy", "shop0_buy"}, 
-                        Dialog::Choice{"Sell", "shop0_sell"}, 
-                        Dialog::Choice{"BEGONE!", "leave"},
+                        ButtonBox("Buy", DEFAULT_FONT, "shop0_buy"), 
+                        ButtonBox("Sell", DEFAULT_FONT, "shop0_sell"), 
+                        ButtonBox("BEGONE!", DEFAULT_FONT, "leave"),
                     }
                 )
-                
             }
         };
+        return true;
     }
+
+    void DialogHandler::pushContainerToPosition(std::string id, int entity_center_x, int entity_center_y)
+    {
+//        containers[id].setAnchor(entity_center_x, entity_center_y);
+//        dialog_stack.push(&containers[id]);
+    }
+
+    void DialogHandler::handleEvent(Event *event)
+    {
+        printf("dialog_handler recieved: %s", event->getID().c_str());
+//        switch ( event.getType() )
+//        {
+//            case EventType::PORTAL:
+//                setEvent(EventType::PORTAL, flag);
+//                if (flag)
+//                    printf("In Portal!\n");
+//                else
+//                    printf("No Longer in Portal!\n");
+//                break;
+//            default:
+//                printf("Unknown Event\n");
+//                break;
+//        }
+    }
+
 };

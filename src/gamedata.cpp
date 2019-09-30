@@ -21,7 +21,6 @@ namespace game
     std::vector< Solid > *GameData::portals;
     bool GameData::initialized = false;
     bool GameData::quit = false;
-    Container test;
 
     GameData::~GameData()
     {
@@ -46,41 +45,18 @@ namespace game
                     case SDLK_q:
                         quit = true;
                         break;
-                    case SDLK_ESCAPE:
-                        if (menu_handler.inMenu())
-                            menu_handler.popMenu();
-                        else
-                            MenuHandler::pushMenu("main");
-                        break;
-                    case SDLK_j:
-                        if (menu_handler.inMenu())
-                            menu_handler.moveMenu(Direction::DOWN);
-                        else if (menu_handler.inDialog())
-                            menu_handler.moveDialog(Direction::DOWN);
-                        break;
-                    case SDLK_k:
-                        if (menu_handler.inMenu())
-                            menu_handler.moveMenu(Direction::UP);
-                        else if (menu_handler.inDialog())
-                            menu_handler.moveDialog(Direction::UP);
-                        break;
-                    case SDLK_RETURN:
-                        if (menu_handler.inMenu())
-                            menu_handler.selectMenu();
-                        else if (menu_handler.inDialog())
-                            menu_handler.selectDialog();
-                        break;
                     default: 
                         break;
                 }
             }
-            keyboard_handler.handleEvent(event);
+            ui_manager.handleInput(event);
+            keyboard_handler.handleInput(event);
         }
     }
 
     void GameData::update()
     {
-        if (!menu_handler.inMenu())
+        if (!ui_manager.inUI(UI::MENU))
         {
             // Update Character
             float velocity_x = keyboard_handler.getHorizontal() * MAIN_CHARACTER_SPEED;
@@ -102,9 +78,7 @@ namespace game
         main_character.render( renderer );
 
         // Render Menu
-        menu_handler.render( renderer );
-
-        test.render( renderer );
+        ui_manager.render( renderer );
 
         //Update screen
         SDL_RenderPresent( renderer );
@@ -112,39 +86,12 @@ namespace game
 
     void GameData::updateMap(int map_index)
     {
-        test = Container(
-            {
-                TextBox("Testing1", fonts[0]),
-            },
-            {
-                ButtonBox("Button1", fonts[0], "but1"),
-                ButtonBox("Button2", fonts[0], "but2"),
-                ButtonBox("Button3", fonts[0], "but3"),
-            }
-        );
         map_index = map_index;
         Environment *env = world.getMap(map_index);
         solids = env->getSolids();
         portals = env->getPortals();
     }
     
-    void GameData::sendEvent(Event event, bool flag)
-    {
-        switch ( event.getType() )
-        {
-            case EventType::PORTAL:
-                Event::setEvent(EventType::PORTAL, flag);
-                if (flag)
-                    printf("In Portal!\n");
-                else
-                    printf("No Longer in Portal!\n");
-                break;
-            default:
-                printf("Unknown Event\n");
-                break;
-        }
-    }
-
     bool GameData::close()
     {
         bool success = true; // proof by contradiction
@@ -189,8 +136,8 @@ namespace game
             printf("Initialization of initFonts() failed!\n");
         if ( !initWorlds() )
             printf("Initialization of initWorlds() failed!\n");
-        if ( !initMenus() )
-            printf("Initialization of initWorlds() failed!\n");
+        if ( !initUI() )
+            printf("Initialization of initUI() failed!\n");
 
         initialized = true;
         return true;
@@ -271,12 +218,12 @@ namespace game
         return true;
     }
 
-    bool GameData::initMenus()
+    bool GameData::initUI()
     {
 
-        if ( !menu_handler.loadMenus() )
+        if ( !ui_manager.initializeUIHandlers() )
         {
-            printf( "Maps couldn't be initialized! \n"); 
+            printf( "UI Manager couldn't initialize handlers!\n"); 
             return false;
         }
         return true;

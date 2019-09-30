@@ -1,22 +1,20 @@
 #include <SDL.h>
 #include <iostream>
+#include <vector>
 #include <set>
 #include <stdio.h>
 #include "menu_handler.hpp"
 #include "menu.hpp"
 #include "globals.hpp"
 #include "option.hpp"
-#include "dialog.hpp"
+#include "container.hpp"
+#include "text_box.hpp"
+#include "button_box.hpp"
 
 namespace game
 {
-    MenuHandler::MenuHandler()
-    {
-        this->menus = {};
-        this->dialogs = {};
-    }
 
-    bool MenuHandler::loadMenus()
+    bool MenuHandler::loadContainers()
     {
         /*! TODO: Could be made more efficient by passing by reference instead of value
          *  \todo Could be made more efficient by passing by reference instead of value
@@ -26,18 +24,20 @@ namespace game
             { 
                 "main" , 
                 Container( 
+                    {
+                    },
                     { 
                         ButtonBox( "Save", DEFAULT_FONT, "save" ), 
                         ButtonBox( "Load", DEFAULT_FONT, "load" ),
-                        ButtonBox( "Exit", DEFAULT_FONT, "",    ), 
-                    }, 
-                    {
+                        ButtonBox( "Exit", DEFAULT_FONT, ""     ),
                     }
                 ) 
             },
             { 
                 "save" , 
                 Container( 
+                    {
+                    },
                     { 
                         ButtonBox( "Save 1", DEFAULT_FONT, "save1" ), 
                         ButtonBox( "Save 2", DEFAULT_FONT, "save2" ), 
@@ -54,6 +54,8 @@ namespace game
             { 
                 "load" , 
                 Container( 
+                    {
+                    },
                     { 
                         ButtonBox( "Load 1", DEFAULT_FONT, "load1" ), 
                         ButtonBox( "Load 2", DEFAULT_FONT, "load2" ), 
@@ -70,28 +72,45 @@ namespace game
             { 
                 "warning" , 
                 Container( 
+                    {
+                    },
                     { 
                         ButtonBox( "warning!!!", DEFAULT_FONT, "main" ),
                     } 
                 ) 
             },
         };
-
         return true;
+    }
+
+    void MenuHandler::handleEvent(Event *event)
+    {
+        printf("menu_handler recieved: %s", event->getID().c_str());
+//        switch ( event.getType() )
+//        {
+//            case EventType::PORTAL:
+//                setEvent(EventType::PORTAL, flag);
+//                if (flag)
+//                    printf("In Portal!\n");
+//                else
+//                    printf("No Longer in Portal!\n");
+//                break;
+//            default:
+//                printf("Unknown Event\n");
+//                break;
+//        }
     }
 
     void MenuHandler::render( SDL_Renderer *renderer )
     {
         if ( inContainer() )
             getContainer()->render( renderer );
-        }
     }
 
     void MenuHandler::update()
     {
 
     }
-
 
     void MenuHandler::save()
     {
@@ -107,4 +126,4 @@ namespace game
     {
 
     }
-}
+};

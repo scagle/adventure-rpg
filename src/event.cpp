@@ -6,22 +6,22 @@ namespace game
 {
     Event::Event()
     {
-        construct( EventType::UNKOWN, "", 0 );
+        construct( EventType::UNKNOWN, "", 0 );
     }
 
     Event::Event( EventType type )
     {
-        construct( type, "", 0 );
+        construct( EventType::UNKNOWN, "", 0 );
     }
 
     Event::Event( EventType type, std::string id ) 
     { 
-        construct( EventType::UNKOWN, id, 0 );
+        construct( EventType::UNKNOWN, id, 0 );
     }
 
     Event::Event( EventType type, std::string id, int value ) 
     { 
-        construct( EventType::UNKOWN, id, value );
+        construct( EventType::UNKNOWN, id, value );
     }
 
     void Event::construct( EventType type, std::string id, int value )
