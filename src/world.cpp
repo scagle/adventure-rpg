@@ -44,12 +44,12 @@ namespace game
 
         vector< Solid > map0_portals = { 
             // Portal(s)
-            Solid( { 10 + (SCREEN_WIDTH-80) / 2, 0, 60, 40}, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "forest" ), 
+            Solid( { 10 + (SCREEN_WIDTH-80) / 2, 0, 60, 40}, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "home_portal" ), 
         };
 
         vector< Character > map0_characters = { 
-            Character( {250, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant" ),
-            Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard", false ),
+            Character( {250, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant0" ),
+            Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard", false, "home_npc0" ),
         };
 
         maps.push_back(Environment("home", map0_objects, map0_portals, map0_characters));

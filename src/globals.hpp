@@ -4,8 +4,8 @@
 
 const float MAIN_CHARACTER_SPEED = 0.10;
 const std::string MAIN_CHARACTER_NAME = "Bob";
-const int SCREEN_WIDTH  = 1280;
-const int SCREEN_HEIGHT = 720;
+const int SCREEN_WIDTH  = 640;
+const int SCREEN_HEIGHT = 480;
 // Colors
 const SDL_Color MENU_BACKGROUND_COLOR      = { 20  , 20  , 50  , 255 };
 const SDL_Color BLUR_BACKGROUND_COLOR      = { 0  , 0  , 0  , 100 };

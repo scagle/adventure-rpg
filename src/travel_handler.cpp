@@ -10,7 +10,7 @@ namespace game
         this->containers = 
         { 
             { 
-                "main_portal",
+                "home_portal",
                 Container( 
                     { 
                         TextBox("Travel", DEFAULT_FONT)
@@ -29,7 +29,8 @@ namespace game
 
     bool TravelHandler::handleEvent( Event *event )
     {
-        printf("travel_handler recieved: %s", event->getID().c_str());
+        printf("travel_handler recieved: %s\n", event->getID().c_str());
+        return true;
         if ( event->getValue() == 1 )
         {
             if ( event->isEmitted() )

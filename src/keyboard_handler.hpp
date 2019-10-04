@@ -12,8 +12,8 @@ namespace game
 
         public:
         KeyboardHandler();
-        int getVertical();
-        int getHorizontal();
+        int getVerticalDirection();
+        int getHorizontalDirection();
         bool isPressed(unsigned char);
         bool isReleased(unsigned char);
         void handleInput(SDL_Event*);

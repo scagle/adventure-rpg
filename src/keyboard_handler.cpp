@@ -5,12 +5,12 @@ namespace game
 {
     KeyboardHandler::KeyboardHandler(){}
 
-    int KeyboardHandler::getVertical()
+    int KeyboardHandler::getVerticalDirection()
     {
         return ( this->keys['s'] - this->keys['w'] );
     }
 
-    int KeyboardHandler::getHorizontal()
+    int KeyboardHandler::getHorizontalDirection()
     {
         return ( this->keys['d'] - this->keys['a'] );
     }

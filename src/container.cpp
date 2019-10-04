@@ -37,8 +37,8 @@ namespace game
         {
             case ContainerType::FLOATING:
                 {
-                    const int floating_width = 250;
-                    const int floating_height = 250;
+                    const int floating_width = 200;
+                    const int floating_height = 100;
                     const int floating_x = emit_x - floating_width / 2;
                     const int floating_y = emit_y - floating_height;
                     this->box = {floating_x, floating_y, floating_width, floating_height};

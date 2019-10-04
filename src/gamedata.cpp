@@ -60,8 +60,8 @@ namespace game
         if (!ui_manager.inUI(UI::MENU))
         {
             // Update Character
-            float velocity_x = keyboard_handler.getHorizontal() * MAIN_CHARACTER_SPEED;
-            float velocity_y = keyboard_handler.getVertical()   * MAIN_CHARACTER_SPEED;
+            float velocity_x = keyboard_handler.getHorizontalDirection() * MAIN_CHARACTER_SPEED;
+            float velocity_y = keyboard_handler.getVerticalDirection()   * MAIN_CHARACTER_SPEED;
             main_character.setVelocity(velocity_x, velocity_y);
             main_character.update();
             world.update();
@@ -176,12 +176,14 @@ namespace game
     bool GameData::initSDL_Renderer()
     {
         renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
-        //SDL_SetRenderDrawBlendMode( renderer, SDL_BLENDMODE_BLEND );
+        SDL_SetRenderDrawBlendMode( renderer, SDL_BLENDMODE_BLEND );
         if ( renderer == NULL )
         {
             printf( "Renderer couldn't be created! : %s\n", SDL_GetError() );
             return false;
         }
+        //SDL_RenderSetLogicalSize( renderer, 320, 240 );
+        //SDL_RenderSetIntegerScale( renderer, SDL_TRUE );
         return true;
     }
 
@@ -199,7 +201,7 @@ namespace game
         };
         for ( std::string font_name : font_names )
         {
-            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 32);
+            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 64);
             if ( font == NULL )
             {
                 printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 

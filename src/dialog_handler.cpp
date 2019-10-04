@@ -13,11 +13,10 @@ namespace game
         this->containers = 
         { 
             { 
-                "merchant0",
+                "home_merchant0",
                 Container( 
                     { 
-                        TextBox("Hello", DEFAULT_FONT),
-                        TextBox("there adventurer!", DEFAULT_FONT),
+                        TextBox("Hello there", DEFAULT_FONT),
                         TextBox("adventurer!", DEFAULT_FONT),
                         TextBox("Would you like", DEFAULT_FONT),
                         TextBox("to browse my wares?", DEFAULT_FONT),
@@ -26,6 +25,20 @@ namespace game
                         ButtonBox("Buy", DEFAULT_FONT, "shop0_buy"), 
                         ButtonBox("Sell", DEFAULT_FONT, "shop0_sell"), 
                         ButtonBox("BEGONE!", DEFAULT_FONT, "leave"),
+                    },
+                    ContainerType::FLOATING
+                )
+            },
+            { 
+                "home_npc0",
+                Container( 
+                    { 
+                        TextBox("OMG!", DEFAULT_FONT),
+                        TextBox("I'm so bored...", DEFAULT_FONT),
+                        TextBox("There's NOTHING here!", DEFAULT_FONT),
+                    }, 
+                    { 
+                        ButtonBox("SHUT UP!", DEFAULT_FONT, "leave"),
                     },
                     ContainerType::FLOATING
                 )
