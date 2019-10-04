@@ -15,17 +15,17 @@ namespace game
         return ( this->keys['d'] - this->keys['a'] );
     }
 
-    bool KeyboardHandler::isPressed(unsigned char key)
+    bool KeyboardHandler::isPressed( unsigned char key )
     {
         return this->keys[key] == PRESSED;
     }
 
-    bool KeyboardHandler::isReleased(unsigned char key)
+    bool KeyboardHandler::isReleased( unsigned char key )
     {
         return this->keys[key] == RELEASED;
     }
 
-    void KeyboardHandler::handleInput(SDL_Event *event)
+    void KeyboardHandler::handleInput( SDL_Event *event )
     {
         if ( event->type == SDL_KEYDOWN )
         {
@@ -68,4 +68,4 @@ namespace game
             }
         }
     }
-}
+};

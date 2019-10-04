@@ -5,4 +5,4 @@
 namespace game
 {
     uint32_t colorToNumber(SDL_Color color);
-}
+};

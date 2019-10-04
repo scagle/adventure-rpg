@@ -23,7 +23,7 @@ namespace game
     }
 
     // Copy Constructor
-    Option::Option(const Option &other) : text(other.text), next(other.next), 
+    Option::Option( const Option &other ) : text(other.text), next(other.next), 
         background(other.background), foreground(other.foreground)
     {
         font = GameData::getFont(other.font_index);
@@ -31,7 +31,7 @@ namespace game
     }
 
     // Copy Assignment
-    Option& Option::operator=(const Option &other)    
+    Option& Option::operator=( const Option &other )    
     {
         this->text = other.text;        // Text of option
         this->next = other.next;        // string of the next menu key (ie: "main", "save screen", etc)
@@ -72,4 +72,4 @@ namespace game
         message = SDL_CreateTextureFromSurface( renderer, text_surface );
         SDL_FreeSurface(text_surface);
     }
-}
+};

@@ -20,6 +20,12 @@ namespace game
         VERTICAL,
         HORIZONTAL,
     };
+    enum class ContainerType
+    {
+        FLOATING , // floating at a postition (IE: dialogs)
+        SCREEN   , // covers entire screen (IE: main menu)
+        FOOTER   , // covers bottom of screen (IE: travel menu)
+    };
 
     class Container
     {
@@ -36,17 +42,24 @@ namespace game
         int text_index = 0;              // Current index of text_boxes (at last index the buttons will show up)
         int selected_index = 0;          // Current index of selected button
         float divider_ratio = 0.8; // where to put vertical / horizontal split. IE: [  text  | buttons ] = 0.5 (50%)
+        ContainerType type = ContainerType::FLOATING;
         ContainerOrientation orientation = ContainerOrientation::VERTICAL;       
 
         public:
         Container();
-        Container(std::vector< TextBox >, std::vector< ButtonBox >);
-        Container(std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerOrientation orientation);
+        Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs);
+        Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type );
+        Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type, int emit_x, int emit_y);
         virtual ~Container() { }
         //virtual ContainerFormat getFormat() { return this->format; }
 
+        virtual void initializeBox(int emit_x, int emit_y);
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
+        virtual bool hasTextBoxes() { return (text_boxes.size() > 0); }
+        virtual bool hasButtonBoxes() { return (button_boxes.size() > 0); }
+        virtual bool isTotallyEmpty() { return (text_boxes.size() == 0 && button_boxes.size() == 0); }  
+        virtual void setEmittedPosition(int emit_x, int emit_y);
         void moveCursor(Direction dir);
         std::string select();
     

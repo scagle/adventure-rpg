@@ -21,6 +21,7 @@ namespace game
     std::vector< Solid > *GameData::portals;
     bool GameData::initialized = false;
     bool GameData::quit = false;
+    std::unordered_map< std::string, Container > mapping;
 
     GameData::~GameData()
     {
@@ -84,7 +85,7 @@ namespace game
         SDL_RenderPresent( renderer );
     }
 
-    void GameData::updateMap(int map_index)
+    void GameData::updateMap( int map_index )
     {
         map_index = map_index;
         Environment *env = world.getMap(map_index);
@@ -115,6 +116,7 @@ namespace game
 
         return success;
     }
+
     void GameData::start()
     {
         if ( init() )
@@ -174,7 +176,7 @@ namespace game
     bool GameData::initSDL_Renderer()
     {
         renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
-        SDL_SetRenderDrawBlendMode( renderer, SDL_BLENDMODE_BLEND );
+        //SDL_SetRenderDrawBlendMode( renderer, SDL_BLENDMODE_BLEND );
         if ( renderer == NULL )
         {
             printf( "Renderer couldn't be created! : %s\n", SDL_GetError() );
@@ -228,5 +230,4 @@ namespace game
         }
         return true;
     }
-}
-
+};

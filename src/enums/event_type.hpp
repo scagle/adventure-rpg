@@ -4,9 +4,9 @@ namespace game
 {
     enum class EventType 
     {
-        PORTAL,
-        DIALOG,
-        TRAVEL,
-        UNKNOWN,
+        MENU    ,
+        DIALOG  ,
+        TRAVEL  ,
+        UNKNOWN ,
     };
 };

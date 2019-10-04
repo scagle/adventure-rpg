@@ -20,4 +20,4 @@ int main(int argc, char *argv[])
         gamedata.render();
     }
     return 0;
-} 
+}

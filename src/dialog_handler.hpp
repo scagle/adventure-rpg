@@ -16,8 +16,8 @@ namespace game
         virtual ~DialogHandler() { }
 
         bool loadContainers() override;
-//        static bool inDialog() { return (container_stack.size() != 0) ; }
-        void handleEvent( Event * );
-        void pushContainerToPosition(std::string id, int entity_center_x, int entity_center_y);
+        bool handleEvent( Event * );
+        virtual void render( SDL_Renderer *renderer );  
+        virtual void update();
     };
 };

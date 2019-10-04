@@ -30,4 +30,4 @@ namespace game
         Option* getOption();
         std::vector< Option >* getOptions();
     };
-}
+};

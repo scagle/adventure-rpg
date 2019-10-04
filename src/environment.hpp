@@ -29,4 +29,4 @@ namespace game
         std::vector< Solid >* getPortals() { return &portals; }
         std::vector< Character >* getCharacters() { return &characters; }
     };
-}
+};

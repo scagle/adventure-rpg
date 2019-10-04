@@ -69,4 +69,4 @@ namespace game
             bool initWorlds();
             bool initUI();
     };
-}
+};

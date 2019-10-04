@@ -3,7 +3,7 @@
 
 namespace game
 {
-    void Dialog::setAnchor(int entity_center_x, int entity_center_y)
+    void Dialog::setAnchor( int entity_center_x, int entity_center_y )
     {
         this->box = {0, 0, 200, 50};
     }

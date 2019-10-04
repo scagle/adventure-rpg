@@ -48,30 +48,12 @@ namespace game
         };
 
         vector< Character > map0_characters = { 
-            Character( {250, 50, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant" ),
+            Character( {250, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant" ),
             Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard", false ),
         };
 
         maps.push_back(Environment("home", map0_objects, map0_portals, map0_characters));
 
-    // TODO
-    //    //vector< string > files = getFiles("../assets/", ".map");
-    //
-    //    string line;
-    //    ifstream map_stream( "../assets/home.gamemap" );
-    //    if ( map_stream.is_open() )
-    //    {
-    //        while ( getline( map_stream, line ) )
-    //        {
-    //            cout << line << "\n";
-    //        }
-    //        map_stream.close();
-    //    }
-    //    else
-    //    {
-    //        cout << "Couldn't find ../assets/home.map (objects/world.cpp -> loadMaps())" << "\n";
-    //        success = false;
-    //    }
         return success;
     }
 
@@ -92,13 +74,13 @@ namespace game
         /*! TODO: This
          *  \todo This
          */
-        printf("*** WARNING: unimplemented/todo code @(world.cpp -> getCharacters())");
+        printf("*** WARNING: unimplemented/todo code @(world.cpp -> getCharacters())\n");
 
         return all_characters;
     }
 
     // Get files with "name" in it
-    vector< string > World::getFiles(string dir, string name)
+    vector< string > World::getFiles( string dir, string name )
     {
         /*! TODO: Finish this with some good ole' cross platform string globbing
          *  \todo Finish this with some good ole' cross platform string globbing
@@ -106,4 +88,4 @@ namespace game
         vector< string > files;
         return files;
     }
-}
+};

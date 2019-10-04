@@ -20,12 +20,11 @@ namespace game
         virtual ~MenuHandler() { }
 
         bool loadContainers() override; 
-        void handleEvent( Event * );
+        bool handleEvent( Event * );
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
-//        static bool inMenu() { return (container_stack.size() != 0) ; }
         void save();
         void load();
         void quit();
     };
-}
+};

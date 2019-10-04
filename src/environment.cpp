@@ -30,4 +30,4 @@ namespace game
         for (unsigned int i = 0; i < characters.size(); i++)
             characters[i].update();
     }
-}
+};

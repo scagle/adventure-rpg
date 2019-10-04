@@ -19,22 +19,22 @@ namespace game
         construct({0, 0, 5, 5}, {200, 200, 200, 255}, "UNDEFINED", false, "");
     }
 
-    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name)
+    Character::Character( SDL_Rect hitbox, SDL_Color color, std::string name )
     {
         construct(hitbox, color, name, false, "");
     }
 
-    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc)
+    Character::Character( SDL_Rect hitbox, SDL_Color color, std::string name, bool mc )
     {
         construct(hitbox, color, name, mc, "");
     }
 
-    Character::Character(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::string action)
+    Character::Character( SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::string action )
     {
         construct(hitbox, color, name, mc, action);
     }
 
-    void Character::construct(SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::string action)
+    void Character::construct( SDL_Rect hitbox, SDL_Color color, std::string name, bool mc, std::string action )
     {
         this->hitbox = hitbox;
         this->actual_x = hitbox.x; 
@@ -43,15 +43,14 @@ namespace game
         this->velocity_y = 0;
         this->color = color;
         this->name = name; 
-        this->main_character = mc; 
         this->action = action; 
     }
 
     // Function to move character while detecting collisions with solids
     // actual = actual_x/y, velocity = velocity_x/y, solids = solids
     // returns boolean of whether it bounced or not
-    bool Character::moveCharacter(float *actual, float *velocity, int *hitbox_coord, 
-            int *hitbox_offset, std::vector< Solid > *solids, int boundary)
+    bool Character::moveCharacter( float *actual, float *velocity, int *hitbox_coord, 
+            int *hitbox_offset, std::vector< Solid > *solids, int boundary )
     {
         float prev = *actual; // Record original value;
         bool bounce = false;
@@ -89,7 +88,7 @@ namespace game
         return bounce;
     }
 
-    void Character::checkPortal(std::vector< Solid > *portals)
+    void Character::checkPortal( std::vector< Solid > *portals )
     {
         bool was_inside = UIManager::inUI(UI::TRAVEL);
         bool is_inside = false;
@@ -100,53 +99,71 @@ namespace game
                 is_inside = true;
                 if ( !was_inside )
                 {
-                    Event event = Event(EventType::TRAVEL, "forest", 1);
-                    UIManager::handleEvent(UI::TRAVEL, &event); // Send "PORTAL" event
+                    Event event = Event( EventType::TRAVEL, "main_portal", 1 );
+                    if ( UIManager::handleEvent( UI::TRAVEL, &event ) == false )
+                    {
+                        printf( "Can't find event id '%s'", event.getID().c_str() );
+                    }
                     break;
                 }
             }
         }
         if ( was_inside && !is_inside )
         {
-            Event event = Event(EventType::TRAVEL, "forest", 0);
-            UIManager::handleEvent(UI::TRAVEL, &event); // Send "PORTAL" event
+            Event event = Event( EventType::TRAVEL, "main_portal", 0 );
+            if ( UIManager::handleEvent( UI::TRAVEL, &event ) == false )
+            {
+                printf("Can't find event id '%s'", event.getID().c_str());
+            }
         }
     }
 
-    void Character::checkNearby(std::vector< Character > *characters)
+    void Character::checkNearby( std::vector< Character > *characters )
     {
         //TODO: Make pushDialog/pushMenu push copy of dialog/menu so that more than one of them can appear.
         //      Also see if you can make the Font_Textures static, so that they don't have to be created
         //      everytime a new dialog/menu is created
-        bool was_inside = UIManager::inUI(UI::DIALOG);
-        bool is_inside = false;
-        Character *closest_character;
-        unsigned int distance = 100;
-        std::string action = "";
-        for ( unsigned int i = 0; i < characters->size(); i++ )
+        if ( characters->size() > 0 )
         {
-            unsigned int temp_distance = (*characters)[i].getDistance(actual_x, actual_y, DISTANCE_FAST);
-            if ( temp_distance < distance && (*characters)[i].hasDialog() )
+            bool was_inside = UIManager::inUI(UI::DIALOG);
+            bool is_inside = false;
+            Character *closest_character = NULL;
+            unsigned int distance = 100;
+            std::string action = "";
+            for ( unsigned int i = 0; i < characters->size(); i++ )
             {
-                distance = temp_distance;
-                closest_character = &((*characters)[i]);
-                action = (*characters)[i].getAction();
-                is_inside = true;
+                unsigned int temp_distance = (*characters)[i].getDistance(actual_x, actual_y, DISTANCE_FAST);
+                //printf("%d %d %s\n", temp_distance, temp_distance < distance, (*characters)[i].getAction().c_str());
+                if ( temp_distance < distance && (*characters)[i].hasDialog() )
+                {
+                    closest_character = &((*characters)[i]);
+                    action = (*characters)[i].getAction();
+                    is_inside = true;
+                }
             }
-        }
-        if (!was_inside && is_inside)
-        {
-            Event event = Event(EventType::DIALOG, "shop0_buy", 1);
-            UIManager::handleEvent(UI::DIALOG, &event);
-        }
-        if (was_inside && !is_inside)
-        {
-            Event event = Event(EventType::DIALOG, "shop0_buy", 0);
-            UIManager::handleEvent(UI::DIALOG, &event);
+            if ( !was_inside && is_inside )
+            {
+                printf("Pushed container to %d, %d\n", closest_character->getCenterX(), closest_character->getCenterY());
+                Event event = Event( EventType::DIALOG, "merchant0", 1, 
+                                     closest_character->getCenterX(), 
+                                     closest_character->getCenterY() );
+                if ( UIManager::handleEvent( UI::DIALOG, &event ) == false )
+                {
+                    printf("Can't find event id '%s'", event.getID().c_str());
+                }
+            }
+            if ( was_inside && !is_inside )
+            {
+                Event event = Event( EventType::DIALOG, "merchant0", 0 );
+                if ( UIManager::handleEvent( UI::DIALOG, &event ) == false )
+                {
+                    printf("Can't find event id '%s'", event.getID().c_str());
+                }
+            }
         }
     }
 
-    unsigned int Character::getDistance(float x, float y, Distance_Algorithm alg)
+    unsigned int Character::getDistance( float x, float y, Distance_Algorithm alg )
     {
         unsigned int distance;
         if (alg == DISTANCE_FAST)
@@ -189,4 +206,4 @@ namespace game
         }
     }
 
-}
+};

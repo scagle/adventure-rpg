@@ -30,7 +30,8 @@ namespace game
                         ButtonBox( "Save", DEFAULT_FONT, "save" ), 
                         ButtonBox( "Load", DEFAULT_FONT, "load" ),
                         ButtonBox( "Exit", DEFAULT_FONT, ""     ),
-                    }
+                    },
+                    ContainerType::SCREEN
                 ) 
             },
             { 
@@ -48,7 +49,8 @@ namespace game
                         ButtonBox( "Save 7", DEFAULT_FONT, "save7" ), 
                         ButtonBox( "Save 8", DEFAULT_FONT, "save8" ), 
                         ButtonBox( "Save 9", DEFAULT_FONT, "save9" ), 
-                    } 
+                    },
+                    ContainerType::SCREEN
                 ) 
             }, 
             { 
@@ -66,7 +68,8 @@ namespace game
                         ButtonBox( "Load 7", DEFAULT_FONT, "load7" ), 
                         ButtonBox( "Load 8", DEFAULT_FONT, "load8" ), 
                         ButtonBox( "Load 9", DEFAULT_FONT, "load9" ), 
-                    } 
+                    },
+                    ContainerType::SCREEN
                 ) 
             }, 
             { 
@@ -76,29 +79,18 @@ namespace game
                     },
                     { 
                         ButtonBox( "warning!!!", DEFAULT_FONT, "main" ),
-                    } 
+                    },
+                    ContainerType::SCREEN
                 ) 
             },
         };
         return true;
     }
 
-    void MenuHandler::handleEvent(Event *event)
+    bool MenuHandler::handleEvent( Event *event )
     {
         printf("menu_handler recieved: %s", event->getID().c_str());
-//        switch ( event.getType() )
-//        {
-//            case EventType::PORTAL:
-//                setEvent(EventType::PORTAL, flag);
-//                if (flag)
-//                    printf("In Portal!\n");
-//                else
-//                    printf("No Longer in Portal!\n");
-//                break;
-//            default:
-//                printf("Unknown Event\n");
-//                break;
-//        }
+        return true;
     }
 
     void MenuHandler::render( SDL_Renderer *renderer )

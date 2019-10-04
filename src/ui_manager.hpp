@@ -18,7 +18,7 @@ namespace game
         UIManager() { }
         virtual ~UIManager() { }
 
-        static void handleEvent(UI target,Event* event);
+        static bool handleEvent(UI target,Event* event);
         static void handleInput(SDL_Event*);
         static bool inUI(UI);
         bool initializeUIHandlers();

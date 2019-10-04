@@ -29,4 +29,4 @@ namespace game
         std::vector< Character* >* getCharacters(); // TODO: Recursively check all environments and return characters
         
     };
-}
+};

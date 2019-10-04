@@ -11,13 +11,13 @@ namespace game
         this->options = std::vector< Option >();
     }
 
-    Menu::Menu(std::string title)
+    Menu::Menu( std::string title )
     {
         this->title = title;
         this->options = std::vector< Option >();
     }
 
-    Menu::Menu(std::string title, std::vector< Option > options)
+    Menu::Menu( std::string title, std::vector< Option > options )
     {
         this->title = title;
         this->options = options;
@@ -63,6 +63,7 @@ namespace game
         if (this->current_option > 0)
             this->current_option--; 
     }
+
     void Menu::down() 
     { 
         if (this->current_option < this->options.size() - 1)
@@ -78,4 +79,4 @@ namespace game
     {
         return &(this->options);
     }
-}
+};

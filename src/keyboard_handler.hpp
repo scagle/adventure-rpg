@@ -18,4 +18,4 @@ namespace game
         bool isReleased(unsigned char);
         void handleInput(SDL_Event*);
     };
-}
+};

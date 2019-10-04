@@ -43,4 +43,4 @@ namespace game
         Type getType() { return this->type; }
         std::string getLocation() { return this->location; }
     };
-}
+};

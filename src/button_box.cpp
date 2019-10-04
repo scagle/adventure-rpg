@@ -32,6 +32,7 @@ namespace game
     {
         this->action = action;
     }
+
     std::string ButtonBox::getAction()
     {
         return this->action;

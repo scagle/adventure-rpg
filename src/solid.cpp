@@ -41,5 +41,4 @@ namespace game
         }
         return false;
     }
-}
-
+};

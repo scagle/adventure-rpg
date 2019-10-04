@@ -10,8 +10,8 @@ namespace game
     class ContainerHandler
     {
         protected:
-        static std::unordered_map< std::string, Container > containers;
-        static std::stack< Container* > container_stack;
+        std::unordered_map< std::string, Container > containers;
+        std::stack< Container > container_stack;
 
         public:
         ContainerHandler() { }
@@ -19,6 +19,7 @@ namespace game
         
         virtual bool loadContainers();                  
         virtual void pushContainer(std::string);        
+        virtual void pushContainer(std::string, int, int);        
         virtual void popContainer();                    
         virtual void moveContainer(Direction);          
         virtual void selectContainer();                 

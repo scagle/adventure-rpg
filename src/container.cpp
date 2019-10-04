@@ -1,23 +1,56 @@
 #include "container.hpp"
 #include "enums/direction.hpp"
+#include "globals.hpp"
 
 namespace game
 {
     Container::Container() : background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
     {
-        this->box = {0, 0, 250, 250};
+        initializeBox(0, 0);
     }
 
-    Container::Container(std::vector< TextBox > tbs, std::vector< ButtonBox > bbs)
+    Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs )
         : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
     {
-        this->box = {0, 0, 250, 250};
+        initializeBox(0, 0);
     }
-    Container::Container(std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerOrientation orientation)
-        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
+
+    Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
+                          ContainerType type )
+        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR),
+          type(type) 
     {
-        this->box = {0, 0, 250, 250};
-        this->orientation = orientation;
+        initializeBox(0, 0);
+    }
+
+    Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
+                          ContainerType type, int emit_x, int emit_y )
+        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR),
+          type(type) 
+    {
+        initializeBox(emit_x, emit_y);
+    }
+
+    void Container::initializeBox(int emit_x, int emit_y)
+    {
+        switch (type)
+        {
+            case ContainerType::FLOATING:
+                {
+                    const int floating_width = 250;
+                    const int floating_height = 250;
+                    const int floating_x = emit_x - floating_width / 2;
+                    const int floating_y = emit_y - floating_height;
+                    this->box = {floating_x, floating_y, floating_width, floating_height};
+                }
+                break;
+            case ContainerType::SCREEN:
+                this->box = { SCREEN_WIDTH / 4, SCREEN_HEIGHT / 8, SCREEN_WIDTH / 2, SCREEN_HEIGHT - SCREEN_HEIGHT / 4 }; 
+                break;
+            case ContainerType::FOOTER:
+                this->box = { SCREEN_WIDTH / 4, SCREEN_HEIGHT - 100, SCREEN_WIDTH / 2, 100 }; 
+                break;
+        }
     }
 
     void Container::render( SDL_Renderer *renderer )
@@ -41,7 +74,7 @@ namespace game
                 SDL_Rect button_rect = { box.x + buffer, 
                                          box.y + buffer + (button_height * (int)i), 
                                          box.w - (buffer * 2), 
-                                         box.h - (buffer * 2) };
+                                         button_height };
                 button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
             }
         }
@@ -105,7 +138,6 @@ namespace game
         }
         else  // Just display text_box
         {
-            printf("display\n");
             SDL_Rect text_rect = { box.x + buffer,
                                    box.y + buffer,
                                    box.w - (buffer * 2), 
@@ -114,7 +146,12 @@ namespace game
         }
     }
 
-    void Container::moveCursor(Direction dir)
+    void Container::update()
+    {
+
+    }
+
+    void Container::moveCursor( Direction dir )
     {
         switch (dir)
         {
@@ -143,13 +180,22 @@ namespace game
         }
     }
 
-    std::string Container::select()
+    void Container::setEmittedPosition(int emit_x, int emit_y)
     {
-        return button_boxes[selected_index].getAction();
+        initializeBox(emit_x, emit_y);
     }
 
-    void Container::update()
+    std::string Container::select()
     {
-
+        printf("text_index: %d, len(text_boxes): %d\n", text_index, text_boxes.size());
+        if ( text_boxes.size() != 0 )
+        {
+            if ( ( unsigned int )text_index != ( text_boxes.size() - 1 ) )
+            {
+                text_index++;
+                return "text_continue";
+            }
+        }
+        return button_boxes[selected_index].getAction();
     }
 };

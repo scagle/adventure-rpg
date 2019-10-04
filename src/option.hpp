@@ -40,4 +40,4 @@ namespace game
             SDL_Texture* getTextMessage() { return this->message; }
 
     };
-}
+};
