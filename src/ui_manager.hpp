@@ -1,4 +1,5 @@
 #pragma once
+#include <string> 
 #include "menu_handler.hpp"
 #include "dialog_handler.hpp"
 #include "travel_handler.hpp"
@@ -21,6 +22,8 @@ namespace game
         static bool handleEvent(UI target,Event* event);
         static void handleInput(SDL_Event*);
         static bool inUI(UI);
+        static bool inUI(UI, std::string);
+        static std::string getID(UI);
         bool initializeUIHandlers();
         virtual void render( SDL_Renderer *renderer );
         virtual void update();

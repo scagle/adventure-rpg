@@ -38,7 +38,7 @@ namespace game
                         TextBox("There's NOTHING here!", DEFAULT_FONT),
                     }, 
                     { 
-                        ButtonBox("SHUT UP!", DEFAULT_FONT, "leave"),
+                        ButtonBox("Go away!", DEFAULT_FONT, "leave"),
                     },
                     ContainerType::FLOATING
                 )
@@ -50,15 +50,17 @@ namespace game
     bool DialogHandler::handleEvent( Event *event )
     {
         // TODO: Figure out how to have multiple active dialogs simutaneously
-        if ( event->getValue() == 1 )
+        std::string id = event->getID();
+        int value = event->getValue();
+        if ( value == 1 )
         {
             if ( event->isEmitted() )
             {
-                pushContainer(event->getID(), event->getX(), event->getY());
+                pushContainer(id, event->getX(), event->getY());
             }
             else
             {
-                pushContainer(event->getID());
+                pushContainer(id);
             }
         }
         else

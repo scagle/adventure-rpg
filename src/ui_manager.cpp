@@ -92,10 +92,45 @@ namespace game
             case UI::TRAVEL:
                 return travel_handler.inContainer();
             default:
-                printf("Invalid UI (ui_manager.cpp -> inUI())\n");
+                printf("Invalid UI (ui_manager.cpp -> inUI(UI))\n");
                 break;
         }
         return false;
+    }
+
+    bool UIManager::inUI( UI ui, std::string id )
+    {
+        switch (ui)
+        {
+            case UI::MENU:
+                return menu_handler.checkActiveContainer();
+            case UI::DIALOG:
+                return dialog_handler.checkActiveContainer();
+            case UI::TRAVEL:
+                return travel_handler.checkActiveContainer();
+            default:
+                printf("Invalid UI (ui_manager.cpp -> inUI(UI, std::string))\n");
+                break;
+        }
+        return false;
+    }
+
+
+    std::string UIManager::getID( UI ui )
+    {
+        switch (ui)
+        {
+            case UI::MENU:
+                return menu_handler.getContainerID();
+            case UI::DIALOG:
+                return dialog_handler.getContainerID();
+            case UI::TRAVEL:
+                return travel_handler.getContainerID();
+            default:
+                printf("Invalid UI (ui_manager.cpp -> getUI())\n");
+                break;
+        }
+        return "";
     }
 
     bool UIManager::initializeUIHandlers()

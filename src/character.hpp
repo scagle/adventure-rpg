@@ -40,11 +40,19 @@ namespace game
         Character* getAdjacentNPC( std::vector< Character > * );
         bool hasDialog() { return (action != ""); }
         std::string getAction() { return this->action; }
-        unsigned int getDistance( float, float, Distance_Algorithm );
-        unsigned int getCenterX() { return this->hitbox.x + this->hitbox.w / 2; }
-        unsigned int getCenterY() { return this->hitbox.y; }
+        unsigned int getDistance( int, int, Distance_Algorithm );
+
+        // For positioning floating dialogs only
+        int getEmitX() { return this->hitbox.x + this->hitbox.w / 2; }
+        int getEmitY() { return this->hitbox.y; }
+
+        // Get Center X and Center Y
+        int getCenterX() { return this->hitbox.x + this->hitbox.w / 2; }
+        int getCenterY() { return this->hitbox.y + this->hitbox.h / 2; }
+
         unsigned int getVoiceDistance() { return this->voice_distance; }
         void sendEvent(EventType type, UI ui, std::string action, int value);
+        void sendEvent(EventType type, UI ui, std::string action, int value, int emit_x, int emit_y );
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
         // Accessors

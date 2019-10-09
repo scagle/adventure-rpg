@@ -119,26 +119,31 @@ namespace game
 
     void Character::checkNPCs( std::vector< Character > *characters )
     {
-        if ( !UIManager::inUI(UI::DIALOG) && characters->size() > 0 )
+        if ( characters->size() > 0 )
         {
-            if ( focused_character != NULL )
-            {
-                unsigned int distance = getDistance(focused_character->getCenterX(), 
-                                           focused_character->getCenterY(), DISTANCE_FAST );
-                if ( distance > focused_character->getVoiceDistance())
-                {
-                    sendEvent(EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 0);
-                    focused_character = NULL;
-                }
-            }
-            else
+            if ( !UIManager::inUI(UI::DIALOG) )     // If not in dialog already, check nearby npcs for focus
             {
                 // Check if near any NPC's with dialog
                 focused_character = getAdjacentNPC(characters);
                 if ( focused_character != NULL )
                 {
-                    sendEvent(EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 1);
+                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 1,
+                               focused_character->getCenterX(), focused_character->getCenterY() );
                 }
+            }
+            else if ( focused_character != NULL )   // If in dialog, and npc has focus, check if still inside range
+            {
+                unsigned int distance = getDistance(focused_character->getCenterX(), 
+                                           focused_character->getCenterY(), DISTANCE_FAST );
+                if ( distance > focused_character->getVoiceDistance()) // Out of range
+                { 
+                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 0 );
+                    focused_character = NULL;
+                }
+            }
+            else
+            {
+                printf("Where am I? Ahhh! -- character.cpp -> checkNPCs()\n");
             }
         }
     }
@@ -149,12 +154,12 @@ namespace game
         //      Also see if you can make the Font_Textures static, so that they don't have to be created
         //      everytime a new dialog/menu is created
         Character *closest_character = NULL;
-        unsigned int closest_distance = 1000; // start at some high number
+        unsigned int closest_distance = 10000; // start at some crazy high number
         for ( unsigned int i = 0; i < characters->size(); i++ )
         {
             if ( (*characters)[i].hasDialog() )
             {
-                unsigned int distance_from_npc = (*characters)[i].getDistance(actual_x, actual_y, DISTANCE_FAST);
+                unsigned int distance_from_npc = (*characters)[i].getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
                 if ( distance_from_npc < closest_distance && distance_from_npc <= (*characters)[i].getVoiceDistance() )
                 {
                     closest_character = &((*characters)[i]);
@@ -165,13 +170,13 @@ namespace game
         return closest_character;
     }
 
-    unsigned int Character::getDistance( float x, float y, Distance_Algorithm alg )
+    unsigned int Character::getDistance( int center_x, int center_y, Distance_Algorithm alg )
     {
         unsigned int distance = 0;
         if (alg == DISTANCE_FAST)
         {
-            int distance_x = abs((int)(actual_x + 0.5) - (int)(x + 0.5));
-            int distance_y = abs((int)(actual_y + 0.5) - (int)(y + 0.5));
+            int distance_x = abs(getCenterX() - center_x);
+            int distance_y = abs(getCenterY() - center_y);
             distance = distance_x + distance_y;
         }
         if (alg == DISTANCE_ACCURATE)
@@ -182,13 +187,23 @@ namespace game
         return distance; 
     }
 
-    void Character::sendEvent(EventType type, UI ui, std::string action, int value)
+    void Character::sendEvent(EventType type, UI ui, std::string action, int value )
     {
         Event event = Event( type, action, value );
         if ( UIManager::handleEvent( ui, &event ) == false )
         {
-            printf("Can't find event id '%s'", event.getID().c_str());
+            printf("character.cpp -> sendEvent() failed...\n");
         }
+    }
+
+    void Character::sendEvent(EventType type, UI ui, std::string action, int value, int emit_x, int emit_y )
+    {
+        Event event = Event( type, action, value, emit_x, emit_y );
+        if ( UIManager::handleEvent( ui, &event ) == false )
+        {
+            printf("character.cpp -> sendEvent() failed...\n");
+        }
+        
     }
 
     void Character::render( SDL_Renderer *renderer )
