@@ -64,7 +64,6 @@ namespace game
 
     void World::update() 
     {
-
         getCurrentMap()->update();
     }
 

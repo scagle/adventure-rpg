@@ -91,32 +91,48 @@ namespace game
         return bounce;
     }
 
+    std::vector< Solid* > adjacent_portals; 
     void Character::checkPortals( std::vector< Solid > *portals )
     {
-//        if ( !UIManager::inUI(UI::TRAVEL) && portals->size() > 0 )
-//        {
-//            if ( focused_portal != NULL )
-//            {
-//                if ( !isInside( &(focused_portal->hitbox) ) )
-//                {
-//                    sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 0 );
-//                    focused_portal = NULL;
-//                }
-//            }
-//            else
-//            {
-//                for ( unsigned int i = 0; i < (*portals).size(); i++ )
-//                {
-//                    if ( isInside(&((*portals)[i].hitbox)) )
-//                    {
-//                        focused_portal = &((*portals)[i]);
-//                        printf("location: %s\n", focused_portal->getLocation().c_str());
-//                        sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 1 );
-//                        break;
-//                    }
-//                }
-//            }
-//        }
+        if ( portals->size() > 0 )
+        {
+            // Check for entering portal range
+            std::vector< Solid* > new_adjacent_portals;
+            for ( auto& portal : *portals)
+            {
+                if ( isInside( &(portal.hitbox) ) )
+                {
+                    new_adjacent_portals.push_back(&portal);
+                }
+            }
+
+            for ( Solid* portal : new_adjacent_portals )
+            {
+                // if a new portal not found in adjacent_portals
+                if ( std::find( adjacent_portals.begin(), adjacent_portals.end(), portal ) 
+                     == adjacent_portals.end() )
+                {
+                    // Send found event
+                    spawnTravel( portal->getLocation() );
+                    printf("Entering portal '%s'\n", portal->getLocation().c_str());
+                }
+            }
+
+            // Check for leaving portal range
+            for ( Solid* portal : adjacent_portals)
+            {
+                // if an old portal not found in new_adjacent_portals
+                if ( std::find( new_adjacent_portals.begin(), new_adjacent_portals.end(), portal ) 
+                     == new_adjacent_portals.end() )
+                {
+                    // Send not found event
+                    removeTravel( portal->getLocation() );
+                    printf("Leaving portal '%s'\n", portal->getLocation().c_str());
+                }
+            }
+
+            adjacent_portals = new_adjacent_portals;
+        }
     }
 
     std::vector< Character* > adjacent_characters; 

@@ -30,6 +30,7 @@ namespace game
 
         virtual void moveContainer(Direction);              
         virtual void selectContainer();                 
+        virtual void handleID( std::string id );
         virtual Container* getContainer();              
         virtual std::string getContainerID();
 

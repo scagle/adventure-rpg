@@ -26,10 +26,16 @@ namespace game
         if (id != "" && id != "text_continue")
         {
             popContainer();
-            pushPriorityContainer(id);
+            handleID(id);
         }
 
         printf("Action: '%s'\n", id.c_str());
+    }
+
+    void ContainerHandler::handleID( std::string id )
+    {
+        if ( id != "leave")
+            pushPriorityContainer(id);
     }
 
     Container* ContainerHandler::getContainer()
