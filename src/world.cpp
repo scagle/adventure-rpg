@@ -48,8 +48,8 @@ namespace game
         };
 
         vector< Character > map0_characters = { 
-            Character( {250, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant0" ),
-            Character( {400, 250, 20, 20}, { 200, 50, 22, 255 }, "Richard", false, "home_npc0" ),
+            Character( {350, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant0" ),
+            Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Richard", false, "home_npc0" ),
         };
 
         maps.push_back(Environment("home", map0_objects, map0_portals, map0_characters));

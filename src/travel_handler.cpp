@@ -20,7 +20,8 @@ namespace game
                         ButtonBox("Caves", DEFAULT_FONT, "travel_caves"), 
                         ButtonBox("Beach", DEFAULT_FONT, "travel_beach"), 
                     },
-                    ContainerType::FOOTER
+                    ContainerType::FOOTER,
+                    "home_portal"
                 )
             },
         };

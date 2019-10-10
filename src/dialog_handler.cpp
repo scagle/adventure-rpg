@@ -26,7 +26,8 @@ namespace game
                         ButtonBox("Sell", DEFAULT_FONT, "shop0_sell"), 
                         ButtonBox("BEGONE!", DEFAULT_FONT, "leave"),
                     },
-                    ContainerType::FLOATING
+                    ContainerType::FLOATING,
+                    "home_merchant0"
                 )
             },
             { 
@@ -40,7 +41,8 @@ namespace game
                     { 
                         ButtonBox("Go away!", DEFAULT_FONT, "leave"),
                     },
-                    ContainerType::FLOATING
+                    ContainerType::FLOATING,
+                    "home_npc0"
                 )
             },
         };

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <unordered_map>
 #include <SDL.h>
 #include "solid.hpp" 
 
@@ -37,9 +38,11 @@ namespace game
         bool moveCharacter( float *, float *, int *, int *, std::vector< Solid > *, int );
         void checkPortals( std::vector< Solid > * );
         void checkNPCs( std::vector< Character > * );
-        Character* getAdjacentNPC( std::vector< Character > * );
+//        Character* getAdjacentNPC( std::vector< Character > * );
+        std::vector< Character* > getAdjacentNPCs( std::vector< Character > *characters );
         bool hasDialog() { return (action != ""); }
         std::string getAction() { return this->action; }
+        std::string getName() { return this->name; }
         unsigned int getDistance( int, int, Distance_Algorithm );
 
         // For positioning floating dialogs only
@@ -51,13 +54,19 @@ namespace game
         int getCenterY() { return this->hitbox.y + this->hitbox.h / 2; }
 
         unsigned int getVoiceDistance() { return this->voice_distance; }
-        void sendEvent(EventType type, UI ui, std::string action, int value);
-        void sendEvent(EventType type, UI ui, std::string action, int value, int emit_x, int emit_y );
+
+        void spawnTravel( std::string action );         // Create a footer message
+        void transitionTravel( std::string action );
+        void removeTravel( std::string action );
+        void spawnDialog( std::string action, int, int );
+        void transitionDialog( std::string action, int, int );
+        void removeDialog( std::string action );
+        void sendEvent( EventType type, std::string action, int value, std::unordered_map< std::string, int > );
+        void sendEvent( EventType type, std::string action, int value, int emit_x, int emit_y, std::unordered_map< std::string, int > );
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
-        // Accessors
-        // Mutators
-        void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; } 
+
+        void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; }
             
     };
 };

@@ -31,6 +31,7 @@ namespace game
     void ButtonBox::construct( std::string action )
     {
         this->action = action;
+        printf("Action: %s\n", this->action.c_str());
     }
 
     std::string ButtonBox::getAction()

@@ -6,31 +6,33 @@ namespace game
 {
     Event::Event()
     {
-        construct( EventType::UNKNOWN, "", 0, 0, 0, false );
+        construct( EventType::UNKNOWN, "", 0, 0, 0, false, {} );
     }
 
     Event::Event( EventType type )
     {
-        construct( EventType::UNKNOWN, "", 0, 0, 0, false );
+        construct( type, "", 0, 0, 0, false, {} );
     }
 
     Event::Event( EventType type, std::string id ) 
     { 
-        construct( EventType::UNKNOWN, id, 0, 0, 0, false );
+        construct( type, id, 0, 0, 0, false, {} );
     }
 
-    Event::Event( EventType type, std::string id, int value ) 
+    Event::Event( EventType type, std::string id, int value, 
+            std::unordered_map< std::string, int> properties ) 
     { 
-        construct( EventType::UNKNOWN, id, value, 0, 0, false );
+        construct( type, id, value, 0, 0, false, properties);
     }
 
-    Event::Event( EventType type, std::string id, int value, int emit_x, int emit_y  ) 
+    Event::Event( EventType type, std::string id, int value, int emit_x, int emit_y, 
+            std::unordered_map< std::string, int> properties ) 
     { 
-        construct( EventType::UNKNOWN, id, value, emit_x, emit_y, true );
+        construct( type, id, value, emit_x, emit_y, true, properties );
     }
 
     void Event::construct( EventType type, std::string id, int value, 
-                           int emit_x, int emit_y, bool is_emitted )
+                           int emit_x, int emit_y, bool is_emitted, std::unordered_map< std::string, int> properties )
     {
         this->type = type;
         this->id = id;
@@ -38,5 +40,6 @@ namespace game
         this->emit_x = emit_x;
         this->emit_y = emit_y;
         this->is_emitted = is_emitted;
+        this->properties = properties;
     }
 };

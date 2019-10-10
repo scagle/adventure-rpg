@@ -2,6 +2,7 @@
 #include "menu_handler.hpp"
 #include "dialog_handler.hpp"
 #include "travel_handler.hpp"
+#include "enums/event_type.hpp"
 #include "event.hpp"
 
 namespace game
@@ -10,16 +11,16 @@ namespace game
     DialogHandler UIManager::dialog_handler;
     TravelHandler UIManager::travel_handler;
 
-    bool UIManager::handleEvent( UI target, Event* event )
+    bool UIManager::handleEvent(Event* event )
     {
-        switch (target)
+        switch ( event->getType() )
         {
-            case UI::MENU:
-                return menu_handler.handleEvent(event);
-            case UI::DIALOG:
-                return dialog_handler.handleEvent(event);
-            case UI::TRAVEL:
-                return travel_handler.handleEvent(event);
+            case EventType::MENU:
+                return menu_handler.handleEvent( event );
+            case EventType::DIALOG:
+                return dialog_handler.handleEvent( event );
+            case EventType::TRAVEL:
+                return travel_handler.handleEvent( event );
             default:
                 printf("Unknown Event Type (ui_manager.cpp -> handleEvent())");
                 return false;
@@ -103,11 +104,11 @@ namespace game
         switch (ui)
         {
             case UI::MENU:
-                return menu_handler.checkActiveContainer();
+                return menu_handler.checkContainer( id );
             case UI::DIALOG:
-                return dialog_handler.checkActiveContainer();
+                return dialog_handler.checkContainer( id );
             case UI::TRAVEL:
-                return travel_handler.checkActiveContainer();
+                return travel_handler.checkContainer( id );
             default:
                 printf("Invalid UI (ui_manager.cpp -> inUI(UI, std::string))\n");
                 break;

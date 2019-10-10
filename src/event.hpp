@@ -17,15 +17,17 @@ namespace game
             int emit_x = 0;  // x coordinate to display dialogs above entities
             int emit_y = 0;  // y coordinate to display dialogs above entities
             bool is_emitted = false;  // true if called using emit constructor(s)
+            std::unordered_map< std::string, int> properties;
 
             Event();
             Event( EventType type );
             Event( EventType type, std::string id );
-            Event( EventType type, std::string id, int value );
-            Event( EventType type, std::string id, int value, int emit_x, int emit_y );
+            Event( EventType type, std::string id, int value, std::unordered_map< std::string, int> );
+            Event( EventType type, std::string id, int value, int emit_x, int emit_y, std::unordered_map< std::string, int> );
             virtual ~Event() { }
             void construct( EventType type, std::string id, int value, 
-                            int emit_x, int emit_y, bool is_emitted );
+                            int emit_x, int emit_y, bool is_emitted,
+                            std::unordered_map< std::string, int> properties);
 
             EventType getType() { return this->type; }
             std::string getID() { return this->id; }

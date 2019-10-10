@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstdlib>
+#include <unordered_map>
 #include <SDL.h>
 #include <cstdlib>
+#include <algorithm>
 
 #include "character.hpp"
 #include "gamedata.hpp"
@@ -91,83 +93,110 @@ namespace game
 
     void Character::checkPortals( std::vector< Solid > *portals )
     {
-        if ( !UIManager::inUI(UI::TRAVEL) && portals->size() > 0 )
-        {
-            if ( focused_portal != NULL )
-            {
-                if ( !isInside( &(focused_portal->hitbox) ) )
-                {
-                    sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 0 );
-                    focused_portal = NULL;
-                }
-            }
-            else
-            {
-                for ( unsigned int i = 0; i < (*portals).size(); i++ )
-                {
-                    if ( isInside(&((*portals)[i].hitbox)) )
-                    {
-                        focused_portal = &((*portals)[i]);
-                        printf("location: %s\n", focused_portal->getLocation().c_str());
-                        sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 1 );
-                        break;
-                    }
-                }
-            }
-        }
+//        if ( !UIManager::inUI(UI::TRAVEL) && portals->size() > 0 )
+//        {
+//            if ( focused_portal != NULL )
+//            {
+//                if ( !isInside( &(focused_portal->hitbox) ) )
+//                {
+//                    sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 0 );
+//                    focused_portal = NULL;
+//                }
+//            }
+//            else
+//            {
+//                for ( unsigned int i = 0; i < (*portals).size(); i++ )
+//                {
+//                    if ( isInside(&((*portals)[i].hitbox)) )
+//                    {
+//                        focused_portal = &((*portals)[i]);
+//                        printf("location: %s\n", focused_portal->getLocation().c_str());
+//                        sendEvent( EventType::TRAVEL, UI::TRAVEL, focused_portal->getLocation(), 1 );
+//                        break;
+//                    }
+//                }
+//            }
+//        }
     }
 
+    std::vector< Character* > adjacent_characters; 
     void Character::checkNPCs( std::vector< Character > *characters )
     {
         if ( characters->size() > 0 )
         {
-            if ( !UIManager::inUI(UI::DIALOG) )     // If not in dialog already, check nearby npcs for focus
+            // Check for entering npc range
+            std::vector< Character* > new_adjacent_characters = getAdjacentNPCs(characters);
+            for ( Character* character : new_adjacent_characters )
             {
-                // Check if near any NPC's with dialog
-                focused_character = getAdjacentNPC(characters);
-                if ( focused_character != NULL )
+                // if a new character not found in adjacent_characters
+                if ( std::find( adjacent_characters.begin(), adjacent_characters.end(), character ) 
+                     == adjacent_characters.end() )
                 {
-                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 1,
-                               focused_character->getCenterX(), focused_character->getCenterY() );
+                    // Send found event
+                    spawnDialog( character->getAction(), character->getCenterX(), character->getCenterY() );
+                    printf("Entering npc '%s'\n", character->getName().c_str());
                 }
             }
-            else if ( focused_character != NULL )   // If in dialog, and npc has focus, check if still inside range
+
+            // Check for leaving npc range
+            for ( Character* character : adjacent_characters )
             {
-                unsigned int distance = getDistance(focused_character->getCenterX(), 
-                                           focused_character->getCenterY(), DISTANCE_FAST );
-                if ( distance > focused_character->getVoiceDistance()) // Out of range
-                { 
-                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 0 );
-                    focused_character = NULL;
+                // if an old character not found in new_adjacent_characters
+                if ( std::find( new_adjacent_characters.begin(), new_adjacent_characters.end(), character ) 
+                     == new_adjacent_characters.end() )
+                {
+                    // Send not found event
+                    removeDialog( character->getAction() );
+                    printf("Leaving npc '%s'\n", character->getName().c_str());
                 }
             }
-            else
-            {
-                printf("Where am I? Ahhh! -- character.cpp -> checkNPCs()\n");
-            }
+
+            adjacent_characters = new_adjacent_characters;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            if ( !UIManager::inUI(UI::DIALOG) )     // If not in dialog already, check nearby npcs for focus
+//            {
+//                // Check if near any NPC's with dialog
+//                focused_character = getAdjacentNPC(characters);
+//                if ( focused_character != NULL )
+//                {
+//                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 1,
+//                               focused_character->getCenterX(), focused_character->getCenterY() );
+//                }
+//            }
+//            else if ( focused_character != NULL )   // If in dialog, and npc has focus, check if still inside range
+//            {
+//                unsigned int distance = getDistance(focused_character->getCenterX(), 
+//                                           focused_character->getCenterY(), DISTANCE_FAST );
+//                if ( distance > focused_character->getVoiceDistance()) // Out of range
+//                { 
+//                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 0 );
+//                    focused_character = NULL;
+//                }
+//            }
+//            else
+//            {
+//                printf("Where am I? Ahhh! -- character.cpp -> checkNPCs()\n");
+//            }
         }
     }
 
-    Character* Character::getAdjacentNPC( std::vector< Character > *characters )
+    std::vector< Character* > Character::getAdjacentNPCs( std::vector< Character > *characters )
     {
-        //TODO: Make pushDialog/pushMenu push copy of dialog/menu so that more than one of them can appear.
-        //      Also see if you can make the Font_Textures static, so that they don't have to be created
-        //      everytime a new dialog/menu is created
-        Character *closest_character = NULL;
-        unsigned int closest_distance = 10000; // start at some crazy high number
+        std::vector< Character* > adjacent_characters;
         for ( unsigned int i = 0; i < characters->size(); i++ )
         {
-            if ( (*characters)[i].hasDialog() )
+            Character* character = &(*characters)[i];
+            if ( character->hasDialog() )
             {
-                unsigned int distance_from_npc = (*characters)[i].getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
-                if ( distance_from_npc < closest_distance && distance_from_npc <= (*characters)[i].getVoiceDistance() )
+                unsigned int distance_from_npc = character->getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
+                if ( distance_from_npc <= character->getVoiceDistance() )
                 {
-                    closest_character = &((*characters)[i]);
+                    adjacent_characters.push_back( character );
                 }
             }
         }
-         
-        return closest_character;
+        return adjacent_characters;
     }
 
     unsigned int Character::getDistance( int center_x, int center_y, Distance_Algorithm alg )
@@ -187,19 +216,53 @@ namespace game
         return distance; 
     }
 
-    void Character::sendEvent(EventType type, UI ui, std::string action, int value )
+    void Character::spawnTravel( std::string action )
     {
-        Event event = Event( type, action, value );
-        if ( UIManager::handleEvent( ui, &event ) == false )
+        sendEvent( EventType::TRAVEL, action, 1, {});
+    }
+
+    void Character::transitionTravel( std::string action )
+    {
+        std::unordered_map< std::string, int > properties = { { "pop", 1 } };
+        sendEvent( EventType::TRAVEL, action, 1, properties );
+    }
+
+    void Character::removeTravel( std::string action )
+    {
+        sendEvent( EventType::TRAVEL, action, 0, {} );
+    }
+
+    void Character::spawnDialog( std::string action, int x, int y )
+    {
+        sendEvent( EventType::DIALOG, action, 1, x, y, {} );
+    }
+
+    void Character::transitionDialog( std::string action, int x, int y )
+    {
+        std::unordered_map< std::string, int > properties = { { "transition", 1 } };
+        sendEvent( EventType::DIALOG, action, 1, x, y, properties );
+    }
+
+    void Character::removeDialog( std::string action )
+    {
+        sendEvent( EventType::DIALOG, action, 0, {} );
+    }
+
+
+    void Character::sendEvent( EventType type, std::string action, int value, std::unordered_map< std::string, int > properties = {} )
+    {
+        Event event = Event( type, action, value, properties );
+        if ( UIManager::handleEvent( &event ) == false )
         {
             printf("character.cpp -> sendEvent() failed...\n");
         }
+        
     }
 
-    void Character::sendEvent(EventType type, UI ui, std::string action, int value, int emit_x, int emit_y )
+    void Character::sendEvent( EventType type, std::string action, int value, int emit_x, int emit_y, std::unordered_map< std::string, int > properties = {} )
     {
-        Event event = Event( type, action, value, emit_x, emit_y );
-        if ( UIManager::handleEvent( ui, &event ) == false )
+        Event event = Event( type, action, value, emit_x, emit_y, properties);
+        if ( UIManager::handleEvent( &event ) == false )
         {
             printf("character.cpp -> sendEvent() failed...\n");
         }
@@ -231,5 +294,27 @@ namespace game
             checkNPCs(characters);
         }
     }
-
 };
+
+//    Character* Character::getAdjacentNPC( std::vector< Character > *characters )
+//    {
+//        //TODO: Make pushDialog/pushMenu push copy of dialog/menu so that more than one of them can appear.
+//        //      Also see if you can make the Font_Textures static, so that they don't have to be created
+//        //      everytime a new dialog/menu is created
+//        Character *closest_character = NULL;
+//        unsigned int closest_distance = 10000; // start at some crazy high number
+//        for ( unsigned int i = 0; i < characters->size(); i++ )
+//        {
+//            if ( (*characters)[i].hasDialog() )
+//            {
+//                unsigned int distance_from_npc = (*characters)[i].getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
+//                if ( distance_from_npc < closest_distance && distance_from_npc <= (*characters)[i].getVoiceDistance() )
+//                {
+//                    closest_character = &((*characters)[i]);
+//                }
+//            }
+//        }
+//         
+//        return closest_character;
+//    }
+

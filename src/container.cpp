@@ -1,5 +1,6 @@
 #include "container.hpp"
 #include "enums/direction.hpp"
+#include "enums/container_enums.hpp"
 #include "globals.hpp"
 
 namespace game
@@ -16,17 +17,18 @@ namespace game
     }
 
     Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
-                          ContainerType type )
-        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR),
-          type(type) 
+                          ContainerType type, std::string id )
+        : text_boxes(tbs), button_boxes(bbs), type(type), id(id), 
+          background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
+
     {
         initializeBox(0, 0);
     }
 
     Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
                           ContainerType type, int emit_x, int emit_y )
-        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR),
-          type(type) 
+        : text_boxes(tbs), button_boxes(bbs), type(type),
+          background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
     {
         initializeBox(emit_x, emit_y);
     }

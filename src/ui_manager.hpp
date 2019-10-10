@@ -19,7 +19,7 @@ namespace game
         UIManager() { }
         virtual ~UIManager() { }
 
-        static bool handleEvent(UI target,Event* event);
+        static bool handleEvent(Event* event);
         static void handleInput(SDL_Event*);
         static bool inUI(UI);
         static bool inUI(UI, std::string);

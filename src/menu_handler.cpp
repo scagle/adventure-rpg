@@ -31,7 +31,8 @@ namespace game
                         ButtonBox( "Load", DEFAULT_FONT, "load" ),
                         ButtonBox( "Exit", DEFAULT_FONT, ""     ),
                     },
-                    ContainerType::SCREEN
+                    ContainerType::SCREEN,
+                    "main"
                 ) 
             },
             { 
@@ -50,7 +51,8 @@ namespace game
                         ButtonBox( "Save 8", DEFAULT_FONT, "save8" ), 
                         ButtonBox( "Save 9", DEFAULT_FONT, "save9" ), 
                     },
-                    ContainerType::SCREEN
+                    ContainerType::SCREEN,
+                    "save"
                 ) 
             }, 
             { 
@@ -69,7 +71,8 @@ namespace game
                         ButtonBox( "Load 8", DEFAULT_FONT, "load8" ), 
                         ButtonBox( "Load 9", DEFAULT_FONT, "load9" ), 
                     },
-                    ContainerType::SCREEN
+                    ContainerType::SCREEN,
+                    "load"
                 ) 
             }, 
             { 
@@ -80,7 +83,8 @@ namespace game
                     { 
                         ButtonBox( "warning!!!", DEFAULT_FONT, "main" ),
                     },
-                    ContainerType::SCREEN
+                    ContainerType::SCREEN,
+                    "warning"
                 ) 
             },
         };
