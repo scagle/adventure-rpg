@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <string>
 
-const float MAIN_CHARACTER_SPEED = 0.10;
+const float MAIN_CHARACTER_SPEED = 0.9;
 const std::string MAIN_CHARACTER_NAME = "Bob";
 const int SCREEN_WIDTH  = 640;
 const int SCREEN_HEIGHT = 480;

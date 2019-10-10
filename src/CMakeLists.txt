@@ -4,6 +4,11 @@ find_package(SDL2TTF REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${SDL2TTF_INCLUDE_DIRS})
 
+# Threads
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED)
+
 set(GAME_SOURCES 
     button_box.cpp
     button_box.hpp
@@ -54,6 +59,7 @@ add_subdirectory(enums)
 add_executable(game ${GAME_SOURCES} ${ENUM_SOURCES})
 
 target_link_libraries(game SDL2 SDL2_ttf)
+target_link_libraries(game Threads::Threads)
 
 message("Copying binary to <project>/build")
 add_custom_command(TARGET game
