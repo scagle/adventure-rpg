@@ -1,4 +1,5 @@
 build/*
+!build/.gitignore
 font_test
 font_test/*
 tags
