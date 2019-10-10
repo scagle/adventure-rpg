@@ -1,1 +1,0 @@
-/usr/bin/c++   -g -Wall -O2 -g -DNDEBUG  -rdynamic CMakeFiles/font.dir/main.cpp.o  -o font -lSDL2 -lSDL2_ttf 
