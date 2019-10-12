@@ -189,7 +189,6 @@ namespace game
 
     std::string Container::select()
     {
-        printf("text_index: %d, len(text_boxes): %d\n", text_index, text_boxes.size());
         if ( text_boxes.size() != 0 )
         {
             if ( ( unsigned int )text_index != ( text_boxes.size() - 1 ) )

@@ -38,7 +38,6 @@ namespace game
         bool moveCharacter( float *, float *, int *, int *, std::vector< Solid > *, int );
         void checkPortals( std::vector< Solid > * );
         void checkNPCs( std::vector< Character > * );
-//        Character* getAdjacentNPC( std::vector< Character > * );
         std::vector< Character* > getAdjacentNPCs( std::vector< Character > *characters );
         bool hasDialog() { return (action != ""); }
         std::string getAction() { return this->action; }

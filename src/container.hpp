@@ -38,7 +38,7 @@ namespace game
         Container();
         Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs);
         Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type );
-        Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type, std::string id);
+        Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type, std::string id );
         Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, ContainerType type, int emit_x, int emit_y);
 
         virtual ~Container() { }

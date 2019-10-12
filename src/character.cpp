@@ -264,7 +264,6 @@ namespace game
         sendEvent( EventType::DIALOG, action, 0, {} );
     }
 
-
     void Character::sendEvent( EventType type, std::string action, int value, std::unordered_map< std::string, int > properties = {} )
     {
         Event event = Event( type, action, value, properties );
@@ -311,26 +310,3 @@ namespace game
         }
     }
 };
-
-//    Character* Character::getAdjacentNPC( std::vector< Character > *characters )
-//    {
-//        //TODO: Make pushDialog/pushMenu push copy of dialog/menu so that more than one of them can appear.
-//        //      Also see if you can make the Font_Textures static, so that they don't have to be created
-//        //      everytime a new dialog/menu is created
-//        Character *closest_character = NULL;
-//        unsigned int closest_distance = 10000; // start at some crazy high number
-//        for ( unsigned int i = 0; i < characters->size(); i++ )
-//        {
-//            if ( (*characters)[i].hasDialog() )
-//            {
-//                unsigned int distance_from_npc = (*characters)[i].getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
-//                if ( distance_from_npc < closest_distance && distance_from_npc <= (*characters)[i].getVoiceDistance() )
-//                {
-//                    closest_character = &((*characters)[i]);
-//                }
-//            }
-//        }
-//         
-//        return closest_character;
-//    }
-

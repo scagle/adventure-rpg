@@ -23,6 +23,8 @@ namespace game
     void ContainerHandler::selectContainer()
     {
         std::string id = this->active_containers.back().select();
+        // TODO: Should I really do this?
+        std::vector< std::pair< std::string, int > > properties = this->active_containers.back().getProperties();
         if (id != "" && id != "text_continue")
         {
             handleID(id);

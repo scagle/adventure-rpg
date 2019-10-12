@@ -44,15 +44,15 @@ namespace game
                     },
                     { 
                         ButtonBox( "Return", DEFAULT_FONT, "leave" ),
-                        ButtonBox( "Save 1", DEFAULT_FONT, "save1" ), 
-                        ButtonBox( "Save 2", DEFAULT_FONT, "save2" ), 
-                        ButtonBox( "Save 3", DEFAULT_FONT, "save3" ), 
-                        ButtonBox( "Save 4", DEFAULT_FONT, "save4" ), 
-                        ButtonBox( "Save 5", DEFAULT_FONT, "save5" ), 
-                        ButtonBox( "Save 6", DEFAULT_FONT, "save6" ), 
-                        ButtonBox( "Save 7", DEFAULT_FONT, "save7" ), 
-                        ButtonBox( "Save 8", DEFAULT_FONT, "save8" ), 
-                        ButtonBox( "Save 9", DEFAULT_FONT, "save9" ), 
+                        ButtonBox( "Save 1", DEFAULT_FONT, "save;1" ), 
+                        ButtonBox( "Save 2", DEFAULT_FONT, "save;2" ), 
+                        ButtonBox( "Save 3", DEFAULT_FONT, "save;3" ), 
+                        ButtonBox( "Save 4", DEFAULT_FONT, "save;4" ), 
+                        ButtonBox( "Save 5", DEFAULT_FONT, "save;5" ), 
+                        ButtonBox( "Save 6", DEFAULT_FONT, "save;6" ), 
+                        ButtonBox( "Save 7", DEFAULT_FONT, "save;7" ), 
+                        ButtonBox( "Save 8", DEFAULT_FONT, "save;8" ), 
+                        ButtonBox( "Save 9", DEFAULT_FONT, "save;9" ), 
                     },
                     ContainerType::SCREEN,
                     "save"
@@ -65,15 +65,15 @@ namespace game
                     },
                     { 
                         ButtonBox( "Return", DEFAULT_FONT, "leave" ),
-                        ButtonBox( "Load 1", DEFAULT_FONT, "load1" ), 
-                        ButtonBox( "Load 2", DEFAULT_FONT, "load2" ), 
-                        ButtonBox( "Load 3", DEFAULT_FONT, "load3" ), 
-                        ButtonBox( "Load 4", DEFAULT_FONT, "load4" ), 
-                        ButtonBox( "Load 5", DEFAULT_FONT, "load5" ), 
-                        ButtonBox( "Load 6", DEFAULT_FONT, "load6" ), 
-                        ButtonBox( "Load 7", DEFAULT_FONT, "load7" ), 
-                        ButtonBox( "Load 8", DEFAULT_FONT, "load8" ), 
-                        ButtonBox( "Load 9", DEFAULT_FONT, "load9" ), 
+                        ButtonBox( "Load 1", DEFAULT_FONT, "load;1" ), 
+                        ButtonBox( "Load 2", DEFAULT_FONT, "load;2" ), 
+                        ButtonBox( "Load 3", DEFAULT_FONT, "load;3" ), 
+                        ButtonBox( "Load 4", DEFAULT_FONT, "load;4" ), 
+                        ButtonBox( "Load 5", DEFAULT_FONT, "load;5" ), 
+                        ButtonBox( "Load 6", DEFAULT_FONT, "load;6" ), 
+                        ButtonBox( "Load 7", DEFAULT_FONT, "load;7" ), 
+                        ButtonBox( "Load 8", DEFAULT_FONT, "load;8" ), 
+                        ButtonBox( "Load 9", DEFAULT_FONT, "load;9" ), 
                     },
                     ContainerType::SCREEN,
                     "load"
@@ -97,7 +97,12 @@ namespace game
 
     void MenuHandler::handleID( std::string id )
     {
-        int entity = 0;
+        if ( id.find(";") != std::string::npos )
+        {
+            printf("'%s' contains a semicolon\n", id.c_str());
+            return;
+        }
+
         if ( id == "quit")
             quit();
         else if ( id == "leave" || id == "back" )
@@ -108,7 +113,7 @@ namespace game
 
     bool MenuHandler::handleEvent( Event *event )
     {
-        printf("menu_handler recieved: %s", event->getID().c_str());
+        printf("menu_handler recieved: %s\n", event->getID().c_str());
         return true;
     }
 
