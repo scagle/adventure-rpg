@@ -16,54 +16,57 @@ namespace game
                 "home_merchant0",
                 Container( 
                     { 
-                        TextBox("Hello there", DEFAULT_FONT),
-                        TextBox("adventurer!", DEFAULT_FONT),
-                        TextBox("Would you like", DEFAULT_FONT),
-                        TextBox("to browse my wares?", DEFAULT_FONT),
+                        TextBox("Hello there", DEFAULT_FONT, Properties()),
+                        TextBox("adventurer!", DEFAULT_FONT, Properties()),
+                        TextBox("Would you like", DEFAULT_FONT, Properties()),
+                        TextBox("to browse my wares?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Buy", DEFAULT_FONT, "shop0_buy"), 
-                        ButtonBox("Sell", DEFAULT_FONT, "shop0_sell"), 
-                        ButtonBox("BEGONE!", DEFAULT_FONT, "leave"),
+                        ButtonBox("Buy", DEFAULT_FONT, "shop0_buy", Properties()), 
+                        ButtonBox("Sell", DEFAULT_FONT, "shop0_sell", Properties()), 
+                        ButtonBox("BEGONE!", DEFAULT_FONT, "leave", Properties()),
                     },
                     ContainerType::FLOATING,
-                    "home_merchant0"
+                    "home_merchant0",
+                    {}
                 )
             },
             { 
                 "home_npc0",
                 Container( 
                     { 
-                        TextBox("OMG!", DEFAULT_FONT),
-                        TextBox("I'm so bored...", DEFAULT_FONT),
-                        TextBox("There's NOTHING here!", DEFAULT_FONT),
+                        TextBox("OMG!", DEFAULT_FONT, Properties()),
+                        TextBox("I'm so bored...", DEFAULT_FONT, Properties()),
+                        TextBox("There's NOTHING here!", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Go away!", DEFAULT_FONT, "leave"),
+                        ButtonBox("Go away!", DEFAULT_FONT, "leave", Properties()),
                     },
                     ContainerType::FLOATING,
-                    "home_npc0"
+                    "home_npc0",
+                    {}
                 )
             },
             { 
                 "forest_wizard",
                 Container( 
                     { 
-                        TextBox("Oh hi!", DEFAULT_FONT),
-                        TextBox("You scared me...", DEFAULT_FONT),
-                        TextBox("I was practicing", DEFAULT_FONT),
-                        TextBox("my wizard spells.", DEFAULT_FONT),
-                        TextBox("Would you be", DEFAULT_FONT),
-                        TextBox("interested in", DEFAULT_FONT),
-                        TextBox("being my test", DEFAULT_FONT),
-                        TextBox("dummy?", DEFAULT_FONT),
+                        TextBox("Oh hi!", DEFAULT_FONT, Properties()),
+                        TextBox("You scared me...", DEFAULT_FONT, Properties()),
+                        TextBox("I was practicing", DEFAULT_FONT, Properties()),
+                        TextBox("my wizard spells.", DEFAULT_FONT, Properties()),
+                        TextBox("Would you be", DEFAULT_FONT, Properties()),
+                        TextBox("interested in", DEFAULT_FONT, Properties()),
+                        TextBox("being my test", DEFAULT_FONT, Properties()),
+                        TextBox("dummy?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Cast Away!", DEFAULT_FONT, ""),
-                        ButtonBox("Umm... No.", DEFAULT_FONT, "leave"),
+                        ButtonBox("Cast Away!", DEFAULT_FONT, "", Properties()),
+                        ButtonBox("Umm... No.", DEFAULT_FONT, "leave", Properties()),
                     },
                     ContainerType::FLOATING,
-                    "forest_wizard"
+                    "forest_wizard",
+                    {}
                 )
             },
         };

@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <string>
+#include "datatypes/properties.hpp"
 
 namespace game
 {
@@ -13,14 +14,16 @@ namespace game
         SDL_Color background;
         SDL_Color foreground;
         int font_index;
+        Properties properties;
 
         public:
         TextBox();
-        TextBox( std::string, int );
-        TextBox( std::string, int, SDL_Color );
+        TextBox( std::string, int, Properties );
+        TextBox( std::string, int, SDL_Color, Properties );
         virtual ~TextBox() { }
 
-        void construct( std::string, int, SDL_Color );
+        void construct( std::string, int, SDL_Color, Properties );
+        virtual Properties* getProperties() { return &(this->properties); } 
         virtual void render( SDL_Renderer *renderer, SDL_Rect *text_rect );
         virtual void update();
         virtual void initText();

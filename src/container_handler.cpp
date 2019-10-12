@@ -2,7 +2,9 @@
 #include <cstdio>
 #include <unordered_map>
 #include <stack>
+#include "container.hpp"
 #include "container_handler.hpp"
+#include "datatypes/properties.hpp"
 
 namespace game
 {
@@ -23,17 +25,16 @@ namespace game
     void ContainerHandler::selectContainer()
     {
         std::string id = this->active_containers.back().select();
-        // TODO: Should I really do this?
-        std::vector< std::pair< std::string, int > > properties = this->active_containers.back().getProperties();
+        Properties* properties = this->active_containers.back().getProperties();
         if (id != "" && id != "text_continue")
         {
-            handleID(id);
+            handleID(id, properties);
         }
 
         printf("Action: '%s'\n", id.c_str());
     }
 
-    void ContainerHandler::handleID( std::string id )
+    void ContainerHandler::handleID( std::string id, Properties *properties )
     {
         popContainer();
         if ( id != "leave")

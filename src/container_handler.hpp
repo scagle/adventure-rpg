@@ -4,6 +4,7 @@
 #include <string>
 #include <SDL.h>
 #include "container.hpp"
+#include "datatypes/properties.hpp"
 
 namespace game
 {
@@ -30,7 +31,7 @@ namespace game
 
         virtual void moveContainer(Direction);              
         virtual void selectContainer();                 
-        virtual void handleID( std::string id );
+        virtual void handleID( std::string id, Properties* properties );
         virtual Container* getContainer();              
         virtual std::string getContainerID();
 

@@ -14,76 +14,81 @@ namespace game
                 "home_portal",
                 Container( 
                     { 
-                        TextBox("Travel", DEFAULT_FONT),
+                        TextBox("Travel", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Forest", DEFAULT_FONT, "forest"), 
-                        ButtonBox("Caves", DEFAULT_FONT, "caves"), 
-                        ButtonBox("Beach", DEFAULT_FONT, "beach"), 
+                        ButtonBox("Forest", DEFAULT_FONT, "forest", Properties()), 
+                        ButtonBox("Caves", DEFAULT_FONT, "caves", Properties()), 
+                        ButtonBox("Beach", DEFAULT_FONT, "beach", Properties()), 
                     },
                     ContainerType::FOOTER,
-                    "home_portal"
+                    "home_portal",
+                    {}
                 )
             },
             {
                 "forest_portal",
                 Container( 
                     { 
-                        TextBox("Aww, too scared?", DEFAULT_FONT),
+                        TextBox("Aww, too scared?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Home", DEFAULT_FONT, "home"), 
+                        ButtonBox("Home", DEFAULT_FONT, "home", Properties()), 
                     },
                     ContainerType::FOOTER,
-                    "forest_portal"
+                    "forest_portal",
+                    {}
                 )
             },
             {
                 "cave_portal",
                 Container( 
                     { 
-                        TextBox("Are you...", DEFAULT_FONT),
-                        TextBox("CAVING in?", DEFAULT_FONT),
+                        TextBox("Are you...", DEFAULT_FONT, Properties()),
+                        TextBox("CAVING in?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("HAHAHA yes", DEFAULT_FONT, "home"), 
+                        ButtonBox("HAHAHA yes", DEFAULT_FONT, "home", Properties()), 
                     },
                     ContainerType::FOOTER,
-                    "cave_portal"
+                    "cave_portal",
+                    {}
                 )
             },
             {
                 "inner_cave_portal",
                 Container( 
                     { 
-                        TextBox("You're not ready yet...", DEFAULT_FONT),
-                        TextBox("( UNIMPLEMENTED )", DEFAULT_FONT),
+                        TextBox("You're not ready yet...", DEFAULT_FONT, Properties()),
+                        TextBox("( UNIMPLEMENTED )", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Yeah yeah yeah...", DEFAULT_FONT, "leave"), 
+                        ButtonBox("Yeah yeah yeah...", DEFAULT_FONT, "leave", Properties()), 
                     },
                     ContainerType::FOOTER,
-                    "inner_cave_portal"
+                    "inner_cave_portal",
+                    {}
                 )
             },
             {
                 "beach_portal",
                 Container( 
                     { 
-                        TextBox("Too much sun?", DEFAULT_FONT),
+                        TextBox("Too much sun?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
-                        ButtonBox("Get me home please!", DEFAULT_FONT, "home"), 
+                        ButtonBox("Get me home please!", DEFAULT_FONT, "home", Properties()), 
                     },
                     ContainerType::FOOTER,
-                    "beach_portal"
+                    "beach_portal",
+                    {}
                 )
             },
         };
         return true;
     }
 
-    void TravelHandler::handleID( std::string id )
+    void TravelHandler::handleID( std::string id, Properties *properties )
     {
         popContainer();
         int entity = 0;

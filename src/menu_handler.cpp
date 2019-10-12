@@ -28,13 +28,14 @@ namespace game
                     {
                     },
                     { 
-                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
-                        ButtonBox( "Save", DEFAULT_FONT, "save" ), 
-                        ButtonBox( "Load", DEFAULT_FONT, "load" ),
-                        ButtonBox( "Exit", DEFAULT_FONT, "quit" ),
+                        ButtonBox( "Return", DEFAULT_FONT, "leave", Properties() ),
+                        ButtonBox( "Save", DEFAULT_FONT, "save", Properties( { { "stackable", 1 } } ) ), 
+                        ButtonBox( "Load", DEFAULT_FONT, "load", Properties( { { "stackable", 1 } } ) ),
+                        ButtonBox( "Exit", DEFAULT_FONT, "quit", Properties() ),
                     },
                     ContainerType::SCREEN,
-                    "main"
+                    "main",
+                    {}
                 ) 
             },
             { 
@@ -43,19 +44,20 @@ namespace game
                     {
                     },
                     { 
-                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
-                        ButtonBox( "Save 1", DEFAULT_FONT, "save;1" ), 
-                        ButtonBox( "Save 2", DEFAULT_FONT, "save;2" ), 
-                        ButtonBox( "Save 3", DEFAULT_FONT, "save;3" ), 
-                        ButtonBox( "Save 4", DEFAULT_FONT, "save;4" ), 
-                        ButtonBox( "Save 5", DEFAULT_FONT, "save;5" ), 
-                        ButtonBox( "Save 6", DEFAULT_FONT, "save;6" ), 
-                        ButtonBox( "Save 7", DEFAULT_FONT, "save;7" ), 
-                        ButtonBox( "Save 8", DEFAULT_FONT, "save;8" ), 
-                        ButtonBox( "Save 9", DEFAULT_FONT, "save;9" ), 
+                        ButtonBox( "Return", DEFAULT_FONT, "leave",  Properties() ),
+                        ButtonBox( "Save 1", DEFAULT_FONT, "save_1", Properties() ), 
+                        ButtonBox( "Save 2", DEFAULT_FONT, "save_2", Properties() ), 
+                        ButtonBox( "Save 3", DEFAULT_FONT, "save_3", Properties() ), 
+                        ButtonBox( "Save 4", DEFAULT_FONT, "save_4", Properties() ), 
+                        ButtonBox( "Save 5", DEFAULT_FONT, "save_5", Properties() ), 
+                        ButtonBox( "Save 6", DEFAULT_FONT, "save_6", Properties() ), 
+                        ButtonBox( "Save 7", DEFAULT_FONT, "save_7", Properties() ), 
+                        ButtonBox( "Save 8", DEFAULT_FONT, "save_8", Properties() ), 
+                        ButtonBox( "Save 9", DEFAULT_FONT, "save_9", Properties() ), 
                     },
                     ContainerType::SCREEN,
-                    "save"
+                    "save",
+                    {}
                 ) 
             }, 
             { 
@@ -64,19 +66,20 @@ namespace game
                     {
                     },
                     { 
-                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
-                        ButtonBox( "Load 1", DEFAULT_FONT, "load;1" ), 
-                        ButtonBox( "Load 2", DEFAULT_FONT, "load;2" ), 
-                        ButtonBox( "Load 3", DEFAULT_FONT, "load;3" ), 
-                        ButtonBox( "Load 4", DEFAULT_FONT, "load;4" ), 
-                        ButtonBox( "Load 5", DEFAULT_FONT, "load;5" ), 
-                        ButtonBox( "Load 6", DEFAULT_FONT, "load;6" ), 
-                        ButtonBox( "Load 7", DEFAULT_FONT, "load;7" ), 
-                        ButtonBox( "Load 8", DEFAULT_FONT, "load;8" ), 
-                        ButtonBox( "Load 9", DEFAULT_FONT, "load;9" ), 
+                        ButtonBox( "Return", DEFAULT_FONT, "leave",  Properties() ),
+                        ButtonBox( "Load 1", DEFAULT_FONT, "load_1", Properties() ), 
+                        ButtonBox( "Load 2", DEFAULT_FONT, "load_2", Properties() ), 
+                        ButtonBox( "Load 3", DEFAULT_FONT, "load_3", Properties() ), 
+                        ButtonBox( "Load 4", DEFAULT_FONT, "load_4", Properties() ), 
+                        ButtonBox( "Load 5", DEFAULT_FONT, "load_5", Properties() ), 
+                        ButtonBox( "Load 6", DEFAULT_FONT, "load_6", Properties() ), 
+                        ButtonBox( "Load 7", DEFAULT_FONT, "load_7", Properties() ), 
+                        ButtonBox( "Load 8", DEFAULT_FONT, "load_8", Properties() ), 
+                        ButtonBox( "Load 9", DEFAULT_FONT, "load_9", Properties() ), 
                     },
                     ContainerType::SCREEN,
-                    "load"
+                    "load",
+                    {}
                 ) 
             }, 
             { 
@@ -85,17 +88,18 @@ namespace game
                     {
                     },
                     { 
-                        ButtonBox( "warning!!!", DEFAULT_FONT, "main" ),
+                        ButtonBox( "warning!!!", DEFAULT_FONT, "main", Properties() ),
                     },
                     ContainerType::SCREEN,
-                    "warning"
+                    "warning",
+                    {}
                 ) 
             },
         };
         return true;
     }
 
-    void MenuHandler::handleID( std::string id )
+    void MenuHandler::handleID( std::string id, Properties *properties )
     {
         if ( id.find(";") != std::string::npos )
         {

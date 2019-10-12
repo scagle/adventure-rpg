@@ -1,42 +1,39 @@
 #include <SDL.h>
 #include "button_box.hpp"
 #include "text_box.hpp"
+#include "datatypes/properties.hpp"
 
 namespace game
 {
     ButtonBox::ButtonBox()
         : TextBox()
     {
-        construct("");
+        construct( "", {} );
     }
 
-    ButtonBox::ButtonBox( std::string action )
-        : TextBox( )
+    ButtonBox::ButtonBox( std::string action, Properties p )
+        : TextBox()
     {
-        construct(action);
+        construct( action, p  );
     }
 
-    ButtonBox::ButtonBox( std::string text, int font_index, std::string action )
-        : TextBox( text, font_index )
+    ButtonBox::ButtonBox( std::string text, int font_index, std::string action, Properties p )
+        : TextBox( text, font_index, p )
     {
-        construct(action);
+        construct( action, p );
     }
 
-    ButtonBox::ButtonBox( std::string text, int font_index, SDL_Color background, std::string action )
-        : TextBox( text, font_index, background )
+    ButtonBox::ButtonBox( std::string text, int font_index, SDL_Color background, std::string action, Properties p )
+        : TextBox( text, font_index, background, p )
     {
-        construct(action);
+        construct( action, p );
     }
 
-    void ButtonBox::construct( std::string action )
+    void ButtonBox::construct( std::string action, Properties p )
     {
         this->action = action;
+        this->properties = p;
         printf("Action: %s\n", this->action.c_str());
-    }
-
-    std::string ButtonBox::getAction()
-    {
-        return this->action;
     }
 
     void ButtonBox::render( SDL_Renderer *renderer, SDL_Rect *button_rect, bool selected )

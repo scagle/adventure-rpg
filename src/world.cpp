@@ -108,7 +108,7 @@ namespace game
         };
 
 /////// Caves
-        SDL_Color caves_background = { 112, 97, 54, 255 };
+        SDL_Color caves_background = { 70, 60, 20, 255 };
 
         vector< Solid > caves_objects = { 
             Solid( { 0   , 0 , 50  , 480 } , { 137 , 87 , 60 , 255 } , Solid::Type::SOLID ) ,

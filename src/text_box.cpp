@@ -1,30 +1,32 @@
 #include <SDL.h> 
 #include "text_box.hpp"
 #include "gamedata.hpp"
+#include "datatypes/properties.hpp"
 
 namespace game
 {
     TextBox::TextBox()
     {
-        construct( "", 0, {255, 255, 255, 255} );
+        construct( "", 0, {255, 255, 255, 255}, Properties() );
     }
 
-    TextBox::TextBox( std::string text, int font_index)
+    TextBox::TextBox( std::string text, int font_index, Properties p)
     {
-        construct( text, font_index, {255, 255, 255, 255} );
+        construct( text, font_index, {255, 255, 255, 255}, p );
     }
 
-    TextBox::TextBox( std::string text, int font_index, SDL_Color background )
+    TextBox::TextBox( std::string text, int font_index, SDL_Color background, Properties p )
     {
-        construct( text, font_index, background );
+        construct( text, font_index, background, p );
     }
 
-    void TextBox::construct( std::string text, int font_index, SDL_Color background )
+    void TextBox::construct( std::string text, int font_index, SDL_Color background, Properties p )
     {
         this->text = text;
         this->font_index = font_index;
         this->background = background;
         this->foreground = {0, 0, 0, 255};
+        this->properties = p;
         initText();
     }
 

@@ -10,15 +10,16 @@ namespace game
         initializeBox(0, 0);
     }
 
-    Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs )
-        : text_boxes(tbs), button_boxes(bbs), background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
+    Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, Properties p )
+        : text_boxes(tbs), button_boxes(bbs), properties(p),
+          background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
     {
         initializeBox(0, 0);
     }
 
     Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
-                          ContainerType type, std::string id )
-        : text_boxes(tbs), button_boxes(bbs), type(type), id(id), 
+                          ContainerType type, std::string id, Properties p )
+        : text_boxes(tbs), button_boxes(bbs), type(type), id(id), properties(p), 
           background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
 
     {
@@ -26,8 +27,8 @@ namespace game
     }
 
     Container::Container( std::vector< TextBox > tbs, std::vector< ButtonBox > bbs, 
-                          ContainerType type, int emit_x, int emit_y )
-        : text_boxes(tbs), button_boxes(bbs), type(type),
+                          ContainerType type, int emit_x, int emit_y, Properties p )
+        : text_boxes(tbs), button_boxes(bbs), type(type), properties(p),
           background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
     {
         initializeBox(emit_x, emit_y);

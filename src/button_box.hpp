@@ -3,6 +3,7 @@
 #include <string>
 #include "text_box.hpp"
 #include "globals.hpp"
+#include "datatypes/properties.hpp"
 
 namespace game
 {
@@ -13,12 +14,12 @@ namespace game
 
         public:
         ButtonBox( );
-        ButtonBox( std::string );
-        ButtonBox( std::string, int, std::string );
-        ButtonBox( std::string, int, SDL_Color, std::string );
+        ButtonBox( std::string, Properties );
+        ButtonBox( std::string, int, std::string, Properties );
+        ButtonBox( std::string, int, SDL_Color, std::string, Properties );
 
-        void construct( std::string );
-        std::string getAction();
+        void construct( std::string, Properties );
+        std::string getAction() { return this->action; } 
         virtual void render( SDL_Renderer *renderer, SDL_Rect *button_rect, bool selected );
         virtual void update();
     };
