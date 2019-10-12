@@ -77,6 +77,8 @@ namespace game
                         menu_handler.selectContainer();
                     else if ( dialog_handler.inContainer() )
                         dialog_handler.selectContainer();
+                    else if ( travel_handler.inContainer() )
+                        travel_handler.selectContainer();
                 }
                 break;
         }

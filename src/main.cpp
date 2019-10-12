@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
      */
     game::GameData gamedata = game::GameData(); // Initialize Game Sessions
     gamedata.start(); // Start Game
-    gamedata.updateMap(0);
     std::thread rt( render_thread, &gamedata );
 
     SDL_Event event;
@@ -36,7 +35,6 @@ int main(int argc, char *argv[])
         auto end = std::chrono::steady_clock::now();
         auto duration = std::chrono::duration_cast< std::chrono::milliseconds >( end - begin );
         std::this_thread::sleep_for( std::chrono::milliseconds( 5 ) - duration );
-        //gamedata.render();
     }
     rt.join();
 

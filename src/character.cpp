@@ -6,7 +6,6 @@
 #include <algorithm>
 
 #include "character.hpp"
-#include "gamedata.hpp"
 #include "ui_manager.hpp"
 #include "dialog_handler.hpp"
 #include "travel_handler.hpp"
@@ -96,7 +95,7 @@ namespace game
     {
         if ( portals->size() > 0 )
         {
-            // Check for entering portal range
+            // Get all portals that character is inside of  
             std::vector< Solid* > new_adjacent_portals;
             for ( auto& portal : *portals)
             {
@@ -106,6 +105,7 @@ namespace game
                 }
             }
 
+            // Check for entering portal range
             for ( Solid* portal : new_adjacent_portals )
             {
                 // if a new portal not found in adjacent_portals
@@ -295,8 +295,8 @@ namespace game
     {
         if ( main_character == true )
         {
-            std::vector< Solid > *solids = GameData::getSolids();
-            std::vector< Solid > *portals = GameData::getPortals();
+            std::vector< Solid > *solids = World::getSolids();
+            std::vector< Solid > *portals = World::getPortals();
             std::vector< Character > *characters = World::getCharactersInMap();
 
             // Move Character

@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <unordered_map>
 #include <string>
 #include <SDL.h>
 #include "environment.hpp"
@@ -12,21 +13,29 @@ namespace game
     class World
     {
         private:
-        static std::vector< Environment > maps;
-        static unsigned int current_map;   
+        static std::unordered_map< std::string, Environment > maps;
+        static Environment* current_map;   
+        static Character main_character;   
 
         public:
         World();
         ~World() { }
         bool loadMaps(); 
-        virtual void render( SDL_Renderer *renderer );
-        virtual void update();
-        Environment* getCurrentMap() { return &(this->maps[current_map]); }
-        Environment* getMap(unsigned int index) { return &(this->maps[index]); }
+        static void updateMap( std::string id, int entry );
+        
+        static Environment* getCurrentMap() { return current_map; }
+        static std::vector< Solid >* getSolids() { return getCurrentMap()->getSolids(); }
+        static std::vector< Solid >* getPortals() { return getCurrentMap()->getPortals(); }
+        static std::vector< Character >* getCharactersInMap() { return current_map->getCharacters(); }
+        static SDL_Color* getCurrentBackground() { return current_map->getBackground(); }
+        static void changeMap( std::string id ) { current_map = &(maps[id]); }
 
-        static std::vector< Character >* getCharactersInMap() { return maps[current_map].getCharacters(); }
         std::vector< std::string > getFiles(std::string, std::string); 
         std::vector< Character* >* getCharacters(); // TODO: Recursively check all environments and return characters
-        
+
+        static void setMainCharacterVelocity( float velocity_x, float velocity_y );
+
+        virtual void render( SDL_Renderer *renderer );
+        virtual void update();
     };
 };

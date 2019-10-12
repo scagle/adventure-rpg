@@ -45,6 +45,27 @@ namespace game
                     "home_npc0"
                 )
             },
+            { 
+                "forest_wizard",
+                Container( 
+                    { 
+                        TextBox("Oh hi!", DEFAULT_FONT),
+                        TextBox("You scared me...", DEFAULT_FONT),
+                        TextBox("I was practicing", DEFAULT_FONT),
+                        TextBox("my wizard spells.", DEFAULT_FONT),
+                        TextBox("Would you be", DEFAULT_FONT),
+                        TextBox("interested in", DEFAULT_FONT),
+                        TextBox("being my test", DEFAULT_FONT),
+                        TextBox("dummy?", DEFAULT_FONT),
+                    }, 
+                    { 
+                        ButtonBox("Cast Away!", DEFAULT_FONT, ""),
+                        ButtonBox("Umm... No.", DEFAULT_FONT, "leave"),
+                    },
+                    ContainerType::FLOATING,
+                    "forest_wizard"
+                )
+            },
         };
         return true;
     }

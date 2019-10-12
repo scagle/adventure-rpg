@@ -9,7 +9,7 @@ set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
 
-set(GAME_SOURCES 
+set(BASE_SOURCES 
     button_box.cpp
     button_box.hpp
     character.cpp
@@ -56,7 +56,8 @@ set(GAME_SOURCES
 )
 
 add_subdirectory(enums)
-add_executable(game ${GAME_SOURCES} ${ENUM_SOURCES})
+add_subdirectory(datatypes)
+add_executable(game ${BASE_SOURCES} ${ENUMS_SOURCES} ${DATATYPES_SOURCES})
 
 target_link_libraries(game SDL2 SDL2_ttf)
 target_link_libraries(game Threads::Threads)

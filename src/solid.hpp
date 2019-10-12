@@ -4,6 +4,7 @@
 #include <SDL.h>
 #include <stdint.h>
 #include "event.hpp"
+#include "datatypes/position.hpp"
 
 namespace game
 {
@@ -37,6 +38,7 @@ namespace game
         uint32_t getColorNumber() { return ( (color.a << 24) | (color.r << 16) | (color.g << 8) | (color.b) ); }
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
+        virtual void setPosition( Position* pos ) { hitbox = { pos->x, pos->y, hitbox.w, hitbox.h }; }
 
         // Check if this solid is close to another solid 
         bool isInside( SDL_Rect* ); 

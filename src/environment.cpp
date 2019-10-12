@@ -8,15 +8,14 @@ namespace game
      */
     void Environment::render( SDL_Renderer *renderer ) 
     {
-        //printf("render: this: %p, vec_portal: %p portal: %p\n", this, getPortals(), &getPortals()[0]);
-        for (unsigned int i = 0; i < portals.size(); i++)
+        for ( unsigned int i = 0; i < portals.size(); i++ )
             portals[i].render( renderer );
-        for (unsigned int i = 0; i < solids.size(); i++)
+        for ( unsigned int i = 0; i < solids.size(); i++ )
             solids[i].render( renderer );
-        for (unsigned int i = 0; i < characters.size(); i++)
+        for ( unsigned int i = 0; i < characters.size(); i++ )
             characters[i].render( renderer );
 
-        for (Character chr : (*getCharacters()))
+        for ( Character chr : (*getCharacters()) )
             chr.render( renderer );
     }
 

@@ -67,6 +67,7 @@ namespace game
         virtual void update();
 
         void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; }
+        void setPosition( Position* pos) override { this->actual_x = pos->x; this->actual_y = pos->y; }
             
     };
 };

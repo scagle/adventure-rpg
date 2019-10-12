@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include "travel_handler.hpp"
 #include "event.hpp"
+#include "world.hpp"
 
 namespace game
 {
@@ -16,16 +17,39 @@ namespace game
                         TextBox("Travel", DEFAULT_FONT)
                     }, 
                     { 
-                        ButtonBox("Forest", DEFAULT_FONT, "travel_forest"), 
-                        ButtonBox("Caves", DEFAULT_FONT, "travel_caves"), 
-                        ButtonBox("Beach", DEFAULT_FONT, "travel_beach"), 
+                        ButtonBox("Forest", DEFAULT_FONT, "forest"), 
+                        ButtonBox("Caves", DEFAULT_FONT, "caves"), 
+                        ButtonBox("Beach", DEFAULT_FONT, "beach"), 
                     },
                     ContainerType::FOOTER,
                     "home_portal"
                 )
             },
+            {
+                "forest_portal",
+                Container( 
+                    { 
+                        TextBox("Aww, too scared?", DEFAULT_FONT)
+                    }, 
+                    { 
+                        ButtonBox("Home", DEFAULT_FONT, "home"), 
+                    },
+                    ContainerType::FOOTER,
+                    "forest_portal"
+                )
+            },
         };
         return true;
+    }
+
+    void TravelHandler::handleID( std::string id )
+    {
+        int entity = 0;
+        if ( id == "home")
+            entity = 0;
+        if ( id == "forest")
+            entity = 2;
+        World::updateMap( id, entity ); 
     }
 
     bool TravelHandler::handleEvent( Event *event )

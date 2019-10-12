@@ -26,16 +26,10 @@ namespace game
             SDL_Window* window;                 // Window containing the game
             KeyboardHandler keyboard_handler;   // Keyboard input handler
             UIManager ui_manager;               // Manager of menus/dialogs/travel interfaces
-            Character main_character;           // Main character
             World world;                        // World with all the maps / mapdata
-
-            // Current Map attributes
-            int map_index = 0;
 
             static SDL_Renderer* renderer;          // Hardware accelerated renderer
             static std::vector< TTF_Font* > fonts;  // All pre-loaded fonts
-            static std::vector< Solid > *solids;    // A pointer to a vector of solids
-            static std::vector< Solid > *portals;   // A vector of pointers to solids that are of type PORTAL
             static bool initialized;
             static bool quit;
 
@@ -46,14 +40,12 @@ namespace game
             void checkInputs( SDL_Event* event );
             void update();
             void render();
-            void updateMap(int map_index);
+            void updateMap( std::string id );
             bool close();
 
             static void sendEvent(Event, bool);
             static bool getInitialized() { return initialized; }
             static bool getQuit() { return quit; }
-            static std::vector< Solid >* getSolids() { return solids; }
-            static std::vector< Solid >* getPortals() { return portals; }
             static TTF_Font* getFont(int) { return fonts[0]; }
             static SDL_Renderer* getActiveRenderer() { return renderer; }
             static void setInitialized(bool val) { initialized = val; }

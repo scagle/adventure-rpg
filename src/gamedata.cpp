@@ -17,8 +17,6 @@ namespace game
     // Static Declarations
     SDL_Renderer* GameData::renderer;         
     std::vector< TTF_Font* > GameData::fonts; 
-    std::vector< Solid > *GameData::solids;
-    std::vector< Solid > *GameData::portals;
     bool GameData::initialized = false;
     bool GameData::quit = false;
     std::unordered_map< std::string, Container > mapping;
@@ -59,11 +57,9 @@ namespace game
     {
         if (!ui_manager.inUI(UI::MENU))
         {
-            // Update Character
             float velocity_x = keyboard_handler.getHorizontalDirection() * MAIN_CHARACTER_SPEED;
             float velocity_y = keyboard_handler.getVerticalDirection()   * MAIN_CHARACTER_SPEED;
-            main_character.setVelocity(velocity_x, velocity_y);
-            main_character.update();
+            world.setMainCharacterVelocity(velocity_x, velocity_y);
             world.update();
         }
     }
@@ -71,12 +67,12 @@ namespace game
     void GameData::render()
     {
         // Clear screen
-        SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+        SDL_Color* color = world.getCurrentBackground();
+        SDL_SetRenderDrawColor( renderer, color->r, color->g, color->b, color->a );
         SDL_RenderClear( renderer );
 
         // Render Environment
         world.render( renderer );
-        main_character.render( renderer );
 
         // Render Menu
         ui_manager.render( renderer );
@@ -85,13 +81,6 @@ namespace game
         SDL_RenderPresent( renderer );
     }
 
-    void GameData::updateMap( int map_index )
-    {
-        map_index = map_index;
-        Environment *env = world.getMap(map_index);
-        solids = env->getSolids();
-        portals = env->getPortals();
-    }
     
     bool GameData::close()
     {
@@ -123,7 +112,6 @@ namespace game
             std::cout << "Initialization Success!" << "\n";
         else
             std::cout << "Initialization Failure!" << "\n";
-        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true );
     }
 
     bool GameData::init()
