@@ -57,7 +57,7 @@ namespace game
                 Container( 
                     { 
                         TextBox("You're not ready yet...", DEFAULT_FONT),
-                        TextBox("( unimplemented )", DEFAULT_FONT),
+                        TextBox("( UNIMPLEMENTED )", DEFAULT_FONT),
                     }, 
                     { 
                         ButtonBox("Yeah yeah yeah...", DEFAULT_FONT, "leave"), 
@@ -85,6 +85,7 @@ namespace game
 
     void TravelHandler::handleID( std::string id )
     {
+        popContainer();
         int entity = 0;
         if ( id == "home")
             entity = 0;

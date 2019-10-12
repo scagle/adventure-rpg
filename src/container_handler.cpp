@@ -25,7 +25,6 @@ namespace game
         std::string id = this->active_containers.back().select();
         if (id != "" && id != "text_continue")
         {
-            popContainer();
             handleID(id);
         }
 
@@ -34,6 +33,7 @@ namespace game
 
     void ContainerHandler::handleID( std::string id )
     {
+        popContainer();
         if ( id != "leave")
             pushPriorityContainer(id);
     }

@@ -7,6 +7,7 @@
 #include "menu.hpp"
 #include "globals.hpp"
 #include "option.hpp"
+#include "world.hpp"
 #include "container.hpp"
 #include "text_box.hpp"
 #include "button_box.hpp"
@@ -27,9 +28,10 @@ namespace game
                     {
                     },
                     { 
+                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
                         ButtonBox( "Save", DEFAULT_FONT, "save" ), 
                         ButtonBox( "Load", DEFAULT_FONT, "load" ),
-                        ButtonBox( "Exit", DEFAULT_FONT, ""     ),
+                        ButtonBox( "Exit", DEFAULT_FONT, "quit" ),
                     },
                     ContainerType::SCREEN,
                     "main"
@@ -41,6 +43,7 @@ namespace game
                     {
                     },
                     { 
+                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
                         ButtonBox( "Save 1", DEFAULT_FONT, "save1" ), 
                         ButtonBox( "Save 2", DEFAULT_FONT, "save2" ), 
                         ButtonBox( "Save 3", DEFAULT_FONT, "save3" ), 
@@ -61,6 +64,7 @@ namespace game
                     {
                     },
                     { 
+                        ButtonBox( "Return", DEFAULT_FONT, "leave" ),
                         ButtonBox( "Load 1", DEFAULT_FONT, "load1" ), 
                         ButtonBox( "Load 2", DEFAULT_FONT, "load2" ), 
                         ButtonBox( "Load 3", DEFAULT_FONT, "load3" ), 
@@ -89,6 +93,17 @@ namespace game
             },
         };
         return true;
+    }
+
+    void MenuHandler::handleID( std::string id )
+    {
+        int entity = 0;
+        if ( id == "quit")
+            quit();
+        else if ( id == "leave" || id == "back" )
+            popContainer();
+        else
+            pushPriorityContainer(id);
     }
 
     bool MenuHandler::handleEvent( Event *event )
@@ -120,6 +135,7 @@ namespace game
 
     void MenuHandler::quit()
     {
+        printf("Trying to quit!\n");
 
     }
 };
