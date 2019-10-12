@@ -14,7 +14,7 @@ namespace game
                 "home_portal",
                 Container( 
                     { 
-                        TextBox("Travel", DEFAULT_FONT)
+                        TextBox("Travel", DEFAULT_FONT),
                     }, 
                     { 
                         ButtonBox("Forest", DEFAULT_FONT, "forest"), 
@@ -29,13 +29,54 @@ namespace game
                 "forest_portal",
                 Container( 
                     { 
-                        TextBox("Aww, too scared?", DEFAULT_FONT)
+                        TextBox("Aww, too scared?", DEFAULT_FONT),
                     }, 
                     { 
                         ButtonBox("Home", DEFAULT_FONT, "home"), 
                     },
                     ContainerType::FOOTER,
                     "forest_portal"
+                )
+            },
+            {
+                "cave_portal",
+                Container( 
+                    { 
+                        TextBox("Are you...", DEFAULT_FONT),
+                        TextBox("CAVING in?", DEFAULT_FONT),
+                    }, 
+                    { 
+                        ButtonBox("HAHAHA yes", DEFAULT_FONT, "home"), 
+                    },
+                    ContainerType::FOOTER,
+                    "cave_portal"
+                )
+            },
+            {
+                "inner_cave_portal",
+                Container( 
+                    { 
+                        TextBox("You're not ready yet...", DEFAULT_FONT),
+                        TextBox("( unimplemented )", DEFAULT_FONT),
+                    }, 
+                    { 
+                        ButtonBox("Yeah yeah yeah...", DEFAULT_FONT, "leave"), 
+                    },
+                    ContainerType::FOOTER,
+                    "inner_cave_portal"
+                )
+            },
+            {
+                "beach_portal",
+                Container( 
+                    { 
+                        TextBox("Too much sun?", DEFAULT_FONT),
+                    }, 
+                    { 
+                        ButtonBox("Get me home please!", DEFAULT_FONT, "home"), 
+                    },
+                    ContainerType::FOOTER,
+                    "beach_portal"
                 )
             },
         };
@@ -49,6 +90,10 @@ namespace game
             entity = 0;
         if ( id == "forest")
             entity = 2;
+        if ( id == "caves")
+            entity = 2;
+        if ( id == "beach")
+            entity = 1;
         World::updateMap( id, entity ); 
     }
 

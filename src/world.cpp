@@ -29,12 +29,12 @@ namespace game
 
         bool success = true;
         // Default Entry Points for maps
-        std::vector< Position > default_entries = { Position( 310, 50 ), Position( 50, 170 ), Position( 310, 410 ), Position( 570, 170 ) };
+        std::vector< Position > default_entries = { Position( 310, 50 ), Position( 50, 230 ), Position( 310, 410 ), Position( 570, 170 ) };
 
-/////// MAP0
-        SDL_Color map0_background = { 255, 255, 225, 255 };
+/////// Home
+        SDL_Color home_background = { 255, 255, 225, 255 };
     
-        vector< Solid > map0_objects = { 
+        vector< Solid > home_objects = { 
             // SOLIDS (Collisions)
             Solid( { 50, 50, 100, 2 },  { 50, 50, 50, 255 }, Solid::Type::SOLID ),
             Solid( { 150, 50, 2, 380 }, { 50, 50, 50, 255 }, Solid::Type::SOLID ),
@@ -51,20 +51,20 @@ namespace game
             Solid( { 10, 10, 2, (SCREEN_HEIGHT - 20) }, { 50, 50, 50, 255 }, Solid::Type::SOLID ),
         };
 
-        vector< Solid > map0_portals = { 
+        vector< Solid > home_portals = { 
             // Portal(s)
             Solid( { 10 + (SCREEN_WIDTH-80) / 2, 0, 60, 40}, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "home_portal" ), 
         };
 
-        vector< Character > map0_characters = { 
+        vector< Character > home_characters = { 
             Character( {350, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant0" ),
             Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Richard", false, "home_npc0" ),
         };
 
-/////// MAP1
-        SDL_Color map1_background = { 87, 45, 9, 255 };
+/////// Forest 
+        SDL_Color forest_background = { 87, 45, 9, 255 };
 
-        vector< Solid > map1_objects = { 
+        vector< Solid > forest_objects = { 
             Solid( { 70, 70, 30, 30 }, { 50, 200, 50, 255 }, Solid::Type::SOLID ),
             Solid( { 75, 75, 20, 20 }, { 50, 225, 50, 255 }, Solid::Type::SOLID ),
             Solid( { 80, 80, 10, 10 }, { 50, 255, 50, 255 }, Solid::Type::SOLID ),
@@ -98,18 +98,54 @@ namespace game
             Solid( { 10,  410,  80,  80 }, { 30, 255, 50, 255 }, Solid::Type::SOLID ),
         };
 
-        vector< Solid > map1_portals = { 
+        vector< Solid > forest_portals = { 
             // Portal(s)
             Solid( { 10 + (SCREEN_WIDTH-80) / 2, SCREEN_HEIGHT-40 , 60, 40}, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "forest_portal" ), 
         };
 
-        vector< Character > map1_characters = { 
+        vector< Character > forest_characters = { 
             Character( {200, 230, 20, 20}, { 50, 150, 50, 255 }, "Wilson the Wizard", false, "forest_wizard" ),
         };
 
+/////// Caves
+        SDL_Color caves_background = { 112, 97, 54, 255 };
 
-        maps["home"] = Environment("home", map0_background, map0_objects, map0_portals, map0_characters, default_entries);
-        maps["forest"] = Environment("home", map1_background, map1_objects, map1_portals, map1_characters, default_entries);
+        vector< Solid > caves_objects = { 
+            Solid( { 0   , 0 , 50  , 480 } , { 137 , 87 , 60 , 255 } , Solid::Type::SOLID ) ,
+            Solid( { 100 , 0 , 540 , 100 } , { 137 , 87 , 60 , 255 } , Solid::Type::SOLID ) ,
+            Solid( { 590 , 0 , 50  , 480 } , { 137 , 87 , 60 , 255 } , Solid::Type::SOLID ) ,
+        };
+
+        vector< Solid > caves_portals = { 
+            // Portal(s)
+            Solid( { SCREEN_WIDTH / 2 - 30, SCREEN_HEIGHT - 40, 60, 40 }, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "cave_portal" ), 
+            Solid( { 50, 0, 50, 40 }, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "inner_cave_portal" ), 
+        };
+
+        vector< Character > caves_characters = { 
+
+        };
+
+/////// Beach
+        SDL_Color beach_background = { 245, 204, 77, 255 };
+
+        vector< Solid > beach_objects = { 
+            Solid( { 500, 0, 200, 480 }, { 80, 100, 255, 255 }, Solid::Type::SOLID ),
+        };
+
+        vector< Solid > beach_portals = { 
+            // Portal(s)
+            Solid( { 0, SCREEN_HEIGHT / 2 - 30, 40, 60}, { 255, 255, 200, 255 }, Solid::Type::PORTAL, "beach_portal" ), 
+        };
+
+        vector< Character > beach_characters = { 
+
+        };
+
+        maps["home"] = Environment("home", home_background, home_objects, home_portals, home_characters, default_entries);
+        maps["forest"] = Environment("forest", forest_background, forest_objects, forest_portals, forest_characters, default_entries);
+        maps["caves"] = Environment("caves", caves_background, caves_objects, caves_portals, caves_characters, default_entries);
+        maps["beach"] = Environment("beach", beach_background, beach_objects, beach_portals, beach_characters, default_entries);
 
         return success;
     }
