@@ -56,11 +56,16 @@ namespace game
         virtual void initializeBox(int emit_x, int emit_y);
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
+
         virtual bool hasTextBoxes() { return (text_boxes.size() > 0); }
         virtual bool hasButtonBoxes() { return (button_boxes.size() > 0); }
         virtual bool isTotallyEmpty() { return (text_boxes.size() == 0 && button_boxes.size() == 0); }  
+
         virtual std::string getID() { return id; }
-        virtual Properties* getProperties() { return &(properties); }
+        virtual Properties* getProperties() { return &( properties ); }
+        virtual std::string getSelectedAction() { return button_boxes[selected_index].getAction(); }
+        virtual Properties* getSelectedProperties() { return button_boxes[selected_index].getProperties(); }
+
         virtual void setEmittedPosition(int emit_x, int emit_y);
         void moveCursor(Direction dir);
         std::string select();

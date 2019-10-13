@@ -11,6 +11,8 @@
 #include "container.hpp"
 #include "text_box.hpp"
 #include "button_box.hpp"
+#include "datatypes/properties.hpp"
+#include "enums/property_type.hpp"
 
 namespace game
 {
@@ -29,8 +31,8 @@ namespace game
                     },
                     { 
                         ButtonBox( "Return", DEFAULT_FONT, "leave", Properties() ),
-                        ButtonBox( "Save", DEFAULT_FONT, "save", Properties( { { "stackable", 1 } } ) ), 
-                        ButtonBox( "Load", DEFAULT_FONT, "load", Properties( { { "stackable", 1 } } ) ),
+                        ButtonBox( "Save", DEFAULT_FONT, "save", Properties( { { PropertyType::STACKABLE, 1 } } ) ), 
+                        ButtonBox( "Load", DEFAULT_FONT, "load", Properties( { { PropertyType::STACKABLE, 1 } } ) ),
                         ButtonBox( "Exit", DEFAULT_FONT, "quit", Properties() ),
                     },
                     ContainerType::SCREEN,
@@ -99,20 +101,31 @@ namespace game
         return true;
     }
 
-    void MenuHandler::handleID( std::string id, Properties *properties )
+    void MenuHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
     {
-        if ( id.find(";") != std::string::npos )
+        // Check properties
+        if ( button_properties->hasProperties() )
         {
-            printf("'%s' contains a semicolon\n", id.c_str());
-            return;
+            for ( auto&& key_value : *(button_properties->getProperties()) )
+            {
+                switch( key_value.first )
+                {
+                    case PropertyType::STACKABLE:
+                        pushPriorityContainer( id );
+                        return;
+                    default:
+                        printf("*** WARNING: Unknown Property  ( menu_handler.cpp -> handleID() )\n");
+                        return;
+                }
+            }
         }
 
         if ( id == "quit")
             quit();
-        else if ( id == "leave" || id == "back" )
+        if ( id == "leave" || id == "back" )
             popContainer();
         else
-            pushPriorityContainer(id);
+            printf("*** WARNING: I don't know how I got here... ( menu_handler.cpp -> handleID() )\n");
     }
 
     bool MenuHandler::handleEvent( Event *event )

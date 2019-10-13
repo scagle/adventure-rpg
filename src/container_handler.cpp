@@ -25,16 +25,17 @@ namespace game
     void ContainerHandler::selectContainer()
     {
         std::string id = this->active_containers.back().select();
-        Properties* properties = this->active_containers.back().getProperties();
+        Properties* container_properties = this->active_containers.back().getProperties();
+        Properties* button_properties = this->active_containers.back().getSelectedProperties();
         if (id != "" && id != "text_continue")
         {
-            handleID(id, properties);
+            handleID(id, container_properties, button_properties);
         }
 
         printf("Action: '%s'\n", id.c_str());
     }
 
-    void ContainerHandler::handleID( std::string id, Properties *properties )
+    void ContainerHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
     {
         popContainer();
         if ( id != "leave")

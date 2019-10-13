@@ -88,7 +88,7 @@ namespace game
         return true;
     }
 
-    void TravelHandler::handleID( std::string id, Properties *properties )
+    void TravelHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
     {
         popContainer();
         int entity = 0;
