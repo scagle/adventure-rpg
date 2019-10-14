@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
      *  \todo Fix this annoying static problem
      */
     game::GameData gamedata = game::GameData(); // Initialize Game Sessions
-    gamedata.start(); // Start Game
+    gamedata.startGame(); 
     std::thread rt( render_thread, &gamedata );
 
     SDL_Event event;

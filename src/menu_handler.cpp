@@ -6,6 +6,7 @@
 #include "menu_handler.hpp"
 #include "menu.hpp"
 #include "globals.hpp"
+#include "gamedata.hpp"
 #include "option.hpp"
 #include "world.hpp"
 #include "container.hpp"
@@ -110,8 +111,9 @@ namespace game
             {
                 switch( key_value.first )
                 {
-                    case PropertyType::STACKABLE:
-                        pushPriorityContainer( id );
+                    case PropertyType::STACKABLE:       // Dont
+                        if ( key_value.second == 1 )
+                            pushPriorityContainer( id );
                         return;
                     default:
                         printf("*** WARNING: Unknown Property  ( menu_handler.cpp -> handleID() )\n");
@@ -122,10 +124,14 @@ namespace game
 
         if ( id == "quit")
             quit();
-        if ( id == "leave" || id == "back" )
+        else if ( id == "leave" || id == "back" )
             popContainer();
         else
-            printf("*** WARNING: I don't know how I got here... ( menu_handler.cpp -> handleID() )\n");
+        {
+            printf("*** WARNING: Unimplemented event handle... Pushing container anyways ( menu_handler.cpp -> handleID() )\n");
+            pushPriorityContainer( id );
+        }
+            
     }
 
     bool MenuHandler::handleEvent( Event *event )
@@ -157,7 +163,6 @@ namespace game
 
     void MenuHandler::quit()
     {
-        printf("Trying to quit!\n");
-
+        GameData::quitGame();
     }
 };

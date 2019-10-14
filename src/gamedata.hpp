@@ -49,11 +49,12 @@ namespace game
             static TTF_Font* getFont(int) { return fonts[0]; }
             static SDL_Renderer* getActiveRenderer() { return renderer; }
             static void setInitialized(bool val) { initialized = val; }
-            static void setQuit(bool val) { quit = val; }
 
-            void start();
-            void restart();
-            bool init();
+            void startGame(); // Non-static on purpose
+            static void restartGame();
+            static void quitGame() { quit = true; }
+
+            bool initGame();
             bool initSDL();
             bool initSDL_Window();
             bool initSDL_Renderer();

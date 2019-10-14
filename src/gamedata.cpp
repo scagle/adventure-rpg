@@ -106,15 +106,15 @@ namespace game
         return success;
     }
 
-    void GameData::start()
+    void GameData::startGame()
     {
-        if ( init() )
+        if ( initGame() )
             std::cout << "Initialization Success!" << "\n";
         else
             std::cout << "Initialization Failure!" << "\n";
     }
 
-    bool GameData::init()
+    bool GameData::initGame()
     {
         if ( !initSDL() )
             printf("Initialization of initSDL() failed!\n");
