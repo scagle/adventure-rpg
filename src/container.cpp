@@ -45,6 +45,7 @@ namespace game
                     const int floating_x = emit_x - floating_width / 2;
                     const int floating_y = emit_y - floating_height;
                     this->box = {floating_x, floating_y, floating_width, floating_height};
+                    this->show_prompt = true;
                 }
                 break;
             case ContainerType::SCREEN:
@@ -58,6 +59,18 @@ namespace game
 
     void Container::render( SDL_Renderer *renderer )
     {
+        // Prompt the user if necessary
+        if ( show_prompt == true )
+        {
+            SDL_Rect border_box = { box.x + box.w / 2 + 5, box.y + box.h - 25, 10, 10 };
+            SDL_Rect fill_box   = { box.x + box.w / 2 + 6, box.y + box.h - 24,  8,  8 };
+            SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
+            SDL_RenderFillRect( renderer, &border_box ); 
+            SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
+            SDL_RenderFillRect( renderer, &fill_box ); 
+            return;
+        }
+
         // Draw Container background
         SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
         SDL_RenderFillRect( renderer, &box ); 
@@ -190,6 +203,11 @@ namespace game
 
     std::string Container::select()
     {
+        if ( show_prompt )
+        {
+            show_prompt = false;
+            return "";
+        }
         if ( text_boxes.size() != 0 )
         {
             if ( ( unsigned int )text_index != ( text_boxes.size() - 1 ) )

@@ -3,9 +3,7 @@
 #include <set>
 #include <stack>
 #include <vector>
-#include "menu.hpp"
 #include "event.hpp"
-#include "dialog.hpp"
 #include "container_handler.hpp"
 #include "enums/direction.hpp"
 

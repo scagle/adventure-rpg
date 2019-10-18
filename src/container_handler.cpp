@@ -24,6 +24,7 @@ namespace game
 
     void ContainerHandler::selectContainer()
     {
+        printf("Active Container size: %d\n", active_containers.size());
         std::string id = this->active_containers.back().select();
         Properties* container_properties = this->active_containers.back().getProperties();
         Properties* button_properties = this->active_containers.back().getSelectedProperties();

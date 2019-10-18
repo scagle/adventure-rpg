@@ -4,10 +4,8 @@
 #include <set>
 #include <stdio.h>
 #include "menu_handler.hpp"
-#include "menu.hpp"
 #include "globals.hpp"
 #include "gamedata.hpp"
-#include "option.hpp"
 #include "world.hpp"
 #include "container.hpp"
 #include "text_box.hpp"

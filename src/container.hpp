@@ -32,6 +32,7 @@ namespace game
         Properties properties;
         SDL_Color background; 
         SDL_Color foreground;
+        bool show_prompt = false;             // boolean to control whether container must be prompted first (IE: npc dialogs )
 
         // Constants until I need a way to change them
         int text_index = 0;              // Current index of text_boxes (at last index the buttons will show up)

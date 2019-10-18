@@ -18,13 +18,8 @@ set(BASE_SOURCES
     container_handler.cpp
     container_handler.hpp
     container.hpp
-    dialog.cpp
     dialog_handler.cpp
     dialog_handler.hpp
-    dialog.hpp
-    enums/direction.hpp
-    enums/event_type.hpp
-    enums/ui.hpp
     environment.cpp
     environment.hpp
     event.cpp
@@ -35,12 +30,8 @@ set(BASE_SOURCES
     keyboard_handler.cpp
     keyboard_handler.hpp
     main.cpp
-    menu.cpp
     menu_handler.cpp
     menu_handler.hpp
-    menu.hpp
-    option.cpp
-    option.hpp
     sdl_utils.cpp
     sdl_utils.hpp
     solid.cpp
