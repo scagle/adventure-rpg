@@ -9,13 +9,6 @@ namespace game
 {
     class Character : public Solid
     {
-        public:
-        enum Distance_Algorithm
-        {
-            DISTANCE_FAST = 0,
-            DISTANCE_ACCURATE = 1,
-        };
-
         private:
         float actual_x; 
         float actual_y;
@@ -66,7 +59,7 @@ namespace game
         virtual void update();
 
         void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; }
-        void setPosition( Position* pos) override { this->actual_x = pos->x; this->actual_y = pos->y; }
+        void setPosition( Position* pos) { this->actual_x = pos->x; this->actual_y = pos->y; }
             
     };
 };
