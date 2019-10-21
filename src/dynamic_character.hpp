@@ -16,6 +16,12 @@ namespace game
         float velocity_x;
         float velocity_y;
 
+        public:
+        DynamicCharacter();
+        DynamicCharacter( SDL_Rect, SDL_Color, std::string );
+        virtual ~DynamicCharacter() { }
+        void construct( SDL_Rect hitbox );
+
         bool moveCharacter( float *, float *, int *, int *, std::vector< Solid > *, int );
 
         void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; }

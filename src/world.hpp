@@ -5,6 +5,8 @@
 #include <SDL.h>
 #include "environment.hpp"
 #include "character.hpp"
+#include "dynamic_character.hpp"
+#include "main_character.hpp"
 
 namespace game
 {
@@ -15,7 +17,7 @@ namespace game
         private:
         static std::unordered_map< std::string, Environment > maps;
         static Environment* current_map;   
-        static Character main_character;   
+        static MainCharacter main_character;   
 
         public:
         World();

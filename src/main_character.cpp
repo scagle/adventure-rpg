@@ -1,10 +1,27 @@
-#include <vector>
 #include "main_character.hpp"
+
+#include <vector>
+#include <algorithm>
+#include "world.hpp"
+#include "solid.hpp"
+#include "character.hpp"
 
 namespace game
 {
+    MainCharacter::MainCharacter()
+        : DynamicCharacter( )
+    {
+
+    }
+    
+    MainCharacter::MainCharacter( SDL_Rect hitbox, SDL_Color color, std::string name )
+        : DynamicCharacter( hitbox, color, name )
+    {
+
+    }
+
     std::vector< Solid* > adjacent_portals; 
-    void Character::checkPortals( std::vector< Solid > *portals )
+    void MainCharacter::checkPortals( std::vector< Solid > *portals )
     {
         if ( portals->size() > 0 )
         {
@@ -12,7 +29,7 @@ namespace game
             std::vector< Solid* > new_adjacent_portals;
             for ( auto& portal : *portals)
             {
-                if ( isInside( &(portal.hitbox) ) )
+                if ( isInside( portal.getRekt() ) )
                 {
                     new_adjacent_portals.push_back(&portal);
                 }
@@ -49,7 +66,7 @@ namespace game
     }
 
     std::vector< Character* > adjacent_characters; 
-    void Character::checkNPCs( std::vector< Character > *characters )
+    void MainCharacter::checkNPCs( std::vector< Character > *characters )
     {
         if ( characters->size() > 0 )
         {
@@ -110,7 +127,7 @@ namespace game
         }
     }
 
-    std::vector< Character* > Character::getAdjacentNPCs( std::vector< Character > *characters )
+    std::vector< Character* > MainCharacter::getAdjacentNPCs( std::vector< Character > *characters )
     {
         std::vector< Character* > adjacent_characters;
         for ( unsigned int i = 0; i < characters->size(); i++ )
@@ -126,5 +143,23 @@ namespace game
             }
         }
         return adjacent_characters;
+    }
+
+    void MainCharacter::render( SDL_Renderer *renderer )
+    {
+        DynamicCharacter::render( renderer );
+    }
+
+    void MainCharacter::update()
+    {
+        DynamicCharacter::update();
+        std::vector< Solid > *portals = World::getPortals();
+        std::vector< Character > *characters = World::getCharactersInMap();
+
+        // Check if inside Portals
+        checkPortals(portals);
+
+        // NPC dialog checks
+        checkNPCs(characters);
     }
 };

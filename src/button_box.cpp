@@ -33,7 +33,6 @@ namespace game
     {
         this->action = action;
         this->properties = p;
-        printf("Action: %s\n", this->action.c_str());
     }
 
     void ButtonBox::render( SDL_Renderer *renderer, SDL_Rect *button_rect, bool selected )

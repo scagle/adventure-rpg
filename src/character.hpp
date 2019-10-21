@@ -24,26 +24,16 @@ namespace game
         public:
         Character();
         Character( SDL_Rect, SDL_Color, std::string );
-        Character( SDL_Rect, SDL_Color, std::string, bool );
-        Character( SDL_Rect, SDL_Color, std::string, bool, std::string );
-        void construct( SDL_Rect, SDL_Color, std::string, bool, std::string ); // constructor wrapper
+        Character( SDL_Rect, SDL_Color, std::string, std::string );
+        void construct( std::string, std::string ); // constructor wrapper
 
-        bool moveCharacter( float *, float *, int *, int *, std::vector< Solid > *, int );
-        void checkPortals( std::vector< Solid > * );
-        void checkNPCs( std::vector< Character > * );
-        std::vector< Character* > getAdjacentNPCs( std::vector< Character > *characters );
         bool hasDialog() { return (action != ""); }
         std::string getAction() { return this->action; }
         std::string getName() { return this->name; }
-        unsigned int getDistance( int, int, Distance_Algorithm );
 
-        // For positioning floating dialogs only
-        int getEmitX() { return this->hitbox.x + this->hitbox.w / 2; }
-        int getEmitY() { return this->hitbox.y; }
-
-        // Get Center X and Center Y
-        int getCenterX() { return this->hitbox.x + this->hitbox.w / 2; }
-        int getCenterY() { return this->hitbox.y + this->hitbox.h / 2; }
+        // For positioning Emitted Floating dialogs ONLY
+        int getEmitX() { return Solid::getCenterTopX(); } // Wrapper to make it more clear
+        int getEmitY() { return Solid::getCenterTopY(); } // Wrapper to make it more clear
 
         unsigned int getVoiceDistance() { return this->voice_distance; }
 
@@ -57,9 +47,5 @@ namespace game
         void sendEvent( EventType type, std::string action, int value, int emit_x, int emit_y, std::unordered_map< std::string, int > );
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
-
-        void setVelocity( float vx, float vy ) { velocity_x = vx; velocity_y = vy; }
-        void setPosition( Position* pos) { this->actual_x = pos->x; this->actual_y = pos->y; }
-            
     };
 };

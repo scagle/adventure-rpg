@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "world.hpp"
 #include "solid.hpp"
+#include "main_character.hpp"
 #include "character.hpp"
 #include "globals.hpp"
 #include "datatypes/position.hpp"
@@ -16,11 +17,11 @@ namespace game
     
     std::unordered_map< std::string, Environment > World::maps;
     Environment* World::current_map = &(maps["home"]);
-    Character World::main_character;
+    MainCharacter World::main_character;
 
     World::World()
     {
-        main_character = Character( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME, true );
+        main_character = MainCharacter( SDL_Rect{15, 50, 20, 20}, SDL_Color{255, 50, 50, 255}, MAIN_CHARACTER_NAME );
         loadMaps();
     }
 
@@ -57,8 +58,9 @@ namespace game
         };
 
         vector< Character > home_characters = { 
-            Character( {350, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", false, "home_merchant0" ),
-            Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Richard", false, "home_npc0" ),
+            Character( {350, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", "home_merchant0" ),
+            Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Richard", "home_npc0" ),
+            Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Crazy Guy", "home_npc0" ),
         };
 
 /////// Forest 
@@ -104,7 +106,7 @@ namespace game
         };
 
         vector< Character > forest_characters = { 
-            Character( {200, 230, 20, 20}, { 50, 150, 50, 255 }, "Wilson the Wizard", false, "forest_wizard" ),
+            Character( {200, 230, 20, 20}, { 50, 150, 50, 255 }, "Wilson the Wizard", "forest_wizard" ),
         };
 
 /////// Caves
@@ -176,8 +178,8 @@ namespace game
     // Get files with "name" in it
     vector< string > World::getFiles( string dir, string name )
     {
-        /*! TODO: Finish this with some good ole' cross platform string globbing
-         *  \todo Finish this with some good ole' cross platform string globbing
+        /*! TODO: Finish this with some good cross platform globbing
+         *  \todo Finish this with some good cross platform globbing
          */
         vector< string > files;
         return files;

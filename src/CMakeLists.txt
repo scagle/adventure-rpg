@@ -20,6 +20,8 @@ set(BASE_SOURCES
     container.hpp
     dialog_handler.cpp
     dialog_handler.hpp
+    dynamic_character.cpp
+    dynamic_character.hpp
     environment.cpp
     environment.hpp
     event.cpp
@@ -29,6 +31,8 @@ set(BASE_SOURCES
     globals.hpp
     keyboard_handler.cpp
     keyboard_handler.hpp
+    main_character.cpp
+    main_character.hpp
     main.cpp
     menu_handler.cpp
     menu_handler.hpp

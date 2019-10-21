@@ -1,11 +1,35 @@
 #include "dynamic_character.hpp"
 
-namespace DynamicCharacter
+#include "world.hpp"
+#include "solid.hpp"
+#include "character.hpp"
+#include "globals.hpp"
+
+namespace game
 {
+    DynamicCharacter::DynamicCharacter()
+        : Character( )
+    {
+        construct( {0, 0, 10, 10} );
+    }
+
+    DynamicCharacter::DynamicCharacter( SDL_Rect hitbox, SDL_Color color, std::string name )
+        : Character( hitbox, color, name )
+    {
+        construct( hitbox );
+    }
+
+    void DynamicCharacter::construct( SDL_Rect hitbox )
+    {
+        this->actual_x = hitbox.x; 
+        this->actual_y = hitbox.y;
+        this->velocity_x = 0;
+        this->velocity_y = 0;
+    }
     // Function to move character while detecting collisions with solids
     // actual = actual_x/y, velocity = velocity_x/y, solids = solids
     // returns boolean of whether it bounced or not
-    bool Character::moveCharacter( float *actual, float *velocity, int *hitbox_coord, 
+    bool DynamicCharacter::moveCharacter( float *actual, float *velocity, int *hitbox_coord, 
             int *hitbox_offset, std::vector< Solid > *solids, int boundary )
     {
         float prev = *actual; // Record original value;
@@ -26,7 +50,7 @@ namespace DynamicCharacter
                 {
                     for ( unsigned int i = 0; i < solids->size(); i++ )
                     {
-                        if ( SDL_HasIntersection( &(this->hitbox), &((*solids)[i].hitbox) ) )
+                        if ( SDL_HasIntersection( &(this->hitbox), (*solids)[i].getRekt() ) )
                         {
                             bounce = true;
                             break;
@@ -42,5 +66,20 @@ namespace DynamicCharacter
         }
 
         return bounce;
+    }
+
+    void DynamicCharacter::render( SDL_Renderer *renderer )
+    {
+        Character::render( renderer );
+    }
+
+    void DynamicCharacter::update()
+    {
+        Character::update();
+        std::vector< Solid > *solids = World::getSolids();
+        // Move Character
+        moveCharacter(&actual_x, &velocity_x, &(hitbox.x), &(hitbox.w), solids, SCREEN_WIDTH);
+        moveCharacter(&actual_y, &velocity_y, &(hitbox.y), &(hitbox.h), solids, SCREEN_HEIGHT);
+        
     }
 };
