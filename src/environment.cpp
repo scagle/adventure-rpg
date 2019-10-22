@@ -14,6 +14,8 @@ namespace game
             solids[i].render( renderer );
         for ( unsigned int i = 0; i < characters.size(); i++ )
             characters[i].render( renderer );
+        for (unsigned int i = 0; i < dynamics.size(); i++)
+            dynamics[i].render( renderer );
 
         for ( Character chr : (*getCharacters()) )
             chr.render( renderer );
@@ -28,5 +30,7 @@ namespace game
             portals[i].update();
         for (unsigned int i = 0; i < characters.size(); i++)
             characters[i].update();
+        for (unsigned int i = 0; i < dynamics.size(); i++)
+            dynamics[i].update();
     }
 };

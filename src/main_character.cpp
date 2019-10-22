@@ -5,6 +5,7 @@
 #include "world.hpp"
 #include "solid.hpp"
 #include "character.hpp"
+#include "globals.hpp"
 
 namespace game
 {
@@ -153,9 +154,13 @@ namespace game
     void MainCharacter::update()
     {
         DynamicCharacter::update();
+        std::vector< Solid > *solids = World::getSolids();
         std::vector< Solid > *portals = World::getPortals();
         std::vector< Character > *characters = World::getCharactersInMap();
 
+        // Move Character
+        DynamicCharacter::moveCharacter(&actual_x, &velocity_x, &(hitbox.x), &(hitbox.w), solids, SCREEN_WIDTH);
+        DynamicCharacter::moveCharacter(&actual_y, &velocity_y, &(hitbox.y), &(hitbox.h), solids, SCREEN_HEIGHT);
         // Check if inside Portals
         checkPortals(portals);
 

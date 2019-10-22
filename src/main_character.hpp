@@ -9,7 +9,6 @@ namespace game
 {
     class MainCharacter : public DynamicCharacter
     {
-
         public:
         MainCharacter();
         MainCharacter( SDL_Rect, SDL_Color, std::string );

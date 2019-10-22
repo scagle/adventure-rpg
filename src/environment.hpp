@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "solid.hpp"
 #include "character.hpp"
+#include "dynamic_character.hpp"
 #include "datatypes/position.hpp"
 
 namespace game
@@ -17,14 +18,15 @@ namespace game
         std::vector< Solid > solids;
         std::vector< Solid > portals;
         std::vector< Character > characters;
+        std::vector< DynamicCharacter > dynamics;
         std::vector< Position > entries;
 
         public:
         Environment() { }
 
         Environment( std::string n, SDL_Color bg, std::vector< Solid > o, std::vector< Solid > p, 
-                     std::vector< Character > c, std::vector< Position > entries ) 
-            : name(n), background(bg), solids(o), portals(p), characters(c), entries(entries) { }
+                     std::vector< Character > c, std::vector< DynamicCharacter > dc, std::vector< Position > entries ) 
+            : name(n), background(bg), solids(o), portals(p), characters(c), dynamics(dc), entries(entries) { }
 
         ~Environment() { }
 

@@ -7,10 +7,12 @@
 #include "solid.hpp"
 #include "main_character.hpp"
 #include "character.hpp"
+#include "dynamic_character.hpp"
 #include "globals.hpp"
 #include "datatypes/position.hpp"
 
-using namespace std;
+using std::vector;
+using std::string;
 
 namespace game
 {
@@ -60,7 +62,10 @@ namespace game
         vector< Character > home_characters = { 
             Character( {350, 400, 20, 20}, { 100, 50, 22, 255 }, "Sally", "home_merchant0" ),
             Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Richard", "home_npc0" ),
-            Character( {400, 350, 20, 20}, { 200, 50, 22, 255 }, "Crazy Guy", "home_npc0" ),
+        };
+
+        vector< DynamicCharacter > home_dynamics = { 
+            DynamicCharacter( {50, 400, 20, 20}, { 150, 100, 22, 255 }, "Crazy Person", DynamicCharacter::Behavior::GLOBAL_FOLLOW ),
         };
 
 /////// Forest 
@@ -109,6 +114,9 @@ namespace game
             Character( {200, 230, 20, 20}, { 50, 150, 50, 255 }, "Wilson the Wizard", "forest_wizard" ),
         };
 
+        vector< DynamicCharacter > forest_dynamics = { 
+        };
+
 /////// Caves
         SDL_Color caves_background = { 70, 60, 20, 255 };
 
@@ -128,6 +136,9 @@ namespace game
 
         };
 
+        vector< DynamicCharacter > caves_dynamics = { 
+        };
+
 /////// Beach
         SDL_Color beach_background = { 245, 204, 77, 255 };
 
@@ -144,10 +155,13 @@ namespace game
 
         };
 
-        maps["home"] = Environment("home", home_background, home_objects, home_portals, home_characters, default_entries);
-        maps["forest"] = Environment("forest", forest_background, forest_objects, forest_portals, forest_characters, default_entries);
-        maps["caves"] = Environment("caves", caves_background, caves_objects, caves_portals, caves_characters, default_entries);
-        maps["beach"] = Environment("beach", beach_background, beach_objects, beach_portals, beach_characters, default_entries);
+        vector< DynamicCharacter > beach_dynamics = { 
+        };
+
+        maps["home"] = Environment("home", home_background, home_objects, home_portals, home_characters, home_dynamics, default_entries);
+        maps["forest"] = Environment("forest", forest_background, forest_objects, forest_portals, forest_characters, forest_dynamics, default_entries);
+        maps["caves"] = Environment("caves", caves_background, caves_objects, caves_portals, caves_characters, caves_dynamics, default_entries);
+        maps["beach"] = Environment("beach", beach_background, beach_objects, beach_portals, beach_characters, beach_dynamics, default_entries);
 
         return success;
     }
