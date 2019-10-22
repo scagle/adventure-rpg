@@ -65,7 +65,7 @@ namespace game
         };
 
         vector< DynamicCharacter > home_dynamics = { 
-            DynamicCharacter( {50, 400, 20, 20}, { 150, 100, 22, 255 }, "Crazy Person", DynamicCharacter::Behavior::GLOBAL_FOLLOW ),
+            DynamicCharacter( {50, 400, 20, 20}, { 150, 100, 22, 255 }, "Crazy Ed", DynamicCharacter::Behavior::RANDOM),
         };
 
 /////// Forest 
@@ -115,6 +115,7 @@ namespace game
         };
 
         vector< DynamicCharacter > forest_dynamics = { 
+            DynamicCharacter( {300, 200, 10, 10}, { 255, 50, 22, 255 }, "Frightened Ferret", DynamicCharacter::Behavior::LOCAL_FLEE),
         };
 
 /////// Caves
@@ -137,6 +138,7 @@ namespace game
         };
 
         vector< DynamicCharacter > caves_dynamics = { 
+            DynamicCharacter( {250, 150, 50, 50}, { 50, 200, 50, 255 }, "Goblin", DynamicCharacter::Behavior::GLOBAL_FOLLOW),
         };
 
 /////// Beach

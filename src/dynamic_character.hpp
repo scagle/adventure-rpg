@@ -21,6 +21,8 @@ namespace game
             GLOBAL_FOLLOW,
             LOCAL_FLEE,
             GLOBAL_FLEE,
+            LOCAL_RANDOM,
+            RANDOM,
         };
 
         protected:
@@ -29,8 +31,12 @@ namespace game
         float velocity_x;
         float velocity_y;
         Behavior behavior = Behavior::NONE; 
-        unsigned int local_radius = 100;   // Radius of behavior
-        double speed = 0.5;       
+        unsigned int detect_range = 100;        // Detect Circle diameter     ( IE: start following if within this range )
+        unsigned int post_detect_range = 175;   // Outer-Most-Circle diameter ( IE: stop following if out of this range )
+        unsigned int too_close_range = 40;      // Inner-Circle diameter      ( IE: stop following if within this range )
+        bool following = false;
+        bool fleeing = false;
+        double speed = 0.4;       
 
         public:
         DynamicCharacter();

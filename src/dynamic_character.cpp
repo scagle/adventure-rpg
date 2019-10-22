@@ -1,5 +1,7 @@
 #include "dynamic_character.hpp"
 
+#include <stdlib.h>
+#include <time.h>
 #include "world.hpp"
 #include "solid.hpp"
 #include "character.hpp"
@@ -47,7 +49,9 @@ namespace game
         this->actual_y = hitbox.y;
         this->velocity_x = 0;
         this->velocity_y = 0;
+        srand( time( 0 ) ); // Randomize seed for RANDOM behavior
     }
+
     // Function to move character while detecting collisions with solids
     // actual = actual_x/y, velocity = velocity_x/y, solids = solids
     // returns boolean of whether it bounced or not
@@ -98,49 +102,59 @@ namespace game
         Position this_pos = Position( hitbox.x + hitbox.w / 2, hitbox.y + hitbox.h / 2 );
         double delta_x = this_pos.x - main_pos.x;      // Difference in X position
         double delta_y = this_pos.y - main_pos.y;      // Difference in Y position
-        if (delta_x == 0 || delta_y == 0 )
+
+        double unit_velocity_x = 0;
+        double unit_velocity_y = 0;
+
+        // Check for divide by zero error
+        if (delta_x != 0 && delta_y != 0 )
+        {
+            double angle = std::atan( delta_x / delta_y ); // Angle in radians
+            if ( delta_y > 0 )
+            {
+                unit_velocity_x = (-1) * std::sin( angle ) * speed;
+                unit_velocity_y = (-1) * std::cos( angle ) * speed;
+            }
+            else
+            {
+                unit_velocity_x = std::sin( angle ) * speed;
+                unit_velocity_y = std::cos( angle ) * speed;
+            }
+        }
+        else // Handle divide by zero error 
         {
             if ( delta_x == 0 && delta_y == 0 )
             {
-                setVelocity( 0, 0 );
+                unit_velocity_x = 0;
+                unit_velocity_y = 9;
             }
             else if ( delta_x == 0 )
             {
                 if ( delta_y > 0 )
                 {
-                    setVelocity( 0, -speed );
+                    unit_velocity_x = 0;
+                    unit_velocity_y = -speed;
                 }
                 else
                 {
-                    setVelocity( 0, speed );
+                    unit_velocity_x = 0;
+                    unit_velocity_y = speed;
                 }
             }
             else if ( delta_y == 0 )
             {
                 if ( delta_x > 0 )
                 {
-                    setVelocity( -speed, 0 );
+                    unit_velocity_x = -speed;
+                    unit_velocity_y = 0;
                 }
                 else
                 {
-                    setVelocity( speed, 0 );
+                    unit_velocity_x = speed;
+                    unit_velocity_y = 0;
                 }
             }
-            return;
         }
-        double angle = std::atan( delta_x / delta_y ); // Angle in radians
-        double unit_velocity_x, unit_velocity_y;
-        if ( delta_y > 0 )
-        {
-            unit_velocity_x = (-1) * std::sin( angle ) * speed;
-            unit_velocity_y = (-1) * std::cos( angle ) * speed;
-        }
-        else
-        {
-            unit_velocity_x = std::sin( angle ) * speed;
-            unit_velocity_y = std::cos( angle ) * speed;
-        }
-
         // Perform Behavior
         switch ( behavior )
         {
@@ -150,28 +164,93 @@ namespace game
             }
             case Behavior::LOCAL_FOLLOW:
             {
-                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= local_radius )
+                unsigned int outer_boundary = ( following ) ? post_detect_range : detect_range;
+                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= outer_boundary )
                 {
-                    setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
+                    if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) > too_close_range )
+                    {
+                        setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
+                        following = true;
+                    }
+                    else
+                    {
+                        setVelocity( 0, 0 );
+                        following = false;
+                    }
+                }
+                else
+                {
+                    setVelocity( 0, 0 );
+                    following = false;
                 }
                 break;
             }
             case Behavior::GLOBAL_FOLLOW:
             {
-                setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
+                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) > too_close_range )
+                {
+                    setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
+                }
+                else
+                {
+                    setVelocity( 0, 0 );
+                }
                 break;
             }
             case Behavior::LOCAL_FLEE:
             {
-                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= local_radius )
+                unsigned int outer_boundary = ( fleeing ) ? post_detect_range : detect_range;
+                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= outer_boundary )
                 {
                     setVelocity( ( float )( -unit_velocity_x ), ( float )( -unit_velocity_y ) );
+                    fleeing = true;
+                }
+                else
+                {
+                    setVelocity( 0, 0 );
+                    fleeing = false;
                 }
                 break;
             }
             case Behavior::GLOBAL_FLEE:
             {
                 setVelocity( ( float )( -unit_velocity_x ), ( float )( -unit_velocity_y ) );
+                break;
+            }
+
+            case Behavior::LOCAL_RANDOM: // Intentionally want it to fall through
+            case Behavior::RANDOM:
+            {
+                if (behavior == Behavior::LOCAL_RANDOM )
+                {
+                    if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= detect_range )
+                    {
+                        setVelocity( 0, 0 );
+                        break;
+                    }
+                }
+
+                if ( rand() % 100 == 0 )
+                {
+                    switch ( ( int ) ( ( rand() % 4 ) + 1 ) )
+                    {
+                        case 1: // Up
+                            setVelocity( 0, -speed );
+                            break;
+                        case 2: // Down
+                            setVelocity( 0, speed );
+                            break;
+                        case 3: // Left
+                            setVelocity( -speed, 0 );
+                            break;
+                        case 4: // Right
+                            setVelocity( speed, 0 );
+                            break;
+                        default:
+                            printf("Invalid number!\n");
+                            break;
+                    }
+                }
                 break;
             }
             default:
