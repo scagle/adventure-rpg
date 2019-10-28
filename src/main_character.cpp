@@ -44,7 +44,7 @@ namespace game
                      == adjacent_portals.end() )
                 {
                     // Send found event
-                    spawnTravel( portal->getLocation() );
+                    Character::spawnTravel( portal->getLocation() );
                     printf("Entering portal '%s'\n", portal->getLocation().c_str());
                 }
             }
@@ -57,7 +57,7 @@ namespace game
                      == new_adjacent_portals.end() )
                 {
                     // Send not found event
-                    removeTravel( portal->getLocation() );
+                    Character::removeTravel( portal->getLocation() );
                     printf("Leaving portal '%s'\n", portal->getLocation().c_str());
                 }
             }
@@ -80,7 +80,7 @@ namespace game
                      == adjacent_characters.end() )
                 {
                     // Send found event
-                    spawnDialog( character->getAction(), character->getCenterX(), character->getCenterY() );
+                    Character::spawnDialog( character->getAction() );
                     printf("Entering npc '%s'\n", character->getName().c_str());
                 }
             }
@@ -93,38 +93,12 @@ namespace game
                      == new_adjacent_characters.end() )
                 {
                     // Send not found event
-                    removeDialog( character->getAction() );
+                    Character::removeDialog( character->getAction() );
                     printf("Leaving npc '%s'\n", character->getName().c_str());
                 }
             }
 
             adjacent_characters = new_adjacent_characters;
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            if ( !UIManager::inUI(UI::DIALOG) )     // If not in dialog already, check nearby npcs for focus
-//            {
-//                // Check if near any NPC's with dialog
-//                focused_character = getAdjacentNPC(characters);
-//                if ( focused_character != NULL )
-//                {
-//                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 1,
-//                               focused_character->getCenterX(), focused_character->getCenterY() );
-//                }
-//            }
-//            else if ( focused_character != NULL )   // If in dialog, and npc has focus, check if still inside range
-//            {
-//                unsigned int distance = getDistance(focused_character->getCenterX(), 
-//                                           focused_character->getCenterY(), DISTANCE_FAST );
-//                if ( distance > focused_character->getVoiceDistance()) // Out of range
-//                { 
-//                    sendEvent( EventType::DIALOG, UI::DIALOG, focused_character->getAction(), 0 );
-//                    focused_character = NULL;
-//                }
-//            }
-//            else
-//            {
-//                printf("Where am I? Ahhh! -- character.cpp -> checkNPCs()\n");
-//            }
         }
     }
 

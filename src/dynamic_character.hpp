@@ -5,11 +5,10 @@
 #include <SDL.h>
 #include "solid.hpp" 
 #include "character.hpp" 
+#include "main_character.hpp" 
 
 namespace game
 {
-    class MainCharacter;
-
     // Moveable/Animated Character ( Collidable or not )
     class DynamicCharacter : public Character
     {

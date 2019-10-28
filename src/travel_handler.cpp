@@ -111,7 +111,7 @@ namespace game
             if ( event->isEmitted() )
             {
                 printf("Pushing container '%s' with coordinates\n", event->getID().c_str());
-                pushContainer(event->getID(), event->getX(), event->getY());
+                pushContainer(event->getID(), event->getX(), event->getY(), event->getCharacter());
             }
             else
             {

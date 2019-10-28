@@ -3,37 +3,37 @@
 #include <unordered_map>
 #include <bitset>
 #include <vector>
+#include "character.hpp"
 #include "enums/event_type.hpp"
 #include "enums/ui.hpp"
 
 namespace game
 {
+    class Character;
     class Event
     {
         public:
             EventType type;
             std::string id = "";
             int value = 0;
-            int emit_x = 0;  // x coordinate to display dialogs above entities
-            int emit_y = 0;  // y coordinate to display dialogs above entities
-            bool is_emitted = false;  // true if called using emit constructor(s)
-            std::unordered_map< std::string, int> properties;
+            Character* character;
+            int emit_x = 0;          // x coordinate to display dialogs above entities
+            int emit_y = 0;          // y coordinate to display dialogs above entities
+            bool is_emitted = true;  // "is an event that spawns an emitted container"
 
-            Event();
-            Event( EventType type );
-            Event( EventType type, std::string id );
-            Event( EventType type, std::string id, int value, std::unordered_map< std::string, int> );
-            Event( EventType type, std::string id, int value, int emit_x, int emit_y, std::unordered_map< std::string, int> );
+            Event( );
+            Event( EventType t, std::string id, int v );
+            Event( EventType type, std::string id, int value, Character* c );           // IE: Have dialog follow/hover over character
+            Event( EventType type, std::string id, int value, int emit_x, int emit_y ); // IE: Have dialog at specific position
             virtual ~Event() { }
-            void construct( EventType type, std::string id, int value, 
-                            int emit_x, int emit_y, bool is_emitted,
-                            std::unordered_map< std::string, int> properties);
+            void construct( Character* );
 
             EventType getType() { return this->type; }
             std::string getID() { return this->id; }
             int getValue() { return this->value; }
             int getX() { return this->emit_x; }
             int getY() { return this->emit_y; }
-            int isEmitted() { return (this->is_emitted); }
+            Character* getCharacter() { return this->character; }
+            bool isEmitted() { return this->is_emitted; }
     };
 };

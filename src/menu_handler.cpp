@@ -129,7 +129,6 @@ namespace game
             printf("*** WARNING: Unimplemented event handle... Pushing container anyways ( menu_handler.cpp -> handleID() )\n");
             pushPriorityContainer( id );
         }
-            
     }
 
     bool MenuHandler::handleEvent( Event *event )

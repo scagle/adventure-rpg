@@ -2,7 +2,9 @@
 #include "dialog_handler.hpp"
 #include "container.hpp"
 #include "button_box.hpp"
-#include "button_box.hpp"
+#include "vector"
+#include "datatypes/properties.hpp"
+#include "enums/property_type.hpp"
 #include "globals.hpp"
 
 namespace game
@@ -28,7 +30,7 @@ namespace game
                     },
                     ContainerType::FLOATING,
                     "home_merchant0",
-                    {}
+                    Properties()
                 )
             },
             { 
@@ -44,7 +46,7 @@ namespace game
                     },
                     ContainerType::FLOATING,
                     "home_npc0",
-                    {}
+                    Properties()
                 )
             },
             { 
@@ -66,11 +68,49 @@ namespace game
                     },
                     ContainerType::FLOATING,
                     "forest_wizard",
-                    {}
+                    Properties()
+                )
+            },
+            { 
+                "scared_ferret",
+                Container( 
+                    { 
+                        TextBox( "*SQUEAK*", DEFAULT_FONT, Properties( { { PropertyType::NO_PROMPT, 1 } } ) ),
+                    }, 
+                    { 
+
+                    },
+                    ContainerType::FLOATING,
+                    "scared_ferret",
+                    Properties()
                 )
             },
         };
         return true;
+    }
+
+    void DialogHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
+    {
+        // Check button properties
+        //if ( button_properties->hasProperties() )
+        //{
+        //    for ( auto&& key_value : *(button_properties->getProperties()) )
+        //    {
+        //        switch( key_value.first )
+        //        {
+        //            case PropertyType::STACKABLE:       
+        //                if ( key_value.second == 1 )
+        //                    pushPriorityContainer( id );
+        //                return;
+        //            default:
+        //                printf("*** WARNING: Unknown Property  ( menu_handler.cpp -> handleID() )\n");
+        //                return;
+        //        }
+        //    }
+        //}
+
+        if ( id == "leave" || id == "back" )
+            popContainer();
     }
 
     bool DialogHandler::handleEvent( Event *event )
@@ -82,7 +122,7 @@ namespace game
         {
             if ( event->isEmitted() )
             {
-                pushContainer(id, event->getX(), event->getY());
+                pushContainer(id, event->getCharacter());
             }
             else
             {

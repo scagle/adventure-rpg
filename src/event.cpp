@@ -1,45 +1,49 @@
 #include <unordered_map>
 #include "event.hpp"
+#include "character.hpp"
 #include "enums/event_type.hpp"
+
+//! TODO: Make Proper Properties (no pun intended)
 
 namespace game
 {
     Event::Event()
+        : type(EventType::UNKNOWN), id(""), value(0), charactor(nullptr) 
     {
-        construct( EventType::UNKNOWN, "", 0, 0, 0, false, {} );
+        construct( nullptr );
     }
 
-    Event::Event( EventType type )
+    Event::Event( EventType t, std::string id, int v ) 
+        : type(t), id(id), value(v), charactor(nullptr) 
     {
-        construct( type, "", 0, 0, 0, false, {} );
+        construct( nullptr );
     }
 
-    Event::Event( EventType type, std::string id ) 
+    // IE: Have dialog follow/hover over character
+    Event::Event( EventType type, std::string id, int value, Character* c ) 
+        : type(t), id(id), value(v), charactor(c) 
     { 
-        construct( type, id, 0, 0, 0, false, {} );
+        construct( c );
     }
 
-    Event::Event( EventType type, std::string id, int value, 
-            std::unordered_map< std::string, int> properties ) 
-    { 
-        construct( type, id, value, 0, 0, false, properties);
-    }
-
-    Event::Event( EventType type, std::string id, int value, int emit_x, int emit_y, 
-            std::unordered_map< std::string, int> properties ) 
-    { 
-        construct( type, id, value, emit_x, emit_y, true, properties );
-    }
-
-    void Event::construct( EventType type, std::string id, int value, 
-                           int emit_x, int emit_y, bool is_emitted, std::unordered_map< std::string, int> properties )
+    // IE: Have dialog at specific position
+    Event::Event( EventType type, std::string id, int value, int emit_x, int emit_y ) 
     {
-        this->type = type;
-        this->id = id;
-        this->value = value;
         this->emit_x = emit_x;
         this->emit_y = emit_y;
-        this->is_emitted = is_emitted;
-        this->properties = properties;
+    }
+
+    void Event::construct( Character* )
+    {
+        if ( character == nullptr )
+        {
+            this->emit_x = 0;
+            this->emit_y = 0;
+        }
+        else
+        {
+            this->emit_x = character->getEmitX();
+            this->emit_y = character->getEmitY();
+        }
     }
 };

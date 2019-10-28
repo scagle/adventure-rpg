@@ -4,21 +4,18 @@
 #include <unordered_map>
 #include <SDL.h>
 #include "solid.hpp" 
+#include "enums/event_type.hpp" 
 
 namespace game
 {
+    class Solid;
+
     class Character : public Solid
     {
         private:
-        float actual_x; 
-        float actual_y;
-        float velocity_x;
-        float velocity_y;
         std::string name;
         bool main_character;
         std::string action;
-        Solid *focused_portal = NULL;
-        Character *focused_character = NULL;
         int voice_distance = 100;  // How far they can project their voice 
 
         public:
@@ -37,14 +34,14 @@ namespace game
 
         unsigned int getVoiceDistance() { return this->voice_distance; }
 
-        void spawnTravel( std::string action );         // Create a footer message
-        void transitionTravel( std::string action );
-        void removeTravel( std::string action );
-        void spawnDialog( std::string action, int, int );
-        void transitionDialog( std::string action, int, int );
-        void removeDialog( std::string action );
-        void sendEvent( EventType type, std::string action, int value, std::unordered_map< std::string, int > );
-        void sendEvent( EventType type, std::string action, int value, int emit_x, int emit_y, std::unordered_map< std::string, int > );
+        void spawnTravel      ( std::string action );
+        void transitionTravel ( std::string action );
+        void removeTravel     ( std::string action );
+        void spawnDialog      ( std::string action );
+        void transitionDialog ( std::string action );
+        void removeDialog     ( std::string action );
+        void sendEvent        ( EventType type, std::string action, int value, Character* );
+
         virtual void render( SDL_Renderer *renderer );
         virtual void update();
     };

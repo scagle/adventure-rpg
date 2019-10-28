@@ -57,116 +57,6 @@ namespace game
         }
     }
 
-    void Container::render( SDL_Renderer *renderer )
-    {
-        // Prompt the user if necessary
-        if ( show_prompt == true )
-        {
-            SDL_Rect border_box = { box.x + box.w / 2 + 5, box.y + box.h - 25, 10, 10 };
-            SDL_Rect fill_box   = { box.x + box.w / 2 + 6, box.y + box.h - 24,  8,  8 };
-            SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
-            SDL_RenderFillRect( renderer, &border_box ); 
-            SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
-            SDL_RenderFillRect( renderer, &fill_box ); 
-            return;
-        }
-
-        // Draw Container background
-        SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
-        SDL_RenderFillRect( renderer, &box ); 
-
-        // Draw Text Boxes / Button Boxes
-        const int buffer = 2; // buffer of pixels around edges
-        if (text_boxes.size() == 0 && button_boxes.size() == 0)
-        {
-            printf("*** WARNING: Trying to render an empty Container\n");
-            return;
-        }
-        else if (text_boxes.size() == 0 && button_boxes.size() > 0)  // If just buttons (menu)
-        {
-            int button_height = (box.h - (buffer * 2)) / button_boxes.size() ;
-            for (unsigned int i = 0; i < button_boxes.size(); i++)
-            {
-                SDL_Rect button_rect = { box.x + buffer, 
-                                         box.y + buffer + (button_height * (int)i), 
-                                         box.w - (buffer * 2), 
-                                         button_height };
-                button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
-            }
-        }
-        else if ((unsigned int)text_index == text_boxes.size() - 1)  // If at last text box, display buttons
-        {
-            if (orientation == ContainerOrientation::HORIZONTAL)
-            {
-                int split_location = box.x + (int)((float)box.w * divider_ratio);
-                int split_location_min = split_location - buffer / 2;
-                int split_location_max = split_location + buffer / 2;
-                int button_width = split_location_min - (box.x + buffer) ;
-                int button_height = ((box.y + box.h - buffer) - (box.y + buffer)) / button_boxes.size() ;
-                int text_width = (box.x + box.w - buffer) - split_location_max;
-                int text_height = (box.y + box.h - buffer) - (box.y + buffer);
-
-                for (unsigned int i = 0; i < button_boxes.size(); i++)
-                {
-                    SDL_Rect button_rect = { box.x + buffer, 
-                                             box.y + buffer + (button_height * (int)i), 
-                                             button_width, 
-                                             button_height  };
-                    button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
-                }
-                for (unsigned int i = 0; i < text_boxes.size(); i++)
-                {
-                    SDL_Rect text_rect = { split_location_max, 
-                                           box.y + buffer,
-                                           text_width, 
-                                           text_height  };
-                    text_boxes[i].render( renderer, &text_rect );
-                }
-            }
-            else if (orientation == ContainerOrientation::VERTICAL)
-            {
-                int split_location = box.y + (int)((float)box.h * divider_ratio);
-                int split_location_min = split_location - buffer / 2;
-                int split_location_max = split_location + buffer / 2;
-                int button_width = ((box.x + box.w - buffer) - (box.x + buffer)) / button_boxes.size() ;
-                int button_height = (box.y + box.h - buffer) - (split_location_max + buffer) ;
-                int text_width = (box.x + box.w - buffer) - (box.x + buffer);
-                int text_height = split_location_min - (box.y + buffer) ;
-
-                for (unsigned int i = 0; i < button_boxes.size(); i++)
-                {
-                    SDL_Rect button_rect = { box.x + buffer + (button_width * (int)i), 
-                                             box.y + box.h - buffer - button_height,
-                                             button_width, 
-                                             button_height  };
-                    button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
-                }
-                for (unsigned int i = 0; i < text_boxes.size(); i++)
-                {
-                    SDL_Rect text_rect = { box.x + buffer, 
-                                           box.y + buffer,
-                                           text_width, 
-                                           text_height  };
-                    text_boxes[i].render( renderer, &text_rect );
-                }
-                
-            }
-        }
-        else  // Just display text_box
-        {
-            SDL_Rect text_rect = { box.x + buffer,
-                                   box.y + buffer,
-                                   box.w - (buffer * 2), 
-                                   box.h - (buffer * 2)  };
-            text_boxes[text_index].render( renderer, &text_rect);
-        }
-    }
-
-    void Container::update()
-    {
-
-    }
-
     void Container::moveCursor( Direction dir )
     {
         switch (dir)
@@ -218,4 +108,134 @@ namespace game
         }
         return button_boxes[selected_index].getAction();
     }
+
+    void Container::render( SDL_Renderer *renderer )
+    {
+        // Prompt the user if necessary
+        if ( show_prompt == true )
+        {
+            renderPrompt( renderer );
+            return;
+        }
+
+        // Draw Container background
+        SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
+        SDL_RenderFillRect( renderer, &box ); 
+
+        // Draw Text Boxes / Button Boxes
+        if (text_boxes.size() == 0 && button_boxes.size() == 0)
+        {
+            printf("*** WARNING: Trying to render an empty Container\n");
+            return;
+        }
+        else if (text_boxes.size() == 0 && button_boxes.size() > 0)  // If just buttons (menu)
+        {
+            renderMenu( renderer );
+        }
+        else if ((unsigned int)text_index == text_boxes.size() - 1)  // If at last text box, display buttons
+        {
+            renderTextWithButtons( renderer );
+        }
+        else  // Just display text_box
+        {
+            renderText( renderer );
+        }
+    }
+
+    void Container::renderPrompt( SDL_Renderer *renderer )
+    {
+        SDL_Rect border_box = { box.x + box.w / 2 + 5, box.y + box.h - 25, 10, 10 };
+        SDL_Rect fill_box   = { box.x + box.w / 2 + 6, box.y + box.h - 24,  8,  8 };
+        SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
+        SDL_RenderFillRect( renderer, &border_box ); 
+        SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
+        SDL_RenderFillRect( renderer, &fill_box ); 
+    }
+
+    void Container::renderMenu( SDL_Renderer *renderer )
+    {
+        int button_height = (box.h - (buffer * 2)) / button_boxes.size() ;
+        for (unsigned int i = 0; i < button_boxes.size(); i++)
+        {
+            SDL_Rect button_rect = { box.x + buffer, 
+                                     box.y + buffer + (button_height * (int)i), 
+                                     box.w - (buffer * 2), 
+                                     button_height };
+            button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
+        }
+    }
+
+    void Container::renderTextWithButtons( SDL_Renderer *renderer )
+    {
+        if (orientation == ContainerOrientation::HORIZONTAL)
+        {
+            int split_location = box.x + (int)((float)box.w * divider_ratio);
+            int split_location_min = split_location - buffer / 2;
+            int split_location_max = split_location + buffer / 2;
+            int button_width = split_location_min - (box.x + buffer) ;
+            int button_height = ((box.y + box.h - buffer) - (box.y + buffer)) / button_boxes.size() ;
+            int text_width = (box.x + box.w - buffer) - split_location_max;
+            int text_height = (box.y + box.h - buffer) - (box.y + buffer);
+
+            for (unsigned int i = 0; i < button_boxes.size(); i++)
+            {
+                SDL_Rect button_rect = { box.x + buffer, 
+                                         box.y + buffer + (button_height * (int)i), 
+                                         button_width, 
+                                         button_height  };
+                button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
+            }
+            for (unsigned int i = 0; i < text_boxes.size(); i++)
+            {
+                SDL_Rect text_rect = { split_location_max, 
+                                       box.y + buffer,
+                                       text_width, 
+                                       text_height  };
+                text_boxes[i].render( renderer, &text_rect );
+            }
+        }
+        else if (orientation == ContainerOrientation::VERTICAL)
+        {
+            int split_location = box.y + (int)((float)box.h * divider_ratio);
+            int split_location_min = split_location - buffer / 2;
+            int split_location_max = split_location + buffer / 2;
+            int button_width = ((box.x + box.w - buffer) - (box.x + buffer)) / button_boxes.size() ;
+            int button_height = (box.y + box.h - buffer) - (split_location_max + buffer) ;
+            int text_width = (box.x + box.w - buffer) - (box.x + buffer);
+            int text_height = split_location_min - (box.y + buffer) ;
+
+            for (unsigned int i = 0; i < button_boxes.size(); i++)
+            {
+                SDL_Rect button_rect = { box.x + buffer + (button_width * (int)i), 
+                                         box.y + box.h - buffer - button_height,
+                                         button_width, 
+                                         button_height  };
+                button_boxes[i].render( renderer, &button_rect, (selected_index == (int)i) );
+            }
+            for (unsigned int i = 0; i < text_boxes.size(); i++)
+            {
+                SDL_Rect text_rect = { box.x + buffer, 
+                                       box.y + buffer,
+                                       text_width, 
+                                       text_height  };
+                text_boxes[i].render( renderer, &text_rect );
+            }
+            
+        }
+    }
+
+    void Container::renderText( SDL_Renderer *renderer )
+    {
+        SDL_Rect text_rect = { box.x + buffer,
+                               box.y + buffer,
+                               box.w - (buffer * 2), 
+                               box.h - (buffer * 2)  };
+        text_boxes[text_index].render( renderer, &text_rect);
+    }
+
+    void Container::update()
+    {
+        
+    }
+
 };

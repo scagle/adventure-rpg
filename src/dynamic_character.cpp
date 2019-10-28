@@ -1,5 +1,4 @@
 #include "dynamic_character.hpp"
-
 #include <stdlib.h>
 #include <time.h>
 #include "world.hpp"
@@ -37,7 +36,7 @@ namespace game
 
     DynamicCharacter::DynamicCharacter( SDL_Rect hitbox, SDL_Color color, std::string name, std::string action, 
                                         Behavior behavior )
-        : Character( hitbox, color, name )
+        : Character( hitbox, color, name, action )
     {
         construct( hitbox );
         this->behavior = behavior;

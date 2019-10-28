@@ -115,7 +115,7 @@ namespace game
         };
 
         vector< DynamicCharacter > forest_dynamics = { 
-            DynamicCharacter( {300, 200, 10, 10}, { 255, 50, 22, 255 }, "Frightened Ferret", DynamicCharacter::Behavior::LOCAL_FLEE),
+            DynamicCharacter( {300, 200, 10, 10}, { 255, 50, 22, 255 }, "Frightened Ferret", "scared", DynamicCharacter::Behavior::LOCAL_FLEE),
         };
 
 /////// Caves

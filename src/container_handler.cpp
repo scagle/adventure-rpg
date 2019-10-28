@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <unordered_map>
 #include <stack>
+#include "character.hpp"
 #include "container.hpp"
 #include "container_handler.hpp"
 #include "datatypes/properties.hpp"
@@ -24,7 +25,7 @@ namespace game
 
     void ContainerHandler::selectContainer()
     {
-        printf("Active Container size: %d\n", active_containers.size());
+        printf("Active Container size: %d\n", (int)active_containers.size());
         std::string id = this->active_containers.back().select();
         Properties* container_properties = this->active_containers.back().getProperties();
         Properties* button_properties = this->active_containers.back().getSelectedProperties();
@@ -39,7 +40,7 @@ namespace game
     void ContainerHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
     {
         popContainer();
-        if ( id != "leave")
+        if ( id != "leave" )
             pushPriorityContainer(id);
     }
 
@@ -66,10 +67,23 @@ namespace game
         active_containers.push_front( containers[id] );
     }
 
-    void ContainerHandler::pushContainer( std::string id, int x, int y )
+    void ContainerHandler::pushContainer( std::string id, Character* character)
     {
+        // Create copy of container
         Container emitted_container = containers[id];
-        emitted_container.setEmittedPosition( x, y );
+
+        // If character is not null, then align at character, otherwise align at specific position
+        if ( character != nullptr )
+        {
+            emitted_container.setCharacter(character);
+            emitted_container.setEmittedPosition( character->getEmitX(), character->getEmitY() );
+        }
+        else
+        {
+            emitted_container.setEmittedPosition( 0, 0 );
+            printf("*** WARNING: Pushing floating container with NULL character (container_handler.cpp)\n");
+
+        }
         active_containers.push_front( emitted_container );
     }
 
@@ -111,25 +125,6 @@ namespace game
             }
         }
 
-        return false;
-    }
-
-//// 'active_containers' deque methods
-
-    bool ContainerHandler::pushActiveContainer(std::string id)          // add container to beginning, if its not already active
-    {
-        if ( !active_containers.empty() )
-        {
-            for ( unsigned int i = 0; i < active_containers.size(); i++ )
-            {
-                if ( id == active_containers[i].getID() )
-                {
-                    return false;   // There already exists that specific id in the queue, so return false
-                }
-            }
-        }
-        // Otherwise add it to active containers
-        active_containers.push_front(containers[id]); 
         return false;
     }
 
