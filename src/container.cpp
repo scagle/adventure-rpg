@@ -5,6 +5,8 @@
 #include "enums/container_type.hpp"
 #include "globals.hpp"
 
+#include "character.hpp"
+
 namespace game
 {
     Container::Container() : background(CONTAINER_BACKGROUND_COLOR), foreground(CONTAINER_FOREGROUND_COLOR)
@@ -38,18 +40,26 @@ namespace game
 
     void Container::initializeBox(int emit_x, int emit_y)
     {
+        for ( std::pair< PropertyType, int > property : *properties.getProperties() )
+        {
+            switch ( property.first )
+            {
+                case PropertyType::SIZE:
+                    this->scale = (float)property.second / 100.0;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         switch (type)
         {
             case ContainerType::FLOATING:
                 {
-                    const int floating_width = 200;
-                    const int floating_height = 100;
-                    const int floating_x = emit_x - floating_width / 2;
-                    const int floating_y = emit_y - floating_height;
-                    this->box = {floating_x, floating_y, floating_width, floating_height};
+                    setEmittedPosition(emit_x, emit_y);
                     this->show_prompt = true;
+                    break;
                 }
-                break;
             case ContainerType::SCREEN:
                 this->box = { SCREEN_WIDTH / 4, SCREEN_HEIGHT / 8, SCREEN_WIDTH / 2, SCREEN_HEIGHT - SCREEN_HEIGHT / 4 }; 
                 break;
@@ -90,7 +100,11 @@ namespace game
 
     void Container::setEmittedPosition(int emit_x, int emit_y)
     {
-        initializeBox(emit_x, emit_y);
+        const int floating_width = 200 * scale;
+        const int floating_height = 100 * scale;
+        const int floating_x = emit_x - floating_width / 2;
+        const int floating_y = emit_y - floating_height;
+        this->box = {floating_x, floating_y, floating_width, floating_height};
     }
 
     std::string Container::select()
@@ -113,7 +127,18 @@ namespace game
 
     void Container::render( SDL_Renderer *renderer )
     {
-        // Prompt the user if necessary
+        // Handle properties
+        for ( std::pair< PropertyType, int > property : *(properties.getProperties()) )
+        {
+            switch ( property.first )
+            {
+                case PropertyType::NO_PROMPT:
+                    show_prompt = false;
+                    break;
+                default:
+                    break;
+            }
+        }
         if ( show_prompt == true )
         {
             renderPrompt( renderer );
@@ -130,15 +155,19 @@ namespace game
             printf("*** WARNING: Trying to render an empty Container\n");
             return;
         }
-        else if (text_boxes.size() == 0 && button_boxes.size() > 0)  // If just buttons (menu)
+        else if ( button_boxes.size() == 0 ) // If just text (some dialog)
         {
-            renderMenu( renderer );
+            renderText( renderer ); // Render Text
         }
-        else if ((unsigned int)text_index == text_boxes.size() - 1)  // If at last text box, display buttons
+        else if ( text_boxes.size() == 0 ) // If just buttons (menu)
+        {
+            renderMenu( renderer ); // Render Buttons
+        }
+        else if ((unsigned int)text_index == text_boxes.size() - 1)  // If at last text box, display buttons (end dialog)
         {
             renderTextWithButtons( renderer );
         }
-        else  // Just display text_box
+        else  // If has text and buttons, and not at the end, just display text (mid dialog)
         {
             renderText( renderer );
         }
@@ -237,7 +266,10 @@ namespace game
 
     void Container::update()
     {
-        
+        // If following a character
+        if ( character != nullptr )
+        {
+            setEmittedPosition( character->getCenterX(), character->getCenterY() );
+        }
     }
-
 };

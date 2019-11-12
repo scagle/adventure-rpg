@@ -80,14 +80,28 @@ namespace game
                 "scared_ferret",
                 Container( 
                     { 
-                        TextBox( "*SQUEAK*", DEFAULT_FONT, Properties( { { PropertyType::NO_PROMPT, 1 } } ) ),
+                        TextBox( "*SQUEAK*", DEFAULT_FONT, Properties() ),
                     }, 
                     { 
 
                     },
                     ContainerType::FLOATING,
                     "scared_ferret",
-                    Properties()
+                    Properties( { { PropertyType::NO_PROMPT, 1 }, { PropertyType::SIZE, 40 } } )
+                )
+            },
+            { 
+                "ogre",
+                Container( 
+                    { 
+                        TextBox( "GET EN MY BELLEH!", DEFAULT_FONT, Properties() ),
+                    }, 
+                    { 
+
+                    },
+                    ContainerType::FLOATING,
+                    "scared_ferret",
+                    Properties( { { PropertyType::NO_PROMPT, 1 }, { PropertyType::SIZE, 200 } } )
                 )
             },
         };
@@ -149,7 +163,7 @@ namespace game
 
     void DialogHandler::update()
     {
-
+        if ( inContainer() )
+            getContainer()->update();
     }
-
 };

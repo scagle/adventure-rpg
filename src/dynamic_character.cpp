@@ -268,7 +268,10 @@ namespace game
 
     void DynamicCharacter::update()
     {
+        // Update character-part of dynamic character
         Character::update();
+
+        // If we have some form of behavior
         if ( behavior != Behavior::NONE )
         {
             std::vector< Solid > *solids = World::getSolids();

@@ -11,9 +11,22 @@ class SDL_Renderer;
 
 namespace game
 {
-    /*! TODO: Figure out why for ( element : array ) loops were causing "off by 16" errors when placed here
-     *  \todo Figure out why for ( element : array ) loops were causing "off by 16" errors when placed here
-     */
+    std::vector< Character* > Environment::getAllCharacters()
+    {
+        std::vector< Character* > all_characters;
+        for ( unsigned int i = 0; i < characters.size(); i++ )
+        {
+            all_characters.push_back( &(characters[i]) );
+        }
+
+        for ( unsigned int i = 0; i < dynamics.size(); i++ )
+        {
+            all_characters.push_back( &(dynamics[i]) );
+        }
+
+        return all_characters;
+    }
+
     void Environment::render( SDL_Renderer *renderer ) 
     {
         for ( unsigned int i = 0; i < portals.size(); i++ )

@@ -39,7 +39,7 @@ namespace game
             static std::vector< Solid >* getSolids() { return getCurrentMap()->getSolids(); }
             static std::vector< Solid >* getPortals() { return getCurrentMap()->getPortals(); }
             static MainCharacter* getMainCharacter() { return &(main_character); }
-            static std::vector< Character >* getCharactersInMap() { return current_map->getCharacters(); }
+            static std::vector< Character* > getCharactersInMap() { return current_map->getAllCharacters(); }
             static SDL_Color* getCurrentBackground() { return current_map->getBackground(); }
             static void changeMap( std::string id ) { current_map = &(maps[id]); }
 

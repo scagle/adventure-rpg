@@ -31,6 +31,8 @@ namespace game
 
             ~Environment() { }
 
+            std::vector< Character* > getAllCharacters();
+
             virtual void render( SDL_Renderer *renderer );
             virtual void update();
 

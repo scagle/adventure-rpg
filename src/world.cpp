@@ -113,7 +113,7 @@ namespace game
         };
 
         std::vector< DynamicCharacter > forest_dynamics = { 
-            DynamicCharacter( {300, 200, 10, 10}, { 255, 50, 22, 255 }, "Frightened Ferret", "scared", DynamicCharacter::Behavior::LOCAL_FLEE),
+            DynamicCharacter( {300, 200, 10, 10}, { 255, 50, 22, 255 }, "Frightened Ferret", "scared_ferret", DynamicCharacter::Behavior::LOCAL_FLEE),
         };
 
 /////// Caves
@@ -136,7 +136,7 @@ namespace game
         };
 
         std::vector< DynamicCharacter > caves_dynamics = { 
-            DynamicCharacter( {250, 150, 50, 50}, { 50, 200, 50, 255 }, "Goblin", DynamicCharacter::Behavior::GLOBAL_FOLLOW),
+            DynamicCharacter( {250, 150, 50, 50}, { 50, 200, 50, 255 }, "Ogre", "ogre", DynamicCharacter::Behavior::GLOBAL_FOLLOW),
         };
 
 /////// Beach

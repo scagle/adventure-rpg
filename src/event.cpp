@@ -42,6 +42,7 @@ namespace game
         {
             this->emit_x = 0;
             this->emit_y = 0;
+            this->is_emitted = false;
         }
         else
         {

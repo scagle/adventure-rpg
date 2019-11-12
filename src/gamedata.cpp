@@ -64,6 +64,7 @@ namespace game
             world.setMainCharacterVelocity(velocity_x, velocity_y);
             world.update();
         }
+        ui_manager.update();
     }
 
     void GameData::render()

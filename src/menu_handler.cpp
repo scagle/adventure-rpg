@@ -143,12 +143,17 @@ namespace game
     void MenuHandler::render( SDL_Renderer *renderer )
     {
         if ( inContainer() )
+        {
             getContainer()->render( renderer );
+        }
     }
 
     void MenuHandler::update()
     {
-
+        if ( inContainer() )
+        {
+            getContainer()->update();
+        }
     }
 
     void MenuHandler::save()

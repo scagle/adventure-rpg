@@ -19,7 +19,6 @@ namespace game
     {
         private:
             std::string name;
-            bool main_character;
             std::string action;
             int voice_distance = 100;  // How far they can project their voice 
 
@@ -42,7 +41,7 @@ namespace game
             void spawnTravel      ( std::string action );
             void transitionTravel ( std::string action );
             void removeTravel     ( std::string action );
-            void spawnDialog      ( std::string action );
+            void spawnDialog( Character* npc, std::string action );
             void transitionDialog ( std::string action );
             void removeDialog     ( std::string action );
             void sendEvent        ( EventType type, std::string action, int value, Character* );

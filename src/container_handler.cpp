@@ -22,16 +22,19 @@ namespace game
 
     void ContainerHandler::selectContainer()
     {
-        printf("Active Container size: %d\n", (int)active_containers.size());
-        std::string id = this->active_containers.back().select();
-        Properties* container_properties = this->active_containers.back().getProperties();
-        Properties* button_properties = this->active_containers.back().getSelectedProperties();
-        if (id != "" && id != "text_continue")
+        printf("Active Container size: %d %p\n", (int)active_containers.size(), &active_containers);
+        if ( this->active_containers.back().hasButtonBoxes() )
         {
-            handleID(id, container_properties, button_properties);
-        }
+            std::string id = this->active_containers.back().select();
+            Properties* container_properties = this->active_containers.back().getProperties();
+            Properties* button_properties = this->active_containers.back().getSelectedProperties();
+            if (id != "" && id != "text_continue")
+            {
+                handleID(id, container_properties, button_properties);
+            }
 
-        printf("Action: '%s'\n", id.c_str());
+            printf("Action: '%s'\n", id.c_str());
+        }
     }
 
     void ContainerHandler::handleID( std::string id, Properties *container_properties, Properties *button_properties )
@@ -61,27 +64,36 @@ namespace game
 
     void ContainerHandler::pushContainer( std::string id )
     {
-        active_containers.push_front( containers[id] );
+        Container new_container = containers[id];
+        active_containers.push_front( new_container );
+        new_container.initializeBox( 0, 0 );
     }
 
     void ContainerHandler::pushContainer( std::string id, Character* character)
     {
         // Create copy of container
-        Container emitted_container = containers[id];
+        Container new_container = containers[id];
 
         // If character is not null, then align at character, otherwise align at specific position
         if ( character != nullptr )
         {
-            emitted_container.setCharacter(character);
-            emitted_container.setEmittedPosition( character->getEmitX(), character->getEmitY() );
+            new_container.setCharacter(character);
+            new_container.initializeBox( character->getEmitX(), character->getEmitY() );
         }
         else
         {
-            emitted_container.setEmittedPosition( 0, 0 );
-            printf("*** WARNING: Pushing floating container with NULL character (container_handler.cpp)\n");
+            new_container.setEmittedPosition( 0, 0 );
+            printf("*** WARNING: Pushing floating container with NOBODY to follow  (container_handler.cpp)\n");
 
         }
-        active_containers.push_front( emitted_container );
+        active_containers.push_front( new_container );
+    }
+
+    void ContainerHandler::pushContainer( std::string id, int emit_x, int emit_y )
+    {
+        // Create copy of container
+        Container new_container = containers[id];
+        new_container.initializeBox( emit_x, emit_y );
     }
 
     void ContainerHandler::pushPriorityContainer( std::string id )
@@ -133,9 +145,7 @@ namespace game
 
     void ContainerHandler::update()
     {
-
     }
-
 };
 
 //    bool ContainerHandler::prioritizeActiveContainer(std::string id)    // prioritize container by moving it to the end of the queue

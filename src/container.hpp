@@ -41,6 +41,7 @@ namespace game
             int selected_index = 0;     // Current index of selected button
 
             // Constants until I need a way to change them
+            float scale = 1;            // scale of container size
             float divider_ratio = 0.8;  // where to put vertical / horizontal split. IE: [  text  | buttons ] = 0.5 (50%)
             int buffer = 2;       // buffer of pixels around edges
             ContainerOrientation orientation = ContainerOrientation::VERTICAL;       

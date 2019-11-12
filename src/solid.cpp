@@ -60,9 +60,10 @@ namespace game
 
     void Solid::update()
     {
-        if (type == Type::PORTAL)
+        // Check if we are portal, so we can have fun with colors
+        if (type == Type::PORTAL) 
         {
-            portal_color = portal_color + 5; 
+            portal_color = portal_color + 1024; 
             portal_color &= 0x00FFFFFFF;
         }
     }

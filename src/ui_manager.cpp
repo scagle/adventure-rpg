@@ -172,6 +172,8 @@ namespace game
 
     void UIManager::update()
     {
-        
+        menu_handler.update();
+        dialog_handler.update();
+        travel_handler.update();
     }
 };

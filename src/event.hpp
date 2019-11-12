@@ -36,8 +36,8 @@ namespace game
             EventType getType() { return this->type; }
             std::string getID() { return this->id; }
             int getValue() { return this->value; }
-            int getX() { return this->emit_x; }
-            int getY() { return this->emit_y; }
+            int getEmitX() { return this->emit_x; }
+            int getEmitY() { return this->emit_y; }
             Character* getCharacter() { return this->character; }
             bool isEmitted() { return this->is_emitted; }
     };

@@ -37,39 +37,44 @@ namespace game
 
     void Character::spawnTravel( std::string action )
     {
-        sendEvent( EventType::TRAVEL, action, 1, this );
+        sendEvent( EventType::TRAVEL, action, 1, nullptr );
     }
 
     void Character::transitionTravel( std::string action )
     {
         std::unordered_map< std::string, int > properties = { { "pop", 1 } };
-        sendEvent( EventType::TRAVEL, action, 1, this );
+        sendEvent( EventType::TRAVEL, action, 1, nullptr );
     }
 
     void Character::removeTravel( std::string action )
     {
-        sendEvent( EventType::TRAVEL, action, 0, this );
+        sendEvent( EventType::TRAVEL, action, 0, nullptr );
     }
 
-    void Character::spawnDialog( std::string action )
+    void Character::spawnDialog( Character* npc, std::string action )
     {
-        sendEvent( EventType::DIALOG, action, 1, this );
+        sendEvent( EventType::DIALOG, action, 1, npc );
     }
 
     void Character::transitionDialog( std::string action )
     {
         std::unordered_map< std::string, int > properties = { { "transition", 1 } };
-        sendEvent( EventType::DIALOG, action, 1, this );
+        sendEvent( EventType::DIALOG, action, 1, nullptr );
     }
 
     void Character::removeDialog( std::string action )
     {
-        sendEvent( EventType::DIALOG, action, 0, this );
+        sendEvent( EventType::DIALOG, action, 0, nullptr );
     }
 
     void Character::sendEvent( EventType type, std::string action, int value, Character* character )
     {
-        Event event = Event( type, action, value, character );
+        Event event;
+        if ( character == nullptr )
+            event = Event( type, action, value );
+        else
+            event = Event( type, action, value, character );
+
         if ( UIManager::handleEvent( &event ) == false )
         {
             printf("character.cpp -> sendEvent() failed...\n");
@@ -83,6 +88,7 @@ namespace game
 
     void Character::update()
     {
+        // Update solid-part of character
         Solid::update();
     }
 };

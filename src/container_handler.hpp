@@ -20,7 +20,6 @@ namespace game
     {
         protected:
             std::unordered_map< std::string, Container > containers;
-            std::stack< Container > container_stack;
             std::deque< Container > active_containers;
 
         public:
@@ -30,7 +29,8 @@ namespace game
             virtual bool loadContainers();                  
 
             virtual void pushContainer( std::string );              // push container to beginning, if its not already active
-            virtual void pushContainer( std::string, Character* );  // ^^^ with coordinates
+            virtual void pushContainer( std::string, Character* );  // ^^^ with follower
+            virtual void pushContainer( std::string, int, int );    // ^^^ with coordinates
             virtual void pushPriorityContainer( std::string id );   // push container to front of queue (used commonly for transitions)
             virtual void popContainer();                            // remove end container, and return new end
             virtual void removeContainer( std::string );            // remove specific container, and return end

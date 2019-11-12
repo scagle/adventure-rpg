@@ -67,7 +67,7 @@ namespace game
     }
 
     std::vector< Character* > adjacent_characters; 
-    void MainCharacter::checkNPCs( std::vector< Character > *characters )
+    void MainCharacter::checkNPCs( std::vector< Character* > *characters )
     {
         if ( characters->size() > 0 )
         {
@@ -80,8 +80,8 @@ namespace game
                      == adjacent_characters.end() )
                 {
                     // Send found event
-                    Character::spawnDialog( character->getAction() );
-                    printf("Entering npc '%s'\n", character->getName().c_str());
+                    Character::spawnDialog( character, character->getAction() );
+                    printf("Entering npc '%s' for action '%s'\n", character->getName().c_str(), character->getAction().c_str());
                 }
             }
 
@@ -102,14 +102,15 @@ namespace game
         }
     }
 
-    std::vector< Character* > MainCharacter::getAdjacentNPCs( std::vector< Character > *characters )
+    std::vector< Character* > MainCharacter::getAdjacentNPCs( std::vector< Character* > *characters )
     {
         std::vector< Character* > adjacent_characters;
         for ( unsigned int i = 0; i < characters->size(); i++ )
         {
-            Character* character = &(*characters)[i];
+            Character* character = (*characters)[i];
             if ( character->hasDialog() )
             {
+                //printf("HAS DIALOG '%s'\n", character->getName().c_str());
                 unsigned int distance_from_npc = character->getDistance(getCenterX(), 
                                                                         getCenterY(), 
                                                                         Solid::Distance_Algorithm::DISTANCE_FAST);
@@ -129,18 +130,22 @@ namespace game
 
     void MainCharacter::update()
     {
+        // Update dynamic-part of main character
         DynamicCharacter::update();
+
         std::vector< Solid > *solids = World::getSolids();
         std::vector< Solid > *portals = World::getPortals();
-        std::vector< Character > *characters = World::getCharactersInMap();
+        //std::vector< Character > *characters = World::getCharactersInMap(); // TODO: Generalize this to be Character OR DynamicCharacter
+        std::vector< Character* > characters = World::getCharactersInMap(); // TODO: Generalize this to be Character OR DynamicCharacter
 
         // Move Character
         DynamicCharacter::moveCharacter(&actual_x, &velocity_x, &(hitbox.x), &(hitbox.w), solids, SCREEN_WIDTH);
         DynamicCharacter::moveCharacter(&actual_y, &velocity_y, &(hitbox.y), &(hitbox.h), solids, SCREEN_HEIGHT);
+
         // Check if inside Portals
         checkPortals(portals);
 
         // NPC dialog checks
-        checkNPCs(characters);
+        checkNPCs(&(characters));
     }
 };
