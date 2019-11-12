@@ -1,6 +1,5 @@
-#include <SDL.h>
 #include "button_box.hpp"
-#include "text_box.hpp"
+
 #include "datatypes/properties.hpp"
 
 namespace game
@@ -56,3 +55,4 @@ namespace game
 
     }
 };
+

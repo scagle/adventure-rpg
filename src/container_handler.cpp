@@ -1,11 +1,10 @@
-#include <SDL.h>
-#include <cstdio>
-#include <unordered_map>
-#include <stack>
+#include "container_handler.hpp"
+
 #include "character.hpp"
 #include "container.hpp"
-#include "container_handler.hpp"
 #include "datatypes/properties.hpp"
+
+#include <SDL.h>
 
 namespace game
 {
@@ -15,8 +14,6 @@ namespace game
         printf("Calling base-class function, which is empty (container_handler.cpp -> loadContainers())\n");
         return false;
     }
-
-//// 'containers' unordered_map methods
 
     void ContainerHandler::moveContainer( Direction dir )
     {

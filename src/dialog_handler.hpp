@@ -1,24 +1,31 @@
 #pragma once
+
+// Forward Declaration inside game
+namespace game
+{
+    class Event;
+};
+
+#include "container_handler.hpp"
+
 #include <set>
 #include <string>
-#include "container_handler.hpp"
-#include "event.hpp"
 
 namespace game
 {
     class DialogHandler : public ContainerHandler
     {
         private:
-        static std::set< std::string > dialog_set;
+            static std::set< std::string > dialog_set;
 
         public:
-        DialogHandler() { }
-        virtual ~DialogHandler() { }
+            DialogHandler() { }
+            virtual ~DialogHandler() { }
 
-        bool loadContainers() override;
-        void handleID( std::string, Properties*, Properties* ) override;
-        bool handleEvent( Event * );
-        virtual void render( SDL_Renderer *renderer );  
-        virtual void update();
+            bool loadContainers() override;
+            void handleID( std::string, Properties*, Properties* ) override;
+            bool handleEvent( Event * );
+            virtual void render( SDL_Renderer *renderer );  
+            virtual void update();
     };
 };

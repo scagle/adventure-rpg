@@ -1,6 +1,8 @@
 #include "container.hpp"
+
 #include "enums/direction.hpp"
-#include "enums/container_enums.hpp"
+#include "enums/container_orientation.hpp"
+#include "enums/container_type.hpp"
 #include "globals.hpp"
 
 namespace game

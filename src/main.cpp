@@ -1,9 +1,8 @@
-#include <iostream>
+#include "gamedata.hpp"
+
 #include <chrono>
 #include <thread>
-#include <stdio.h>
 #include <SDL.h>
-#include "gamedata.hpp"
 
 void render_thread(game::GameData *gamedata) 
 {

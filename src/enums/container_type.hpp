@@ -1,14 +1,7 @@
 #pragma once
-#include <vector>
 
 namespace game
 {
-    enum class ContainerOrientation
-    {
-        VERTICAL,
-        HORIZONTAL,
-    };
-
     enum class ContainerType
     {
         FLOATING , // floating at a postition (IE: dialogs)

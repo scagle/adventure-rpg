@@ -1,15 +1,17 @@
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <iostream>
-#include <assert.h>
 #include "gamedata.hpp"
-#include "sdl_utils.hpp"
+
 #include "event.hpp"
 #include "text_box.hpp"
 #include "button_box.hpp"
+#include "container.hpp"
+
 #include "enums/direction.hpp"
 #include "enums/event_type.hpp"
-#include "container.hpp"
+#include "enums/ui.hpp"
+
+#include <unordered_map>
+#include <SDL.h>
+#include <SDL_ttf.h>
 
 namespace game
 {
@@ -109,9 +111,9 @@ namespace game
     void GameData::startGame()
     {
         if ( initGame() )
-            std::cout << "Initialization Success!" << "\n";
+            printf("Initialization Success!\n");
         else
-            std::cout << "Initialization Failure!" << "\n";
+            printf("Initialization Failure!\n");
     }
 
     bool GameData::initGame()

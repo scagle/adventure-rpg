@@ -1,5 +1,9 @@
-#include <SDL.h>
 #include "keyboard_handler.hpp"
+
+#include <SDL.h>
+
+#define PRESSED true
+#define RELEASED false
 
 namespace game
 {

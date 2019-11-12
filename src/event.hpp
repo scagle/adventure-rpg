@@ -1,15 +1,20 @@
 #pragma once
-#include <string>
-#include <unordered_map>
-#include <bitset>
-#include <vector>
-#include "character.hpp"
+
+// Forward Declarations
+namespace game
+{
+    class Character;
+};
+
 #include "enums/event_type.hpp"
-#include "enums/ui.hpp"
+
+#include <string>
+#include <vector>
 
 namespace game
 {
     class Character;
+
     class Event
     {
         public:

@@ -1,8 +1,14 @@
 #pragma once
-#include <SDL.h>
+
+// Forward Declarations
+class SDL_Color;
+
 #include <stdint.h>
 
 namespace game
 {
-    uint32_t colorToNumber(SDL_Color color);
+    namespace utils
+    {
+        uint32_t colorToNumber(SDL_Color color);
+    };
 };

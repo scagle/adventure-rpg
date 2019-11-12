@@ -1,11 +1,16 @@
-#include <string>
 #include "dialog_handler.hpp"
+
 #include "container.hpp"
+#include "text_box.hpp"
 #include "button_box.hpp"
-#include "vector"
 #include "datatypes/properties.hpp"
+#include "event.hpp"
+
 #include "enums/property_type.hpp"
 #include "globals.hpp"
+
+#include <string>
+#include <vector>
 
 namespace game
 {

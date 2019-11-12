@@ -1,5 +1,13 @@
+// Forward Declarations
+namespace game
+{
+    class Solid;
+    class Character;
+    class DynamicCharacter;
+};
+class SDL_Renderer;
+
 #include "environment.hpp"
-#include <SDL.h>
 
 namespace game
 {

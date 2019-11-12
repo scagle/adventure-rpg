@@ -1,27 +1,30 @@
-#include <unordered_map>
 #include "event.hpp"
+
 #include "character.hpp"
+
 #include "enums/event_type.hpp"
+
+#include <string>
 
 //! TODO: Make Proper Properties (no pun intended)
 
 namespace game
 {
     Event::Event()
-        : type(EventType::UNKNOWN), id(""), value(0), charactor(nullptr) 
+        : type(EventType::UNKNOWN), id(""), value(0), character(nullptr) 
     {
         construct( nullptr );
     }
 
-    Event::Event( EventType t, std::string id, int v ) 
-        : type(t), id(id), value(v), charactor(nullptr) 
+    Event::Event( EventType type, std::string id, int value ) 
+        : type(type), id(id), value(value), character(nullptr) 
     {
         construct( nullptr );
     }
 
     // IE: Have dialog follow/hover over character
     Event::Event( EventType type, std::string id, int value, Character* c ) 
-        : type(t), id(id), value(v), charactor(c) 
+        : type(type), id(id), value(value), character(c) 
     { 
         construct( c );
     }

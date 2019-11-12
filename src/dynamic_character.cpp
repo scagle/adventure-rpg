@@ -1,11 +1,13 @@
 #include "dynamic_character.hpp"
-#include <stdlib.h>
-#include <time.h>
+
 #include "world.hpp"
 #include "solid.hpp"
-#include "character.hpp"
+#include "main_character.hpp"
 #include "datatypes/position.hpp"
 #include "globals.hpp"
+
+#include <stdlib.h>
+#include <time.h>
 
 namespace game
 {
@@ -71,7 +73,7 @@ namespace game
             }
             else
             {
-                if ( solids != NULL )
+                if ( solids != nullptr )
                 {
                     for ( unsigned int i = 0; i < solids->size(); i++ )
                     {
@@ -164,9 +166,9 @@ namespace game
             case Behavior::LOCAL_FOLLOW:
             {
                 unsigned int outer_boundary = ( following ) ? post_detect_range : detect_range;
-                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= outer_boundary )
+                if ( getDistance( main_pos.x, main_pos.y, Solid::Distance_Algorithm::DISTANCE_FAST ) <= outer_boundary )
                 {
-                    if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) > too_close_range )
+                    if ( getDistance( main_pos.x, main_pos.y, Solid::Distance_Algorithm::DISTANCE_FAST ) > too_close_range )
                     {
                         setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
                         following = true;
@@ -186,7 +188,7 @@ namespace game
             }
             case Behavior::GLOBAL_FOLLOW:
             {
-                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) > too_close_range )
+                if ( getDistance( main_pos.x, main_pos.y, Solid::Distance_Algorithm::DISTANCE_FAST ) > too_close_range )
                 {
                     setVelocity( ( float )( unit_velocity_x ), ( float )( unit_velocity_y ) );
                 }
@@ -199,7 +201,7 @@ namespace game
             case Behavior::LOCAL_FLEE:
             {
                 unsigned int outer_boundary = ( fleeing ) ? post_detect_range : detect_range;
-                if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= outer_boundary )
+                if ( getDistance( main_pos.x, main_pos.y, Solid::Distance_Algorithm::DISTANCE_FAST ) <= outer_boundary )
                 {
                     setVelocity( ( float )( -unit_velocity_x ), ( float )( -unit_velocity_y ) );
                     fleeing = true;
@@ -222,7 +224,7 @@ namespace game
             {
                 if (behavior == Behavior::LOCAL_RANDOM )
                 {
-                    if ( getDistance( main_pos.x, main_pos.y, DISTANCE_FAST ) <= detect_range )
+                    if ( getDistance( main_pos.x, main_pos.y, Solid::Distance_Algorithm::DISTANCE_FAST ) <= detect_range )
                     {
                         setVelocity( 0, 0 );
                         break;

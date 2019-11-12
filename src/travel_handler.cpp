@@ -1,8 +1,9 @@
-#include <SDL.h>
-#include <cstdlib>
 #include "travel_handler.hpp"
+
 #include "event.hpp"
 #include "world.hpp"
+
+#include <SDL.h>
 
 namespace game
 {
@@ -111,7 +112,7 @@ namespace game
             if ( event->isEmitted() )
             {
                 printf("Pushing container '%s' with coordinates\n", event->getID().c_str());
-                pushContainer(event->getID(), event->getX(), event->getY(), event->getCharacter());
+                pushContainer(event->getID(), event->getCharacter());
             }
             else
             {

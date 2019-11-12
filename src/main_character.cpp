@@ -1,11 +1,11 @@
 #include "main_character.hpp"
 
+#include "world.hpp"
+
+#include "globals.hpp"
+
 #include <vector>
 #include <algorithm>
-#include "world.hpp"
-#include "solid.hpp"
-#include "character.hpp"
-#include "globals.hpp"
 
 namespace game
 {
@@ -110,7 +110,9 @@ namespace game
             Character* character = &(*characters)[i];
             if ( character->hasDialog() )
             {
-                unsigned int distance_from_npc = character->getDistance(getCenterX(), getCenterY(), DISTANCE_FAST);
+                unsigned int distance_from_npc = character->getDistance(getCenterX(), 
+                                                                        getCenterY(), 
+                                                                        Solid::Distance_Algorithm::DISTANCE_FAST);
                 if ( distance_from_npc <= character->getVoiceDistance() )
                 {
                     adjacent_characters.push_back( character );

@@ -1,7 +1,8 @@
-#include <SDL.h> 
 #include "text_box.hpp"
+
 #include "gamedata.hpp"
-#include "datatypes/properties.hpp"
+
+#include <SDL_ttf.h>
 
 namespace game
 {

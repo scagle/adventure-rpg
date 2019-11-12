@@ -1,22 +1,26 @@
 #pragma once
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <bitset>
-#include <vector>
+
+// Forward Declarations
+namespace game
+{
+    class Solid;
+    class Event;
+};
+class SDL_Window;
+class SDL_Renderer;
+union SDL_Event;
+
 #include "keyboard_handler.hpp"
 #include "ui_manager.hpp"
 #include "world.hpp"
 #include "character.hpp"
-#include "event.hpp"
 #include "solid.hpp"
+
 #include "enums/event_type.hpp"
 
-
-class KeyboardHandler;
-class MenuHandler;
-class Character;
-class World;
-class Solid;
+#include <bitset>
+#include <vector>
+#include <SDL_ttf.h>
 
 namespace game
 {

@@ -1,20 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <unordered_map>
-#include <SDL.h>
-#include <cstdlib>
-#include <algorithm>
-
 #include "character.hpp"
-#include "solid.hpp"
+
 #include "ui_manager.hpp"
-#include "dialog_handler.hpp"
-#include "travel_handler.hpp"
-#include "globals.hpp"
+#include "event.hpp"
+
 #include "enums/event_type.hpp"
+
+#include <algorithm>
+#include <SDL.h>
 
 namespace game
 {
+
     Character::Character()
         : Solid( )
     {

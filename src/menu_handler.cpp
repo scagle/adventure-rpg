@@ -1,17 +1,20 @@
+#include "menu_handler.hpp"
+
+#include "gamedata.hpp"
+#include "container.hpp"
+#include "text_box.hpp"
+#include "button_box.hpp"
+#include "event.hpp"
+#include "datatypes/properties.hpp"
+
+#include "enums/property_type.hpp"
+#include "globals.hpp"
+
 #include <SDL.h>
 #include <iostream>
 #include <vector>
 #include <set>
 #include <stdio.h>
-#include "menu_handler.hpp"
-#include "globals.hpp"
-#include "gamedata.hpp"
-#include "world.hpp"
-#include "container.hpp"
-#include "text_box.hpp"
-#include "button_box.hpp"
-#include "datatypes/properties.hpp"
-#include "enums/property_type.hpp"
 
 namespace game
 {

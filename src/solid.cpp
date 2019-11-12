@@ -1,6 +1,8 @@
-#include <SDL.h>
-#include <stdlib.h>
 #include "solid.hpp"
+
+#include "datatypes/position.hpp"
+
+#include <SDL.h>
 
 namespace game
 {
@@ -25,13 +27,13 @@ namespace game
     unsigned int Solid::getDistance( int center_x, int center_y, Distance_Algorithm alg )
     {
         unsigned int distance = 0;
-        if (alg == DISTANCE_FAST)
+        if (alg == Solid::Distance_Algorithm::DISTANCE_FAST)
         {
             int distance_x = abs(getCenterX() - center_x);
             int distance_y = abs(getCenterY() - center_y);
             distance = distance_x + distance_y;
         }
-        if (alg == DISTANCE_ACCURATE)
+        if (alg == Solid::Distance_Algorithm::DISTANCE_ACCURATE)
         {
             distance = 0;
             printf("Unimplemented DISTANCE_ACCURATE");

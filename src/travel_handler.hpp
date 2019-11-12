@@ -1,6 +1,12 @@
 #pragma once
-#include <SDL.h>
-#include "event.hpp"
+
+// Forward Declarations
+namespace game
+{
+    class Event;
+};
+class SDL_Renderer;
+
 #include "container_handler.hpp"
 
 namespace game
@@ -10,13 +16,13 @@ namespace game
         private:
 
         public:
-        TravelHandler() { }
-        virtual ~TravelHandler() { }
+            TravelHandler() { }
+            virtual ~TravelHandler() { }
 
-        bool loadContainers() override; 
-        void handleID( std::string, Properties*, Properties* ) override;
-        bool handleEvent( Event * );
-        virtual void render( SDL_Renderer *renderer );
-        virtual void update();
+            bool loadContainers() override; 
+            void handleID( std::string, Properties*, Properties* ) override;
+            bool handleEvent( Event * );
+            virtual void render( SDL_Renderer *renderer );
+            virtual void update();
     };
 };

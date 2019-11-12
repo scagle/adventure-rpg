@@ -1,8 +1,11 @@
 #include "ui_manager.hpp"
+
 #include "menu_handler.hpp"
 #include "dialog_handler.hpp"
 #include "travel_handler.hpp"
+
 #include "enums/event_type.hpp"
+#include "enums/ui.hpp"
 #include "event.hpp"
 
 namespace game
@@ -84,6 +87,30 @@ namespace game
         }
     }
 
+    bool UIManager::initializeUIHandlers()
+    {
+        if ( !menu_handler.loadContainers() )
+        {
+            printf("ui_manager.cpp : MenuHandler could not be initialized!\n");
+            return false;
+        }
+
+        if ( !dialog_handler.loadContainers() )
+        {
+
+            printf("ui_manager.cpp : DialogHandler could not be initialized!\n");
+            return false;
+        }
+
+        if ( !travel_handler.loadContainers() )
+        {
+            printf("ui_manager.cpp : TravelHandler could not be initialized!\n");
+            return false;
+        }
+        return true;
+    }
+
+
     bool UIManager::inUI( UI ui )
     {
         switch (ui)
@@ -134,29 +161,6 @@ namespace game
                 break;
         }
         return "";
-    }
-
-    bool UIManager::initializeUIHandlers()
-    {
-        if ( !menu_handler.loadContainers() )
-        {
-            printf("ui_manager.cpp : MenuHandler could not be initialized!\n");
-            return false;
-        }
-
-        if ( !dialog_handler.loadContainers() )
-        {
-
-            printf("ui_manager.cpp : DialogHandler could not be initialized!\n");
-            return false;
-        }
-
-        if ( !travel_handler.loadContainers() )
-        {
-            printf("ui_manager.cpp : TravelHandler could not be initialized!\n");
-            return false;
-        }
-        return true;
     }
 
     void UIManager::render( SDL_Renderer *renderer )
