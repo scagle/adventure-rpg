@@ -10,44 +10,51 @@ set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
 
 set(BASE_SOURCES 
+# Non Dependants
+    sdl_utils.cpp
+    sdl_utils.hpp
+    globals.hpp
+    game_texture.cpp
+    game_texture.hpp
+# Priority 3
+    event.cpp
+    event.hpp
+    text_box.cpp
+    text_box.hpp
     button_box.cpp
     button_box.hpp
+    solid.cpp
+    solid.hpp
+    dynamic_character.cpp
+    dynamic_character.hpp
+    main_character.cpp
+    main_character.hpp
     character.cpp
     character.hpp
     container.cpp
-    container_handler.cpp
-    container_handler.hpp
     container.hpp
-    dialog_handler.cpp
-    dialog_handler.hpp
-    dynamic_character.cpp
-    dynamic_character.hpp
+# Priority 2
     environment.cpp
     environment.hpp
-    event.cpp
-    event.hpp
-    gamedata.cpp
-    gamedata.hpp
-    globals.hpp
+# Priority 1
     keyboard_handler.cpp
     keyboard_handler.hpp
-    main_character.cpp
-    main_character.hpp
-    main.cpp
+    dialog_handler.cpp
+    dialog_handler.hpp
     menu_handler.cpp
     menu_handler.hpp
-    sdl_utils.cpp
-    sdl_utils.hpp
-    solid.cpp
-    solid.hpp
-    text_box.cpp
-    text_box.hpp
     travel_handler.cpp
     travel_handler.hpp
-    ui_manager.cpp
-    ui_manager.hpp
+    container_handler.cpp
+    container_handler.hpp
     world.cpp
     world.hpp
+    ui_manager.cpp
+    ui_manager.hpp
+# Priority 0
+    gamedata.cpp
+    gamedata.hpp
+    main.cpp
 )
 
 add_subdirectory(enums)

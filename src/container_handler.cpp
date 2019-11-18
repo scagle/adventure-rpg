@@ -28,7 +28,7 @@ namespace game
             std::string id = this->active_containers.back().select();
             Properties* container_properties = this->active_containers.back().getProperties();
             Properties* button_properties = this->active_containers.back().getSelectedProperties();
-            if (id != "" && id != "text_continue")
+            if ( id != "" && id != "text_continue" )
             {
                 handleID(id, container_properties, button_properties);
             }
@@ -46,7 +46,7 @@ namespace game
 
     Container* ContainerHandler::getContainer()
     {
-        if (active_containers.size() == 0)
+        if ( active_containers.size() == 0 )
             printf("*** Warning: No containers on stack! (ui/container_handler.cpp -> getContainer())\n");
 
         return &(this->active_containers.back());

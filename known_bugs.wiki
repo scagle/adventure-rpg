@@ -1,0 +1,3 @@
+* Dynamic dialogs
+    * Dynamic dialogs carry on after passing out of range only when talking to another npc   
+    * Dynamic dialogs starts when passing in range, even if talking to another npc

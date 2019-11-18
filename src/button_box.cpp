@@ -46,8 +46,7 @@ namespace game
             SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
         }
 
-        SDL_RenderFillRect( renderer, button_rect );
-        SDL_RenderCopy( renderer, text_texture, NULL, button_rect ); 
+        text_texture.render( renderer, button_rect );
     }
 
     void ButtonBox::update()

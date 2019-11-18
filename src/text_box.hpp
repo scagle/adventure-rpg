@@ -1,6 +1,7 @@
 #pragma once
 
 #include "datatypes/properties.hpp"
+#include "game_texture.hpp"
 
 #include <string>
 #include <SDL.h>
@@ -11,7 +12,7 @@ namespace game
     {
         protected:   // We want inherited classes to have access to members
             std::string text;
-            SDL_Texture *text_texture;
+            GameTexture text_texture;
             SDL_Color background;
             SDL_Color foreground;
             int font_index;

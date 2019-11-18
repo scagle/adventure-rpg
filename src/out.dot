@@ -1,0 +1,5 @@
+digraph dependencies {
+  "enums" [shape=oval];
+  "ROOT" -> "enums" [color=lightblue];
+  "datatypes" [shape=oval];
+}

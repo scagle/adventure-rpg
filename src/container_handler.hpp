@@ -3,6 +3,7 @@
 // Forward Declarations
 namespace game
 {
+    class Character;
     class Properties;
 };
 class SDL_Renderer;
@@ -10,7 +11,6 @@ class SDL_Renderer;
 #include "container.hpp"
 
 #include <unordered_map>
-#include <stack>
 #include <deque>
 #include <string>
 

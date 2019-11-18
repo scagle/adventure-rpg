@@ -192,7 +192,7 @@ namespace game
         };
         for ( std::string font_name : font_names )
         {
-            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 64);
+            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 24);
             if ( font == NULL )
             {
                 printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 

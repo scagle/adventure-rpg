@@ -50,7 +50,7 @@ namespace game
             static void sendEvent(Event, bool);
             static bool getInitialized() { return initialized; }
             static bool getQuit() { return quit; }
-            static TTF_Font* getFont(int) { return fonts[0]; }
+            static TTF_Font* getFont( int i ) { return fonts[i]; }
             static SDL_Renderer* getActiveRenderer() { return renderer; }
             static void setInitialized(bool val) { initialized = val; }
 
