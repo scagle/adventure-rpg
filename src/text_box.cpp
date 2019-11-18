@@ -27,7 +27,7 @@ namespace game
         this->text = text;
         this->font_index = font_index;
         this->background = background;
-        this->foreground = {128, 128, 128, 255};
+        this->foreground = {0, 0, 0, 255};
         this->properties = p;
         initText();
     }
@@ -35,9 +35,6 @@ namespace game
     void TextBox::render( SDL_Renderer *renderer, SDL_Rect *text_rect )
     {
         text_texture.render( renderer, text_rect );
-        //SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
-        //SDL_RenderFillRect( renderer, text_rect );
-        //SDL_RenderCopy( renderer, text_texture, NULL, text_rect ); 
     }
 
     void TextBox::update()

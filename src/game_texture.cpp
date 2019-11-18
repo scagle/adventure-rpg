@@ -61,15 +61,35 @@ namespace game
         }
     }
 
+    void GameTexture::setBackground( const SDL_Color& color )
+    {
+        setBackground( color.r, color.g, color.b );
+    }
+        
+    void GameTexture::setBackground( SDL_Color& color )
+    {
+        setBackground( color.r, color.g, color.b );
+    }
+
     void GameTexture::setBackground( unsigned char red, unsigned char green, unsigned char blue )
     {
         background = true;
-        background_color = { red, green, blue };
+        background_color = { red, green, blue, 255 };
     }
 
     void GameTexture::unsetBackground()
     {
         background = false;
+    }
+
+    void GameTexture::setColor( const SDL_Color& color )
+    {
+        setColor( color.r, color.g, color.b );
+    }
+
+    void GameTexture::setColor( SDL_Color& color )
+    {
+        setColor( color.r, color.g, color.b );
     }
 
     void GameTexture::setColor( unsigned char red, unsigned char green, unsigned char blue )
@@ -87,11 +107,6 @@ namespace game
         SDL_SetTextureAlphaMod( texture, alpha );
     }
 
-    void GameTexture::render( SDL_Renderer* renderer, SDL_Rect* rect )
-    {
-        render( renderer, rect );
-    }
-
     void GameTexture::render( SDL_Renderer* renderer, SDL_Rect* rect, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip )
     {
         //Set rendering space and render to screen
@@ -105,8 +120,11 @@ namespace game
         }
 
         //Render to screen
-        SDL_SetRenderDrawColor( renderer, background_color.r, background_color.g, background_color.b, background_color.a );
-        SDL_RenderFillRect( renderer, rect );
+        if ( background )
+        {
+            SDL_SetRenderDrawColor( renderer, background_color.r, background_color.g, background_color.b, background_color.a );
+            SDL_RenderFillRect( renderer, rect );
+        }
         SDL_RenderCopyEx( renderer, texture, clip, &render_rect, angle, center, flip );
     }
 };

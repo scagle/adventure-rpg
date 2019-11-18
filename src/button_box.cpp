@@ -38,12 +38,11 @@ namespace game
     {
         if (selected) // If this button is selected, change color
         {
-            SDL_Color sc = BUTTON_SELECTED_BACKGROUND_COLOR;
-            SDL_SetRenderDrawColor( renderer, sc.r, sc.g, sc.b, sc.a );
+            text_texture.setBackground( BUTTON_SELECTED_BACKGROUND_COLOR );
         }
         else
         {
-            SDL_SetRenderDrawColor( renderer, background.r, background.g, background.b, background.a );
+            text_texture.setBackground( background );
         }
 
         text_texture.render( renderer, button_rect );
