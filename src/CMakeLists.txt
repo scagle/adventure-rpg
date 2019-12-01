@@ -59,8 +59,10 @@ set(BASE_SOURCES
 
 add_subdirectory(enums)
 add_subdirectory(datatypes)
-message(STATUS ${PONG_SOURCES})
-add_executable(game ${BASE_SOURCES} ${ENUMS_SOURCES} ${DATATYPES_SOURCES})
+add_subdirectory(external)
+
+message("${EXTERNAL_SOURCES}")
+add_executable(game ${BASE_SOURCES} ${ENUMS_SOURCES} ${DATATYPES_SOURCES} ${EXTERNAL_SOURCES})
 
 target_link_libraries(game SDL2 SDL2_ttf)
 target_link_libraries(game Threads::Threads)

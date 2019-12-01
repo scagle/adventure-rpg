@@ -1,4 +1,5 @@
 set(DATATYPES_SOURCES 
-    position.hpp
-    properties.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/position.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/properties.hpp
+    PARENT_SCOPE
 )    

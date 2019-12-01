@@ -16,6 +16,7 @@ union SDL_Event;
 #include "character.hpp"
 #include "solid.hpp"
 
+#include "external/SDL_FontCache.h"
 #include "enums/event_type.hpp"
 
 #include <bitset>
@@ -33,7 +34,7 @@ namespace game
             World world;                        // World with all the maps / mapdata
 
             static SDL_Renderer* renderer;          // Hardware accelerated renderer
-            static std::vector< TTF_Font* > fonts;  // All pre-loaded fonts
+            static std::vector< FC_Font* > fonts;  // All pre-loaded fonts
             static bool initialized;
             static bool quit;
 
@@ -50,7 +51,7 @@ namespace game
             static void sendEvent(Event, bool);
             static bool getInitialized() { return initialized; }
             static bool getQuit() { return quit; }
-            static TTF_Font* getFont( int i ) { return fonts[i]; }
+            static FC_Font* getFont( int i ) { return fonts[i]; }
             static SDL_Renderer* getActiveRenderer() { return renderer; }
             static void setInitialized(bool val) { initialized = val; }
 

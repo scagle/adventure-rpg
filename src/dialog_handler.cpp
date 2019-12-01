@@ -23,10 +23,8 @@ namespace game
                 "home_merchant0",
                 Container( 
                     { 
-                        TextBox("Hello there", DEFAULT_FONT, Properties()),
-                        TextBox("adventurer!", DEFAULT_FONT, Properties()),
-                        TextBox("Would you like", DEFAULT_FONT, Properties()),
-                        TextBox("to browse my wares?", DEFAULT_FONT, Properties()),
+                        TextBox("Hello there adventurer!", DEFAULT_FONT, Properties()),
+                        TextBox("Would you like to browse my wares?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
                         ButtonBox("Buy", DEFAULT_FONT, "shop0_buy", Properties()), 
@@ -42,11 +40,14 @@ namespace game
                 "home_npc0",
                 Container( 
                     { 
-                        TextBox("OMG!", DEFAULT_FONT, Properties()),
-                        TextBox("I'm so bored...", DEFAULT_FONT, Properties()),
-                        TextBox("There's NOTHING here!", DEFAULT_FONT, Properties()),
+                        TextBox("OMG! I'm so freaking bored!!!", DEFAULT_FONT, Properties()),
+                        TextBox("There's like literally NOTHING to do here!", DEFAULT_FONT, Properties()),
+                        TextBox("Like what the heck was the creator thinking?", DEFAULT_FONT, Properties()),
+                        TextBox("Or is he even thinking at all?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
+                        ButtonBox("SAVAGE!", DEFAULT_FONT, "leave", Properties()),
+                        ButtonBox("Okay...", DEFAULT_FONT, "leave", Properties()),
                         ButtonBox("Go away!", DEFAULT_FONT, "leave", Properties()),
                     },
                     ContainerType::FLOATING,
@@ -58,14 +59,8 @@ namespace game
                 "forest_wizard",
                 Container( 
                     { 
-                        TextBox("Oh hi!", DEFAULT_FONT, Properties()),
-                        TextBox("You scared me...", DEFAULT_FONT, Properties()),
-                        TextBox("I was practicing", DEFAULT_FONT, Properties()),
-                        TextBox("my wizard spells.", DEFAULT_FONT, Properties()),
-                        TextBox("Would you be", DEFAULT_FONT, Properties()),
-                        TextBox("interested in", DEFAULT_FONT, Properties()),
-                        TextBox("being my test", DEFAULT_FONT, Properties()),
-                        TextBox("dummy?", DEFAULT_FONT, Properties()),
+                        TextBox("Oh hi! You really scared me!\nI was just practicing my wizard spells.", DEFAULT_FONT, Properties()),
+                        TextBox("Would you be interested in being my test dummy?", DEFAULT_FONT, Properties()),
                     }, 
                     { 
                         ButtonBox("Cast Away!", DEFAULT_FONT, "", Properties()),
@@ -87,7 +82,7 @@ namespace game
                     },
                     ContainerType::FLOATING,
                     "scared_ferret",
-                    Properties( { { PropertyType::NO_PROMPT, 1 }, { PropertyType::SIZE, 40 } } )
+                    Properties( { { PropertyType::NO_PROMPT, 1 }, { PropertyType::SIZE, 30 } } )
                 )
             },
             { 

@@ -45,7 +45,7 @@ namespace game
             text_texture.setBackground( background );
         }
 
-        text_texture.render( renderer, button_rect );
+        text_texture.render( renderer, text, button_rect, align );
     }
 
     void ButtonBox::update()

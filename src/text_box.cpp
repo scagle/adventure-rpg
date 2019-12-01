@@ -34,7 +34,7 @@ namespace game
 
     void TextBox::render( SDL_Renderer *renderer, SDL_Rect *text_rect )
     {
-        text_texture.render( renderer, text_rect );
+        text_texture.render( renderer, text, text_rect, align );
     }
 
     void TextBox::update()
@@ -44,8 +44,8 @@ namespace game
 
     void TextBox::initText()
     {
-        SDL_Renderer *renderer = GameData::getActiveRenderer();
-        TTF_Font *font = GameData::getFont(0);
-        text_texture.loadFromRenderedText( renderer, text, font, foreground );
+        //SDL_Renderer *renderer = GameData::getActiveRenderer();
+        //TTF_Font *font = GameData::getFont(0);
+        //text_texture.loadFromRenderedText( renderer, text, font, foreground );
     }
 };

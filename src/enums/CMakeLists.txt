@@ -1,9 +1,9 @@
 set(ENUMS_SOURCES 
-    container_ids.hpp
-    container_orientation.hpp
-    container_type.hpp
-    direction.hpp
-    event_type.hpp
-    property_type.hpp
-    ui.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/container_orientation.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/container_type.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/direction.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/event_type.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/property_type.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui.hpp
+    PARENT_SCOPE
 )    

@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "external/SDL_FontCache.h"
+
 #include <SDL.h> // Could forward declare individual bits and pieces, but not right now
 #include <SDL_ttf.h>
 #include <string>
@@ -13,10 +15,11 @@ namespace game
     {
         private:
             // Private Members
-            SDL_Texture* texture = NULL;
+            SDL_Texture* texture = nullptr;
+            std::string text = "";
+            FC_Font* font = nullptr;
             int width = 0;
             int height = 0;
-            TTF_Font* font = NULL;
             bool background = true;
             SDL_Color background_color = { 255, 255, 255, 255 };
 
@@ -31,7 +34,7 @@ namespace game
             bool loadFromFile( std::string path ); 
 
             // Create image image from font string
-            bool loadFromRenderedText( SDL_Renderer* renderer, std::string text, TTF_Font* font, SDL_Color color );
+            bool loadFromRenderedText( SDL_Renderer* renderer, std::string text, FC_Font* font, SDL_Color color );
 
             // Deallocate Texture
             void free(); 
@@ -54,8 +57,7 @@ namespace game
             void setAlpha( unsigned char alpha );
 
             //Renders texture at given point
-            void render( SDL_Renderer* renderer, SDL_Rect* rect, SDL_Rect* clip = NULL, double angle = 0.0, 
-                    SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE );
+            void render( SDL_Renderer* renderer, std::string text, SDL_Rect* rect, FC_AlignEnum align );
 
 
             // Accessors

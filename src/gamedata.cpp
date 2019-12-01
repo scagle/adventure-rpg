@@ -9,6 +9,8 @@
 #include "enums/event_type.hpp"
 #include "enums/ui.hpp"
 
+#include "external/SDL_FontCache.h"
+
 #include <unordered_map>
 #include <SDL.h>
 #include <SDL_ttf.h>
@@ -18,7 +20,7 @@ namespace game
 
     // Static Declarations
     SDL_Renderer* GameData::renderer;         
-    std::vector< TTF_Font* > GameData::fonts; 
+    std::vector< FC_Font* > GameData::fonts; 
     bool GameData::initialized = false;
     bool GameData::quit = false;
     std::unordered_map< std::string, Container > mapping;
@@ -72,12 +74,12 @@ namespace game
         // Clear screen
         SDL_Color* color = world.getCurrentBackground();
         SDL_SetRenderDrawColor( renderer, color->r, color->g, color->b, color->a );
-        SDL_RenderClear( renderer );
+        SDL_RenderFillRect( renderer, NULL );
 
         // Render Environment
         world.render( renderer );
 
-        // Render Menu
+        // Render Menus
         ui_manager.render( renderer );
 
         //Update screen
@@ -96,12 +98,11 @@ namespace game
         window = NULL;
         renderer = NULL;
 
-        for ( TTF_Font* font : fonts )
+        for ( FC_Font* font : fonts )
         {
-            TTF_CloseFont(font);
+            FC_FreeFont(font);
         }
 
-        TTF_Quit();
         SDL_Quit();
 
         printf("Goodbye!\n");
@@ -143,6 +144,7 @@ namespace game
             printf( "SDL couldn't be initialized! : %s\n", SDL_GetError() ); 
             return false;
         }
+        SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengl");
         return true;
     }
 
@@ -192,13 +194,17 @@ namespace game
         };
         for ( std::string font_name : font_names )
         {
-            TTF_Font *font = TTF_OpenFont(font_name.c_str(), 24);
+            //TODO: Try this out
+            FC_Font *font = FC_CreateFont();
+            FC_LoadFont(font, renderer, font_name.c_str(), 16, FC_MakeColor(0, 0, 0, 255), TTF_STYLE_NORMAL);  
+
+            //TTF_Font *font = TTF_OpenFont(font_name.c_str(), 24);
             if ( font == NULL )
             {
                 printf( "Font: '%s' couldn't be found! \n", font_name.c_str() ); 
                 return false;
             }
-            fonts.push_back(font);
+            this->fonts.push_back(font);
         }
         return true;
     }

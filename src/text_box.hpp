@@ -2,6 +2,7 @@
 
 #include "datatypes/properties.hpp"
 #include "game_texture.hpp"
+#include "external/SDL_FontCache.h"
 
 #include <string>
 #include <SDL.h>
@@ -13,6 +14,7 @@ namespace game
         protected:   // We want inherited classes to have access to members
             std::string text;
             GameTexture text_texture;
+            FC_AlignEnum align = FC_ALIGN_CENTER;
             SDL_Color background;
             SDL_Color foreground;
             int font_index;
